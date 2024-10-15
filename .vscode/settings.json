@@ -1,0 +1,11 @@
+{
+    "editor.formatOnSave": true, 
+    "autopep8.args": [
+        "--max-line-length",
+        "120",
+        "--experimental",
+        "--aggressive",
+        "--exclude",
+        "utils/issue_api/define/**"
+    ]
+}

@@ -1,0 +1,2 @@
+SqlCpp 是一个构建SQL语句的ORM框架，仓库主要功能是使用C++代码构建SQL语句
+源代码位于./src/下, 头文件位于./inc/sqlcpp下
