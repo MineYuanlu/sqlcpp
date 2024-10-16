@@ -14,24 +14,21 @@ if(MSVC)
         $<$<CONFIG:Release>:/O2>)
 else()
     target_compile_options(sqlcpp PRIVATE -Wall -Werror
-        $<$<CONFIG:Debug>:-O0>
+        $<$<CONFIG:Debug>:-O0 -g>
         $<$<CONFIG:Release>:-O3>)
 endif()
 
 option(SQLCPP_TESTS "Build the sqlcpp test executable" OFF)
 
 if(SQLCPP_TESTS)
+    find_package(SQLite3 REQUIRED)
     add_executable(sqlcpp_test "main.cpp")
     target_include_directories(sqlcpp_test PRIVATE "${PROJECT_SOURCE_DIR}/inc")
-    target_link_libraries(sqlcpp_test PRIVATE sqlcpp)
+    target_link_libraries(sqlcpp_test PRIVATE sqlcpp SQLite::SQLite3)
 
-    if(MSVC)
-        target_compile_options(sqlcpp_test PRIVATE /W4 /WX
-            $<$<CONFIG:Debug>:/Od>
-            $<$<CONFIG:Release>:/O2>)
-    else()
-        target_compile_options(sqlcpp_test PRIVATE -Wall -Werror
-            $<$<CONFIG:Debug>:-O0>
-            $<$<CONFIG:Release>:-O3>)
-    endif()
+    target_compile_options(sqlcpp_test PRIVATE
+        $<$<CONFIG:Debug>:-O0 -g>
+    )
+
+    add_test(NAME SqlcppTest COMMAND sqlcpp_test)
 endif()
