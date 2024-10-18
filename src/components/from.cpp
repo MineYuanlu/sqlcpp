@@ -43,7 +43,6 @@ namespace sqlcpp {
         return *this;
     }
     void Froms::build_s(std::ostream &oss, const Type &t) const {
-        oss << " FROM ";
         std::visit([&](const auto &arg) { arg.build_s(oss, t); }, from_);
         for (const auto &join: joins_) {
             oss << ' ' << join_type_str(std::get<0>(join)) << ' ';

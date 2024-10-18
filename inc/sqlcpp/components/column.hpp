@@ -8,6 +8,7 @@
 #include "sqlcpp/defs.hpp"
 #include <optional>
 #include <vector>
+#include <tuple>
 namespace sqlcpp {
     struct Column : public Builder {
         std::string name_;

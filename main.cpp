@@ -4,10 +4,13 @@
 #include "sqlcpp/components/insert.hpp"
 #include "sqlcpp/components/select.hpp"
 #include "sqlcpp/components/table.hpp"
+#include "sqlcpp/components/update.hpp"
+#include "sqlcpp/components/value.hpp"
 #include <cstdint>
 #include <iomanip>
 #include <iostream>
 #include <sqlite3.h>
+#include <stdexcept>
 #include <sys/types.h>
 
 #define ASSERT_SQLITE_A(expr, expect, code, msg_summoner, OR, finish)                                                                                              \
@@ -250,10 +253,37 @@ void select_data() {
     }
 }
 
+void update_data() {
+    static const std::string NEW_VAL = "YUANLU123";
+    {
+        auto sql = Update("user", "name", VAR)
+                           .where(Field("id") == 1)
+                           .build();
+
+        auto stmt = db.prepare(sql);
+        db.bind(sqlite3_bind_text, stmt, 1, NEW_VAL.c_str(), -1, SQLITE_STATIC);
+        db.run(stmt);
+    }
+    {
+        auto sql = Select("name")
+                           .from("user")
+                           .where(Field("id") == 1)
+                           .build();
+        auto stmt = db.prepare(sql);
+        db.run(stmt);
+        const char *text = reinterpret_cast<const char *>(sqlite3_column_text(stmt.stmt, 0));
+        if (text != NEW_VAL) {
+            std::cerr << "UPDATE ERROR: " << text << " != " << NEW_VAL << std::endl;
+            throw std::runtime_error("UPDATE ERROR");
+        }
+    }
+}
+
 /// @brief test
 int main() {
     create_tables();
     insert_data();
     select_data();
+    update_data();
     return 0;
 }

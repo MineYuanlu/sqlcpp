@@ -20,5 +20,8 @@ namespace sqlcpp {
             return oss.str();
         }
     };
+    struct NoAliasBuilder {
+        virtual void build_no_alias(std::ostream &oss, const Type &t = SQLITE) const = 0;
+    };
 }// namespace sqlcpp
 #endif// SQLCPP_DEFS__HPP_GUARD

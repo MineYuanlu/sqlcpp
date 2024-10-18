@@ -101,7 +101,6 @@ namespace sqlcpp {
                 }
                 // clang-format on
             }
-            if (IGNORE_) oss << "IGNORE ";
         } else if (t == SQLITE) {
             if (INSERT_OR_) {
                 // clang-format off
@@ -109,7 +108,7 @@ namespace sqlcpp {
                     case OR_ROLLBACK: oss << "ROLLBACK "; break;
                     case OR_ABORT:    oss << "ABORT "; break;
                     case OR_FAIL:     oss << "FAIL "; break;
-                    case OR_IGNORE:   oss << "IGNORE "; break;
+                    case OR_IGNORE:   /* 稍后输出 */ break;
                     case OR_REPLACE:  oss << "REPLACE "; break;
                 }
                 // clang-format on
@@ -117,6 +116,7 @@ namespace sqlcpp {
         } else {
             throw std::invalid_argument("[sqlcpp] Unknown SQL type: " + std::string{t});
         }
+        if (IGNORE_ || INSERT_OR_ == OR_IGNORE) oss << "IGNORE ";
         oss << "INTO " << table_;
 
         oss << '(';
@@ -152,11 +152,12 @@ namespace sqlcpp {
                 oss << " RETURNING ";
                 auto &returing = *RETURNING_;
                 for (size_t i = 0; i < returing.size(); ++i) {
-                    if (i > 0) oss << ",";
+                    if (i > 0) oss << ", ";
                     returing[i].build_s(oss, t);
                 }
             }
         }
+        oss << ';';
     }
 
 
@@ -200,6 +201,25 @@ namespace sqlcpp {
         if (auto *val = std::get_if<InsertValues>(&values_); val) val->add_col(col);
         else
             throw std::invalid_argument("[sqlcpp] Cannot add col after set raw values.");
+        return *this;
+    }
+    Insert &Insert::returning(FieldLike r) {
+        RETURNING_ = std::vector<FieldLike>{r};
+        return *this;
+    }
+    Insert &Insert::returning(std::optional<std::vector<FieldLike>> r) {
+        RETURNING_ = std::move(r);
+        return *this;
+    }
+    Insert &Insert::add_returning(FieldLike rs) {
+        if (!RETURNING_) RETURNING_ = std::vector<FieldLike>{};
+        RETURNING_->emplace_back(rs);
+        return *this;
+    }
+    Insert &Insert::add_returning(const std::vector<FieldLike> &rs) {
+        if (!RETURNING_) RETURNING_ = rs;
+        else
+            RETURNING_->insert(RETURNING_->end(), rs.begin(), rs.end());
         return *this;
     }
 }// namespace sqlcpp

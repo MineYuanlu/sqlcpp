@@ -78,7 +78,10 @@ namespace sqlcpp {
             fields_[i].build_s(oss, t);
             if (i < sz - 1) oss << ", ";
         }
-        if (from_) from_->build_s(oss, t);
+        if (from_) {
+            oss << " FROM ";
+            from_->build_s(oss, t);
+        }
         if (where_) where_->build_s(oss, t);
         if (group_by_) group_by_->build_s(oss, t);
         if (having_) having_->build_s(oss, t);
@@ -99,5 +102,6 @@ namespace sqlcpp {
                 val->build_s(oss, t);
             }
         }
+        oss << ';';
     }
 }// namespace sqlcpp

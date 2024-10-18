@@ -1,4 +1,5 @@
 #include "sqlcpp/components/field.hpp"
+#include "sqlcpp/components/assign.hpp"
 #include "sqlcpp/components/cond.hpp"
 #include "sqlcpp/components/order_by.hpp"
 #include "sqlcpp/components/value.hpp"
@@ -41,6 +42,13 @@ namespace sqlcpp {
         if (alias_) oss << " AS " << safe_field(*alias_, t);
     }
 
+    Assign Field::assign(ValueLike v) const {
+        return {*this, std::move(v)};
+    }
+    Assign Field::operator=(ValueLike v) const {
+        return assign(std::move(v));
+    }
+
 
     RawField::RawField(std::string raw_field) : raw_field_(std::move(raw_field)) {}
     void RawField::build_s(std::ostream &oss, const Type &t) const {
@@ -63,26 +71,35 @@ namespace sqlcpp {
         if (alias_) oss << " AS " << safe_field(*alias_, t);
     }
 
-
+    FieldLike::FieldLike(const char *field) : FieldLike(Field{std::move(field)}) {}
+    FieldLike::FieldLike(std::string field) : FieldLike(Field{std::move(field)}) {}
+    FieldLike::FieldLike(std::string table, std::string field) : FieldLike(Field{std::move(table), std::move(field)}) {}
+    FieldLike::FieldLike(std::string table, std::string field, std::string alias) : FieldLike(Field{std::move(table), std::move(field), std::move(alias)}) {}
     FieldLike::FieldLike(Field field) : field_(std::move(field)) {}
     FieldLike::FieldLike(RawField field) : field_(std::move(field)) {}
     FieldLike::FieldLike(FuncField field) : field_(std::move(field)) {}
     void FieldLike::build_s(std::ostream &oss, const Type &t) const {
         std::visit([&](const auto &arg) { arg.build_s(oss, t); }, field_);
     }
-    CondCmp FieldLike::LIKE(ValueLike v) {
+    CondCmp FieldLike::LIKE(ValueLike v) const {
         return {*this, CmpOp::LIKE, v};
     }
-    CondCmp FieldLike::NOT_LIKE(ValueLike v) {
+    CondCmp FieldLike::NOT_LIKE(ValueLike v) const {
         return {*this, CmpOp::NOT_LIKE, v};
     }
-    CondIn FieldLike::IN(std::vector<ValueLike> vs) {
+    CondIn FieldLike::IN(std::vector<ValueLike> vs) const {
         return {*this, vs};
     }
-    CondNotIn FieldLike::NOT_IN(std::vector<ValueLike> vs) {
+    CondNotIn FieldLike::NOT_IN(std::vector<ValueLike> vs) const {
         return {*this, vs};
     }
-    CondBetween FieldLike::BETWEEN(ValueLike start, ValueLike end) {
+    CondBetween FieldLike::BETWEEN(ValueLike start, ValueLike end) const {
         return {*this, start, end};
+    }
+    Assign FieldLike::assign(ValueLike v) const {
+        return {*this, std::move(v)};
+    }
+    Assign FieldLike::operator=(ValueLike v) const {
+        return assign(std::move(v));
     }
 }// namespace sqlcpp

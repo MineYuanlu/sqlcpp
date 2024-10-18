@@ -13,6 +13,13 @@
 namespace sqlcpp {
 
     struct OrderByField;
+    struct ValueLike;
+    struct CondCmp;
+    struct CondIn;
+    struct CondNotIn;
+    struct CondBetween;
+    struct Assign;
+
     struct Field : Builder {
         std::optional<std::string> table_name_{};
         std::string field_name_;
@@ -30,6 +37,9 @@ namespace sqlcpp {
         OrderByField desc() const;
 
         virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+
+        Assign assign(ValueLike) const;
+        Assign operator=(ValueLike) const;
     };
 
 
@@ -52,22 +62,24 @@ namespace sqlcpp {
         virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
     };
 
-    struct ValueLike;
-    struct CondCmp;
-    struct CondIn;
-    struct CondNotIn;
-    struct CondBetween;
     struct FieldLike : Builder {
         std::variant<Field, RawField, FuncField> field_;
+        FieldLike(const char *field);
+        FieldLike(std::string field);
+        FieldLike(std::string table, std::string field);
+        FieldLike(std::string table, std::string field, std::string alias);
         FieldLike(Field field);
         FieldLike(RawField field);
         FieldLike(FuncField field);
         virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
-        CondCmp LIKE(ValueLike v);//TODO
-        CondCmp NOT_LIKE(ValueLike v);
-        CondIn IN(std::vector<ValueLike> vs);
-        CondNotIn NOT_IN(std::vector<ValueLike> vs);
-        CondBetween BETWEEN(ValueLike start, ValueLike end);
+        CondCmp LIKE(ValueLike v) const;
+        CondCmp NOT_LIKE(ValueLike v) const;
+        CondIn IN(std::vector<ValueLike> vs) const;
+        CondNotIn NOT_IN(std::vector<ValueLike> vs) const;
+        CondBetween BETWEEN(ValueLike start, ValueLike end) const;
+
+        Assign assign(ValueLike) const;
+        Assign operator=(ValueLike) const;
     };
 }// namespace sqlcpp
 #endif// SQLCPP_COMPONENTS_FIELD__HPP_GUARD

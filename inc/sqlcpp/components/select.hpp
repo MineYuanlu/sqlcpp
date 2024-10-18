@@ -33,10 +33,12 @@ namespace sqlcpp {
         explicit Select() = default;
         Select(FieldLike field);
         Select(std::vector<FieldLike> fields);
-        template<typename... Args>
-        Select(Args &&...args) {
-            select(std::forward<Args>(args)...);
-        }
+        template<
+                typename T,
+                typename... Args,
+                typename = std::enable_if_t<
+                        (std::is_convertible_v<std::decay_t<T>, Field> || std::is_convertible_v<std::decay_t<T>, RawField> || std::is_convertible_v<std::decay_t<T>, FuncField>) &&(sizeof...(Args) > 0)>>
+        Select(T field, Args &&...args) { select(field, std::forward<Args>(args)...); }
         Select &select(FieldLike field);
         Select &select(Field field);
         Select &select(RawField field);
@@ -46,13 +48,12 @@ namespace sqlcpp {
                 typename... Args,
                 typename = std::enable_if_t<
                         (std::is_convertible_v<std::decay_t<T>, Field> || std::is_convertible_v<std::decay_t<T>, RawField> || std::is_convertible_v<std::decay_t<T>, FuncField>) &&(sizeof...(Args) > 0)>>
-        inline Select &select(T field, Args &&...args) {
-            select(std::move(field));
-            return select(std::forward<Args>(args)...);
-        }
+        inline Select &select(T field, Args &&...args);
+
         Select &from(Froms from);
         Select &from(From from);
         Select &from(RawFrom from);
+
         Select &where(Where where);
         Select &where(Condition where);
         Select &group_by(GroupBy group_by);
@@ -67,6 +68,15 @@ namespace sqlcpp {
 
         virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
     };
+
+    template<
+            typename T,
+            typename... Args,
+            typename>
+    inline Select &Select::select(T field, Args &&...args) {
+        select(std::move(field));
+        return select(std::forward<Args>(args)...);
+    }
 
 }// namespace sqlcpp
 #endif// SQLCPP_COMPONENTS_SELECT__HPP_GUARD
