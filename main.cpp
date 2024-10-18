@@ -282,7 +282,7 @@ void update_data() {
 
 void delete_data() {
     {
-        auto sql = Delete("user", Field("age") > 100).limit(1).build();
+        auto sql = Delete("user", Field("age") > 100).build();
         auto stmt = db.prepare(sql);
         db.run(stmt);
     }

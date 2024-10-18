@@ -119,5 +119,6 @@ namespace sqlcpp {
                 var->build_s(oss, t);
             }
         }
+        oss << ';';
     }
 }// namespace sqlcpp

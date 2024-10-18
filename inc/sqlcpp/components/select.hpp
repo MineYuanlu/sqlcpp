@@ -16,14 +16,14 @@
 namespace sqlcpp {
 
     struct Select final : public Builder {
-        std::vector<FieldLike> fields_;
-        std::optional<Froms> from_;
-        std::optional<Where> where_;
-        std::optional<GroupBy> group_by_;
-        std::optional<Having> having_;
-        std::optional<OrderBy> order_by_;
-        std::optional<std::variant<VarValue, size_t>> limit_;
-        std::optional<std::variant<VarValue, size_t>> offset_;
+        std::vector<FieldLike> fields_{};
+        std::optional<Froms> from_{};
+        std::optional<Where> where_{};
+        std::optional<GroupBy> group_by_{};
+        std::optional<Having> having_{};
+        std::optional<OrderBy> order_by_{};
+        std::optional<std::variant<VarValue, size_t>> limit_{};
+        std::optional<std::variant<VarValue, size_t>> offset_{};
 
         Select(Select &&) = default;
         Select &operator=(Select &&) = default;

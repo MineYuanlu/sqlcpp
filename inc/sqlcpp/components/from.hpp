@@ -58,7 +58,7 @@ namespace sqlcpp {
 
     struct Froms final : public Builder {
         std::variant<From, RawFrom> from_;
-        std::vector<std::tuple<JoinType, std::variant<From, RawFrom>, Condition>> joins_;
+        std::vector<std::tuple<JoinType, std::variant<From, RawFrom>, Condition>> joins_{};
 
         Froms(From);
         Froms(RawFrom);

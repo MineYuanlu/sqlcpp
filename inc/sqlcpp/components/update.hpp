@@ -25,16 +25,16 @@ namespace sqlcpp {
         };
 
 
-        bool LOW_PRIORITY = false;         ///< mysql only
-        bool IGNORE = false;               ///< mysql only
-        std::optional<UpdateOr> UPDATE_OR_;///< sqlite only
-        std::optional<Froms> table_;
-        std::optional<Assigns> assigns_;
-        std::optional<Where> where_;
-        std::optional<OrderBy> order_by_;
-        std::optional<std::variant<VarValue, size_t>> limit_;
-        std::optional<std::variant<VarValue, size_t>> offset_;///< sqlite only
-        std::optional<std::vector<FieldLike>> RETURNING_;     ///< sqlite only
+        bool LOW_PRIORITY = false;           ///< mysql only
+        bool IGNORE = false;                 ///< mysql only
+        std::optional<UpdateOr> UPDATE_OR_{};///< sqlite only
+        std::optional<Froms> table_{};
+        std::optional<Assigns> assigns_{};
+        std::optional<Where> where_{};
+        std::optional<OrderBy> order_by_{};
+        std::optional<std::variant<VarValue, size_t>> limit_{};
+        std::optional<std::variant<VarValue, size_t>> offset_{};///< sqlite only
+        std::optional<std::vector<FieldLike>> RETURNING_{};     ///< sqlite only
 
         Update() = default;
         Update(Assigns assigns);

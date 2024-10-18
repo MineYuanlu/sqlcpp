@@ -55,9 +55,9 @@ namespace sqlcpp {
         bool IGNORE_ = false;
         std::vector<FieldLike> columns_{};
         std::variant<InsertValues, std::string> values_ = InsertValues{};
-        std::optional<InsertOr> INSERT_OR_;                                    ///< sqlite only
-        std::optional<std::vector<std::pair<FieldLike, ValueLike>>> DUPLICATE_;///< mysql only
-        std::optional<std::vector<FieldLike>> RETURNING_;                      ///< sqlite only
+        std::optional<InsertOr> INSERT_OR_{};                                    ///< sqlite only
+        std::optional<std::vector<std::pair<FieldLike, ValueLike>>> DUPLICATE_{};///< mysql only
+        std::optional<std::vector<FieldLike>> RETURNING_{};                      ///< sqlite only
 
         Insert() = default;
         Insert(const std::string &table) : table_(table) {}

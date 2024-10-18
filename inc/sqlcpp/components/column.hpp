@@ -11,21 +11,21 @@
 #include <vector>
 namespace sqlcpp {
     struct Column final : public Builder {
-        std::string name_;
-        std::tuple<std::string, std::optional<int>, std::optional<int>> type_;
+        std::string name_{};
+        std::tuple<std::string, std::optional<int>, std::optional<int>> type_{};
 
         bool NOT_NULL_ = false;
-        std::optional<std::string> DEFAULT_ = {};
+        std::optional<std::string> DEFAULT_{};
         bool UNIQUE_ = false;
         bool PRIMARY_KEY_ = false;
         bool AUTO_INCREMENT_ = false;
         bool FULL_TEXT_SEARCH_ = false;
-        std::optional<std::string> COMMENT_ = {};
-        std::optional<std::string> REFERENCES_ = {};
-        std::optional<std::string> CHECK_ = {};
-        std::optional<std::string> ON_UPDATE_ = {};
-        std::optional<std::string> CHARACTER_SET_ = {};
-        std::optional<std::string> COLLATE_ = {};
+        std::optional<std::string> COMMENT_{};
+        std::optional<std::string> REFERENCES_{};
+        std::optional<std::string> CHECK_{};
+        std::optional<std::string> ON_UPDATE_{};
+        std::optional<std::string> CHARACTER_SET_{};
+        std::optional<std::string> COLLATE_{};
 
         Column(std::string f, std::string t = {});
 
