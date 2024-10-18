@@ -290,6 +290,7 @@ void delete_data() {
 
 /// @brief test
 int main() {
+    std::cout << "SQLite version: " << sqlite3_libversion() << std::endl;
     create_tables();
     insert_data();
     select_data();

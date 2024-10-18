@@ -100,4 +100,4 @@ jobs:
       - name: 测试
         working-directory: ${{ steps.strings.outputs.build-output-dir }}
         run: |
-          ctest --build-config ${{ matrix.build_type }}
+          ctest --build-config ${{ matrix.build_type }} --verbose

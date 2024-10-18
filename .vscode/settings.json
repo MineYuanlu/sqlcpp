@@ -1,5 +1,5 @@
 {
-    "editor.formatOnSave": true, 
+    "editor.formatOnSave": true,
     "autopep8.args": [
         "--max-line-length",
         "120",
@@ -7,5 +7,8 @@
         "--aggressive",
         "--exclude",
         "utils/issue_api/define/**"
-    ]
+    ],
+    "files.associations": {
+        "iostream": "cpp"
+    }
 }
