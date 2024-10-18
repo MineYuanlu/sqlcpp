@@ -43,12 +43,54 @@ jobs:
         run: |
           echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
 
+      - name: 缓存 vcpkg (Windows)
+        if: matrix.os == 'windows-latest'
+        uses: actions/cache@v3
+        with:
+          path: |
+            vcpkg
+            vcpkg\installed
+          key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/vcpkg.json') }}
+          restore-keys: |
+            ${{ runner.os }}-vcpkg-
+
+      - name: 安装 vcpkg 和 SQLite3 (Windows)
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        run: |
+          if (-Not (Test-Path "vcpkg")) {
+            git clone https://github.com/microsoft/vcpkg.git
+          }
+          .\vcpkg\bootstrap-vcpkg.bat
+          .\vcpkg\vcpkg.exe install sqlite3:x64-windows
+
+          # 设置 VCPKG_ROOT 环境变量
+          echo "VCPKG_ROOT=${{ github.workspace }}\vcpkg" >> $env:GITHUB_ENV
+
+      - name: 安装 SQLite3 (Ubuntu)
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libsqlite3-dev
+
+      - name: 设置 CMake 工具链文件 (Windows)
+        if: matrix.os == 'windows-latest'
+        run: |
+          echo "CMAKE_TOOLCHAIN_FILE=${{ env.VCPKG_ROOT }}/scripts/buildsystems/vcpkg.cmake" >> $env:GITHUB_ENV
+
+      - name: 设置 CMake 工具链文件 (Ubuntu)
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          echo "CMAKE_TOOLCHAIN_FILE=" >> $env:GITHUB_ENV
+
       - name: 配置 CMake
         run: >
           cmake -B ${{ steps.strings.outputs.build-output-dir }}
           -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
           -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          -DSQLCPP_TESTS=ON
+          -DCMAKE_TOOLCHAIN_FILE=${{ env.CMAKE_TOOLCHAIN_FILE }}
           -S ${{ github.workspace }}
 
       - name: 构建

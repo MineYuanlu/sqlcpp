@@ -30,5 +30,7 @@ if(SQLCPP_TESTS)
         $<$<CONFIG:Debug>:-O0 -g>
     )
 
+    enable_testing()
     add_test(NAME SqlcppTest COMMAND sqlcpp_test)
+    message(STATUS "Enabled sqlcpp tests")
 endif()
