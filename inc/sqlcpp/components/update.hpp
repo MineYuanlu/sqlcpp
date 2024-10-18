@@ -38,16 +38,26 @@ namespace sqlcpp {
 
         Update() = default;
         Update(Assigns assigns);
-        Update(const char *table, std::optional<Assigns> assigns = std::nullopt);
-        Update(std::string table, std::optional<Assigns> assigns = std::nullopt);
-        Update(From table, std::optional<Assigns> assigns = std::nullopt);
-        Update(RawFrom table, std::optional<Assigns> assigns = std::nullopt);
-        Update(Froms table, std::optional<Assigns> assigns = std::nullopt);
-        Update(const char *table, FieldLike field, ValueLike value = VAR);
-        Update(std::string table, FieldLike field, ValueLike value = VAR);
-        Update(From table, FieldLike field, ValueLike value = VAR);
-        Update(RawFrom table, FieldLike field, ValueLike value = VAR);
-        Update(Froms table, FieldLike field, ValueLike value = VAR);
+        Update(const char *table, std::optional<Assigns> assigns = std::nullopt, std::optional<Where> where = std::nullopt);
+        Update(std::string table, std::optional<Assigns> assigns = std::nullopt, std::optional<Where> where = std::nullopt);
+        Update(From table, std::optional<Assigns> assigns = std::nullopt, std::optional<Where> where = std::nullopt);
+        Update(RawFrom table, std::optional<Assigns> assigns = std::nullopt, std::optional<Where> where = std::nullopt);
+        Update(Froms table, std::optional<Assigns> assigns = std::nullopt, std::optional<Where> where = std::nullopt);
+        Update(const char *table, FieldLike field, ValueLike value = VAR, std::optional<Where> where = std::nullopt);
+        Update(std::string table, FieldLike field, ValueLike value = VAR, std::optional<Where> where = std::nullopt);
+        Update(From table, FieldLike field, ValueLike value = VAR, std::optional<Where> where = std::nullopt);
+        Update(RawFrom table, FieldLike field, ValueLike value = VAR, std::optional<Where> where = std::nullopt);
+        Update(Froms table, FieldLike field, ValueLike value = VAR, std::optional<Where> where = std::nullopt);
+        Update(const char *table, std::optional<Assigns> assigns, Condition where);
+        Update(std::string table, std::optional<Assigns> assigns, Condition where);
+        Update(From table, std::optional<Assigns> assigns, Condition where);
+        Update(RawFrom table, std::optional<Assigns> assigns, Condition where);
+        Update(Froms table, std::optional<Assigns> assigns, Condition where);
+        Update(const char *table, FieldLike field, ValueLike value, Condition where);
+        Update(std::string table, FieldLike field, ValueLike value, Condition where);
+        Update(From table, FieldLike field, ValueLike value, Condition where);
+        Update(RawFrom table, FieldLike field, ValueLike value, Condition where);
+        Update(Froms table, FieldLike field, ValueLike value, Condition where);
 
 
         Update &low_priority(bool v = true);

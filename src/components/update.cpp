@@ -1,43 +1,75 @@
 #include "sqlcpp/components/update.hpp"
 #include "sqlcpp/components/field.hpp"
 #include "sqlcpp/components/from.hpp"
+#include "sqlcpp/components/where.hpp"
 #include "sqlcpp/types.hpp"
 #include <cstddef>
+#include <optional>
 #include <stdexcept>
 #include <variant>
 namespace sqlcpp {
     Update::Update(Assigns assigns)
         : assigns_(std::move(assigns)) {}
 
-    Update::Update(const char *table, std::optional<Assigns> assigns)
-        : table_(From{std::move(table)}), assigns_(std::move(assigns)) {}
+    Update::Update(const char *table, std::optional<Assigns> assigns, std::optional<Where> where)
+        : table_(From{std::move(table)}), assigns_(std::move(assigns)), where_(std::move(where)) {}
 
-    Update::Update(std::string table, std::optional<Assigns> assigns)
-        : table_(From{std::move(table)}), assigns_(std::move(assigns)) {}
+    Update::Update(std::string table, std::optional<Assigns> assigns, std::optional<Where> where)
+        : table_(From{std::move(table)}), assigns_(std::move(assigns)), where_(std::move(where)) {}
 
-    Update::Update(From table, std::optional<Assigns> assigns)
-        : table_(std::move(table)), assigns_(std::move(assigns)) {}
+    Update::Update(From table, std::optional<Assigns> assigns, std::optional<Where> where)
+        : table_(std::move(table)), assigns_(std::move(assigns)), where_(std::move(where)) {}
 
-    Update::Update(RawFrom table, std::optional<Assigns> assigns)
-        : table_(std::move(table)), assigns_(std::move(assigns)) {}
+    Update::Update(RawFrom table, std::optional<Assigns> assigns, std::optional<Where> where)
+        : table_(std::move(table)), assigns_(std::move(assigns)), where_(std::move(where)) {}
 
-    Update::Update(Froms table, std::optional<Assigns> assigns)
-        : table_(std::move(table)), assigns_(std::move(assigns)) {}
+    Update::Update(Froms table, std::optional<Assigns> assigns, std::optional<Where> where)
+        : table_(std::move(table)), assigns_(std::move(assigns)), where_(std::move(where)) {}
 
-    Update::Update(const char *table, FieldLike field, ValueLike value)
-        : table_(From{std::move(table)}), assigns_(Assign{std::move(field), std::move(value)}) {}
+    Update::Update(const char *table, FieldLike field, ValueLike value, std::optional<Where> where)
+        : table_(From{std::move(table)}), assigns_(Assign{std::move(field), std::move(value)}), where_(std::move(where)) {}
 
-    Update::Update(std::string table, FieldLike field, ValueLike value)
-        : table_(From{std::move(table)}), assigns_(Assign{std::move(field), std::move(value)}) {}
+    Update::Update(std::string table, FieldLike field, ValueLike value, std::optional<Where> where)
+        : table_(From{std::move(table)}), assigns_(Assign{std::move(field), std::move(value)}), where_(std::move(where)) {}
 
-    Update::Update(From table, FieldLike field, ValueLike value)
-        : table_(std::move(table)), assigns_(Assign{std::move(field), std::move(value)}) {}
+    Update::Update(From table, FieldLike field, ValueLike value, std::optional<Where> where)
+        : table_(std::move(table)), assigns_(Assign{std::move(field), std::move(value)}), where_(std::move(where)) {}
 
-    Update::Update(RawFrom table, FieldLike field, ValueLike value)
-        : table_(std::move(table)), assigns_(Assign{std::move(field), std::move(value)}) {}
+    Update::Update(RawFrom table, FieldLike field, ValueLike value, std::optional<Where> where)
+        : table_(std::move(table)), assigns_(Assign{std::move(field), std::move(value)}), where_(std::move(where)) {}
 
-    Update::Update(Froms table, FieldLike field, ValueLike value)
-        : table_(std::move(table)), assigns_(Assign{std::move(field), std::move(value)}) {}
+    Update::Update(Froms table, FieldLike field, ValueLike value, std::optional<Where> where)
+        : table_(std::move(table)), assigns_(Assign{std::move(field), std::move(value)}), where_(std::move(where)) {}
+
+    Update::Update(const char *table, std::optional<Assigns> assigns, Condition where)
+        : Update(std::move(table), std::move(assigns), Where{std::move(where)}) {}
+
+    Update::Update(std::string table, std::optional<Assigns> assigns, Condition where)
+        : Update(std::move(table), std::move(assigns), Where{std::move(where)}) {}
+
+    Update::Update(From table, std::optional<Assigns> assigns, Condition where)
+        : Update(std::move(table), std::move(assigns), Where{std::move(where)}) {}
+
+    Update::Update(RawFrom table, std::optional<Assigns> assigns, Condition where)
+        : Update(std::move(table), std::move(assigns), Where{std::move(where)}) {}
+
+    Update::Update(Froms table, std::optional<Assigns> assigns, Condition where)
+        : Update(std::move(table), std::move(assigns), Where{std::move(where)}) {}
+
+    Update::Update(const char *table, FieldLike field, ValueLike value, Condition where)
+        : Update(std::move(table), std::move(field), std::move(value), Where{std::move(where)}) {}
+
+    Update::Update(std::string table, FieldLike field, ValueLike value, Condition where)
+        : Update(std::move(table), std::move(field), std::move(value), Where{std::move(where)}) {}
+
+    Update::Update(From table, FieldLike field, ValueLike value, Condition where)
+        : Update(std::move(table), std::move(field), std::move(value), Where{std::move(where)}) {}
+
+    Update::Update(RawFrom table, FieldLike field, ValueLike value, Condition where)
+        : Update(std::move(table), std::move(field), std::move(value), Where{std::move(where)}) {}
+
+    Update::Update(Froms table, FieldLike field, ValueLike value, Condition where)
+        : Update(std::move(table), std::move(field), std::move(value), Where{std::move(where)}) {}
 
 
     Update &Update::low_priority(bool v) {
