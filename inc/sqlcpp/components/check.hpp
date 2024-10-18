@@ -6,10 +6,10 @@
 #define SQLCPP_COMPONENTS_CHECK__HPP_GUARD
 #include "sqlcpp/defs.hpp"
 namespace sqlcpp {
-    struct Check : public Builder {
+    struct Check final : public Builder {
         std::string check_{};
         Check(std::string check);
-        void build_s(std::ostream &oss, const Type &t) const override;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 }// namespace sqlcpp
 #endif// SQLCPP_COMPONENTS_CHECK__HPP_GUARD

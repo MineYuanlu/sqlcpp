@@ -19,7 +19,7 @@ namespace sqlcpp {
     }
 
 
-    struct OrderByField : Builder {
+    struct OrderByField final : Builder {
         FieldLike field_;
         Order direction_ = Order::ASC;
 
@@ -28,11 +28,11 @@ namespace sqlcpp {
         OrderByField(RawField field, Order o = Order::ASC);
         OrderByField(FuncField field, Order o = Order::ASC);
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const override;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 
-    struct OrderBy : Builder {
+    struct OrderBy final : Builder {
         std::vector<OrderByField> fields_;
 
         OrderBy(Field field, Order o = Order::ASC);
@@ -56,7 +56,7 @@ namespace sqlcpp {
             return *this;
         }
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const override;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 }// namespace sqlcpp

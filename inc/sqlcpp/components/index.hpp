@@ -9,13 +9,13 @@
 #include <optional>
 #include <vector>
 namespace sqlcpp {
-    struct Index : public Builder {
+    struct Index final : public Builder {
         std::optional<std::string> table_{};
         std::string name_{};
         bool user_set_name = false;
         bool unique_ = false;
         std::vector<std::tuple<std::string, Order>> fields_{};
-        void build_s(std::ostream &oss, const Type &t) const override;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
 
         Index() = default;
         Index(std::string field, Order order = ASC);

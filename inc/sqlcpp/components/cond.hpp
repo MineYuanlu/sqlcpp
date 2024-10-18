@@ -44,18 +44,19 @@ namespace sqlcpp {
         virtual CondOp AND(const Condition &c);
         virtual CondOp OR(const Condition &c);
         virtual CondOp NOT();
+        virtual ~Cond() = default;
     };
 
 
     /// @brief 比较条件
-    struct CondCmp : Builder, Cond {
+    struct CondCmp final : Builder, Cond {
         FieldLike field_;
         CmpOp op_;
         ValueLike value_;
 
         CondCmp(FieldLike field, CmpOp op, ValueLike value);
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 
@@ -68,52 +69,52 @@ namespace sqlcpp {
 
 
     /// @brief IN条件
-    struct CondIn : Builder, Cond {
+    struct CondIn final : Builder, Cond {
         FieldLike field_;
         std::vector<ValueLike> values_;
 
         CondIn(FieldLike field, std::vector<ValueLike> values);
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 
     /// @brief NOT IN条件
-    struct CondNotIn : Builder, Cond {
+    struct CondNotIn final : Builder, Cond {
         FieldLike field_;
         std::vector<ValueLike> values_;
 
         CondNotIn(FieldLike field, std::vector<ValueLike> values);
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 
     /// @brief BETWEEN条件
-    struct CondBetween : Builder, Cond {
+    struct CondBetween final : Builder, Cond {
         FieldLike field_;
         ValueLike start_;
         ValueLike end_;
 
         CondBetween(FieldLike field, ValueLike start, ValueLike end);
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 
     /// @brief 原生条件
-    struct CondRaw : Builder, Cond {
+    struct CondRaw final : Builder, Cond {
         std::string raw_cond_;
 
         CondRaw(std::string raw_cond);
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 
     struct CondOp;
     /// @brief 条件连接符类型
-    struct CondOpType {
+    struct CondOpType final {
         std::string op_str_;
         /// @brief 连接多个条件
         template<typename... Args>
@@ -134,7 +135,7 @@ namespace sqlcpp {
 
     struct Condition;
     /// @brief 连接条件
-    struct CondOp : Builder, Cond {
+    struct CondOp final : Builder, Cond {
         const CondOpType *op_;
         std::vector<std::shared_ptr<Condition>> subs_;
 
@@ -143,7 +144,7 @@ namespace sqlcpp {
         CondOp(const CondOpType &op, std::initializer_list<Condition> subs);
         CondOp &add(Condition c);
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 
@@ -155,7 +156,7 @@ namespace sqlcpp {
 
 
     /// @brief 条件接口
-    struct Condition : Builder {
+    struct Condition final : Builder {
         std::variant<CondOp, CondCmp, CondIn, CondBetween, CondRaw> conditions_;
 
         Condition(std::variant<CondOp, CondCmp, CondIn, CondBetween, CondRaw> cond);
@@ -169,7 +170,7 @@ namespace sqlcpp {
 
         static Condition CAST(const Cond *);
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 

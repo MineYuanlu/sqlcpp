@@ -15,7 +15,7 @@
 #include <string>
 #include <vector>
 namespace sqlcpp {
-    struct Update : Builder {
+    struct Update final : Builder {
         enum UpdateOr {
             OR_ROLLBACK,
             OR_ABORT,
@@ -94,7 +94,7 @@ namespace sqlcpp {
         Update &add_returning(Args &&...rs);
 
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 

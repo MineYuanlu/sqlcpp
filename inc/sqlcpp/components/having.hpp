@@ -9,12 +9,12 @@
 namespace sqlcpp {
 
 
-    struct Having : Builder {
+    struct Having final : Builder {
         Condition condition_;
 
         Having(Condition condition);
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 

@@ -20,7 +20,7 @@ namespace sqlcpp {
     struct CondBetween;
     struct Assign;
 
-    struct Field : Builder {
+    struct Field final : Builder {
         std::optional<std::string> table_name_{};
         std::string field_name_;
         std::optional<std::string> alias_{};
@@ -36,21 +36,21 @@ namespace sqlcpp {
         OrderByField asc() const;
         OrderByField desc() const;
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
 
         Assign assign(ValueLike) const;
         Assign operator=(ValueLike) const;
     };
 
 
-    struct RawField : Builder {
+    struct RawField final : Builder {
         std::string raw_field_;
         explicit RawField(std::string field);
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 
-    struct FuncField : Builder {
+    struct FuncField final : Builder {
         std::string func_name_;
         std::variant<Field, RawField> args_;
         std::optional<std::string> alias_{};
@@ -59,10 +59,10 @@ namespace sqlcpp {
         FuncField(std::string func, std::variant<Field, RawField> args, std::string alias);
         FuncField &alias(std::string alias);
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
-    struct FieldLike : Builder {
+    struct FieldLike final : Builder {
         std::variant<Field, RawField, FuncField> field_;
         FieldLike(const char *field);
         FieldLike(std::string field);
@@ -71,7 +71,7 @@ namespace sqlcpp {
         FieldLike(Field field);
         FieldLike(RawField field);
         FieldLike(FuncField field);
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
         CondCmp LIKE(ValueLike v) const;
         CondCmp NOT_LIKE(ValueLike v) const;
         CondIn IN(std::vector<ValueLike> vs) const;

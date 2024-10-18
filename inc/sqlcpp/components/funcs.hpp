@@ -7,7 +7,7 @@
 #include "sqlcpp/components/field.hpp"
 #include <string>
 namespace sqlcpp::F {
-    struct NamedFunc {
+    struct NamedFunc final {
         std::string name_;
         FuncField operator()(Field arg) const;
         FuncField operator()(RawField arg) const;

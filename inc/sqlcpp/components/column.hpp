@@ -7,10 +7,11 @@
 
 #include "sqlcpp/defs.hpp"
 #include <optional>
+#include <tuple>
 #include <vector>
 #include <tuple>
 namespace sqlcpp {
-    struct Column : public Builder {
+    struct Column final : public Builder {
         std::string name_;
         std::tuple<std::string, std::optional<int>, std::optional<int>> type_;
 
@@ -29,7 +30,7 @@ namespace sqlcpp {
 
         Column(std::string f, std::string t = {});
 
-        void build_s(std::ostream &oss, const Type &t) const override;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
 
         Column &type(std::string type);
         Column &type(const std::string &type, int m);
@@ -142,7 +143,7 @@ namespace sqlcpp {
     using Col = Column;
 
 
-    struct PrimaryKey : public Builder {
+    struct PrimaryKey final : public Builder {
         std::vector<std::string> columns_{};
         PrimaryKey(const std::string &f);
         PrimaryKey(const Column &f);
@@ -159,7 +160,7 @@ namespace sqlcpp {
             (columns_.emplace_back(convert(std::forward<Args>(args))), ...);
         }
 
-        void build_s(std::ostream &oss, const Type &t) const override;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
 
     private:
         inline static std::string convert(const std::string &s) { return s; }
@@ -167,7 +168,7 @@ namespace sqlcpp {
     };
 
 
-    struct Unique : public Builder {
+    struct Unique final : public Builder {
         std::vector<std::string> columns_{};
         Unique(const std::string &f);
         Unique(const Column &f);
@@ -184,7 +185,7 @@ namespace sqlcpp {
             (columns_.emplace_back(convert(std::forward<Args>(args))), ...);
         }
 
-        void build_s(std::ostream &oss, const Type &t) const override;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
 
     private:
         inline static std::string convert(const std::string &s) { return s; }
@@ -192,7 +193,7 @@ namespace sqlcpp {
     };
 
 
-    struct ForeignKey : public Builder {
+    struct ForeignKey final : public Builder {
         enum Action {
             ///如果在父表中删除了一行，引用该行的所有子表记录也会被自动删除。
             ///如果在父表中更新了一行，引用该行的所有子表记录中的对应值也会被自动更新。
@@ -227,7 +228,7 @@ namespace sqlcpp {
         ForeignKey &fk(std::string table, Column column);
         ForeignKey &on_delete(const std::optional<Action> &a);
         ForeignKey &on_update(const std::optional<Action> &a);
-        void build_s(std::ostream &oss, const Type &t) const override;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 }// namespace sqlcpp
 #endif// SQLCPP_COMPONENTS_COLUMN__HPP_GUARD

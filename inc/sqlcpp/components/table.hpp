@@ -14,7 +14,7 @@
 namespace sqlcpp {
 
 
-    struct Table : public Builder {
+    struct Table final : public Builder {
         enum IfExistsAction {
             NONE,
             DROP,
@@ -45,7 +45,7 @@ namespace sqlcpp {
 
         Table &index(Index index);
 
-        void build_s(std::ostream &oss, const Type &t) const override;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 }// namespace sqlcpp

@@ -15,7 +15,7 @@
 #include <vector>
 namespace sqlcpp {
 
-    struct Select : Builder {
+    struct Select final : Builder {
         std::vector<FieldLike> fields_;
         std::optional<Froms> from_;
         std::optional<Where> where_;
@@ -66,7 +66,7 @@ namespace sqlcpp {
         Select &offset(const VarValue &offset);
 
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
     template<

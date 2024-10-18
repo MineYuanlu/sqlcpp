@@ -9,7 +9,7 @@
 #include "sqlcpp/defs.hpp"
 namespace sqlcpp {
     struct Assigns;
-    struct Assign : Builder {
+    struct Assign final : Builder {
         FieldLike field_;
         ValueLike value_;
 
@@ -19,11 +19,11 @@ namespace sqlcpp {
         Assigns operator+(Assign assign) const;
 
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 
-    struct Assigns : Builder {
+    struct Assigns final : Builder {
         std::vector<Assign> assigns_;
 
         Assigns() = default;
@@ -39,7 +39,7 @@ namespace sqlcpp {
         Assigns operator+(Assign assign) const &;
         Assigns &operator+(Assign assign) &&;
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 }// namespace sqlcpp

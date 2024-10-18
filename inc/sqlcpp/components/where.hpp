@@ -8,12 +8,12 @@
 #include "sqlcpp/defs.hpp"
 namespace sqlcpp {
 
-    struct Where : Builder {
+    struct Where final : Builder {
         Condition condition_;
 
         Where(Condition condition);
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 }// namespace sqlcpp

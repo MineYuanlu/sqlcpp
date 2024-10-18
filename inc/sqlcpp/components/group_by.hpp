@@ -10,7 +10,7 @@
 namespace sqlcpp {
 
 
-    struct GroupBy : Builder {
+    struct GroupBy final : Builder {
         std::vector<FieldLike> fields_;
 
         GroupBy(FieldLike field);
@@ -26,7 +26,7 @@ namespace sqlcpp {
             return by(std::forward<Args>(args)...);
         }
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const override;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 

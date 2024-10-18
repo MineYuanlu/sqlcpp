@@ -16,7 +16,7 @@
 namespace sqlcpp {
     /// @brief 插入数据管理器
     /// @details 如果未指定数据, 则使用"?"(VAR)代替
-    struct InsertValues {
+    struct InsertValues final {
 
         InsertValues() = default;
         InsertValues(std::vector<std::vector<ValueLike>> rows);
@@ -36,7 +36,7 @@ namespace sqlcpp {
         std::vector<std::vector<ValueLike>> rows_{};
         size_t col_num_ = 0;
     };
-    struct Insert : Builder {
+    struct Insert final : Builder {
         enum OperatorModifier {
             LOW_PRIORITY,
             DELAYED,
@@ -131,7 +131,7 @@ namespace sqlcpp {
         }
 
     public:
-        void build_s(std::ostream &oss, const Type &t) const override;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 

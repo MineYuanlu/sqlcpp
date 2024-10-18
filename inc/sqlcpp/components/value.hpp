@@ -14,14 +14,14 @@
 #include <variant>
 namespace sqlcpp {
 
-    struct RawValue : Builder {
+    struct RawValue final : Builder {
         std::string raw_value_;
         explicit RawValue(std::string raw_value);
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 
-    struct Value : Builder {
+    struct Value final : Builder {
         std::variant<std::string, int64_t, uint64_t, double, float, bool> value_;
 
         Value(const char *value);
@@ -32,10 +32,10 @@ namespace sqlcpp {
         Value(float value);
         Value(bool value);
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
-    struct BlobValue : Builder {
+    struct BlobValue final : Builder {
         BlobValue(const void *data, size_t length, bool copy = false);
         template<typename T>
         BlobValue(const std::vector<T> &data, bool copy = true)
@@ -47,7 +47,7 @@ namespace sqlcpp {
         [[nodiscard]] inline const uint8_t *data() const noexcept { return data_ptr_.get(); }
         [[nodiscard]] inline size_t size() const noexcept { return data_len_; }
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
 
     private:
         std::shared_ptr<const uint8_t> data_ptr_;
@@ -55,32 +55,32 @@ namespace sqlcpp {
     };
 
 
-    struct NullValue : Builder {
+    struct NullValue final : Builder {
         explicit NullValue() = default;
         NullValue(std::nullptr_t);
         NullValue(std::nullopt_t);
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
     static const NullValue NULL_VALUE{};
 
-    struct IndexedVarValue : Builder {
+    struct IndexedVarValue final : Builder {
         size_t index_;
         explicit IndexedVarValue(size_t index);
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
-    struct VarValue : Builder {
+    struct VarValue final : Builder {
         VarValue() = default;
 
         inline IndexedVarValue operator()(size_t index) const { return IndexedVarValue{index}; }
         inline IndexedVarValue operator[](size_t index) const { return IndexedVarValue{index}; }
 
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
     static const VarValue VAR{};
 
 
-    struct ValueLike : Builder {
+    struct ValueLike final : Builder {
         std::variant<Value, RawValue, NullValue, IndexedVarValue, VarValue, BlobValue, Field, RawField, FuncField> value_;
         ValueLike(Value value);
         ValueLike(RawValue value);
@@ -104,7 +104,7 @@ namespace sqlcpp {
         ValueLike(T value) : value_(static_cast<uint64_t>(value)) {}
         ValueLike(std::nullptr_t);
         ValueLike(std::nullopt_t);
-        virtual void build_s(std::ostream &oss, const Type &t = SQLITE) const;
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 }// namespace sqlcpp
 #endif// SQLCPP_COMPONENTS_VALUE__HPP_GUARD
