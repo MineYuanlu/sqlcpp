@@ -90,16 +90,16 @@ namespace sqlcpp {
             oss << " LIMIT ";
             if (auto val = std::get_if<size_t>(&*limit_); val) {
                 oss << *val;
-            } else if (auto val = std::get_if<VarValue>(&*limit_); val) {
-                val->build_s(oss, t);
+            } else if (auto var = std::get_if<VarValue>(&*limit_); var) {
+                var->build_s(oss, t);
             }
         }
         if (offset_) {
             oss << " OFFSET ";
             if (auto val = std::get_if<size_t>(&*offset_); val) {
                 oss << *val;
-            } else if (auto val = std::get_if<VarValue>(&*offset_); val) {
-                val->build_s(oss, t);
+            } else if (auto var = std::get_if<VarValue>(&*offset_); var) {
+                var->build_s(oss, t);
             }
         }
         oss << ';';

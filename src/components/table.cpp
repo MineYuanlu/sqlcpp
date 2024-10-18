@@ -81,13 +81,13 @@ namespace sqlcpp {
 
 
         std::optional<std::vector<std::string>> primary_key;
-        auto idx = generateSortedIndex(content_, [](const Content &a, const Content &b) {
+        auto field_idx = generateSortedIndex(content_, [](const Content &a, const Content &b) {
             return getContentOrderIndex(a) < getContentOrderIndex(b);
         });
-        for (size_t i = 0; i < idx.size(); ++i) {
-            auto &content = content_[idx[i]];
+        for (size_t i = 0; i < field_idx.size(); ++i) {
+            auto &content = content_[field_idx[i]];
             std::visit([&oss, &t](auto &&arg) { oss << ' '; arg.build_s(oss, t); }, content);
-            if (i < idx.size() - 1) oss << ",";
+            if (i < field_idx.size() - 1) oss << ",";
             oss << "\n";
             if (std::holds_alternative<Column>(content) && std::get<Column>(content).PRIMARY_KEY_) {
                 if (primary_key) throw std::runtime_error("[sqlcpp] Table '" + table_ + "' has duplicate primary keys defined");
@@ -100,8 +100,8 @@ namespace sqlcpp {
         }
         bool hasFTS = false;
         if (t == MYSQL) {//full text search
-            for (size_t i = 0; i < idx.size(); ++i) {
-                auto &content = content_[idx[i]];
+            for (size_t i = 0; i < field_idx.size(); ++i) {
+                auto &content = content_[field_idx[i]];
                 if (!std::holds_alternative<Column>(content)) continue;
                 const auto &field = std::get<Column>(content);
                 if (!field.FULL_TEXT_SEARCH_) continue;
@@ -135,8 +135,8 @@ namespace sqlcpp {
         }
 
         if (t == SQLITE) {//full text search
-            for (size_t i = 0; i < idx.size(); ++i) {
-                auto &content = content_[idx[i]];
+            for (size_t i = 0; i < field_idx.size(); ++i) {
+                auto &content = content_[field_idx[i]];
                 if (!std::holds_alternative<Column>(content)) continue;
                 const auto &f = std::get<Column>(content);
                 if (!f.FULL_TEXT_SEARCH_) continue;

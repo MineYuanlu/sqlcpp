@@ -122,7 +122,7 @@ namespace sqlcpp {
         return *this;
     }
     Column &Column::type(const std::string &type, int m, int d) {
-        type_ = std::make_tuple(std::move(type), std::nullopt, d);
+        type_ = std::make_tuple(std::move(type), m, d);
         return *this;
     }
     Column &Column::not_null(bool v) {

@@ -28,7 +28,7 @@ namespace sqlcpp {
     }
 
     RawFrom::RawFrom(std::string raw_from) : raw_from_(std::move(raw_from)) {}
-    void RawFrom::build_s(std::ostream &oss, const Type &t) const {
+    void RawFrom::build_s(std::ostream &oss, [[maybe_unused]] const Type &t) const {
         oss << raw_from_;
     }
 

@@ -128,8 +128,8 @@ namespace sqlcpp {
 
         if (auto *val = std::get_if<InsertValues>(&values_); val) {
             val->build_s(oss, t, columns_.size());
-        } else if (auto *val = std::get_if<std::string>(&values_); val) {
-            oss << *val;
+        } else if (auto *raw = std::get_if<std::string>(&values_); raw) {
+            oss << *raw;
         } else {
             throw std::invalid_argument("[sqlcpp] Invalid values type for insert statement.");
         }

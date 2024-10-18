@@ -7,37 +7,37 @@
 #include <variant>
 namespace sqlcpp {
     Update::Update(Assigns assigns)
-        : assigns(std::move(assigns)) {}
+        : assigns_(std::move(assigns)) {}
 
     Update::Update(const char *table, std::optional<Assigns> assigns)
-        : table_(From{std::move(table)}), assigns(std::move(assigns)) {}
+        : table_(From{std::move(table)}), assigns_(std::move(assigns)) {}
 
     Update::Update(std::string table, std::optional<Assigns> assigns)
-        : table_(From{std::move(table)}), assigns(std::move(assigns)) {}
+        : table_(From{std::move(table)}), assigns_(std::move(assigns)) {}
 
     Update::Update(From table, std::optional<Assigns> assigns)
-        : table_(std::move(table)), assigns(std::move(assigns)) {}
+        : table_(std::move(table)), assigns_(std::move(assigns)) {}
 
     Update::Update(RawFrom table, std::optional<Assigns> assigns)
-        : table_(std::move(table)), assigns(std::move(assigns)) {}
+        : table_(std::move(table)), assigns_(std::move(assigns)) {}
 
     Update::Update(Froms table, std::optional<Assigns> assigns)
-        : table_(std::move(table)), assigns(std::move(assigns)) {}
+        : table_(std::move(table)), assigns_(std::move(assigns)) {}
 
     Update::Update(const char *table, FieldLike field, ValueLike value)
-        : table_(From{std::move(table)}), assigns(Assign{std::move(field), std::move(value)}) {}
+        : table_(From{std::move(table)}), assigns_(Assign{std::move(field), std::move(value)}) {}
 
     Update::Update(std::string table, FieldLike field, ValueLike value)
-        : table_(From{std::move(table)}), assigns(Assign{std::move(field), std::move(value)}) {}
+        : table_(From{std::move(table)}), assigns_(Assign{std::move(field), std::move(value)}) {}
 
     Update::Update(From table, FieldLike field, ValueLike value)
-        : table_(std::move(table)), assigns(Assign{std::move(field), std::move(value)}) {}
+        : table_(std::move(table)), assigns_(Assign{std::move(field), std::move(value)}) {}
 
     Update::Update(RawFrom table, FieldLike field, ValueLike value)
-        : table_(std::move(table)), assigns(Assign{std::move(field), std::move(value)}) {}
+        : table_(std::move(table)), assigns_(Assign{std::move(field), std::move(value)}) {}
 
     Update::Update(Froms table, FieldLike field, ValueLike value)
-        : table_(std::move(table)), assigns(Assign{std::move(field), std::move(value)}) {}
+        : table_(std::move(table)), assigns_(Assign{std::move(field), std::move(value)}) {}
 
 
     Update &Update::low_priority(bool v) {
@@ -69,33 +69,33 @@ namespace sqlcpp {
         return *this;
     }
     Update &Update::assign(Assign assign) {
-        assigns.emplace(std::move(assign));
+        assigns_.emplace(std::move(assign));
         return *this;
     }
     Update &Update::assign(FieldLike field, ValueLike value) {
-        assigns.emplace(std::move(field), std::move(value));
+        assigns_.emplace(std::move(field), std::move(value));
         return *this;
     }
     Update &Update::assign(Assigns assigns) {
-        this->assigns = std::move(assigns);
+        assigns_ = std::move(assigns);
         return *this;
     }
     Update &Update::add_assign(Assign assign) {
-        if (!assigns) assigns.emplace(std::move(assign));
+        if (!assigns_) assigns_.emplace(std::move(assign));
         else
-            *assigns += std::move(assign);
+            *assigns_ += std::move(assign);
         return *this;
     }
     Update &Update::add_assign(FieldLike field, ValueLike value) {
-        if (!assigns) assigns.emplace(std::move(field), std::move(value));
+        if (!assigns_) assigns_.emplace(std::move(field), std::move(value));
         else
-            *assigns += Assign{std::move(field), std::move(value)};
+            *assigns_ += Assign{std::move(field), std::move(value)};
         return *this;
     }
     Update &Update::add_assign(const Assigns &assigns) {
-        if (!this->assigns) this->assigns.emplace(std::move(assigns));
+        if (!assigns_) assigns_.emplace(std::move(assigns));
         else
-            *this->assigns += std::move(assigns);
+            *assigns_ += std::move(assigns);
         return *this;
     }
     Update &Update::where(Where where) {
@@ -147,7 +147,7 @@ namespace sqlcpp {
     }
 
     void Update::build_s(std::ostream &oss, const Type &t) const {
-        if (!assigns) throw std::invalid_argument("[sqlcpp] Update assigns is empty");
+        if (!assigns_) throw std::invalid_argument("[sqlcpp] Update assigns is empty");
         if (!table_) throw std::invalid_argument("[sqlcpp] Update table is empty");
         if (offset_ && t != SQLITE) throw std::invalid_argument("[sqlcpp] Update offset is only supported by sqlite");
 
@@ -160,7 +160,7 @@ namespace sqlcpp {
 
 
         oss << " SET ";
-        assigns->build_s(oss, t);
+        assigns_->build_s(oss, t);
 
         if (where_) where_->build_s(oss, t);
         if (order_by_) order_by_->build_s(oss, t);
@@ -168,16 +168,16 @@ namespace sqlcpp {
             oss << " LIMIT ";
             if (auto val = std::get_if<size_t>(&*limit_); val) {
                 oss << *val;
-            } else if (auto val = std::get_if<VarValue>(&*limit_); val) {
-                val->build_s(oss, t);
+            } else if (auto var = std::get_if<VarValue>(&*limit_); var) {
+                var->build_s(oss, t);
             }
         }
         if (offset_) {
             oss << " OFFSET ";
             if (auto val = std::get_if<size_t>(&*offset_); val) {
                 oss << *val;
-            } else if (auto val = std::get_if<VarValue>(&*offset_); val) {
-                val->build_s(oss, t);
+            } else if (auto var = std::get_if<VarValue>(&*offset_); var) {
+                var->build_s(oss, t);
             }
         }
         if (RETURNING_) {

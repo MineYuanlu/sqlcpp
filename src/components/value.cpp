@@ -7,7 +7,7 @@ namespace sqlcpp {
     using namespace sqlcpp::str;
 
     RawValue::RawValue(std::string raw_value) : raw_value_(std::move(raw_value)) {}
-    void RawValue::build_s(std::ostream &oss, const Type &t) const {
+    void RawValue::build_s(std::ostream &oss, [[maybe_unused]] const Type &t) const {
         oss << raw_value_;
     }
 
@@ -19,7 +19,7 @@ namespace sqlcpp {
     Value::Value(double value) : value_(value) {}
     Value::Value(float value) : value_(value) {}
     Value::Value(bool value) : value_(value) {}
-    void Value::build_s(std::ostream &oss, const Type &t) const {
+    void Value::build_s(std::ostream &oss, [[maybe_unused]] const Type &t) const {
         if (std::holds_alternative<std::string>(value_))
             oss << safe_value(std::get<std::string>(value_));
         else if (std::holds_alternative<bool>(value_))
@@ -55,18 +55,18 @@ namespace sqlcpp {
 
     NullValue::NullValue(std::nullptr_t) {}
     NullValue::NullValue(std::nullopt_t) {}
-    void NullValue::build_s(std::ostream &oss, const Type &t) const {
+    void NullValue::build_s(std::ostream &oss, [[maybe_unused]] const Type &t) const {
         oss << "NULL";
     }
 
 
     IndexedVarValue::IndexedVarValue(size_t index) : index_(index) {}
-    void IndexedVarValue::build_s(std::ostream &oss, const Type &t) const {
+    void IndexedVarValue::build_s(std::ostream &oss, [[maybe_unused]] const Type &t) const {
         oss << '?';
     }
 
 
-    void VarValue::build_s(std::ostream &oss, const Type &t) const {
+    void VarValue::build_s(std::ostream &oss, [[maybe_unused]] const Type &t) const {
         oss << '?';
     }
 

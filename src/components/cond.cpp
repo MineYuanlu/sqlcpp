@@ -56,7 +56,7 @@ namespace sqlcpp {
 
 
     CondRaw::CondRaw(std::string raw_cond) : raw_cond_(std::move(raw_cond)) {}
-    void CondRaw::build_s(std::ostream &oss, const Type &t) const {
+    void CondRaw::build_s(std::ostream &oss, [[maybe_unused]] const Type &t) const {
         oss << raw_cond_;
     }
 

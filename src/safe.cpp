@@ -59,7 +59,8 @@ namespace sqlcpp::str {
 
     void hex_stream(std::ostream &os, const unsigned char *const data, const size_t data_len, const size_t buffer_size) {
         static const constexpr char HEX[] = "0123456789ABCDEF";
-        char buffer[buffer_size > 2 ? buffer_size : 2];
+        std::vector<char> buffer_(buffer_size > 2 ? (buffer_size > data_len * 2 ? data_len * 2 : buffer_size) : 2);
+        const auto buffer = buffer_.data();
         size_t buffer_index = 0;
 
         for (size_t i = 0; i < data_len; ++i) {
