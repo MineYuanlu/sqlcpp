@@ -18,7 +18,7 @@ namespace sqlcpp {
     struct Froms;
     struct RawFrom;
 
-    struct From final : Builder {
+    struct From final : public Builder {
         std::string table_name_;
         std::optional<std::string> alias_{};
 
@@ -34,7 +34,7 @@ namespace sqlcpp {
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
-    struct RawFrom final : Builder {
+    struct RawFrom final : public Builder {
         std::string raw_from_;
 
         explicit RawFrom(std::string from);
@@ -56,7 +56,7 @@ namespace sqlcpp {
     }
 
 
-    struct Froms final : Builder {
+    struct Froms final : public Builder {
         std::variant<From, RawFrom> from_;
         std::vector<std::tuple<JoinType, std::variant<From, RawFrom>, Condition>> joins_;
 

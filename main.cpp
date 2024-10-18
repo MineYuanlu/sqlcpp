@@ -1,4 +1,5 @@
 #include "sqlcpp/components/column.hpp"
+#include "sqlcpp/components/delete.hpp"
 #include "sqlcpp/components/field.hpp"
 #include "sqlcpp/components/from.hpp"
 #include "sqlcpp/components/insert.hpp"
@@ -279,11 +280,20 @@ void update_data() {
     }
 }
 
+void delete_data() {
+    {
+        auto sql = Delete("user", Field("age") > 100).limit(1).build();
+        auto stmt = db.prepare(sql);
+        db.run(stmt);
+    }
+}
+
 /// @brief test
 int main() {
     create_tables();
     insert_data();
     select_data();
     update_data();
+    delete_data();
     return 0;
 }

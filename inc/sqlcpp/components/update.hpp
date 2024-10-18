@@ -15,7 +15,7 @@
 #include <string>
 #include <vector>
 namespace sqlcpp {
-    struct Update final : Builder {
+    struct Update final : public Builder {
         enum UpdateOr {
             OR_ROLLBACK,
             OR_ABORT,
@@ -70,6 +70,11 @@ namespace sqlcpp {
         Update &where(Where where);
         Update &where(Condition where);
         Update &order_by(OrderBy order_by);
+        Update &order_by(Field field, Order o = Order::ASC);
+        Update &order_by(RawField field, Order o = Order::ASC);
+        Update &order_by(FuncField field, Order o = Order::ASC);
+        Update &order_by(FieldLike field, Order o = Order::ASC);
+        Update &order_by(OrderByField field);
         Update &limit(size_t limit);
         ///@note sqlite only
         Update &offset(size_t offset);

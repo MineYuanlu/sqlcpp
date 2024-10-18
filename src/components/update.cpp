@@ -110,6 +110,26 @@ namespace sqlcpp {
         order_by_ = std::move(order_by);
         return *this;
     }
+    Update &Update::order_by(Field field, Order o) {
+        order_by_.emplace(std::move(field), std::move(o));
+        return *this;
+    }
+    Update &Update::order_by(RawField field, Order o) {
+        order_by_.emplace(std::move(field), std::move(o));
+        return *this;
+    }
+    Update &Update::order_by(FuncField field, Order o) {
+        order_by_.emplace(std::move(field), std::move(o));
+        return *this;
+    }
+    Update &Update::order_by(FieldLike field, Order o) {
+        order_by_.emplace(std::move(field), std::move(o));
+        return *this;
+    }
+    Update &Update::order_by(OrderByField field) {
+        order_by_.emplace(std::move(field));
+        return *this;
+    }
     Update &Update::limit(size_t limit) {
         limit_ = limit;
         return *this;

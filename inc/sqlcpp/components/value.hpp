@@ -14,14 +14,14 @@
 #include <variant>
 namespace sqlcpp {
 
-    struct RawValue final : Builder {
+    struct RawValue final : public Builder {
         std::string raw_value_;
         explicit RawValue(std::string raw_value);
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 
-    struct Value final : Builder {
+    struct Value final : public Builder {
         std::variant<std::string, int64_t, uint64_t, double, float, bool> value_;
 
         Value(const char *value);
@@ -35,7 +35,7 @@ namespace sqlcpp {
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
-    struct BlobValue final : Builder {
+    struct BlobValue final : public Builder {
         BlobValue(const void *data, size_t length, bool copy = false);
         template<typename T>
         BlobValue(const std::vector<T> &data, bool copy = true)
@@ -55,7 +55,7 @@ namespace sqlcpp {
     };
 
 
-    struct NullValue final : Builder {
+    struct NullValue final : public Builder {
         explicit NullValue() = default;
         NullValue(std::nullptr_t);
         NullValue(std::nullopt_t);
@@ -63,13 +63,13 @@ namespace sqlcpp {
     };
     static const NullValue NULL_VALUE{};
 
-    struct IndexedVarValue final : Builder {
+    struct IndexedVarValue final : public Builder {
         size_t index_;
         explicit IndexedVarValue(size_t index);
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
-    struct VarValue final : Builder {
+    struct VarValue final : public Builder {
         VarValue() = default;
 
         inline IndexedVarValue operator()(size_t index) const { return IndexedVarValue{index}; }
@@ -80,7 +80,7 @@ namespace sqlcpp {
     static const VarValue VAR{};
 
 
-    struct ValueLike final : Builder {
+    struct ValueLike final : public Builder {
         std::variant<Value, RawValue, NullValue, IndexedVarValue, VarValue, BlobValue, Field, RawField, FuncField> value_;
         ValueLike(Value value);
         ValueLike(RawValue value);

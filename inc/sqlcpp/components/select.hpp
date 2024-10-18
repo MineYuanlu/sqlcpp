@@ -15,7 +15,7 @@
 #include <vector>
 namespace sqlcpp {
 
-    struct Select final : Builder {
+    struct Select final : public Builder {
         std::vector<FieldLike> fields_;
         std::optional<Froms> from_;
         std::optional<Where> where_;
@@ -60,6 +60,11 @@ namespace sqlcpp {
         Select &having(Having having);
         Select &having(Condition having);
         Select &order_by(OrderBy order_by);
+        Select &order_by(Field field, Order o = Order::ASC);
+        Select &order_by(RawField field, Order o = Order::ASC);
+        Select &order_by(FuncField field, Order o = Order::ASC);
+        Select &order_by(FieldLike field, Order o = Order::ASC);
+        Select &order_by(OrderByField field);
         Select &limit(size_t limit);
         Select &offset(size_t offset);
         Select &limit(const VarValue &limit);

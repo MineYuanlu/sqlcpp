@@ -20,7 +20,7 @@ namespace sqlcpp {
     struct CondBetween;
     struct Assign;
 
-    struct Field final : Builder {
+    struct Field final : public Builder {
         std::optional<std::string> table_name_{};
         std::string field_name_;
         std::optional<std::string> alias_{};
@@ -43,14 +43,14 @@ namespace sqlcpp {
     };
 
 
-    struct RawField final : Builder {
+    struct RawField final : public Builder {
         std::string raw_field_;
         explicit RawField(std::string field);
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
 
-    struct FuncField final : Builder {
+    struct FuncField final : public Builder {
         std::string func_name_;
         std::variant<Field, RawField> args_;
         std::optional<std::string> alias_{};
@@ -62,7 +62,7 @@ namespace sqlcpp {
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 
-    struct FieldLike final : Builder {
+    struct FieldLike final : public Builder {
         std::variant<Field, RawField, FuncField> field_;
         FieldLike(const char *field);
         FieldLike(std::string field);

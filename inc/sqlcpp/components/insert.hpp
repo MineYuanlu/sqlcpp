@@ -36,7 +36,7 @@ namespace sqlcpp {
         std::vector<std::vector<ValueLike>> rows_{};
         size_t col_num_ = 0;
     };
-    struct Insert final : Builder {
+    struct Insert final : public Builder {
         enum OperatorModifier {
             LOW_PRIORITY,
             DELAYED,

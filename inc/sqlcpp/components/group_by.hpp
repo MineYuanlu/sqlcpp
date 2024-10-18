@@ -10,7 +10,7 @@
 namespace sqlcpp {
 
 
-    struct GroupBy final : Builder {
+    struct GroupBy final : public Builder {
         std::vector<FieldLike> fields_;
 
         GroupBy(FieldLike field);

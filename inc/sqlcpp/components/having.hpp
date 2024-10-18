@@ -9,7 +9,7 @@
 namespace sqlcpp {
 
 
-    struct Having final : Builder {
+    struct Having final : public Builder {
         Condition condition_;
 
         Having(Condition condition);

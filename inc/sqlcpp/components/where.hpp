@@ -8,7 +8,7 @@
 #include "sqlcpp/defs.hpp"
 namespace sqlcpp {
 
-    struct Where final : Builder {
+    struct Where final : public Builder {
         Condition condition_;
 
         Where(Condition condition);

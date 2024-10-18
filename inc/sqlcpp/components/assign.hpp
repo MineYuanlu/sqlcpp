@@ -9,7 +9,7 @@
 #include "sqlcpp/defs.hpp"
 namespace sqlcpp {
     struct Assigns;
-    struct Assign final : Builder {
+    struct Assign final : public Builder {
         FieldLike field_;
         ValueLike value_;
 
@@ -23,7 +23,7 @@ namespace sqlcpp {
     };
 
 
-    struct Assigns final : Builder {
+    struct Assigns final : public Builder {
         std::vector<Assign> assigns_;
 
         Assigns() = default;

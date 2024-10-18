@@ -19,7 +19,7 @@ namespace sqlcpp {
     }
 
 
-    struct OrderByField final : Builder {
+    struct OrderByField final : public Builder {
         FieldLike field_;
         Order direction_ = Order::ASC;
 
@@ -32,7 +32,7 @@ namespace sqlcpp {
     };
 
 
-    struct OrderBy final : Builder {
+    struct OrderBy final : public Builder {
         std::vector<OrderByField> fields_;
 
         OrderBy(Field field, Order o = Order::ASC);

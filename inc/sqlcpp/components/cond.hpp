@@ -49,7 +49,7 @@ namespace sqlcpp {
 
 
     /// @brief 比较条件
-    struct CondCmp final : Builder, Cond {
+    struct CondCmp final : public Builder, Cond {
         FieldLike field_;
         CmpOp op_;
         ValueLike value_;
@@ -69,7 +69,7 @@ namespace sqlcpp {
 
 
     /// @brief IN条件
-    struct CondIn final : Builder, Cond {
+    struct CondIn final : public Builder, Cond {
         FieldLike field_;
         std::vector<ValueLike> values_;
 
@@ -80,7 +80,7 @@ namespace sqlcpp {
 
 
     /// @brief NOT IN条件
-    struct CondNotIn final : Builder, Cond {
+    struct CondNotIn final : public Builder, Cond {
         FieldLike field_;
         std::vector<ValueLike> values_;
 
@@ -91,7 +91,7 @@ namespace sqlcpp {
 
 
     /// @brief BETWEEN条件
-    struct CondBetween final : Builder, Cond {
+    struct CondBetween final : public Builder, Cond {
         FieldLike field_;
         ValueLike start_;
         ValueLike end_;
@@ -103,7 +103,7 @@ namespace sqlcpp {
 
 
     /// @brief 原生条件
-    struct CondRaw final : Builder, Cond {
+    struct CondRaw final : public Builder, Cond {
         std::string raw_cond_;
 
         CondRaw(std::string raw_cond);
@@ -135,7 +135,7 @@ namespace sqlcpp {
 
     struct Condition;
     /// @brief 连接条件
-    struct CondOp final : Builder, Cond {
+    struct CondOp final : public Builder, Cond {
         const CondOpType *op_;
         std::vector<std::shared_ptr<Condition>> subs_;
 
@@ -156,7 +156,7 @@ namespace sqlcpp {
 
 
     /// @brief 条件接口
-    struct Condition final : Builder {
+    struct Condition final : public Builder {
         std::variant<CondOp, CondCmp, CondIn, CondBetween, CondRaw> conditions_;
 
         Condition(std::variant<CondOp, CondCmp, CondIn, CondBetween, CondRaw> cond);

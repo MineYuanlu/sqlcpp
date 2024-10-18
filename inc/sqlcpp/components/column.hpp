@@ -9,7 +9,6 @@
 #include <optional>
 #include <tuple>
 #include <vector>
-#include <tuple>
 namespace sqlcpp {
     struct Column final : public Builder {
         std::string name_;
