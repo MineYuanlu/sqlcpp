@@ -93,10 +93,11 @@ namespace sqlcpp {
     }
 
 
-    Condition::Condition(std::variant<CondOp, CondCmp, CondIn, CondBetween, CondRaw> cond) : conditions_(cond){};
+    Condition::Condition(std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw> cond) : conditions_(cond){};
     Condition::Condition(CondOp cond) : conditions_(cond){};
     Condition::Condition(CondCmp cond) : conditions_(cond){};
     Condition::Condition(CondIn cond) : conditions_(cond){};
+    Condition::Condition(CondNotIn cond) : conditions_(cond){};
     Condition::Condition(CondBetween cond) : conditions_(cond){};
     Condition::Condition(CondRaw cond) : conditions_(cond){};
     Condition::Condition(const Cond *cond) : Condition(CAST(cond)){};
@@ -105,6 +106,7 @@ namespace sqlcpp {
         if (auto ptr = dynamic_cast<const CondOp *>(cond); ptr) return Condition(*ptr);
         if (auto ptr = dynamic_cast<const CondCmp *>(cond); ptr) return Condition(*ptr);
         if (auto ptr = dynamic_cast<const CondIn *>(cond); ptr) return Condition(*ptr);
+        if (auto ptr = dynamic_cast<const CondNotIn *>(cond); ptr) return Condition(*ptr);
         if (auto ptr = dynamic_cast<const CondBetween *>(cond); ptr) return Condition(*ptr);
         if (auto ptr = dynamic_cast<const CondRaw *>(cond); ptr) return Condition(*ptr);
         throw std::invalid_argument(std::string{"unknown condition type: "} + typeid(*cond).name());
