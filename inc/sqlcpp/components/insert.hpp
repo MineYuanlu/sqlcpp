@@ -60,9 +60,10 @@ namespace sqlcpp {
         std::optional<std::vector<FieldLike>> RETURNING_{};                      ///< sqlite only
 
         Insert() = default;
-        Insert(const std::string &table) : table_(table) {}
-        Insert(const Table &table) : table_(table.table_) {}
-        Insert(const From &from) : table_(from.table_name_) {}
+        Insert(std::string table);
+        Insert(const char *table);
+        Insert(const Table &table);
+        Insert(const From &from);
 
         /// @note mysql only
         Insert &op_mod(std::optional<OperatorModifier> om);

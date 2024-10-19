@@ -65,6 +65,12 @@ namespace sqlcpp {
     }
 
 
+    Insert::Insert(std::string table) : table_(std::move(table)) {}
+    Insert::Insert(const char *table) : table_(std::move(table)) {}
+    Insert::Insert(const Table &table) : table_(table.table_) {}
+    Insert::Insert(const From &from) : table_(from.table_name_) {}
+
+
     Insert &Insert::op_mod(std::optional<OperatorModifier> om) {
         op_modifier_ = std::move(om);
         return *this;
