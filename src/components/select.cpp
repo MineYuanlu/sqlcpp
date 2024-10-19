@@ -2,6 +2,15 @@
 namespace sqlcpp {
     Select::Select(FieldLike field) : fields_({std::move(field)}) {}
     Select::Select(std::vector<FieldLike> fields) : fields_(std::move(fields)) {}
+
+    Select &Select::select(const char *field) {
+        fields_.emplace_back(std::move(field));
+        return *this;
+    }
+    Select &Select::select(std::string field) {
+        fields_.emplace_back(std::move(field));
+        return *this;
+    }
     Select &Select::select(FieldLike field) {
         fields_.emplace_back(std::move(field));
         return *this;

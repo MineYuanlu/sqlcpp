@@ -39,6 +39,9 @@ namespace sqlcpp {
                 typename = std::enable_if_t<
                         (std::is_convertible_v<std::decay_t<T>, Field> || std::is_convertible_v<std::decay_t<T>, RawField> || std::is_convertible_v<std::decay_t<T>, FuncField>) &&(sizeof...(Args) > 0)>>
         Select(T field, Args &&...args) { select(field, std::forward<Args>(args)...); }
+
+        Select &select(const char *field);
+        Select &select(std::string field);
         Select &select(FieldLike field);
         Select &select(Field field);
         Select &select(RawField field);

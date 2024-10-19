@@ -239,6 +239,14 @@ void select_data() {
         db.run_select(stmt);
     }
     {
+        auto sql = Select("id", "name")
+                           .from("user")
+                           .where(Field("age") > 20)
+                           .build();
+        auto stmt = db.prepare(sql);
+        db.run_select(stmt);
+    }
+    {
         auto sql = Select(
                            t["name"], t["project"].as("pid"), t["user"].as("uid"), t["active"],
                            u["name"].as("username"), u["age"].as("userage"), p["name"].as("pname"), p["owner"].as("powner"))
