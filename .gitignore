@@ -3,3 +3,4 @@
 .cache
 /cmake-build-*
 /.idea
+/docs/html

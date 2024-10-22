@@ -6,6 +6,7 @@
 #define SQLCPP_COMPONENTS_CHECK__HPP_GUARD
 #include "sqlcpp/defs.hpp"
 namespace sqlcpp {
+    /// @brief Table check component.
     struct Check final : public Builder {
         std::string check_{};
         Check(std::string check);
