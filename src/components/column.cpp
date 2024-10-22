@@ -2,6 +2,7 @@
 #include "sqlcpp/str.hpp"
 #include <cstddef>
 #include <stdexcept>
+#include <tuple>
 
 namespace {
     static const std::unordered_map<std::string, std::string> mysqlToSqliteTypeMap = {
@@ -53,6 +54,55 @@ namespace {
 namespace sqlcpp {
 
     using namespace sqlcpp::str;
+
+    ForeignKey::ForeignKey(std::string column) : column_({std::move(column)}) {}
+    ForeignKey::ForeignKey(Column column) : column_({column.name_}) {}
+    ForeignKey::ForeignKey(std::string column, std::string fk_table, std::string fk_column) : column_({std::move(column)}), fk_table_(std::move(fk_table)), fk_column_({std::move(fk_column)}) {}
+    ForeignKey::ForeignKey(Column column, std::string fk_table, std::string fk_column) : column_({column.name_}), fk_table_(std::move(fk_table)), fk_column_({std::move(fk_column)}) {}
+    ForeignKey::ForeignKey(std::string column, std::string fk_table, Column fk_column) : column_({std::move(column)}), fk_table_(std::move(fk_table)), fk_column_({fk_column.name_}) {}
+    ForeignKey::ForeignKey(Column column, std::string fk_table, Column fk_column) : column_({column.name_}), fk_table_(std::move(fk_table)), fk_column_({fk_column.name_}) {}
+    ForeignKey &ForeignKey::on_delete(const std::optional<Action> &a) {
+        ON_DELETE_ = a;
+        return *this;
+    }
+    ForeignKey &ForeignKey::on_update(const std::optional<Action> &a) {
+        ON_UPDATE_ = a;
+        return *this;
+    }
+    std::string action(const ForeignKey::Action &a) {
+        // clang-format off
+        switch (a) {
+            case ForeignKey::CASCADE:     return "CASCADE";
+            case ForeignKey::SET_NULL:    return "SET NULL";
+            case ForeignKey::SET_DEFAULT: return "SET DEFAULT";
+            case ForeignKey::RESTRICT:    return "RESTRICT";
+            case ForeignKey::NO_ACTION:   return "NO ACTION";
+        }
+        // clang-format on
+        throw std::invalid_argument("[sqlcpp] Unknown Action: " + std::to_string(a));
+    }
+    void ForeignKey::build_s(std::ostream &oss, const Type &t) const {
+        oss << "FOREIGN KEY (";
+        for (size_t i = 0; i < column_.size(); ++i) {
+            if (i > 0) oss << ", ";
+            oss << safe_field(column_[i], t);
+        }
+        oss << ") REFERENCES " << safe_table(fk_table_, t) << '(';
+        for (size_t i = 0; i < fk_column_.size(); ++i) {
+            if (i > 0) oss << ", ";
+            oss << safe_field(fk_column_[i], t);
+        }
+        oss << ')';
+        if (ON_DELETE_) oss << " ON DELETE " << action(*ON_DELETE_);
+        if (ON_UPDATE_) oss << " ON UPDATE " << action(*ON_UPDATE_);
+    }
+    std::string ForeignKey::getColName(std::string col) {
+        return col;
+    }
+    std::string ForeignKey::getColName(const Column &col) {
+        return col.name_;
+    }
+
 
     Column::Column(std::string name, std::string type)
         : name_(std::move(name)), type_(std::move(type), std::nullopt, std::nullopt) {
@@ -110,8 +160,13 @@ namespace sqlcpp {
             oss << "COMMENT " << *COMMENT_ << ' ';
         if (CHECK_)
             oss << "CHECK (" << *CHECK_ << ')' << ' ';
-        if (REFERENCES_)
-            oss << "REFERENCES " << *REFERENCES_ << ' ';
+        if (REFERENCES_) {
+            const auto &[table, column, on_delete, on_update] = *REFERENCES_;
+            oss << "REFERENCES " << safe_table(table, t) << '(' << safe_field(column, t) << ')';
+            if (on_delete) oss << " ON DELETE " << action(*on_delete);
+            if (on_update) oss << " ON UPDATE " << action(*on_update);
+            oss << ' ';
+        }
     }
     Column &Column::type(std::string type) {
         type_ = std::make_tuple(std::move(type), std::nullopt, std::nullopt);
@@ -166,12 +221,10 @@ namespace sqlcpp {
         COMMENT_ = v ? safe_value(*v) : std::move(v);
         return *this;
     }
-    Column &Column::references(std::optional<std::string> v) {
-        REFERENCES_ = v;
-        return *this;
-    }
-    Column &Column::references(const std::string &table, const std::string &column_name) {
-        REFERENCES_ = table + '(' + column_name + ')';
+    Column &Column::references(const std::string &table, const std::string &column_name,
+                               std::optional<ForeignKey::Action> on_delete,
+                               std::optional<ForeignKey::Action> on_update) {
+        REFERENCES_ = std::make_tuple(std::move(table), std::move(column_name), std::move(on_delete), std::move(on_update));
         return *this;
     }
     Column &Column::check(std::optional<std::string> v) {
@@ -299,45 +352,5 @@ namespace sqlcpp {
         }
         oss << ')';
     }
-    ForeignKey::ForeignKey(std::string column) : column_(std::move(column)) {}
-    ForeignKey::ForeignKey(Column column) : column_(column.name_) {}
-    ForeignKey::ForeignKey(std::string column, std::string fk_table, std::string fk_column) : column_(std::move(column)), fk_table_(std::move(fk_table)), fk_column_(std::move(fk_column)) {}
-    ForeignKey::ForeignKey(Column column, std::string fk_table, std::string fk_column) : column_(column.name_), fk_table_(std::move(fk_table)), fk_column_(std::move(fk_column)) {}
-    ForeignKey::ForeignKey(std::string column, std::string fk_table, Column fk_column) : column_(std::move(column)), fk_table_(std::move(fk_table)), fk_column_(fk_column.name_) {}
-    ForeignKey::ForeignKey(Column column, std::string fk_table, Column fk_column) : column_(column.name_), fk_table_(std::move(fk_table)), fk_column_(fk_column.name_) {}
-    ForeignKey &ForeignKey::fk(std::string table, std::string column) {
-        fk_table_ = std::move(table);
-        fk_column_ = std::move(column);
-        return *this;
-    }
-    ForeignKey &ForeignKey::fk(std::string table, Column column) {
-        fk_table_ = std::move(table);
-        fk_column_ = column.name_;
-        return *this;
-    }
-    ForeignKey &ForeignKey::on_delete(const std::optional<Action> &a) {
-        ON_DELETE_ = a;
-        return *this;
-    }
-    ForeignKey &ForeignKey::on_update(const std::optional<Action> &a) {
-        ON_UPDATE_ = a;
-        return *this;
-    }
-    std::string action(const ForeignKey::Action &a) {
-        // clang-format off
-        switch (a) {
-            case ForeignKey::CASCADE:     return "CASCADE";
-            case ForeignKey::SET_NULL:    return "SET NULL";
-            case ForeignKey::SET_DEFAULT: return "SET DEFAULT";
-            case ForeignKey::RESTRICT:    return "RESTRICT";
-            case ForeignKey::NO_ACTION:   return "NO ACTION";
-        }
-        // clang-format on
-        throw std::invalid_argument("[sqlcpp] Unknown Action: " + std::to_string(a));
-    }
-    void ForeignKey::build_s(std::ostream &oss, const Type &t) const {
-        oss << "FOREIGN KEY (" << safe_field(column_, t) << ") REFERENCES " << safe_table(fk_table_, t) << '(' << safe_field(fk_column_, t) << ')';
-        if (ON_DELETE_) oss << " ON DELETE " << action(*ON_DELETE_);
-        if (ON_UPDATE_) oss << " ON UPDATE " << action(*ON_UPDATE_);
-    }
+
 }// namespace sqlcpp

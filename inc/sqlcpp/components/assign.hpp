@@ -29,8 +29,9 @@ namespace sqlcpp {
 
     /// @brief 赋值组组件, 代表一组赋值操作
     struct Assigns final : public Builder {
-        std::vector<Assign> assigns_;
+        std::vector<Assign> assigns_;///< 赋值组
 
+        /// @brief 空赋值组
         Assigns() = default;
         /// @brief 用一个赋值初始化赋值组
         Assigns(FieldLike field, ValueLike value = VAR);
