@@ -10,6 +10,7 @@
 #include "sqlcpp/defs.hpp"
 #include <cstddef>
 #include <optional>
+#include <stdexcept>
 #include <type_traits>
 #include <variant>
 #include <vector>
@@ -31,6 +32,9 @@ namespace sqlcpp {
         void add_col(const std::initializer_list<ValueLike> &col);
 
         void build_s(std::ostream &oss, const Type &t, size_t col_num) const;
+
+        [[nodiscard]] size_t col_num() const { return col_num_; }
+        [[nodiscard]] size_t row_num() const { return rows_.size(); }
 
     private:
         std::vector<std::vector<ValueLike>> rows_{};
@@ -100,13 +104,21 @@ namespace sqlcpp {
         /// @brief 添加一行"?"(VAR)数据
         Insert &val();
 
-        /// @brief 添加一列数据 (缺省部分使用"?"(VAR)代替)
+        /// @brief 添加一列数据, 不会添加列名称 (缺省部分使用"?"(VAR)代替)
         Insert &val_col(const std::vector<ValueLike> &col);
-        /// @brief 添加一列数据 (缺省部分使用"?"(VAR)代替)
+        /// @brief 添加一列数据, 不会添加列名称 (缺省部分使用"?"(VAR)代替)
         Insert &val_col(const std::initializer_list<ValueLike> &col);
-        /// @brief 添加一列数据 (缺省部分使用"?"(VAR)代替)
+        /// @brief 添加一列数据, 不会添加列名称 (缺省部分使用"?"(VAR)代替)
         template<typename... Args>
         Insert &val_col(Args &&...args);
+
+        /// @brief 添加一个新列名, 同时插入这列数据 (缺省部分使用"?"(VAR)代替)
+        Insert &key_value(FieldLike field, const std::vector<ValueLike> &values);
+        /// @brief 添加一个新列名, 同时插入这列数据 (缺省部分使用"?"(VAR)代替)
+        Insert &key_value(FieldLike field, const std::initializer_list<ValueLike> &values);
+        /// @brief 添加一个新列名, 同时插入这列数据 (缺省部分使用"?"(VAR)代替)
+        template<typename... Args>
+        Insert &key_value(FieldLike field, Args &&...args);
 
         ///@note sqlite only
         Insert &returning(FieldLike r);
@@ -169,7 +181,19 @@ namespace sqlcpp {
         if (auto *val = std::get_if<InsertValues>(&values_); val)
             val->add_col(std::initializer_list<ValueLike>{std::forward<Args>(args)...});
         else
-            throw std::invalid_argument("[sqlcpp] Cannot add row after set raw values.");
+            throw std::invalid_argument("[sqlcpp] Cannot add col after set raw values.");
+        return *this;
+    }
+    template<typename... Args>
+    Insert &Insert::key_value(FieldLike field, Args &&...args) {
+        if (auto *val = std::get_if<InsertValues>(&values_); val) {
+            if (val->col_num() != columns_.size()) {
+                throw std::invalid_argument("[sqlcpp] column name and value size not match: " + std::to_string(val->col_num()) + " vs " + std::to_string(columns_.size()));
+            }
+            add_column(std::move(field));
+            val->add_col(std::initializer_list<ValueLike>{std::forward<Args>(args)...});
+        } else
+            throw std::invalid_argument("[sqlcpp] Cannot add col after set raw values.");
         return *this;
     }
     template<typename... Args>
