@@ -8,6 +8,8 @@
 #include <ostream>
 #include <sstream>
 #include <string>
+/// @namespace sqlcpp
+/// @brief sqlcpp所有代码的基础命名空间
 namespace sqlcpp {
 
     static constexpr const auto SQLCPP_DEFAULT_TYPE = SQLITE;

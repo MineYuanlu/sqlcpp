@@ -6,10 +6,16 @@
 #define SQLCPP_COMPONENTS_FUNCS__HPP_GUARD
 #include "sqlcpp/components/field.hpp"
 #include <string>
+/// @namespace sqlcpp::F
+/// @brief sqlcpp的方言函数组件
 namespace sqlcpp::F {
+    /// @brief 预命名的函数
     struct NamedFunc final {
+        /// 函数名
         std::string name_;
+        /// @brief 用此函数包裹一个字段
         FuncField operator()(Field arg) const;
+        /// @brief 用此函数包裹一个raw字段
         FuncField operator()(RawField arg) const;
     };
     static const NamedFunc COUNT = {"COUNT"};

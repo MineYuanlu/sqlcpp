@@ -9,6 +9,8 @@
 #include <functional>
 #include <ostream>
 #include <string>
+/// @namespace sqlcpp::str
+/// @brief sqlcpp的字符串工具
 namespace sqlcpp::str {
     [[nodiscard]] std::string package_string(const std::string &input, char package);
     [[nodiscard]] std::string join(const std::initializer_list<std::string> &list, const std::string &joiner,

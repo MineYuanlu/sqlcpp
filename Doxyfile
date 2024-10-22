@@ -1,0 +1,50 @@
+# 项目信息
+PROJECT_NAME           = "sqlcpp"
+PROJECT_BRIEF          = "一个使用C++17代码构建生成SQL语句的库"
+
+# 输入设置
+INPUT                  = src inc
+FILE_PATTERNS          = *.cpp *.hpp *.h *.cc *.cxx
+RECURSIVE              = YES
+
+# 输出设置
+OUTPUT_DIRECTORY       = docs
+GENERATE_HTML          = YES
+GENERATE_XML           = NO
+GENERATE_LATEX         = NO
+
+# C++ 标准支持
+# 启用对C++11/14/17/20的支持
+ENABLE_PREPROCESSING    = YES
+MACRO_EXPANSION         = YES
+EXPAND_ONLY_PREDEF      = NO
+PREDEFINED              += __cplusplus=201703L
+
+# 使用现代图形
+HAVE_DOT                = YES
+DOT_PATH                =
+DOT_FONTNAME            = Helvetica
+DOT_FONTSIZE            = 10
+DOT_GRAPH_MAX_NODES     = 50
+
+# 支持Markdown
+MARKDOWN_SUPPORT        = YES
+USE_MARKDOWN            = YES
+AUTOLINK_SUPPORT        = YES
+
+# 其他现代特性
+EXTRACT_ALL             = YES
+EXTRACT_PRIVATE         = NO
+EXTRACT_STATIC          = YES
+EXTRACT_LOCAL_CLASSES   = YES
+EXTRACT_ANON_NSPACES    = NO
+
+# 生成树状图
+HIDE_UNDOC_RELATIONS    = NO
+HIDE_FRIEND_COMPOUNDS   = NO
+
+# 使用布局文件自定义输出（可选）
+LAYOUT_FILE             =
+
+# 主题和样式
+HTML_THEME              = default

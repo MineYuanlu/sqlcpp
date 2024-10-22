@@ -9,13 +9,17 @@
 #include "sqlcpp/defs.hpp"
 namespace sqlcpp {
     struct Assigns;
+
+    /// @brief 赋值组件, 代表对一个字段的赋值操作
     struct Assign final : public Builder {
-        FieldLike field_;
-        ValueLike value_;
+        FieldLike field_;///< 被赋值的字段
+        ValueLike value_;///< 赋值的值
 
         Assign(FieldLike field, ValueLike value = VAR);
 
+        /// @brief 与另一个赋值合并为一个赋值组
         Assigns add(Assign assign) const;
+        /// @brief 与另一个赋值合并为一个赋值组
         Assigns operator+(Assign assign) const;
 
 
@@ -23,15 +27,20 @@ namespace sqlcpp {
     };
 
 
+    /// @brief 赋值组组件, 代表一组赋值操作
     struct Assigns final : public Builder {
         std::vector<Assign> assigns_;
 
         Assigns() = default;
+        /// @brief 用一个赋值初始化赋值组
         Assigns(FieldLike field, ValueLike value = VAR);
+        /// @brief 用一个赋值初始化赋值组
         Assigns(Assign assign);
+        /// @brief 用一组赋值组初始化赋值组
         Assigns(std::vector<Assign> assigns);
 
 
+        /// @brief 添加一个赋值到赋值组
         Assigns &add(Assign assign);
 
         Assigns &operator+=(Assign assign);
