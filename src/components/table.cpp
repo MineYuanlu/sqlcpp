@@ -10,6 +10,10 @@ namespace sqlcpp {
 
     Table::Table(std::string table) : table_(std::move(table)) {}
 
+    Table &Table::content(const std::vector<Content> &c) {
+        content_.insert(content_.end(), c.begin(), c.end());
+        return *this;
+    }
     Table &Table::content(const Content &c) {
         content_.emplace_back(c);
         return *this;

@@ -32,7 +32,7 @@ namespace sqlcpp {
 
         Table(std::string table);
 
-        Table &content(decltype(content_) c);
+        Table &content(const std::vector<Content> &c);
         Table &content(const Content &c);
 
         Table &if_exists(IfExistsAction action);
