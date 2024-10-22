@@ -1,0 +1,25 @@
+name: Deploy Doxygen Docs to GitHub Pages
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install Doxygen
+      run: sudo apt-get install doxygen graphviz
+
+    - name: Generate Documentation
+      run: doxygen Doxyfile
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs/html  # 根据你的Doxyfile输出目录调整
