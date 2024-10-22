@@ -209,6 +209,28 @@ namespace sqlcpp {
             throw std::invalid_argument("[sqlcpp] Cannot add col after set raw values.");
         return *this;
     }
+    Insert &Insert::key_value(FieldLike field, const std::vector<ValueLike> &values) {
+        if (auto *val = std::get_if<InsertValues>(&values_); val) {
+            if (val->col_num() != columns_.size()) {
+                throw std::invalid_argument("[sqlcpp] column name and value size not match: " + std::to_string(val->col_num()) + " vs " + std::to_string(columns_.size()));
+            }
+            add_column(std::move(field));
+            val->add_col(values);
+        } else
+            throw std::invalid_argument("[sqlcpp] Cannot add col after set raw values.");
+        return *this;
+    }
+    Insert &Insert::key_value(FieldLike field, const std::initializer_list<ValueLike> &values) {
+        if (auto *val = std::get_if<InsertValues>(&values_); val) {
+            if (val->col_num() != columns_.size()) {
+                throw std::invalid_argument("[sqlcpp] column name and value size not match: " + std::to_string(val->col_num()) + " vs " + std::to_string(columns_.size()));
+            }
+            add_column(std::move(field));
+            val->add_col(values);
+        } else
+            throw std::invalid_argument("[sqlcpp] Cannot add col after set raw values.");
+        return *this;
+    }
     Insert &Insert::returning(FieldLike r) {
         RETURNING_ = std::vector<FieldLike>{r};
         return *this;

@@ -210,6 +210,13 @@ void insert_data() {
         db.run(stmt);
         pid = db.row_id();
     }
+    {
+        auto sql = Insert(p)
+                           .key_value("name", "kv_name")
+                           .key_value("owner", uid)
+                           .build();
+        db.exec(sql);
+    }
 
     {
         auto stmt = db.prepare(Insert(t).columns("project", "user", "name", "active").val().val().build());
