@@ -4,6 +4,7 @@
 /// Licence: MIT
 #ifndef SQLCPP_COMPONENTS_INSERT__HPP_GUARD
 #define SQLCPP_COMPONENTS_INSERT__HPP_GUARD
+#include "sqlcpp/components/assign.hpp"
 #include "sqlcpp/components/field.hpp"
 #include "sqlcpp/components/from.hpp"
 #include "sqlcpp/components/table.hpp"
@@ -11,6 +12,7 @@
 #include <cstddef>
 #include <optional>
 #include <stdexcept>
+#include <tuple>
 #include <type_traits>
 #include <variant>
 #include <vector>
@@ -59,9 +61,12 @@ namespace sqlcpp {
         bool IGNORE_ = false;
         std::vector<FieldLike> columns_{};
         std::variant<InsertValues, std::string> values_ = InsertValues{};
-        std::optional<InsertOr> INSERT_OR_{};                                    ///< sqlite only
-        std::optional<std::vector<std::pair<FieldLike, ValueLike>>> DUPLICATE_{};///< mysql only
-        std::optional<std::vector<FieldLike>> RETURNING_{};                      ///< sqlite only
+        std::optional<InsertOr> INSERT_OR_{};///< sqlite only
+        ///mysql: ON DUPLICATE KEY UPDATE ; sqlite: ON CONFLICT(field, ...) DO
+        ///@note 是否有field区分mysql/sqlite
+        ///@note sqlite >= 3.24.0
+        std::tuple<std::optional<std::vector<FieldLike>>, std::optional<Assigns>> DUPLICATE_{};
+        std::optional<std::vector<FieldLike>> RETURNING_{};///< sqlite AND mysql >= 8.0.19
 
         Insert() = default;
         Insert(std::string table);
@@ -79,7 +84,17 @@ namespace sqlcpp {
         Insert &insert_or(std::optional<InsertOr> io);
 
         ///@note mysql only
-        Insert &on_duplicate(std::optional<std::vector<std::pair<FieldLike, ValueLike>>> v);
+        Insert &on_duplicate(std::optional<std::vector<std::pair<FieldLike, ValueLike>>> a);
+        ///@note mysql only
+        Insert &on_duplicate(Assigns a);
+        ///@note mysql only
+        Insert &on_duplicate(Assign a);
+        ///@note mysql only
+        template<typename... Args>
+        Insert &on_duplicate(Args &&...args) {
+            DUPLICATE_ = std::make_tuple(std::nullopt, Assigns{std::forward<Args>(args)...});
+            return *this;
+        }
 
         ///@note mysql only
         template<typename... Args>
@@ -120,18 +135,38 @@ namespace sqlcpp {
         template<typename... Args>
         Insert &key_value(FieldLike field, Args &&...args);
 
-        ///@note sqlite only
+        ///@note sqlite >= 3.24.0
+        Insert &on_conflict(FieldLike field, std::vector<std::pair<FieldLike, ValueLike>> set);
+        ///@note sqlite >= 3.24.0
+        Insert &on_conflict(FieldLike field, Assigns set);
+        ///@note sqlite >= 3.24.0
+        Insert &on_conflict(FieldLike field, Assign set);
+        ///@note sqlite >= 3.24.0
+        template<typename... Args>
+        Insert &on_conflict(FieldLike field, Args &&...set);
+        ///@note sqlite >= 3.24.0
+        Insert &on_conflict(std::vector<FieldLike> fields, std::vector<std::pair<FieldLike, ValueLike>> set);
+        ///@note sqlite >= 3.24.0
+        Insert &on_conflict(std::vector<FieldLike> fields, Assigns set);
+        ///@note sqlite >= 3.24.0
+        Insert &on_conflict(std::vector<FieldLike> fields, Assign set);
+        ///@note sqlite >= 3.24.0
+        template<typename... Args>
+        Insert &on_conflict(std::vector<FieldLike> fields, Args &&...set);
+
+
+        ///@note sqlite AND mysql >= 8.0.19
         Insert &returning(FieldLike r);
-        ///@note sqlite only
+        ///@note sqlite AND mysql >= 8.0.19
         Insert &returning(std::optional<std::vector<FieldLike>> r);
-        ///@note sqlite only
+        ///@note sqlite AND mysql >= 8.0.19
         template<typename... Args>
         Insert &returning(Args &&...rs);
-        ///@note sqlite only
+        ///@note sqlite AND mysql >= 8.0.19
         Insert &add_returning(FieldLike rs);
-        ///@note sqlite only
+        ///@note sqlite AND mysql >= 8.0.19
         Insert &add_returning(const std::vector<FieldLike> &rs);
-        ///@note sqlite only
+        ///@note sqlite AND mysql >= 8.0.19
         template<typename... Args>
         Insert &add_returning(Args &&...rs);
 
@@ -194,6 +229,16 @@ namespace sqlcpp {
             val->add_col(std::initializer_list<ValueLike>{std::forward<Args>(args)...});
         } else
             throw std::invalid_argument("[sqlcpp] Cannot add col after set raw values.");
+        return *this;
+    }
+    template<typename... Args>
+    Insert &Insert::on_conflict(FieldLike field, Args &&...set) {
+        DUPLICATE_ = std::make_tuple(std::vector<FieldLike>{std::move(field)}, Assigns{std::forward<Args>(set)...});
+        return *this;
+    }
+    template<typename... Args>
+    Insert &Insert::on_conflict(std::vector<FieldLike> fields, Args &&...set) {
+        DUPLICATE_ = std::make_tuple(std::move(fields), Assigns{std::forward<Args>(set)...});
         return *this;
     }
     template<typename... Args>

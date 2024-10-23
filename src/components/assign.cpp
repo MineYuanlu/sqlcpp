@@ -16,6 +16,10 @@ namespace sqlcpp {
     Assigns::Assigns(FieldLike field, ValueLike value) : Assigns(Assign{std::move(field), std::move(value)}) {}
     Assigns::Assigns(Assign assign) : assigns_({std::move(assign)}) {}
     Assigns::Assigns(std::vector<Assign> assigns) : assigns_(std::move(assigns)) {}
+    Assigns::Assigns(std::vector<std::pair<FieldLike, ValueLike>> assigns) {
+        assigns_.reserve(assigns.size());
+        for (auto &[f, v]: assigns) assigns_.emplace_back(std::move(f), std::move(v));
+    }
     Assigns &Assigns::add(Assign assign) {
         assigns_.emplace_back(std::move(assign));
         return *this;
