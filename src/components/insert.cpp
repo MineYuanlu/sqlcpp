@@ -124,6 +124,7 @@ namespace sqlcpp {
             }
         } else if (t == SQLITE) {
             if (INSERT_OR_) {
+                oss << "OR ";
                 // clang-format off
                 switch (*INSERT_OR_) {
                     case OR_ROLLBACK: oss << "ROLLBACK "; break;

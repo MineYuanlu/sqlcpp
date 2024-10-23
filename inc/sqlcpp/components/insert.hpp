@@ -58,18 +58,18 @@ namespace sqlcpp {
         /// @brief 操作优先级
         /// @note mysql only
         enum OperatorModifier {
-            LOW_PRIORITY, ///< 不会打断或阻塞正在进行的读操作
-            DELAYED,      ///< 延迟插入, 仅MyISAM
-            HIGH_PRIORITY,///< 即使有正在进行的读操作，插入操作也会立即执行，优先处理
+            LOW_PRIORITY = 1,///< 不会打断或阻塞正在进行的读操作
+            DELAYED,         ///< 延迟插入, 仅MyISAM
+            HIGH_PRIORITY,   ///< 即使有正在进行的读操作，插入操作也会立即执行，优先处理
         };
         ///@brief 插入失败时的处理方式
         ///@note sqlite only
         enum InsertOr {
-            OR_ROLLBACK,
-            OR_ABORT,
-            OR_FAIL,
-            OR_IGNORE,///< 等于调用ignore, mysql支持
-            OR_REPLACE,
+            OR_FAIL,    ///< 默认行为，遇到冲突时插入失败
+            OR_ROLLBACK,///< 回滚所有操作
+            OR_ABORT,   ///< 回滚当前事务，插入操作失败
+            OR_IGNORE,  ///< 忽略该插入操作; 等于调用ignore, mysql支持
+            OR_REPLACE, ///< 删除原行并插入新行
         };
 
         /// @brief 冲突处理方式
