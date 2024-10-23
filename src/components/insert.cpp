@@ -81,7 +81,7 @@ namespace sqlcpp {
 
 
     Insert &Insert::ignore(bool v) {
-        IGNORE_ = v;
+        INSERT_OR_ = OR_IGNORE;
         return *this;
     }
 
@@ -134,7 +134,7 @@ namespace sqlcpp {
         } else {
             throw std::invalid_argument("[sqlcpp] Unknown SQL type: " + std::string{t});
         }
-        if (IGNORE_ || INSERT_OR_ == OR_IGNORE) oss << "IGNORE ";
+        if (INSERT_OR_ == OR_IGNORE) oss << "IGNORE ";
         oss << "INTO " << table_;
 
         oss << '(';
@@ -263,6 +263,10 @@ namespace sqlcpp {
         DUPLICATE_ = std::make_tuple(std::vector<FieldLike>{std::move(field)}, std::move(set));
         return *this;
     }
+    Insert &Insert::on_conflict(FieldLike field, Conflict DO) {
+        DUPLICATE_ = std::make_tuple(std::vector<FieldLike>{std::move(field)}, std::nullopt);
+        return *this;
+    }
     Insert &Insert::on_conflict(std::vector<FieldLike> fields, std::vector<std::pair<FieldLike, ValueLike>> set) {
         DUPLICATE_ = std::make_tuple(std::move(fields), std::move(set));
         return *this;
@@ -273,6 +277,10 @@ namespace sqlcpp {
     }
     Insert &Insert::on_conflict(std::vector<FieldLike> fields, Assign set) {
         DUPLICATE_ = std::make_tuple(std::move(fields), std::move(set));
+        return *this;
+    }
+    Insert &Insert::on_conflict(std::vector<FieldLike> fields, Conflict DO) {
+        DUPLICATE_ = std::make_tuple(std::move(fields), std::nullopt);
         return *this;
     }
     Insert &Insert::returning(FieldLike r) {
