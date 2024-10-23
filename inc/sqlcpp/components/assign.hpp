@@ -39,6 +39,14 @@ namespace sqlcpp {
         Assigns(Assign assign);
         /// @brief 用一组赋值组初始化赋值组
         Assigns(std::vector<Assign> assigns);
+        /// @brief 用一组赋值组初始化赋值组
+        Assigns(std::vector<std::pair<FieldLike, ValueLike>> assigns);
+        /// @brief 用一组赋值组初始化赋值组
+        template<typename... Args>
+        Assigns(Args... args) {
+            assigns_.reserve(sizeof...(args));
+            (assigns_.emplace_back(std::forward<Args>(args)), ...);
+        }
 
 
         /// @brief 添加一个赋值到赋值组

@@ -1,5 +1,8 @@
 #include "sqlcpp/components/insert.hpp"
+#include "sqlcpp/components/field.hpp"
 #include "sqlcpp/components/value.hpp"
+#include <optional>
+#include <tuple>
 #include <variant>
 namespace sqlcpp {
 
@@ -78,7 +81,7 @@ namespace sqlcpp {
 
 
     Insert &Insert::ignore(bool v) {
-        IGNORE_ = v;
+        INSERT_OR_ = OR_IGNORE;
         return *this;
     }
 
@@ -88,9 +91,18 @@ namespace sqlcpp {
         return *this;
     }
 
-
     Insert &Insert::on_duplicate(std::optional<std::vector<std::pair<FieldLike, ValueLike>>> v) {
-        DUPLICATE_ = std::move(v);
+        if (v) DUPLICATE_ = std::make_tuple(std::nullopt, std::move(*v));
+        else
+            DUPLICATE_ = {};
+        return *this;
+    }
+    Insert &Insert::on_duplicate(Assigns a) {
+        DUPLICATE_ = std::make_tuple(std::nullopt, std::move(a));
+        return *this;
+    }
+    Insert &Insert::on_duplicate(Assign a) {
+        DUPLICATE_ = std::make_tuple(std::nullopt, std::move(a));
         return *this;
     }
 
@@ -122,7 +134,7 @@ namespace sqlcpp {
         } else {
             throw std::invalid_argument("[sqlcpp] Unknown SQL type: " + std::string{t});
         }
-        if (IGNORE_ || INSERT_OR_ == OR_IGNORE) oss << "IGNORE ";
+        if (INSERT_OR_ == OR_IGNORE) oss << "IGNORE ";
         oss << "INTO " << table_;
 
         oss << '(';
@@ -141,19 +153,27 @@ namespace sqlcpp {
         }
 
         if (t == MYSQL) {
-            if (DUPLICATE_) {
+            const auto &[notMYSQL, assigns] = DUPLICATE_;
+            if (!notMYSQL && assigns) {
                 oss << " ON DUPLICATE KEY UPDATE ";
-                bool more = false;
-                for (const auto &[k, v]: *DUPLICATE_) {
-                    if (more) oss << ",";
-                    else
-                        more = true;
-                    k.build_s(oss, t);
-                    oss << " = ";
-                    v.build_s(oss, t);
-                }
+                assigns->build_s(oss, t);
             }
         } else if (t == SQLITE) {
+            const auto &[conflict, assigns] = DUPLICATE_;
+            if (conflict) {
+                oss << " ON CONFLICT(";
+                for (size_t i = 0; i < conflict->size(); ++i) {
+                    if (i > 0) oss << ", ";
+                    conflict->at(i).build_s(oss, t);
+                }
+                oss << ") DO ";
+                if (assigns) {
+                    oss << "UPDATE SET ";
+                    assigns->build_s(oss, t);
+                } else {
+                    oss << "NOTHING";
+                }
+            }
             if (RETURNING_) {
                 oss << " RETURNING ";
                 auto &returing = *RETURNING_;
@@ -229,6 +249,38 @@ namespace sqlcpp {
             val->add_col(values);
         } else
             throw std::invalid_argument("[sqlcpp] Cannot add col after set raw values.");
+        return *this;
+    }
+    Insert &Insert::on_conflict(FieldLike field, std::vector<std::pair<FieldLike, ValueLike>> set) {
+        DUPLICATE_ = std::make_tuple(std::vector<FieldLike>{std::move(field)}, std::move(set));
+        return *this;
+    }
+    Insert &Insert::on_conflict(FieldLike field, Assigns set) {
+        DUPLICATE_ = std::make_tuple(std::vector<FieldLike>{std::move(field)}, std::move(set));
+        return *this;
+    }
+    Insert &Insert::on_conflict(FieldLike field, Assign set) {
+        DUPLICATE_ = std::make_tuple(std::vector<FieldLike>{std::move(field)}, std::move(set));
+        return *this;
+    }
+    Insert &Insert::on_conflict(FieldLike field, Conflict DO) {
+        DUPLICATE_ = std::make_tuple(std::vector<FieldLike>{std::move(field)}, std::nullopt);
+        return *this;
+    }
+    Insert &Insert::on_conflict(std::vector<FieldLike> fields, std::vector<std::pair<FieldLike, ValueLike>> set) {
+        DUPLICATE_ = std::make_tuple(std::move(fields), std::move(set));
+        return *this;
+    }
+    Insert &Insert::on_conflict(std::vector<FieldLike> fields, Assigns set) {
+        DUPLICATE_ = std::make_tuple(std::move(fields), std::move(set));
+        return *this;
+    }
+    Insert &Insert::on_conflict(std::vector<FieldLike> fields, Assign set) {
+        DUPLICATE_ = std::make_tuple(std::move(fields), std::move(set));
+        return *this;
+    }
+    Insert &Insert::on_conflict(std::vector<FieldLike> fields, Conflict DO) {
+        DUPLICATE_ = std::make_tuple(std::move(fields), std::nullopt);
         return *this;
     }
     Insert &Insert::returning(FieldLike r) {
