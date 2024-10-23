@@ -81,7 +81,10 @@ namespace sqlcpp {
 
 
     Insert &Insert::ignore(bool v) {
-        INSERT_OR_ = OR_IGNORE;
+        if (v)
+            INSERT_OR_ = OR_IGNORE;
+        else
+            INSERT_OR_ = std::nullopt;
         return *this;
     }
 
@@ -263,7 +266,7 @@ namespace sqlcpp {
         DUPLICATE_ = std::make_tuple(std::vector<FieldLike>{std::move(field)}, std::move(set));
         return *this;
     }
-    Insert &Insert::on_conflict(FieldLike field, Conflict DO) {
+    Insert &Insert::on_conflict(FieldLike field, [[maybe_unused]] Conflict) {
         DUPLICATE_ = std::make_tuple(std::vector<FieldLike>{std::move(field)}, std::nullopt);
         return *this;
     }
@@ -279,7 +282,7 @@ namespace sqlcpp {
         DUPLICATE_ = std::make_tuple(std::move(fields), std::move(set));
         return *this;
     }
-    Insert &Insert::on_conflict(std::vector<FieldLike> fields, Conflict DO) {
+    Insert &Insert::on_conflict(std::vector<FieldLike> fields, [[maybe_unused]] Conflict) {
         DUPLICATE_ = std::make_tuple(std::move(fields), std::nullopt);
         return *this;
     }
