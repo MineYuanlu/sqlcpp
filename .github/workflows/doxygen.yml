@@ -18,6 +18,13 @@ jobs:
     - name: Install Doxygen
       run: sudo apt-get install doxygen graphviz
 
+    - name: Doxygen Awesome Theme
+      run: |
+        git clone https://github.com/jothepro/doxygen-awesome-css.git
+        cd doxygen-awesome-css
+        git checkout v2.3.4
+        cd ..
+
     - name: Generate Documentation
       run: doxygen Doxyfile
 

@@ -48,3 +48,11 @@ LAYOUT_FILE             =
 
 # 主题和样式
 HTML_THEME              = default
+
+
+GENERATE_TREEVIEW       = YES
+DISABLE_INDEX           = NO
+FULL_SIDEBAR            = NO
+HTML_EXTRA_STYLESHEET   = doxygen-awesome-css/doxygen-awesome.css \
+                          doxygen-awesome-css/doxygen-awesome-sidebar-only.css
+HTML_COLORSTYLE         = LIGHT
