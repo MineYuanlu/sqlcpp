@@ -9,8 +9,9 @@
 namespace sqlcpp {
 
 
+    /// @brief 过滤组件, 基于聚合后的数据来进行条件筛选
     struct Having final : public Builder {
-        Condition condition_;
+        Condition condition_;///< 条件表达式
 
         Having(Condition condition);
 

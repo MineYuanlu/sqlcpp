@@ -10,18 +10,21 @@
 namespace sqlcpp {
 
 
+    /// @brief 排序顺序
     enum Order {
-        ASC,
-        DESC,
+        ASC, ///< 升序排列, 默认顺序. 数字从小到大, 字母从 A 到 Z
+        DESC,///< 降序排列, 数字从大到小, 字母从 Z 到 A
     };
+    /// @brief 字符串化排序顺序
     constexpr inline const char *order_str(Order order) {
         return order == ASC ? "ASC" : "DESC";
     }
 
 
+    /// @brief 单个字段的排序条件
     struct OrderByField final : public Builder {
-        FieldLike field_;
-        Order direction_ = Order::ASC;
+        FieldLike field_;             ///< 排序字段
+        Order direction_ = Order::ASC;///< 排序顺序
 
         OrderByField(FieldLike field, Order o = Order::ASC);
         OrderByField(Field field, Order o = Order::ASC);
@@ -32,8 +35,9 @@ namespace sqlcpp {
     };
 
 
+    /// @brief 多个字段的排序条件
     struct OrderBy final : public Builder {
-        std::vector<OrderByField> fields_;
+        std::vector<OrderByField> fields_;///< 排序字段列表
 
         OrderBy(Field field, Order o = Order::ASC);
         OrderBy(RawField field, Order o = Order::ASC);

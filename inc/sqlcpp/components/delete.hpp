@@ -6,6 +6,7 @@
 #include "sqlcpp/defs.hpp"
 #include <optional>
 namespace sqlcpp {
+    /// @brief 删除语句构建器
     struct Delete final : public Builder {
         bool LOW_PRIORITY = false;///< mysql only
         bool QUICK = false;       ///< mysql only

@@ -103,6 +103,7 @@ namespace sqlcpp {
 
 
     /// @brief 原生条件
+    /// @note 注意数据安全
     struct CondRaw final : public Builder, Cond {
         std::string raw_cond_;
 

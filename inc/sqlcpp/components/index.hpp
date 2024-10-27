@@ -9,12 +9,15 @@
 #include <optional>
 #include <vector>
 namespace sqlcpp {
+
+    /// @brief 索引组件, 创建字段一般的(普通/唯一)索引
     struct Index final : public Builder {
-        std::optional<std::string> table_{};
-        std::string name_{};
-        bool user_set_name = false;
-        bool unique_ = false;
-        std::vector<std::tuple<std::string, Order>> fields_{};
+        std::optional<std::string> table_{};                  ///< 表名
+        std::string name_{};                                  ///< 索引名
+        bool user_set_name = false;                           ///< 用户是否设置了索引名(未设置的情况下使用field生成)
+        bool unique_ = false;                                 ///< 是否唯一索引
+        std::vector<std::tuple<std::string, Order>> fields_{};///< 字段名及排序方式
+
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
 
         Index() = default;
