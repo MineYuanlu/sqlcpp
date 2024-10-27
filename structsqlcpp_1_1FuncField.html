@@ -75,13 +75,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>函数字段, 用于查询/更新/删除/条件等操作  
+ <a href="structsqlcpp_1_1FuncField.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="field_8hpp_source.html">field.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for sqlcpp::FuncField:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1FuncField__inherit__graph.png" border="0" usemap="#asqlcpp_1_1FuncField_inherit__map" alt="Inheritance graph"/></div>
 <map name="asqlcpp_1_1FuncField_inherit__map" id="asqlcpp_1_1FuncField_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,139,107"/>
+<area shape="rect" title="函数字段, 用于查询/更新/删除/条件等操作" alt="" coords="5,80,139,107"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title=" " alt="" coords="13,5,131,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -90,7 +93,7 @@ Collaboration diagram for sqlcpp::FuncField:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1FuncField__coll__graph.png" border="0" usemap="#asqlcpp_1_1FuncField_coll__map" alt="Collaboration graph"/></div>
 <map name="asqlcpp_1_1FuncField_coll__map" id="asqlcpp_1_1FuncField_coll__map">
-<area shape="rect" title=" " alt="" coords="308,93,441,120"/>
+<area shape="rect" title="函数字段, 用于查询/更新/删除/条件等操作" alt="" coords="308,93,441,120"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title=" " alt="" coords="31,5,150,32"/>
 <area shape="rect" title=" " alt="" coords="7,57,175,98"/>
 <area shape="rect" title=" " alt="" coords="61,123,120,149"/>
@@ -101,10 +104,13 @@ Collaboration diagram for sqlcpp::FuncField:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae28c3c53b752f895c38cc92e3647c91e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FuncField.html#ae28c3c53b752f895c38cc92e3647c91e">FuncField</a> (std::string func, std::variant&lt; <a class="el" href="structsqlcpp_1_1Field.html">Field</a>, <a class="el" href="structsqlcpp_1_1RawField.html">RawField</a> &gt; args)</td></tr>
+<tr class="memdesc:ae28c3c53b752f895c38cc92e3647c91e"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用函数名和参数构造  <a href="structsqlcpp_1_1FuncField.html#ae28c3c53b752f895c38cc92e3647c91e">More...</a><br /></td></tr>
 <tr class="separator:ae28c3c53b752f895c38cc92e3647c91e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a924267a763ab3a4b615835d6bd641846"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FuncField.html#a924267a763ab3a4b615835d6bd641846">FuncField</a> (std::string func, std::variant&lt; <a class="el" href="structsqlcpp_1_1Field.html">Field</a>, <a class="el" href="structsqlcpp_1_1RawField.html">RawField</a> &gt; args, std::string <a class="el" href="structsqlcpp_1_1FuncField.html#a02d02af3272f505f76aa77c066517537">alias</a>)</td></tr>
+<tr class="memdesc:a924267a763ab3a4b615835d6bd641846"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用函数名、参数和别称构造  <a href="structsqlcpp_1_1FuncField.html#a924267a763ab3a4b615835d6bd641846">More...</a><br /></td></tr>
 <tr class="separator:a924267a763ab3a4b615835d6bd641846"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02d02af3272f505f76aa77c066517537"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1FuncField.html">FuncField</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FuncField.html#a02d02af3272f505f76aa77c066517537">alias</a> (std::string alias)</td></tr>
+<tr class="memdesc:a02d02af3272f505f76aa77c066517537"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置别称  <a href="structsqlcpp_1_1FuncField.html#a02d02af3272f505f76aa77c066517537">More...</a><br /></td></tr>
 <tr class="separator:a02d02af3272f505f76aa77c066517537"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1edaadd3081f7835288f109b2428d954"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FuncField.html#a1edaadd3081f7835288f109b2428d954">build_s</a> (std::ostream &amp;oss, const <a class="el" href="structsqlcpp_1_1Type.html">Type</a> &amp;t=<a class="el" href="namespacesqlcpp.html#a19237f9b2742dd80678d8dfa286dcfd6">SQLCPP_DEFAULT_TYPE</a>) const override</td></tr>
 <tr class="separator:a1edaadd3081f7835288f109b2428d954"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,13 +121,18 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ae0470144efbb7e587bf778d3e288cf55"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FuncField.html#ae0470144efbb7e587bf778d3e288cf55">func_name_</a></td></tr>
+<tr class="memdesc:ae0470144efbb7e587bf778d3e288cf55"><td class="mdescLeft">&#160;</td><td class="mdescRight">函数名  <a href="structsqlcpp_1_1FuncField.html#ae0470144efbb7e587bf778d3e288cf55">More...</a><br /></td></tr>
 <tr class="separator:ae0470144efbb7e587bf778d3e288cf55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bea9f75b6e7391d9b2b8e1085c8ed00"><td class="memItemLeft" align="right" valign="top">std::variant&lt; <a class="el" href="structsqlcpp_1_1Field.html">Field</a>, <a class="el" href="structsqlcpp_1_1RawField.html">RawField</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FuncField.html#a5bea9f75b6e7391d9b2b8e1085c8ed00">args_</a></td></tr>
+<tr class="memdesc:a5bea9f75b6e7391d9b2b8e1085c8ed00"><td class="mdescLeft">&#160;</td><td class="mdescRight">参数  <a href="structsqlcpp_1_1FuncField.html#a5bea9f75b6e7391d9b2b8e1085c8ed00">More...</a><br /></td></tr>
 <tr class="separator:a5bea9f75b6e7391d9b2b8e1085c8ed00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8adab4ec21d6bc52f28aec43861b7f2b"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FuncField.html#a8adab4ec21d6bc52f28aec43861b7f2b">alias_</a> {}</td></tr>
+<tr class="memdesc:a8adab4ec21d6bc52f28aec43861b7f2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">别称  <a href="structsqlcpp_1_1FuncField.html#a8adab4ec21d6bc52f28aec43861b7f2b">More...</a><br /></td></tr>
 <tr class="separator:a8adab4ec21d6bc52f28aec43861b7f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>函数字段, 用于查询/更新/删除/条件等操作 </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae28c3c53b752f895c38cc92e3647c91e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae28c3c53b752f895c38cc92e3647c91e">&#9670;&nbsp;</a></span>FuncField() <span class="overload">[1/2]</span></h2>
 
@@ -147,6 +158,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>使用函数名和参数构造 </p>
 
 </div>
 </div>
@@ -182,6 +195,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>使用函数名、参数和别称构造 </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -200,6 +215,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置别称 </p>
 
 </div>
 </div>
@@ -254,6 +271,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>别称 </p>
+
 </div>
 </div>
 <a id="a5bea9f75b6e7391d9b2b8e1085c8ed00"></a>
@@ -268,6 +287,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>参数 </p>
+
 </div>
 </div>
 <a id="ae0470144efbb7e587bf778d3e288cf55"></a>
@@ -281,6 +302,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>函数名 </p>
 
 </div>
 </div>

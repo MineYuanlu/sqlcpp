@@ -75,13 +75,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>索引组件, 创建字段一般的(普通/唯一)索引  
+ <a href="structsqlcpp_1_1Index.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="index_8hpp_source.html">index.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for sqlcpp::Index:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1Index__inherit__graph.png" border="0" usemap="#asqlcpp_1_1Index_inherit__map" alt="Inheritance graph"/></div>
 <map name="asqlcpp_1_1Index_inherit__map" id="asqlcpp_1_1Index_inherit__map">
-<area shape="rect" title=" " alt="" coords="11,80,119,107"/>
+<area shape="rect" title="索引组件, 创建字段一般的(普通/唯一)索引" alt="" coords="11,80,119,107"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title=" " alt="" coords="5,5,124,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -90,7 +93,7 @@ Collaboration diagram for sqlcpp::Index:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1Index__coll__graph.png" border="0" usemap="#asqlcpp_1_1Index_coll__map" alt="Collaboration graph"/></div>
 <map name="asqlcpp_1_1Index_coll__map" id="asqlcpp_1_1Index_coll__map">
-<area shape="rect" title=" " alt="" coords="329,124,437,151"/>
+<area shape="rect" title="索引组件, 创建字段一般的(普通/唯一)索引" alt="" coords="329,124,437,151"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title=" " alt="" coords="34,5,153,32"/>
 <area shape="rect" title=" " alt="" coords="5,57,181,98"/>
 <area shape="rect" title=" " alt="" coords="68,123,119,149"/>
@@ -126,17 +129,24 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a26880a31b4591befc55bf9bd4d42f5ca"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Index.html#a26880a31b4591befc55bf9bd4d42f5ca">table_</a> {}</td></tr>
+<tr class="memdesc:a26880a31b4591befc55bf9bd4d42f5ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">表名  <a href="structsqlcpp_1_1Index.html#a26880a31b4591befc55bf9bd4d42f5ca">More...</a><br /></td></tr>
 <tr class="separator:a26880a31b4591befc55bf9bd4d42f5ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13576d91c25e7e04174c2aa4846c40eb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Index.html#a13576d91c25e7e04174c2aa4846c40eb">name_</a> {}</td></tr>
+<tr class="memdesc:a13576d91c25e7e04174c2aa4846c40eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">索引名  <a href="structsqlcpp_1_1Index.html#a13576d91c25e7e04174c2aa4846c40eb">More...</a><br /></td></tr>
 <tr class="separator:a13576d91c25e7e04174c2aa4846c40eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92cda67cba6110f1f7777a4a1e2d9827"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Index.html#a92cda67cba6110f1f7777a4a1e2d9827">user_set_name</a> = false</td></tr>
+<tr class="memdesc:a92cda67cba6110f1f7777a4a1e2d9827"><td class="mdescLeft">&#160;</td><td class="mdescRight">用户是否设置了索引名(未设置的情况下使用field生成)  <a href="structsqlcpp_1_1Index.html#a92cda67cba6110f1f7777a4a1e2d9827">More...</a><br /></td></tr>
 <tr class="separator:a92cda67cba6110f1f7777a4a1e2d9827"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c59442847090f56d04bebf2fe2eb297"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Index.html#a5c59442847090f56d04bebf2fe2eb297">unique_</a> = false</td></tr>
+<tr class="memdesc:a5c59442847090f56d04bebf2fe2eb297"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否唯一索引  <a href="structsqlcpp_1_1Index.html#a5c59442847090f56d04bebf2fe2eb297">More...</a><br /></td></tr>
 <tr class="separator:a5c59442847090f56d04bebf2fe2eb297"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d75a0ceb0d5679024736fbe818d0736"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::tuple&lt; std::string, <a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Index.html#a9d75a0ceb0d5679024736fbe818d0736">fields_</a> {}</td></tr>
+<tr class="memdesc:a9d75a0ceb0d5679024736fbe818d0736"><td class="mdescLeft">&#160;</td><td class="mdescRight">字段名及排序方式  <a href="structsqlcpp_1_1Index.html#a9d75a0ceb0d5679024736fbe818d0736">More...</a><br /></td></tr>
 <tr class="separator:a9d75a0ceb0d5679024736fbe818d0736"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>索引组件, 创建字段一般的(普通/唯一)索引 </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1c10e78a1c2bfd3842b1b968f739763a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c10e78a1c2bfd3842b1b968f739763a">&#9670;&nbsp;</a></span>Index() <span class="overload">[1/3]</span></h2>
 
@@ -376,6 +386,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>字段名及排序方式 </p>
+
 </div>
 </div>
 <a id="a13576d91c25e7e04174c2aa4846c40eb"></a>
@@ -389,6 +401,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>索引名 </p>
 
 </div>
 </div>
@@ -404,6 +418,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>表名 </p>
+
 </div>
 </div>
 <a id="a5c59442847090f56d04bebf2fe2eb297"></a>
@@ -418,6 +434,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>是否唯一索引 </p>
+
 </div>
 </div>
 <a id="a92cda67cba6110f1f7777a4a1e2d9827"></a>
@@ -431,6 +449,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>用户是否设置了索引名(未设置的情况下使用field生成) </p>
 
 </div>
 </div>

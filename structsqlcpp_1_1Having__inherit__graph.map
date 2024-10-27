@@ -1,4 +1,4 @@
 <map id="sqlcpp::Having" name="sqlcpp::Having">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,124,107"/>
+<area shape="rect" id="node1" title="过滤组件, 基于聚合后的数据来进行条件筛选" alt="" coords="5,80,124,107"/>
 <area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="5,5,124,32"/>
 </map>

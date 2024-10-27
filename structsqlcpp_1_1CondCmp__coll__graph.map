@@ -1,7 +1,7 @@
 <map id="sqlcpp::CondCmp" name="sqlcpp::CondCmp">
 <area shape="rect" id="node1" title="比较条件" alt="" coords="607,148,741,175"/>
 <area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="83,91,202,117"/>
-<area shape="rect" id="node5" href="$structsqlcpp_1_1FieldLike.html" title=" " alt="" coords="379,47,508,73"/>
+<area shape="rect" id="node5" href="$structsqlcpp_1_1FieldLike.html" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / FuncField" alt="" coords="379,47,508,73"/>
 <area shape="rect" id="node7" href="$structsqlcpp_1_1ValueLike.html" title=" " alt="" coords="376,148,511,175"/>
 <area shape="rect" id="node3" href="$structsqlcpp_1_1Cond.html" title="条件构建器接口" alt="" coords="391,199,496,225"/>
 <area shape="rect" id="node4" title=" " alt="" coords="408,249,479,276"/>
