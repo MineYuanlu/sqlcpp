@@ -1,5 +1,9 @@
-#ifndef SQLCPP_VERSION_HPP
-#define SQLCPP_VERSION_HPP
+/// Copyright (c) 2024 MineYuanlu
+/// Author: MineYuanlu
+/// Github: https://github.com/MineYuanlu/sqlcpp
+/// Licence: MIT
+#ifndef SQLCPP_VERSION__HPP_GUARD
+#define SQLCPP_VERSION__HPP_GUARD
 
 namespace sqlcpp {
     struct version {
@@ -10,4 +14,4 @@ namespace sqlcpp {
         [[nodiscard]] static const char *string(); ///< 版本号字符串, 未知时为nullptr
     };
 }// namespace sqlcpp
-#endif// SQLCPP_VERSION_HPP
+#endif// SQLCPP_VERSION__HPP_GUARD

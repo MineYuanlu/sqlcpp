@@ -1,5 +1,9 @@
-#ifndef SQLCPP_COMPONENTS_DELETE_HPP
-#define SQLCPP_COMPONENTS_DELETE_HPP
+/// Copyright (c) 2024 MineYuanlu
+/// Author: MineYuanlu
+/// Github: https://github.com/MineYuanlu/sqlcpp
+/// Licence: MIT
+#ifndef SQLCPP_COMPONENTS_DELETE__HPP_GUARD
+#define SQLCPP_COMPONENTS_DELETE__HPP_GUARD
 #include "sqlcpp/components/from.hpp"
 #include "sqlcpp/components/order_by.hpp"
 #include "sqlcpp/components/where.hpp"
@@ -63,4 +67,4 @@ namespace sqlcpp {
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
     };
 }// namespace sqlcpp
-#endif
+#endif// SQLCPP_COMPONENTS_DELETE__HPP_GUARD
