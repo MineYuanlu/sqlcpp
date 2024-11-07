@@ -1,4 +1,6 @@
 <map id="sqlcpp::VarValue" name="sqlcpp::VarValue">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,135,107"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="11,5,129,32"/>
+<area shape="rect" id="node1" title="普通占位符, 表示形式为&quot;?&quot;, 可以使用VAR(N)代表有索引的占位符" alt="" coords="76,80,205,107"/>
+<area shape="rect" id="node4" href="$structsqlcpp_1_1IndexedVarValue.html" title="带有索引的占位符, 表示形式为&quot;?&quot; /" alt="" coords="51,155,231,181"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node3" href="$structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="149,5,287,32"/>
 </map>

@@ -1,10 +1,11 @@
 <map id="sqlcpp::CondCmp" name="sqlcpp::CondCmp">
-<area shape="rect" id="node1" title="比较条件" alt="" coords="607,148,741,175"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="83,91,202,117"/>
-<area shape="rect" id="node5" href="$structsqlcpp_1_1FieldLike.html" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / FuncField" alt="" coords="379,47,508,73"/>
-<area shape="rect" id="node7" href="$structsqlcpp_1_1ValueLike.html" title=" " alt="" coords="376,148,511,175"/>
-<area shape="rect" id="node3" href="$structsqlcpp_1_1Cond.html" title="条件构建器接口" alt="" coords="391,199,496,225"/>
-<area shape="rect" id="node4" title=" " alt="" coords="408,249,479,276"/>
-<area shape="rect" id="node6" title=" " alt="" coords="50,5,235,61"/>
-<area shape="rect" id="node8" title=" " alt="" coords="5,142,280,242"/>
+<area shape="rect" id="node1" title="比较条件" alt="" coords="607,151,741,177"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="83,5,202,32"/>
+<area shape="rect" id="node6" href="$structsqlcpp_1_1FieldLike.html" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / FuncField" alt="" coords="379,201,508,228"/>
+<area shape="rect" id="node8" href="$structsqlcpp_1_1ValueLike.html" title=" " alt="" coords="376,96,511,123"/>
+<area shape="rect" id="node3" href="$structsqlcpp_1_1Cond.html" title="条件构建器接口" alt="" coords="391,151,496,177"/>
+<area shape="rect" id="node4" href="$structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="73,181,212,208"/>
+<area shape="rect" id="node5" title=" " alt="" coords="408,252,479,279"/>
+<area shape="rect" id="node7" title=" " alt="" coords="50,232,235,288"/>
+<area shape="rect" id="node9" title=" " alt="" coords="5,57,280,157"/>
 </map>

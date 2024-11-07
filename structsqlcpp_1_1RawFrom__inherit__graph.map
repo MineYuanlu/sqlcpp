@@ -1,4 +1,4 @@
 <map id="sqlcpp::RawFrom" name="sqlcpp::RawFrom">
 <area shape="rect" id="node1" title="原生数据表引用" alt="" coords="5,80,139,107"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="13,5,131,32"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="13,5,131,32"/>
 </map>

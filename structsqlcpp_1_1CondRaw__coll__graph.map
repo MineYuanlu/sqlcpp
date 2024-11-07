@@ -1,6 +1,7 @@
 <map id="sqlcpp::CondRaw" name="sqlcpp::CondRaw">
-<area shape="rect" id="node1" title="原生条件" alt="" coords="134,95,267,121"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="5,5,124,32"/>
-<area shape="rect" id="node3" href="$structsqlcpp_1_1Cond.html" title="条件构建器接口" alt="" coords="148,5,253,32"/>
-<area shape="rect" id="node4" title=" " alt="" coords="277,5,335,32"/>
+<area shape="rect" id="node1" title="原生条件" alt="" coords="134,171,267,197"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,81,124,108"/>
+<area shape="rect" id="node3" href="$structsqlcpp_1_1Cond.html" title="条件构建器接口" alt="" coords="148,81,253,108"/>
+<area shape="rect" id="node4" href="$structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="131,5,270,32"/>
+<area shape="rect" id="node5" title=" " alt="" coords="277,81,335,108"/>
 </map>

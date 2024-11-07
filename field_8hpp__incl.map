@@ -1,12 +1,12 @@
 <map id="inc/sqlcpp/components/field.hpp" name="inc/sqlcpp/components/field.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="288,5,459,47"/>
-<area shape="rect" id="node2" href="$defs_8hpp.html" title=" " alt="" coords="139,95,263,121"/>
-<area shape="rect" id="node8" title=" " alt="" coords="288,95,363,121"/>
-<area shape="rect" id="node9" title=" " alt="" coords="387,95,455,121"/>
-<area shape="rect" id="node10" title=" " alt="" coords="479,95,542,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="371,5,541,47"/>
+<area shape="rect" id="node2" href="$defs_8hpp.html" title=" " alt="" coords="239,95,363,121"/>
+<area shape="rect" id="node8" title=" " alt="" coords="406,169,469,196"/>
+<area shape="rect" id="node9" title=" " alt="" coords="456,95,531,121"/>
+<area shape="rect" id="node10" title=" " alt="" coords="555,95,623,121"/>
 <area shape="rect" id="node3" href="$types_8hpp.html" title=" " alt="" coords="71,169,203,196"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,244,64,271"/>
 <area shape="rect" id="node6" title=" " alt="" coords="227,169,303,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="328,169,403,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="327,169,382,196"/>
 <area shape="rect" id="node5" title=" " alt="" coords="89,244,186,271"/>
 </map>

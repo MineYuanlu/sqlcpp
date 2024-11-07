@@ -10,6 +10,7 @@ var structsqlcpp_1_1FieldLike =
     [ "assign", "structsqlcpp_1_1FieldLike.html#a842b8bb4b3007947e3de2f41a6346f80", null ],
     [ "BETWEEN", "structsqlcpp_1_1FieldLike.html#a657fa1da81c157b0b0c52d35ea607745", null ],
     [ "build_s", "structsqlcpp_1_1FieldLike.html#a4dbee5f8872f48223704a51227a55f97", null ],
+    [ "edit_var_map", "structsqlcpp_1_1FieldLike.html#aa2fe1b7d8882436b39095c0a3c92ab95", null ],
     [ "IN", "structsqlcpp_1_1FieldLike.html#a1a950eb1dbc36914e7c4a121b167da6f", null ],
     [ "LIKE", "structsqlcpp_1_1FieldLike.html#a39aa8b7429f2e17a051dbd13b87d1b87", null ],
     [ "NOT_IN", "structsqlcpp_1_1FieldLike.html#adf3d9892bd89f2f0bf5e3f0afc7ebc14", null ],

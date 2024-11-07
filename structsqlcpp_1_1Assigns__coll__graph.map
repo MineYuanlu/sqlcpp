@@ -1,5 +1,5 @@
 <map id="sqlcpp::Assigns" name="sqlcpp::Assigns">
 <area shape="rect" id="node1" title="赋值组组件, 代表一组赋值操作" alt="" coords="91,95,214,121"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
 <area shape="rect" id="node3" title=" " alt="" coords="149,5,335,32"/>
 </map>

@@ -1,4 +1,5 @@
 <map id="sqlcpp::OrderByField" name="sqlcpp::OrderByField">
-<area shape="rect" id="node1" title="单个字段的排序条件" alt="" coords="5,80,161,107"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="24,5,143,32"/>
+<area shape="rect" id="node1" title="单个字段的排序条件" alt="" coords="63,80,219,107"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node3" href="$structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="149,5,287,32"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="sqlcpp::RawField" name="sqlcpp::RawField">
 <area shape="rect" id="node1" title="原生字段, 不会进行任何转义, 用于查询/更新/删除/条件等操作" alt="" coords="55,95,186,121"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
 <area shape="rect" id="node3" title=" " alt="" coords="147,5,206,32"/>
 </map>

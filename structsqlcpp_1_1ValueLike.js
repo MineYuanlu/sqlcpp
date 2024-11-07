@@ -21,5 +21,6 @@ var structsqlcpp_1_1ValueLike =
     [ "ValueLike", "structsqlcpp_1_1ValueLike.html#a003d1d952ae8bddeba6ac56127273a91", null ],
     [ "ValueLike", "structsqlcpp_1_1ValueLike.html#a7feb983857b7ac03558243b28c3371ff", null ],
     [ "build_s", "structsqlcpp_1_1ValueLike.html#a2ab8440582fce85507a6e9c3e839a59a", null ],
+    [ "edit_var_map", "structsqlcpp_1_1ValueLike.html#a8b01cd6d5afea4e08bda7c2f61c5b333", null ],
     [ "value_", "structsqlcpp_1_1ValueLike.html#a05032022e9117d8ccb19d46d3bfbd821", null ]
 ];

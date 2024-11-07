@@ -1,6 +1,6 @@
 <map id="sqlcpp::Insert" name="sqlcpp::Insert">
 <area shape="rect" id="node1" title="插入语句构建器" alt="" coords="363,228,472,255"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="56,5,175,32"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="56,5,175,32"/>
 <area shape="rect" id="node3" title=" " alt="" coords="37,56,194,83"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,107,225,178"/>
 <area shape="rect" id="node5" title=" " alt="" coords="15,203,215,229"/>

@@ -1,4 +1,4 @@
 <map id="sqlcpp::Index" name="sqlcpp::Index">
 <area shape="rect" id="node1" title="索引组件, 创建字段一般的(普通/唯一)索引" alt="" coords="11,80,119,107"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
 </map>

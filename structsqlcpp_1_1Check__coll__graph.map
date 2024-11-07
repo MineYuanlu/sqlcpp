@@ -1,5 +1,5 @@
 <map id="sqlcpp::Check" name="sqlcpp::Check">
 <area shape="rect" id="node1" title="CHECK约束，用于定义数据表中的检查条件" alt="" coords="65,95,177,121"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
 <area shape="rect" id="node3" title=" " alt="" coords="147,5,206,32"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="sqlcpp::Column" name="sqlcpp::Column">
 <area shape="rect" id="node1" title="字段定义, 用于构建CREATE TABLE语句" alt="" coords="381,197,504,224"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="40,5,159,32"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="40,5,159,32"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,56,193,112"/>
 <area shape="rect" id="node4" title=" " alt="" coords="74,169,125,196"/>
 <area shape="rect" id="node5" title=" " alt="" coords="70,220,129,247"/>

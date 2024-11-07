@@ -1,11 +1,12 @@
 <map id="sqlcpp::Select" name="sqlcpp::Select">
-<area shape="rect" id="node1" title=" " alt="" coords="345,196,457,223"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="56,5,175,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="15,56,215,83"/>
-<area shape="rect" id="node4" title=" " alt="" coords="10,107,221,133"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,158,225,199"/>
-<area shape="rect" id="node6" title=" " alt="" coords="15,224,216,251"/>
-<area shape="rect" id="node7" title=" " alt="" coords="18,275,213,301"/>
-<area shape="rect" id="node8" title=" " alt="" coords="11,325,219,352"/>
-<area shape="rect" id="node9" title=" " alt="" coords="17,376,214,403"/>
+<area shape="rect" id="node1" title=" " alt="" coords="345,217,457,244"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="56,5,175,32"/>
+<area shape="rect" id="node3" href="$structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="46,56,185,83"/>
+<area shape="rect" id="node4" title=" " alt="" coords="15,107,215,133"/>
+<area shape="rect" id="node5" title=" " alt="" coords="10,157,221,184"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,209,225,250"/>
+<area shape="rect" id="node7" title=" " alt="" coords="15,275,216,301"/>
+<area shape="rect" id="node8" title=" " alt="" coords="18,325,213,352"/>
+<area shape="rect" id="node9" title=" " alt="" coords="11,376,219,403"/>
+<area shape="rect" id="node10" title=" " alt="" coords="17,427,214,453"/>
 </map>

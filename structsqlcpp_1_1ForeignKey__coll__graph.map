@@ -1,6 +1,6 @@
 <map id="sqlcpp::ForeignKey" name="sqlcpp::ForeignKey">
 <area shape="rect" id="node1" title="外键定义, 用于构建CREATE TABLE语句" alt="" coords="243,109,387,136"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
 <area shape="rect" id="node3" title=" " alt="" coords="148,5,307,32"/>
 <area shape="rect" id="node4" title=" " alt="" coords="331,5,478,32"/>
 <area shape="rect" id="node5" title=" " alt="" coords="502,5,561,32"/>

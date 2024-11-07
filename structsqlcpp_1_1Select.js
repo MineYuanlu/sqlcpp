@@ -7,6 +7,7 @@ var structsqlcpp_1_1Select =
     [ "Select", "structsqlcpp_1_1Select.html#ae9d8ca344d63fbcf02b0937f82cb2875", null ],
     [ "Select", "structsqlcpp_1_1Select.html#a2f7b3a8ccf3ec6d20237416e935af1d7", null ],
     [ "build_s", "structsqlcpp_1_1Select.html#aca5837e7d46aa0831a781015665cff38", null ],
+    [ "edit_var_map", "structsqlcpp_1_1Select.html#a0efdd2528453de5a53b5b8bb3ebc74e5", null ],
     [ "from", "structsqlcpp_1_1Select.html#a9007b37ebd070258087a1d80d66ce939", null ],
     [ "from", "structsqlcpp_1_1Select.html#af6b4e5c612e984e04e8f1b6b77c1c113", null ],
     [ "from", "structsqlcpp_1_1Select.html#a6c0e362b1d7c910875d6ed9eef3099ea", null ],

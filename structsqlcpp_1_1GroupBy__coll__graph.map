@@ -1,5 +1,6 @@
 <map id="sqlcpp::GroupBy" name="sqlcpp::GroupBy">
-<area shape="rect" id="node1" title="分组组件, 按某一列或多列的值进行分组, 将具有相同值的行归为一组" alt="" coords="91,95,219,121"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="5,5,124,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="147,5,347,32"/>
+<area shape="rect" id="node1" title="分组组件, 按某一列或多列的值进行分组, 将具有相同值的行归为一组" alt="" coords="154,95,282,121"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node3" href="$structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="149,5,287,32"/>
+<area shape="rect" id="node4" title=" " alt="" coords="311,5,511,32"/>
 </map>

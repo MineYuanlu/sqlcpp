@@ -1,4 +1,4 @@
 <map id="sqlcpp::Delete" name="sqlcpp::Delete">
 <area shape="rect" id="node1" title="删除语句构建器" alt="" coords="7,80,122,107"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
 </map>

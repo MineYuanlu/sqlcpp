@@ -42,11 +42,13 @@ var annotated_dup =
       [ "Value", "structsqlcpp_1_1Value.html", "structsqlcpp_1_1Value" ],
       [ "BlobValue", "structsqlcpp_1_1BlobValue.html", "structsqlcpp_1_1BlobValue" ],
       [ "NullValue", "structsqlcpp_1_1NullValue.html", "structsqlcpp_1_1NullValue" ],
-      [ "IndexedVarValue", "structsqlcpp_1_1IndexedVarValue.html", "structsqlcpp_1_1IndexedVarValue" ],
       [ "VarValue", "structsqlcpp_1_1VarValue.html", "structsqlcpp_1_1VarValue" ],
+      [ "IndexedVarValue", "structsqlcpp_1_1IndexedVarValue.html", "structsqlcpp_1_1IndexedVarValue" ],
       [ "ValueLike", "structsqlcpp_1_1ValueLike.html", "structsqlcpp_1_1ValueLike" ],
       [ "Where", "structsqlcpp_1_1Where.html", "structsqlcpp_1_1Where" ],
       [ "Builder", "structsqlcpp_1_1Builder.html", "structsqlcpp_1_1Builder" ],
+      [ "VarBuilder", "structsqlcpp_1_1VarBuilder.html", "structsqlcpp_1_1VarBuilder" ],
+      [ "VarMap", "structsqlcpp_1_1VarMap.html", "structsqlcpp_1_1VarMap" ],
       [ "Type", "structsqlcpp_1_1Type.html", "structsqlcpp_1_1Type" ],
       [ "version", "structsqlcpp_1_1version.html", "structsqlcpp_1_1version" ]
     ] ]

@@ -1,5 +1,6 @@
 <map id="sqlcpp::ValueLike" name="sqlcpp::ValueLike">
-<area shape="rect" id="node1" title=" " alt="" coords="376,49,511,76"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="83,5,202,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,57,280,157"/>
+<area shape="rect" id="node1" title=" " alt="" coords="376,56,511,83"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="83,5,202,32"/>
+<area shape="rect" id="node3" href="$structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="73,56,212,83"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,107,280,207"/>
 </map>

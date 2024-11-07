@@ -1,0 +1,21 @@
+<map id="sqlcpp::VarBuilder" name="sqlcpp::VarBuilder">
+<area shape="rect" id="node1" title="参数构建基类" alt="" coords="5,385,144,412"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Cond.html" title="条件构建器接口" alt="" coords="217,132,323,159"/>
+<area shape="rect" id="node9" href="$structsqlcpp_1_1Condition.html" title="条件接口" alt="" coords="203,183,337,209"/>
+<area shape="rect" id="node10" href="$structsqlcpp_1_1FieldLike.html" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / FuncField" alt="" coords="205,233,335,260"/>
+<area shape="rect" id="node11" href="$structsqlcpp_1_1GroupBy.html" title="分组组件, 按某一列或多列的值进行分组, 将具有相同值的行归为一组" alt="" coords="206,284,334,311"/>
+<area shape="rect" id="node12" href="$structsqlcpp_1_1Having.html" title="过滤组件, 基于聚合后的数据来进行条件筛选" alt="" coords="211,335,329,361"/>
+<area shape="rect" id="node13" href="$structsqlcpp_1_1OrderBy.html" title="多个字段的排序条件" alt="" coords="207,385,333,412"/>
+<area shape="rect" id="node14" href="$structsqlcpp_1_1OrderByField.html" title="单个字段的排序条件" alt="" coords="192,436,348,463"/>
+<area shape="rect" id="node15" href="$structsqlcpp_1_1Select.html" title=" " alt="" coords="214,487,326,513"/>
+<area shape="rect" id="node16" href="$structsqlcpp_1_1ValueLike.html" title=" " alt="" coords="203,537,337,564"/>
+<area shape="rect" id="node17" href="$structsqlcpp_1_1VarValue.html" title="普通占位符, 表示形式为&quot;?&quot;, 可以使用VAR(N)代表有索引的占位符" alt="" coords="205,588,335,615"/>
+<area shape="rect" id="node19" href="$structsqlcpp_1_1Where.html" title=" " alt="" coords="213,639,327,665"/>
+<area shape="rect" id="node3" href="$structsqlcpp_1_1CondBetween.html" title="BETWEEN条件" alt="" coords="405,5,567,32"/>
+<area shape="rect" id="node4" href="$structsqlcpp_1_1CondCmp.html" title="比较条件" alt="" coords="419,56,553,83"/>
+<area shape="rect" id="node5" href="$structsqlcpp_1_1CondIn.html" title="IN条件" alt="" coords="427,107,545,133"/>
+<area shape="rect" id="node6" href="$structsqlcpp_1_1CondNotIn.html" title="NOT IN条件" alt="" coords="416,157,556,184"/>
+<area shape="rect" id="node7" href="$structsqlcpp_1_1CondOp.html" title="连接条件" alt="" coords="425,208,547,235"/>
+<area shape="rect" id="node8" href="$structsqlcpp_1_1CondRaw.html" title="原生条件" alt="" coords="419,259,553,285"/>
+<area shape="rect" id="node18" href="$structsqlcpp_1_1IndexedVarValue.html" title="带有索引的占位符, 表示形式为&quot;?&quot; /" alt="" coords="396,588,576,615"/>
+</map>

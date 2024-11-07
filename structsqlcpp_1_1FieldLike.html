@@ -102,8 +102,9 @@ Inheritance diagram for sqlcpp::FieldLike:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1FieldLike__inherit__graph.png" border="0" usemap="#asqlcpp_1_1FieldLike_inherit__map" alt="Inheritance graph"/></div>
 <map name="asqlcpp_1_1FieldLike_inherit__map" id="asqlcpp_1_1FieldLike_inherit__map">
-<area shape="rect" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / FuncField" alt="" coords="5,80,135,107"/>
-<area shape="rect" href="structsqlcpp_1_1Builder.html" title=" " alt="" coords="11,5,129,32"/>
+<area shape="rect" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / FuncField" alt="" coords="76,80,205,107"/>
+<area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
+<area shape="rect" href="structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="149,5,287,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -111,9 +112,10 @@ Collaboration diagram for sqlcpp::FieldLike:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1FieldLike__coll__graph.png" border="0" usemap="#asqlcpp_1_1FieldLike_coll__map" alt="Collaboration graph"/></div>
 <map name="asqlcpp_1_1FieldLike_coll__map" id="asqlcpp_1_1FieldLike_coll__map">
-<area shape="rect" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / FuncField" alt="" coords="88,124,217,151"/>
-<area shape="rect" href="structsqlcpp_1_1Builder.html" title=" " alt="" coords="5,20,124,47"/>
-<area shape="rect" title=" " alt="" coords="148,5,333,61"/>
+<area shape="rect" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / FuncField" alt="" coords="279,56,408,83"/>
+<area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="39,5,157,32"/>
+<area shape="rect" href="structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="29,56,167,83"/>
+<area shape="rect" title=" " alt="" coords="5,107,191,163"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -141,7 +143,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2a1b8b6363f66200d4dd8bf4e4fd56eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用字段构造  <a href="structsqlcpp_1_1FieldLike.html#a2a1b8b6363f66200d4dd8bf4e4fd56eb">More...</a><br /></td></tr>
 <tr class="separator:a2a1b8b6363f66200d4dd8bf4e4fd56eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dbee5f8872f48223704a51227a55f97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FieldLike.html#a4dbee5f8872f48223704a51227a55f97">build_s</a> (std::ostream &amp;oss, const <a class="el" href="structsqlcpp_1_1Type.html">Type</a> &amp;t=<a class="el" href="namespacesqlcpp.html#a19237f9b2742dd80678d8dfa286dcfd6">SQLCPP_DEFAULT_TYPE</a>) const override</td></tr>
+<tr class="memdesc:a4dbee5f8872f48223704a51227a55f97"><td class="mdescLeft">&#160;</td><td class="mdescRight">分步的将SQL语句输出到流中  <a href="structsqlcpp_1_1FieldLike.html#a4dbee5f8872f48223704a51227a55f97">More...</a><br /></td></tr>
 <tr class="separator:a4dbee5f8872f48223704a51227a55f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2fe1b7d8882436b39095c0a3c92ab95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FieldLike.html#aa2fe1b7d8882436b39095c0a3c92ab95">edit_var_map</a> (<a class="el" href="structsqlcpp_1_1VarMap.html">VarMap</a> &amp;var_map) const override</td></tr>
+<tr class="separator:aa2fe1b7d8882436b39095c0a3c92ab95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39aa8b7429f2e17a051dbd13b87d1b87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1CondCmp.html">CondCmp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FieldLike.html#a39aa8b7429f2e17a051dbd13b87d1b87">LIKE</a> (<a class="el" href="structsqlcpp_1_1ValueLike.html">ValueLike</a> v) const</td></tr>
 <tr class="memdesc:a39aa8b7429f2e17a051dbd13b87d1b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回like比较条件语句  <a href="structsqlcpp_1_1FieldLike.html#a39aa8b7429f2e17a051dbd13b87d1b87">More...</a><br /></td></tr>
 <tr class="separator:a39aa8b7429f2e17a051dbd13b87d1b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,7 +170,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac418c3b95d8b2e73fcd7dd29dd4ac4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structsqlcpp_1_1Builder"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structsqlcpp_1_1Builder')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structsqlcpp_1_1Builder.html">sqlcpp::Builder</a></td></tr>
 <tr class="memitem:aa7c60ee0415e90c24cb56e277202d90d inherit pub_methods_structsqlcpp_1_1Builder"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Builder.html#aa7c60ee0415e90c24cb56e277202d90d">build</a> (const <a class="el" href="structsqlcpp_1_1Type.html">Type</a> &amp;t=<a class="el" href="namespacesqlcpp.html#a19237f9b2742dd80678d8dfa286dcfd6">SQLCPP_DEFAULT_TYPE</a>) const</td></tr>
+<tr class="memdesc:aa7c60ee0415e90c24cb56e277202d90d inherit pub_methods_structsqlcpp_1_1Builder"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出SQL语句  <a href="structsqlcpp_1_1Builder.html#aa7c60ee0415e90c24cb56e277202d90d">More...</a><br /></td></tr>
 <tr class="separator:aa7c60ee0415e90c24cb56e277202d90d inherit pub_methods_structsqlcpp_1_1Builder"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e530fc93bc44c93ea26f57b9601b59a inherit pub_methods_structsqlcpp_1_1Builder"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Builder.html#a8e530fc93bc44c93ea26f57b9601b59a">~Builder</a> ()=default</td></tr>
+<tr class="separator:a8e530fc93bc44c93ea26f57b9601b59a inherit pub_methods_structsqlcpp_1_1Builder"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_structsqlcpp_1_1VarBuilder"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structsqlcpp_1_1VarBuilder')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structsqlcpp_1_1VarBuilder.html">sqlcpp::VarBuilder</a></td></tr>
+<tr class="memitem:a2327f53bbadcc47e50c7c98414740573 inherit pub_methods_structsqlcpp_1_1VarBuilder"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsqlcpp_1_1VarMap.html">VarMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1VarBuilder.html#a2327f53bbadcc47e50c7c98414740573">get_var_map</a> () const</td></tr>
+<tr class="separator:a2327f53bbadcc47e50c7c98414740573 inherit pub_methods_structsqlcpp_1_1VarBuilder"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -431,7 +442,44 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>分步的将SQL语句输出到流中 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oss</td><td>输出流 </td></tr>
+    <tr><td class="paramname">t</td><td>数据库类型，默认为 SQLCPP_DEFAULT_TYPE </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implements <a class="el" href="structsqlcpp_1_1Builder.html#a18829770c3d514b233b3a94d8fe16035">sqlcpp::Builder</a>.</p>
+
+</div>
+</div>
+<a id="aa2fe1b7d8882436b39095c0a3c92ab95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2fe1b7d8882436b39095c0a3c92ab95">&#9670;&nbsp;</a></span>edit_var_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sqlcpp::FieldLike::edit_var_map </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsqlcpp_1_1VarMap.html">VarMap</a> &amp;&#160;</td>
+          <td class="paramname"><em>var_map</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="structsqlcpp_1_1VarBuilder.html#abb91948d70b13a0b33c326b8f96f2236">sqlcpp::VarBuilder</a>.</p>
 
 </div>
 </div>

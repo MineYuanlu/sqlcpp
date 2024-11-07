@@ -1,5 +1,5 @@
 <map id="sqlcpp::PrimaryKey" name="sqlcpp::PrimaryKey">
 <area shape="rect" id="node1" title="主键定义, 用于构建CREATE TABLE语句" alt="" coords="73,95,219,121"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
 <area shape="rect" id="node3" title=" " alt="" coords="148,5,307,32"/>
 </map>

@@ -1,17 +1,17 @@
 <map id="inc/sqlcpp/components/assign.hpp" name="inc/sqlcpp/components/assign.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="243,5,414,47"/>
-<area shape="rect" id="node2" href="$field_8hpp.html" title=" " alt="" coords="225,169,433,196"/>
-<area shape="rect" id="node3" href="$defs_8hpp.html" title=" " alt="" coords="137,244,261,271"/>
-<area shape="rect" id="node12" href="$value_8hpp.html" title=" " alt="" coords="435,95,651,121"/>
-<area shape="rect" id="node9" title=" " alt="" coords="409,244,483,271"/>
-<area shape="rect" id="node10" title=" " alt="" coords="631,244,699,271"/>
-<area shape="rect" id="node11" title=" " alt="" coords="297,244,360,271"/>
-<area shape="rect" id="node4" href="$types_8hpp.html" title=" " alt="" coords="5,319,137,345"/>
-<area shape="rect" id="node5" title=" " alt="" coords="345,393,403,420"/>
-<area shape="rect" id="node7" title=" " alt="" coords="161,319,237,345"/>
-<area shape="rect" id="node8" title=" " alt="" coords="262,319,337,345"/>
-<area shape="rect" id="node6" title=" " alt="" coords="23,393,120,420"/>
-<area shape="rect" id="node13" title=" " alt="" coords="508,169,579,196"/>
-<area shape="rect" id="node14" title=" " alt="" coords="603,169,670,196"/>
-<area shape="rect" id="node15" title=" " alt="" coords="694,169,771,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="463,5,634,47"/>
+<area shape="rect" id="node2" href="$field_8hpp.html" title=" " alt="" coords="445,169,653,196"/>
+<area shape="rect" id="node3" href="$defs_8hpp.html" title=" " alt="" coords="628,244,752,271"/>
+<area shape="rect" id="node12" href="$value_8hpp.html" title=" " alt="" coords="249,95,465,121"/>
+<area shape="rect" id="node9" title=" " alt="" coords="476,319,539,345"/>
+<area shape="rect" id="node10" title=" " alt="" coords="343,244,418,271"/>
+<area shape="rect" id="node11" title=" " alt="" coords="443,244,511,271"/>
+<area shape="rect" id="node4" href="$types_8hpp.html" title=" " alt="" coords="793,319,925,345"/>
+<area shape="rect" id="node5" title=" " alt="" coords="726,393,785,420"/>
+<area shape="rect" id="node7" title=" " alt="" coords="563,319,639,345"/>
+<area shape="rect" id="node8" title=" " alt="" coords="663,319,717,345"/>
+<area shape="rect" id="node6" title=" " alt="" coords="811,393,908,420"/>
+<area shape="rect" id="node13" title=" " alt="" coords="5,169,76,196"/>
+<area shape="rect" id="node14" title=" " alt="" coords="101,169,167,196"/>
+<area shape="rect" id="node15" title=" " alt="" coords="191,169,269,196"/>
 </map>

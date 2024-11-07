@@ -1,8 +1,9 @@
 <map id="sqlcpp::CondOp" name="sqlcpp::CondOp">
-<area shape="rect" id="node1" title="连接条件" alt="" coords="457,73,580,100"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="207,5,325,32"/>
-<area shape="rect" id="node3" href="$structsqlcpp_1_1Cond.html" title="条件构建器接口" alt="" coords="213,56,319,83"/>
-<area shape="rect" id="node4" href="$structsqlcpp_1_1CondOpType.html" title="条件连接符类型" alt="" coords="189,107,343,133"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,107,64,133"/>
-<area shape="rect" id="node6" title=" " alt="" coords="164,158,368,199"/>
+<area shape="rect" id="node1" title="连接条件" alt="" coords="537,77,660,104"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="287,5,405,32"/>
+<area shape="rect" id="node3" href="$structsqlcpp_1_1Cond.html" title="条件构建器接口" alt="" coords="293,56,399,83"/>
+<area shape="rect" id="node4" href="$structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="5,56,144,83"/>
+<area shape="rect" id="node5" href="$structsqlcpp_1_1CondOpType.html" title="条件连接符类型" alt="" coords="269,107,423,133"/>
+<area shape="rect" id="node6" title=" " alt="" coords="45,107,104,133"/>
+<area shape="rect" id="node7" title=" " alt="" coords="244,158,448,199"/>
 </map>

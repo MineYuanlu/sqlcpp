@@ -14,5 +14,6 @@ var structsqlcpp_1_1OrderBy =
     [ "by", "structsqlcpp_1_1OrderBy.html#a71401bc058bb284cb1f5ab8677ea6790", null ],
     [ "by", "structsqlcpp_1_1OrderBy.html#aa492359ecfa1290e43b671524818aba5", null ],
     [ "by", "structsqlcpp_1_1OrderBy.html#a3a6b6488867737ab3820279822ddcd9d", null ],
+    [ "edit_var_map", "structsqlcpp_1_1OrderBy.html#a6f8d10c1f775be4a434f8d5f71ab74eb", null ],
     [ "fields_", "structsqlcpp_1_1OrderBy.html#a25b0e88179e2d84c588c6ae7a43d2086", null ]
 ];

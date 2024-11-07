@@ -10,5 +10,6 @@ var structsqlcpp_1_1Condition =
     [ "Condition", "structsqlcpp_1_1Condition.html#a87ecbc841e17d25e80630c368f5b84b0", null ],
     [ "build_s", "structsqlcpp_1_1Condition.html#a997e78835b93d75e3b68a07847199a90", null ],
     [ "CAST", "structsqlcpp_1_1Condition.html#a434ed287fa9d10274fe304d73425789a", null ],
+    [ "edit_var_map", "structsqlcpp_1_1Condition.html#acaf57d7fe80ab564e907a3bc77011fd0", null ],
     [ "conditions_", "structsqlcpp_1_1Condition.html#a49d9c6958b5c1339c3a5e5675bc36823", null ]
 ];

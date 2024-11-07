@@ -1,6 +1,7 @@
 <map id="sqlcpp::Having" name="sqlcpp::Having">
-<area shape="rect" id="node1" title="过滤组件, 基于聚合后的数据来进行条件筛选" alt="" coords="603,31,721,57"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title=" " alt="" coords="54,5,173,32"/>
-<area shape="rect" id="node3" href="$structsqlcpp_1_1Condition.html" title="条件接口" alt="" coords="348,56,483,83"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,56,221,141"/>
+<area shape="rect" id="node1" title="过滤组件, 基于聚合后的数据来进行条件筛选" alt="" coords="603,85,721,112"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="54,165,173,192"/>
+<area shape="rect" id="node4" href="$structsqlcpp_1_1Condition.html" title="条件接口" alt="" coords="348,85,483,112"/>
+<area shape="rect" id="node3" href="$structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="44,5,183,32"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,56,221,141"/>
 </map>
