@@ -83,7 +83,7 @@ namespace sqlcpp {
 
 
     /// @brief 形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / FuncField
-    struct FieldLike final : public Builder {
+    struct FieldLike final : public Builder, public VarBuilder {
         std::variant<Field, RawField, FuncField> field_;///< 实际字段
 
         /// @brief 使用字段名构造
@@ -106,6 +106,7 @@ namespace sqlcpp {
         FieldLike(FuncField field);
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void edit_var_map(VarMap &var_map) const override;
 
         /// @brief 返回like比较条件语句
         CondCmp LIKE(ValueLike v) const;

@@ -12,6 +12,9 @@ namespace sqlcpp {
         else
             oss << " DESC";
     }
+    void OrderByField::edit_var_map(VarMap &var_map) const {
+        field_.edit_var_map(var_map);
+    }
 
     OrderBy::OrderBy(Field field, Order o) : OrderBy(OrderByField{std::move(field), o}) {}
     OrderBy::OrderBy(RawField field, Order o) : OrderBy(OrderByField{std::move(field), o}) {}
@@ -48,6 +51,11 @@ namespace sqlcpp {
         for (size_t i = 0; i < sz; ++i) {
             fields_[i].build_s(oss, t);
             if (i < sz - 1) oss << ", ";
+        }
+    }
+    void OrderBy::edit_var_map(VarMap &var_map) const {
+        for (auto &field: fields_) {
+            field.edit_var_map(var_map);
         }
     }
 

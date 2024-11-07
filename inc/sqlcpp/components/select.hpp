@@ -15,7 +15,7 @@
 #include <vector>
 namespace sqlcpp {
 
-    struct Select final : public Builder {
+    struct Select final : public Builder, public VarBuilder {
         std::vector<FieldLike> fields_{};
         std::optional<Froms> from_{};
         std::optional<Where> where_{};
@@ -75,6 +75,7 @@ namespace sqlcpp {
 
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void edit_var_map(VarMap &var_map) const override;
     };
 
     template<

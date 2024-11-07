@@ -40,7 +40,7 @@ namespace sqlcpp {
     struct CondOp;
     struct Condition;
     /// @brief 条件构建器接口
-    struct Cond {
+    struct Cond : public VarBuilder {
         virtual CondOp AND(const Condition &c);
         virtual CondOp OR(const Condition &c);
         virtual CondOp NOT();
@@ -57,6 +57,7 @@ namespace sqlcpp {
         CondCmp(FieldLike field, CmpOp op, ValueLike value);
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void edit_var_map(VarMap &var_map) const override;
     };
 
 
@@ -76,6 +77,7 @@ namespace sqlcpp {
         CondIn(FieldLike field, std::vector<ValueLike> values);
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void edit_var_map(VarMap &var_map) const override;
     };
 
 
@@ -87,6 +89,7 @@ namespace sqlcpp {
         CondNotIn(FieldLike field, std::vector<ValueLike> values);
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void edit_var_map(VarMap &var_map) const override;
     };
 
 
@@ -99,6 +102,7 @@ namespace sqlcpp {
         CondBetween(FieldLike field, ValueLike start, ValueLike end);
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void edit_var_map(VarMap &var_map) const override;
     };
 
 
@@ -110,6 +114,7 @@ namespace sqlcpp {
         CondRaw(std::string raw_cond);
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void edit_var_map(VarMap &var_map) const override;
     };
 
 
@@ -146,6 +151,7 @@ namespace sqlcpp {
         CondOp &add(Condition c);
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void edit_var_map(VarMap &var_map) const override;
     };
 
 
@@ -157,7 +163,7 @@ namespace sqlcpp {
 
 
     /// @brief 条件接口
-    struct Condition final : public Builder {
+    struct Condition final : public Builder, public VarBuilder {
         std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw> conditions_;
 
         Condition(std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw> cond);
@@ -173,6 +179,7 @@ namespace sqlcpp {
         static Condition CAST(const Cond *);
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void edit_var_map(VarMap &var_map) const override;
     };
 
 

@@ -10,12 +10,13 @@ namespace sqlcpp {
 
 
     /// @brief 过滤组件, 基于聚合后的数据来进行条件筛选
-    struct Having final : public Builder {
+    struct Having final : public Builder, public VarBuilder {
         Condition condition_;///< 条件表达式
 
         Having(Condition condition);
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void edit_var_map(VarMap &var_map) const override;
     };
 
 

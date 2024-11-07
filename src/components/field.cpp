@@ -81,6 +81,9 @@ namespace sqlcpp {
     void FieldLike::build_s(std::ostream &oss, const Type &t) const {
         std::visit([&](const auto &arg) { arg.build_s(oss, t); }, field_);
     }
+    void FieldLike::edit_var_map([[maybe_unused]] VarMap &var_map) const {
+        // nothing to do
+    }
     CondCmp FieldLike::LIKE(ValueLike v) const {
         return {*this, CmpOp::LIKE, v};
     }

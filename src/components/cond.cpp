@@ -14,6 +14,10 @@ namespace sqlcpp {
         oss << cmp_op_str(op_);
         value_.build_s(oss, t);
     }
+    void CondCmp::edit_var_map(VarMap &var_map) const {
+        field_.edit_var_map(var_map);
+        value_.edit_var_map(var_map);
+    }
 
 
     CondIn::CondIn(FieldLike field, std::vector<ValueLike> values)
@@ -27,6 +31,10 @@ namespace sqlcpp {
             if (i < sz - 1) oss << ", ";
         }
         oss << ')';
+    }
+    void CondIn::edit_var_map(VarMap &var_map) const {
+        field_.edit_var_map(var_map);
+        for (const auto &v: values_) v.edit_var_map(var_map);
     }
 
 
@@ -42,6 +50,10 @@ namespace sqlcpp {
         }
         oss << ')';
     }
+    void CondNotIn::edit_var_map(VarMap &var_map) const {
+        field_.edit_var_map(var_map);
+        for (const auto &v: values_) v.edit_var_map(var_map);
+    }
 
 
     CondBetween::CondBetween(FieldLike field, ValueLike start, ValueLike end)
@@ -53,11 +65,19 @@ namespace sqlcpp {
         oss << " AND ";
         end_.build_s(oss, t);
     }
+    void CondBetween::edit_var_map(VarMap &var_map) const {
+        field_.edit_var_map(var_map);
+        start_.edit_var_map(var_map);
+        end_.edit_var_map(var_map);
+    }
 
 
     CondRaw::CondRaw(std::string raw_cond) : raw_cond_(std::move(raw_cond)) {}
     void CondRaw::build_s(std::ostream &oss, [[maybe_unused]] const Type &t) const {
         oss << raw_cond_;
+    }
+    void CondRaw::edit_var_map([[maybe_unused]] VarMap &var_map) const {
+        // nothing to do
     }
 
 
@@ -91,6 +111,9 @@ namespace sqlcpp {
             }
         }
     }
+    void CondOp::edit_var_map(VarMap &var_map) const {
+        for (const auto &c: subs_) c->edit_var_map(var_map);
+    }
 
 
     Condition::Condition(std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw> cond) : conditions_(cond){};
@@ -113,5 +136,8 @@ namespace sqlcpp {
     }
     void Condition::build_s(std::ostream &oss, const Type &t) const {
         std::visit([&](const auto &arg) { arg.build_s(oss, t); }, conditions_);
+    }
+    void Condition::edit_var_map(VarMap &var_map) const {
+        std::visit([&](const auto &arg) { arg.edit_var_map(var_map); }, conditions_);
     }
 }// namespace sqlcpp

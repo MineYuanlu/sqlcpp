@@ -11,7 +11,7 @@ namespace sqlcpp {
 
 
     /// @brief 分组组件, 按某一列或多列的值进行分组, 将具有相同值的行归为一组
-    struct GroupBy final : public Builder {
+    struct GroupBy final : public Builder, public VarBuilder {
         std::vector<FieldLike> fields_;///< 分组的列
 
         /// @brief 使用单个列构造
@@ -33,6 +33,7 @@ namespace sqlcpp {
         }
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void edit_var_map(VarMap &var_map) const override;
     };
 
 

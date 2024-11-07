@@ -15,4 +15,7 @@ namespace sqlcpp {
             if (i < sz - 1) oss << ", ";
         }
     }
+    void GroupBy::edit_var_map(VarMap &var_map) const {
+        for (const auto &field: fields_) field.edit_var_map(var_map);
+    }
 }// namespace sqlcpp

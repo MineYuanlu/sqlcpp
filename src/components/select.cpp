@@ -1,4 +1,5 @@
 #include "sqlcpp/components/select.hpp"
+#include "sqlcpp/components/value.hpp"
 namespace sqlcpp {
     Select::Select(FieldLike field) : fields_({std::move(field)}) {}
     Select::Select(std::vector<FieldLike> fields) : fields_(std::move(fields)) {}
@@ -132,5 +133,13 @@ namespace sqlcpp {
             }
         }
         oss << ';';
+    }
+    void Select::edit_var_map(VarMap &var_map) const {
+        if (where_) where_->edit_var_map(var_map);
+        if (group_by_) group_by_->edit_var_map(var_map);
+        if (having_) having_->edit_var_map(var_map);
+        if (order_by_) order_by_->edit_var_map(var_map);
+        if (limit_ && std::holds_alternative<VarValue>(*limit_)) std::get<VarValue>(*limit_).edit_var_map(var_map);
+        if (offset_ && std::holds_alternative<VarValue>(*offset_)) std::get<VarValue>(*offset_).edit_var_map(var_map);
     }
 }// namespace sqlcpp

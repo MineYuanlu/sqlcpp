@@ -60,15 +60,23 @@ namespace sqlcpp {
     }
 
 
+    void VarValue::build_s(std::ostream &oss, [[maybe_unused]] const Type &t) const {
+        oss << '?';
+    }
+    void VarValue::edit_var_map(VarMap &var_map) const {
+        throw std::invalid_argument("[sqlcpp] (NonIndexed)VarValue cannot use var map.");
+    }
+
     IndexedVarValue::IndexedVarValue(size_t index) : index_(index) {}
     void IndexedVarValue::build_s(std::ostream &oss, [[maybe_unused]] const Type &t) const {
         oss << '?';
     }
-
-
-    void VarValue::build_s(std::ostream &oss, [[maybe_unused]] const Type &t) const {
-        oss << '?';
+    void IndexedVarValue::edit_var_map([[maybe_unused]] VarMap &var_map) const {
+        var_map.add_var(index_);
     }
+
+    IndexedVarValue VarValue::operator()(size_t index) const { return IndexedVarValue{index}; }
+    IndexedVarValue VarValue::operator[](size_t index) const { return IndexedVarValue{index}; }
 
 
     ValueLike::ValueLike(Value value) : value_(std::move(value)) {}
@@ -91,5 +99,11 @@ namespace sqlcpp {
     ValueLike::ValueLike(std::nullopt_t) : value_(NULL_VALUE) {}
     void ValueLike::build_s(std::ostream &oss, const Type &t) const {
         std::visit([&](const auto &arg) { arg.build_s(oss, t); }, value_);
+    }
+    void ValueLike::edit_var_map(VarMap &var_map) const {
+        if (std::holds_alternative<VarValue>(value_))
+            std::get<VarValue>(value_).edit_var_map(var_map);
+        else if (std::holds_alternative<IndexedVarValue>(value_))
+            std::get<IndexedVarValue>(value_).edit_var_map(var_map);
     }
 }// namespace sqlcpp

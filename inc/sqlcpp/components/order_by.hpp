@@ -22,7 +22,7 @@ namespace sqlcpp {
 
 
     /// @brief 单个字段的排序条件
-    struct OrderByField final : public Builder {
+    struct OrderByField final : public Builder, public VarBuilder {
         FieldLike field_;             ///< 排序字段
         Order direction_ = Order::ASC;///< 排序顺序
 
@@ -32,11 +32,12 @@ namespace sqlcpp {
         OrderByField(FuncField field, Order o = Order::ASC);
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void edit_var_map(VarMap &var_map) const override;
     };
 
 
     /// @brief 多个字段的排序条件
-    struct OrderBy final : public Builder {
+    struct OrderBy final : public Builder, public VarBuilder {
         std::vector<OrderByField> fields_;///< 排序字段列表
 
         OrderBy(Field field, Order o = Order::ASC);
@@ -61,6 +62,7 @@ namespace sqlcpp {
         }
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void edit_var_map(VarMap &var_map) const override;
     };
 
 }// namespace sqlcpp

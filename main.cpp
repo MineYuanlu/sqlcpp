@@ -7,6 +7,7 @@
 #include "sqlcpp/components/table.hpp"
 #include "sqlcpp/components/update.hpp"
 #include "sqlcpp/components/value.hpp"
+#include <cstddef>
 #include <cstdint>
 #include <iomanip>
 #include <iostream>
@@ -56,6 +57,28 @@ private:
     uint64_t uuid;
     Stmt(sqlite3_stmt *stmt, uint64_t uuid) : stmt(stmt), uuid(uuid) {}
 };
+struct Binder {
+    sqlite3 *db;
+    const Stmt &stmt;
+    size_t idx = 0;
+    Binder(sqlite3 *db, const Stmt &stmt) : db(db), stmt(stmt) {}
+    Binder &operator<<(int val) {
+        ASSERT_SQLITE_C(sqlite3_bind_int(stmt.stmt, ++idx, val), SQLITE_OK, "BIND INT", sqlite3_errmsg(db));
+        return *this;
+    }
+    Binder &operator<<(double val) {
+        ASSERT_SQLITE_C(sqlite3_bind_double(stmt.stmt, ++idx, val), SQLITE_OK, "BIND DOUBLE", sqlite3_errmsg(db));
+        return *this;
+    }
+    Binder &operator<<(const char *val) {
+        ASSERT_SQLITE_C(sqlite3_bind_text(stmt.stmt, ++idx, val, -1, SQLITE_STATIC), SQLITE_OK, "BIND TEXT", sqlite3_errmsg(db));
+        return *this;
+    }
+    Binder &operator<<(const std::string &val) {
+        ASSERT_SQLITE_C(sqlite3_bind_text(stmt.stmt, ++idx, val.c_str(), -1, SQLITE_STATIC), SQLITE_OK, "BIND TEXT", sqlite3_errmsg(db));
+        return *this;
+    }
+};
 struct Database {
     sqlite3 *db;
     Database() {
@@ -86,6 +109,11 @@ struct Database {
     void bind(Func func, const Stmt &stmt, int index, Args... args) {
         ASSERT_SQLITE_C(func(stmt.stmt, index, args...), SQLITE_OK, "BIND DATA", sqlite3_errmsg(db));
     }
+
+    Binder binder(const Stmt &stmt) {
+        return {db, stmt};
+    }
+
     /// @return has next row
     bool run(const Stmt &stmt) {
         int ret;
@@ -254,18 +282,29 @@ void select_data() {
         db.run_select(stmt);
     }
     {
-        auto sql = Select(
-                           t["name"], t["project"].as("pid"), t["user"].as("uid"), t["active"],
-                           u["name"].as("username"), u["age"].as("userage"), p["name"].as("pname"), p["owner"].as("powner"))
-                           .from(t
-                                         .join(LEFT_JOIN, p, t["project"] == p["id"])
-                                         .join(LEFT_JOIN, u, t["user"] == u["id"]))
-                           .where(t["active"] == true && t["name"] == p["name"] || u["age"] < VAR(1))
-                           .order_by(t["name"].desc())
-                           .build();
+        auto select = Select(
+                              t["name"], t["project"].as("pid"), t["user"].as("uid"), t["active"],
+                              u["name"].as("username"), u["age"].as("userage"), p["name"].as("pname"), p["owner"].as("powner"))
+                              .from(t
+                                            .join(LEFT_JOIN, p, t["project"] == p["id"])
+                                            .join(LEFT_JOIN, u, t["user"] == u["id"]))
+                              .where(t["active"] == true && t["name"] == p["name"] || u["age"] < VAR(0))
+                              .order_by(t["name"].desc());
+        auto sql = select.build();
         auto stmt = db.prepare(sql);
-        db.bind(sqlite3_bind_int, stmt, 1, 20);
+        auto vars = select.get_var_map();
+
+        auto binder = db.binder(stmt);
+        for (size_t i = 0; i < vars.index_sql_to_code.size(); ++i) {
+            std::cout << "bind var " << i << " : " << vars.index_sql_to_code[i] << std::endl;
+        }
+        vars.bind(binder, 20);
         db.run_select(stmt);
+    }
+    {
+        static auto select = Select("name").from("table").where(Field("age") > VAR(1) && Field("time") < VAR(0));
+        static auto sql = select.build();
+        static auto var = select.get_var_map();
     }
 }
 
