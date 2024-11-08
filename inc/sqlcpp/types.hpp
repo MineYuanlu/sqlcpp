@@ -13,16 +13,19 @@
 #endif
 namespace sqlcpp {
 
+    /// @brief sqlcpp所支持的数据库类型
     enum class Types {
-        MYSQL,
-        SQLITE,
+        MYSQL, ///< MySQL数据库
+        SQLITE,///< SQLite数据库
     };
+    /// @brief sqlcpp所支持的数据库类型信息
+    /// @details 包含数据库类型、名称、表名、字段名、值名的引用符号
     struct Type {
-        Types type;
-        std::string_view name;
-        char quote_table;
-        char quote_field;
-        char quote_value;
+        Types type;           ///< 数据库类型
+        std::string_view name;///< 数据库名称
+        char quote_table;     ///< 表名引用符号
+        char quote_field;     ///< 字段名引用符号
+        char quote_value;     ///< 值名引用符号
         constexpr Type(Types type, std::string_view name, char quote_table, char quote_field, char quote_value)
             : type(type), name(name), quote_table(quote_table), quote_field(quote_field), quote_value(quote_value) {}
 
@@ -46,6 +49,7 @@ namespace sqlcpp {
     static constexpr const Type MYSQL{Types::MYSQL, "MYSQL", '`', '`', '\''};
     static constexpr const Type SQLITE{Types::SQLITE, "SQLITE", '"', '"', '\''};
 #if __has_include(<drogon/orm/SqlBinder.h>)
+    /// @brief 将drogon::orm::ClientType转换为sqlcpp::Type
     static const Type &trans(const drogon::orm::ClientType &t) {
         switch (t) {
             case drogon::orm::ClientType::Mysql:

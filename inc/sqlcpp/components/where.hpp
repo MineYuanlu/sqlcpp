@@ -8,8 +8,9 @@
 #include "sqlcpp/defs.hpp"
 namespace sqlcpp {
 
+    /// @brief 筛选组件
     struct Where final : public Builder, public VarBuilder {
-        Condition condition_;
+        Condition condition_;///< 条件表达式
 
         Where(Condition condition);
 

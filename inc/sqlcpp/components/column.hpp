@@ -5,12 +5,10 @@
 #ifndef SQLCPP_COMPONENTS_COLUMN__HPP_GUARD
 #define SQLCPP_COMPONENTS_COLUMN__HPP_GUARD
 
-#include "sqlcpp/components/field.hpp"
 #include "sqlcpp/defs.hpp"
 #include <optional>
 #include <string>
 #include <tuple>
-#include <variant>
 #include <vector>
 namespace sqlcpp {
 

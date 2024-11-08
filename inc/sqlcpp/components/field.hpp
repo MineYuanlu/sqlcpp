@@ -90,6 +90,7 @@ namespace sqlcpp {
         FuncField(std::string func, std::variant<Field, RawField> args, std::string alias);
         /// @brief 设置别称
         FuncField &alias(std::string alias);
+        /// @brief 设置别称
         FuncField &as(std::string alias);
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;

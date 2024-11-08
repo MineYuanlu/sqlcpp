@@ -6,6 +6,7 @@
 #define SQLCPP_VERSION__HPP_GUARD
 
 namespace sqlcpp {
+    /// @brief 版本信息
     struct version {
         [[nodiscard]] static int major();          ///< 主版本号, 未知时为0
         [[nodiscard]] static int minor();          ///< 次版本号, 未知时为0
