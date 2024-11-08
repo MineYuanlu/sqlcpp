@@ -116,13 +116,14 @@ namespace sqlcpp {
     }
 
 
-    Condition::Condition(std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw> cond) : conditions_(cond){};
-    Condition::Condition(CondOp cond) : conditions_(cond){};
-    Condition::Condition(CondCmp cond) : conditions_(cond){};
-    Condition::Condition(CondIn cond) : conditions_(cond){};
-    Condition::Condition(CondNotIn cond) : conditions_(cond){};
-    Condition::Condition(CondBetween cond) : conditions_(cond){};
-    Condition::Condition(CondRaw cond) : conditions_(cond){};
+    Condition::Condition(std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw, FuncField> cond) : conditions_(std::move(cond)){};
+    Condition::Condition(CondOp cond) : conditions_(std::move(cond)){};
+    Condition::Condition(CondCmp cond) : conditions_(std::move(cond)){};
+    Condition::Condition(CondIn cond) : conditions_(std::move(cond)){};
+    Condition::Condition(CondNotIn cond) : conditions_(std::move(cond)){};
+    Condition::Condition(CondBetween cond) : conditions_(std::move(cond)){};
+    Condition::Condition(CondRaw cond) : conditions_(std::move(cond)){};
+    Condition::Condition(FuncField cond) : conditions_(std::move(cond)){};
     Condition::Condition(const Cond *cond) : Condition(CAST(cond)){};
 
     Condition Condition::CAST(const Cond *cond) {
@@ -132,6 +133,7 @@ namespace sqlcpp {
         if (auto ptr = dynamic_cast<const CondNotIn *>(cond); ptr) return Condition(*ptr);
         if (auto ptr = dynamic_cast<const CondBetween *>(cond); ptr) return Condition(*ptr);
         if (auto ptr = dynamic_cast<const CondRaw *>(cond); ptr) return Condition(*ptr);
+        if (auto ptr = dynamic_cast<const FuncField *>(cond); ptr) return Condition(*ptr);
         throw std::invalid_argument(std::string{"unknown condition type: "} + typeid(*cond).name());
     }
     void Condition::build_s(std::ostream &oss, const Type &t) const {

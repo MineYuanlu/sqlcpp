@@ -41,7 +41,25 @@ namespace sqlcpp {
         oss << safe_field(field_name_, t);
         if (alias_) oss << " AS " << safe_field(*alias_, t);
     }
+    void Field::edit_var_map([[maybe_unused]] VarMap &var_map) const {
+        // nothing to do
+    }
 
+    CondCmp Field::LIKE(ValueLike v) const {
+        return {*this, CmpOp::LIKE, v};
+    }
+    CondCmp Field::NOT_LIKE(ValueLike v) const {
+        return {*this, CmpOp::NOT_LIKE, v};
+    }
+    CondIn Field::IN(std::vector<ValueLike> vs) const {
+        return {*this, vs};
+    }
+    CondNotIn Field::NOT_IN(std::vector<ValueLike> vs) const {
+        return {*this, vs};
+    }
+    CondBetween Field::BETWEEN(ValueLike start, ValueLike end) const {
+        return {*this, start, end};
+    }
     Assign Field::assign(ValueLike v) const {
         return {*this, std::move(v)};
     }
@@ -54,6 +72,9 @@ namespace sqlcpp {
     void RawField::build_s(std::ostream &oss, [[maybe_unused]] const Type &t) const {
         oss << raw_field_;
     }
+    void RawField::edit_var_map([[maybe_unused]] VarMap &var_map) const {
+        // nothing to do
+    }
 
 
     FuncField::FuncField(std::string func_name, std::variant<Field, RawField> args)
@@ -64,11 +85,18 @@ namespace sqlcpp {
         this->alias_ = std::move(alias);
         return *this;
     }
+    FuncField &FuncField::as(std::string alias) {
+        this->alias_ = std::move(alias);
+        return *this;
+    }
     void FuncField::build_s(std::ostream &oss, const Type &t) const {
         oss << func_name_ << "(";
         std::visit([&](const auto &arg) { arg.build_s(oss, t); }, args_);
         oss << ")";
         if (alias_) oss << " AS " << safe_field(*alias_, t);
+    }
+    void FuncField::edit_var_map(VarMap &var_map) const {
+        std::visit([&](const auto &arg) { arg.edit_var_map(var_map); }, args_);
     }
 
     FieldLike::FieldLike(const char *field) : FieldLike(Field{std::move(field)}) {}
@@ -81,8 +109,8 @@ namespace sqlcpp {
     void FieldLike::build_s(std::ostream &oss, const Type &t) const {
         std::visit([&](const auto &arg) { arg.build_s(oss, t); }, field_);
     }
-    void FieldLike::edit_var_map([[maybe_unused]] VarMap &var_map) const {
-        // nothing to do
+    void FieldLike::edit_var_map(VarMap &var_map) const {
+        std::visit([&](const auto &arg) { arg.edit_var_map(var_map); }, field_);
     }
     CondCmp FieldLike::LIKE(ValueLike v) const {
         return {*this, CmpOp::LIKE, v};

@@ -100,6 +100,14 @@ namespace sqlcpp {
         offset_ = offset;
         return *this;
     }
+    Select &Select::limit(const IndexedVarValue &limit) {
+        limit_ = limit;
+        return *this;
+    }
+    Select &Select::offset(const IndexedVarValue &offset) {
+        offset_ = offset;
+        return *this;
+    }
     void Select::build_s(std::ostream &oss, const Type &t) const {
         //TODO 任何支持"?"的地方，都可以获取其index，然后新建函数允许用户输入一组数据和实际的参数方法，然后自动映射?的位置
         oss << "SELECT ";
@@ -122,6 +130,8 @@ namespace sqlcpp {
                 oss << *val;
             } else if (auto var = std::get_if<VarValue>(&*limit_); var) {
                 var->build_s(oss, t);
+            } else if (auto idx = std::get_if<IndexedVarValue>(&*limit_); idx) {
+                idx->build_s(oss, t);
             }
         }
         if (offset_) {
@@ -130,6 +140,8 @@ namespace sqlcpp {
                 oss << *val;
             } else if (auto var = std::get_if<VarValue>(&*offset_); var) {
                 var->build_s(oss, t);
+            } else if (auto idx = std::get_if<IndexedVarValue>(&*offset_); idx) {
+                idx->build_s(oss, t);
             }
         }
         oss << ';';
@@ -139,7 +151,19 @@ namespace sqlcpp {
         if (group_by_) group_by_->edit_var_map(var_map);
         if (having_) having_->edit_var_map(var_map);
         if (order_by_) order_by_->edit_var_map(var_map);
-        if (limit_ && std::holds_alternative<VarValue>(*limit_)) std::get<VarValue>(*limit_).edit_var_map(var_map);
-        if (offset_ && std::holds_alternative<VarValue>(*offset_)) std::get<VarValue>(*offset_).edit_var_map(var_map);
+        if (limit_) {
+            if (auto var = std::get_if<VarValue>(&*limit_); var) {
+                var->edit_var_map(var_map);
+            } else if (auto idx = std::get_if<IndexedVarValue>(&*limit_); idx) {
+                idx->edit_var_map(var_map);
+            }
+        }
+        if (offset_) {
+            if (auto var = std::get_if<VarValue>(&*offset_); var) {
+                var->edit_var_map(var_map);
+            } else if (auto idx = std::get_if<IndexedVarValue>(&*offset_); idx) {
+                idx->edit_var_map(var_map);
+            }
+        }
     }
 }// namespace sqlcpp

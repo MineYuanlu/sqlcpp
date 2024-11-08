@@ -164,15 +164,16 @@ namespace sqlcpp {
 
     /// @brief 条件接口
     struct Condition final : public Builder, public VarBuilder {
-        std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw> conditions_;
+        std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw, FuncField> conditions_;
 
-        Condition(std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw> cond);
+        Condition(std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw, FuncField> cond);
         Condition(CondOp cond);
         Condition(CondCmp cond);
         Condition(CondIn cond);
         Condition(CondNotIn cond);
         Condition(CondBetween cond);
         Condition(CondRaw cond);
+        Condition(FuncField cond);
         Condition(const Cond *cond);
 
 
@@ -186,6 +187,9 @@ namespace sqlcpp {
     inline CondOp operator&&(Condition &&left, Condition &&right) { return {AND, {std::move(left), std::move(right)}}; }
     inline CondOp operator||(Condition &&left, Condition &&right) { return {OR, {std::move(left), std::move(right)}}; }
     inline CondOp operator!(Condition &&cond) { return {NOT, {std::move(cond)}}; }
+    inline CondOp operator&&(const Condition &left, const Condition &right) { return {AND, {left, right}}; }
+    inline CondOp operator||(const Condition &left, const Condition &right) { return {OR, {left, right}}; }
+    inline CondOp operator!(const Condition &cond) { return {NOT, {cond}}; }
 
 }// namespace sqlcpp
 #endif// SQLCPP_COMPONENTS_COND__HPP_GUARD

@@ -22,7 +22,7 @@ namespace sqlcpp {
 
     /// @brief 一个普通字段, 用于查询/更新/删除/条件等操作
     /// @details 可以指定表、别称
-    struct Field final : public Builder {
+    struct Field final : public Builder, public VarBuilder {
         std::optional<std::string> table_name_{};///< 表名
         std::string field_name_;                 ///< 字段名
         std::optional<std::string> alias_{};     ///< 别称
@@ -48,6 +48,18 @@ namespace sqlcpp {
         OrderByField desc() const;
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void edit_var_map(VarMap &var_map) const override;
+
+        /// @brief 返回like比较条件语句
+        CondCmp LIKE(ValueLike v) const;
+        /// @brief 返回not like比较条件语句
+        CondCmp NOT_LIKE(ValueLike v) const;
+        /// @brief 返回in比较条件语句
+        CondIn IN(std::vector<ValueLike> vs) const;
+        /// @brief 返回not in比较条件语句
+        CondNotIn NOT_IN(std::vector<ValueLike> vs) const;
+        /// @brief 返回between比较条件语句
+        CondBetween BETWEEN(ValueLike start, ValueLike end) const;
 
         /// @brief 返回此字段的赋值语句
         Assign assign(ValueLike) const;
@@ -58,15 +70,16 @@ namespace sqlcpp {
 
     /// @brief 原生字段, 不会进行任何转义, 用于查询/更新/删除/条件等操作
     /// @note 注意数据安全
-    struct RawField final : public Builder {
+    struct RawField final : public Builder, public VarBuilder {
         std::string raw_field_;
         explicit RawField(std::string field);
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void edit_var_map(VarMap &var_map) const override;
     };
 
 
     /// @brief 函数字段, 用于查询/更新/删除/条件等操作
-    struct FuncField final : public Builder {
+    struct FuncField final : public Builder, public VarBuilder {
         std::string func_name_;             ///< 函数名
         std::variant<Field, RawField> args_;///< 参数
         std::optional<std::string> alias_{};///< 别称
@@ -77,8 +90,10 @@ namespace sqlcpp {
         FuncField(std::string func, std::variant<Field, RawField> args, std::string alias);
         /// @brief 设置别称
         FuncField &alias(std::string alias);
+        FuncField &as(std::string alias);
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void edit_var_map(VarMap &var_map) const override;
     };
 
 

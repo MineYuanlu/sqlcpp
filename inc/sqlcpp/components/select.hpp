@@ -9,6 +9,7 @@
 #include "sqlcpp/components/group_by.hpp"
 #include "sqlcpp/components/having.hpp"
 #include "sqlcpp/components/order_by.hpp"
+#include "sqlcpp/components/value.hpp"
 #include "sqlcpp/components/where.hpp"
 #include "sqlcpp/defs.hpp"
 #include <optional>
@@ -22,8 +23,8 @@ namespace sqlcpp {
         std::optional<GroupBy> group_by_{};
         std::optional<Having> having_{};
         std::optional<OrderBy> order_by_{};
-        std::optional<std::variant<VarValue, size_t>> limit_{};
-        std::optional<std::variant<VarValue, size_t>> offset_{};
+        std::optional<std::variant<VarValue, IndexedVarValue, size_t>> limit_{};
+        std::optional<std::variant<VarValue, IndexedVarValue, size_t>> offset_{};
 
         Select(Select &&) = default;
         Select &operator=(Select &&) = default;
@@ -72,6 +73,8 @@ namespace sqlcpp {
         Select &offset(size_t offset);
         Select &limit(const VarValue &limit);
         Select &offset(const VarValue &offset);
+        Select &limit(const IndexedVarValue &limit);
+        Select &offset(const IndexedVarValue &offset);
 
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
