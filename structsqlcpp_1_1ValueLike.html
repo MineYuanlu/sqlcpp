@@ -93,13 +93,16 @@ $(document).ready(function(){initNavTree('structsqlcpp_1_1ValueLike.html',''); i
 </div><!--header-->
 <div class="contents">
 
+<p>所有形似值表示的类  
+ <a href="structsqlcpp_1_1ValueLike.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="value_8hpp_source.html">value.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for sqlcpp::ValueLike:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1ValueLike__inherit__graph.png" border="0" usemap="#asqlcpp_1_1ValueLike_inherit__map" alt="Inheritance graph"/></div>
 <map name="asqlcpp_1_1ValueLike_inherit__map" id="asqlcpp_1_1ValueLike_inherit__map">
-<area shape="rect" title=" " alt="" coords="73,80,208,107"/>
+<area shape="rect" title="所有形似值表示的类" alt="" coords="73,80,208,107"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
 <area shape="rect" href="structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="149,5,287,32"/>
 </map>
@@ -109,7 +112,7 @@ Collaboration diagram for sqlcpp::ValueLike:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1ValueLike__coll__graph.png" border="0" usemap="#asqlcpp_1_1ValueLike_coll__map" alt="Collaboration graph"/></div>
 <map name="asqlcpp_1_1ValueLike_coll__map" id="asqlcpp_1_1ValueLike_coll__map">
-<area shape="rect" title=" " alt="" coords="376,56,511,83"/>
+<area shape="rect" title="所有形似值表示的类" alt="" coords="376,56,511,83"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="83,5,202,32"/>
 <area shape="rect" href="structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="73,56,212,83"/>
 <area shape="rect" title=" " alt="" coords="5,107,280,207"/>
@@ -152,9 +155,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad1cef011bd2933ce77d6cebed7baceb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8af9ecbb9f1e6cc25fccd3637e25012"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if&lt; std::is_integral&lt; T &gt;::value &amp;&amp;std::is_signed&lt; T &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
 <tr class="memitem:aa8af9ecbb9f1e6cc25fccd3637e25012"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1ValueLike.html#aa8af9ecbb9f1e6cc25fccd3637e25012">ValueLike</a> (T value)</td></tr>
+<tr class="memdesc:aa8af9ecbb9f1e6cc25fccd3637e25012"><td class="mdescLeft">&#160;</td><td class="mdescRight">对于任意宽度的有符号整数, 构造ValueLike时会自动转换为int64_t  <a href="structsqlcpp_1_1ValueLike.html#aa8af9ecbb9f1e6cc25fccd3637e25012">More...</a><br /></td></tr>
 <tr class="separator:aa8af9ecbb9f1e6cc25fccd3637e25012"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8af9ecbb9f1e6cc25fccd3637e25012"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if&lt; std::is_integral&lt; T &gt;::value &amp;&amp;std::is_unsigned&lt; T &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
 <tr class="memitem:aa8af9ecbb9f1e6cc25fccd3637e25012"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1ValueLike.html#aa8af9ecbb9f1e6cc25fccd3637e25012">ValueLike</a> (T value)</td></tr>
+<tr class="memdesc:aa8af9ecbb9f1e6cc25fccd3637e25012"><td class="mdescLeft">&#160;</td><td class="mdescRight">对于任意宽度的无符号整数, 构造ValueLike时会自动转换为uint64_t  <a href="structsqlcpp_1_1ValueLike.html#aa8af9ecbb9f1e6cc25fccd3637e25012">More...</a><br /></td></tr>
 <tr class="separator:aa8af9ecbb9f1e6cc25fccd3637e25012"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a003d1d952ae8bddeba6ac56127273a91"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1ValueLike.html#a003d1d952ae8bddeba6ac56127273a91">ValueLike</a> (std::nullptr_t)</td></tr>
 <tr class="separator:a003d1d952ae8bddeba6ac56127273a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,7 +185,10 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a05032022e9117d8ccb19d46d3bfbd821"><td class="memItemLeft" align="right" valign="top">std::variant&lt; <a class="el" href="structsqlcpp_1_1Value.html">Value</a>, <a class="el" href="structsqlcpp_1_1RawValue.html">RawValue</a>, <a class="el" href="structsqlcpp_1_1NullValue.html">NullValue</a>, <a class="el" href="structsqlcpp_1_1IndexedVarValue.html">IndexedVarValue</a>, <a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a>, <a class="el" href="structsqlcpp_1_1BlobValue.html">BlobValue</a>, <a class="el" href="structsqlcpp_1_1Field.html">Field</a>, <a class="el" href="structsqlcpp_1_1RawField.html">RawField</a>, <a class="el" href="structsqlcpp_1_1FuncField.html">FuncField</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1ValueLike.html#a05032022e9117d8ccb19d46d3bfbd821">value_</a></td></tr>
 <tr class="separator:a05032022e9117d8ccb19d46d3bfbd821"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>所有形似值表示的类 </p>
+<p>包括值(Value, Raw, Null, Blob), 占位符(Var, IndexedVar), 字段(Field, RawField, FuncField) </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a443db907d3d2f36293331be477df8ac8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a443db907d3d2f36293331be477df8ac8">&#9670;&nbsp;</a></span>ValueLike() <span class="overload">[1/20]</span></h2>
 
@@ -495,6 +503,8 @@ template&lt;typename T , typename std::enable_if&lt; std::is_integral&lt; T &gt;
 </table>
 </div><div class="memdoc">
 
+<p>对于任意宽度的有符号整数, 构造ValueLike时会自动转换为int64_t </p>
+
 </div>
 </div>
 <a id="aa8af9ecbb9f1e6cc25fccd3637e25012"></a>
@@ -522,6 +532,8 @@ template&lt;typename T , typename std::enable_if&lt; std::is_integral&lt; T &gt;
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>对于任意宽度的无符号整数, 构造ValueLike时会自动转换为uint64_t </p>
 
 </div>
 </div>

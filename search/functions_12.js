@@ -3,7 +3,7 @@ var searchData=
   ['safe_5ffield_674',['safe_field',['../namespacesqlcpp_1_1str.html#aca86616b717c880a704bd6091de64d97',1,'sqlcpp::str']]],
   ['safe_5ftable_675',['safe_table',['../namespacesqlcpp_1_1str.html#a65d3c00ddaadebf3cdf7f871cdc4c1f8',1,'sqlcpp::str']]],
   ['safe_5fvalue_676',['safe_value',['../namespacesqlcpp_1_1str.html#a0cce2c9081f2cc99c6de684995f207c6',1,'sqlcpp::str']]],
-  ['safe_5fvalues_677',['safe_values',['../namespacesqlcpp_1_1str.html#aa0ae16f2c6df88f08c4c737bbf61125a',1,'sqlcpp::str']]],
+  ['safe_5fvalues_677',['safe_values',['../namespacesqlcpp_1_1str.html#af02a3f397b6bd7133c5c9941ad53f0be',1,'sqlcpp::str']]],
   ['select_678',['select',['../structsqlcpp_1_1Select.html#aab418c65d01713c92750cd9337d1ce86',1,'sqlcpp::Select::select(FuncField field)'],['../structsqlcpp_1_1Select.html#a78181615611e8a0f8d1e35f6050692b1',1,'sqlcpp::Select::select(T field, Args &amp;&amp;...args)']]],
   ['select_679',['Select',['../structsqlcpp_1_1Select.html#aa7652164c0e2645970c701a68fb7602d',1,'sqlcpp::Select']]],
   ['select_680',['select',['../structsqlcpp_1_1Select.html#aaf3c936b96ae65df776f222545bf06a8',1,'sqlcpp::Select::select(RawField field)'],['../structsqlcpp_1_1Select.html#a364e5ffa953ac8a819f4309b3bc64df6',1,'sqlcpp::Select::select(Field field)'],['../structsqlcpp_1_1Select.html#a379ebcfe1de28b951c4ed5ab1716b6ee',1,'sqlcpp::Select::select(FieldLike field)'],['../structsqlcpp_1_1Select.html#af5859a2c3264da7b68b6247f0812378a',1,'sqlcpp::Select::select(std::string field)'],['../structsqlcpp_1_1Select.html#a63405bd1fa46c637dbec50ecf7bd3f2a',1,'sqlcpp::Select::select(const char *field)']]],

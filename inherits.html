@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="15,936,134,962"/>
 <area shape="rect" href="structsqlcpp_1_1Assign.html" title="赋值组件, 代表对一个字段的赋值操作" alt="" coords="213,860,327,886"/>
 <area shape="rect" href="structsqlcpp_1_1Assigns.html" title="赋值组组件, 代表一组赋值操作" alt="" coords="209,910,331,937"/>
-<area shape="rect" href="structsqlcpp_1_1BlobValue.html" title=" " alt="" coords="201,961,339,988"/>
+<area shape="rect" href="structsqlcpp_1_1BlobValue.html" title="二进制值, 会被转义" alt="" coords="201,961,339,988"/>
 <area shape="rect" href="structsqlcpp_1_1Check.html" title="CHECK约束，用于定义数据表中的检查条件" alt="" coords="214,1012,326,1038"/>
 <area shape="rect" href="structsqlcpp_1_1Column.html" title="字段定义, 用于构建CREATE TABLE语句" alt="" coords="209,1062,331,1089"/>
 <area shape="rect" href="structsqlcpp_1_1CondBetween.html" title="BETWEEN条件" alt="" coords="405,1196,567,1222"/>
@@ -117,21 +117,21 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 <area shape="rect" href="structsqlcpp_1_1Having.html" title="过滤组件, 基于聚合后的数据来进行条件筛选" alt="" coords="211,1772,329,1798"/>
 <area shape="rect" href="structsqlcpp_1_1Index.html" title="索引组件, 创建字段一般的(普通/唯一)索引" alt="" coords="216,252,324,278"/>
 <area shape="rect" href="structsqlcpp_1_1Insert.html" title="插入语句构建器" alt="" coords="215,302,325,329"/>
-<area shape="rect" href="structsqlcpp_1_1NullValue.html" title=" " alt="" coords="203,353,337,380"/>
+<area shape="rect" href="structsqlcpp_1_1NullValue.html" title="空值, 表示NULL" alt="" coords="203,353,337,380"/>
 <area shape="rect" href="structsqlcpp_1_1OrderBy.html" title="多个字段的排序条件" alt="" coords="207,1822,333,1849"/>
 <area shape="rect" href="structsqlcpp_1_1OrderByField.html" title="单个字段的排序条件" alt="" coords="192,1265,348,1292"/>
 <area shape="rect" href="structsqlcpp_1_1PrimaryKey.html" title="主键定义, 用于构建CREATE TABLE语句" alt="" coords="197,404,343,430"/>
 <area shape="rect" href="structsqlcpp_1_1RawField.html" title="原生字段, 不会进行任何转义, 用于查询/更新/删除/条件等操作" alt="" coords="205,1316,335,1342"/>
 <area shape="rect" href="structsqlcpp_1_1RawFrom.html" title="原生数据表引用" alt="" coords="203,454,337,481"/>
-<area shape="rect" href="structsqlcpp_1_1RawValue.html" title=" " alt="" coords="202,505,338,532"/>
-<area shape="rect" href="structsqlcpp_1_1Select.html" title=" " alt="" coords="214,1366,326,1393"/>
-<area shape="rect" href="structsqlcpp_1_1Table.html" title=" " alt="" coords="217,556,323,582"/>
+<area shape="rect" href="structsqlcpp_1_1RawValue.html" title="原生值, 不会被转义" alt="" coords="202,505,338,532"/>
+<area shape="rect" href="structsqlcpp_1_1Select.html" title="选择语句构建器" alt="" coords="214,1366,326,1393"/>
+<area shape="rect" href="structsqlcpp_1_1Table.html" title="表构建器" alt="" coords="217,556,323,582"/>
 <area shape="rect" href="structsqlcpp_1_1Unique.html" title="唯一索引定义, 用于构建CREATE TABLE语句" alt="" coords="211,708,329,734"/>
-<area shape="rect" href="structsqlcpp_1_1Update.html" title=" " alt="" coords="211,758,329,785"/>
-<area shape="rect" href="structsqlcpp_1_1Value.html" title=" " alt="" coords="216,809,324,836"/>
-<area shape="rect" href="structsqlcpp_1_1ValueLike.html" title=" " alt="" coords="203,1417,337,1444"/>
+<area shape="rect" href="structsqlcpp_1_1Update.html" title="更新语句构建器" alt="" coords="211,758,329,785"/>
+<area shape="rect" href="structsqlcpp_1_1Value.html" title="普通值, 会被转义" alt="" coords="216,809,324,836"/>
+<area shape="rect" href="structsqlcpp_1_1ValueLike.html" title="所有形似值表示的类" alt="" coords="203,1417,337,1444"/>
 <area shape="rect" href="structsqlcpp_1_1VarValue.html" title="普通占位符, 表示形式为&quot;?&quot;, 可以使用VAR(N)代表有索引的占位符" alt="" coords="205,1924,335,1950"/>
-<area shape="rect" href="structsqlcpp_1_1Where.html" title=" " alt="" coords="213,1468,327,1494"/>
+<area shape="rect" href="structsqlcpp_1_1Where.html" title="筛选组件" alt="" coords="213,1468,327,1494"/>
 <area shape="rect" href="structsqlcpp_1_1IndexedVarValue.html" title="带有索引的占位符, 表示形式为&quot;?&quot; /" alt="" coords="396,1924,576,1950"/>
 <area shape="rect" href="structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="5,1594,144,1621"/>
 <area shape="rect" href="structsqlcpp_1_1Cond.html" title="条件构建器接口" alt="" coords="217,1873,323,1900"/>
@@ -154,7 +154,7 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 </td></tr>
 <tr><td><img src="inherit_graph_4.png" border="0" usemap="#asqlcpp_1_1Type" alt=""/>
 <map name="asqlcpp_1_1Type" id="asqlcpp_1_1Type">
-<area shape="rect" href="structsqlcpp_1_1Type.html" title=" " alt="" coords="5,5,108,32"/>
+<area shape="rect" href="structsqlcpp_1_1Type.html" title="sqlcpp所支持的数据库类型信息" alt="" coords="5,5,108,32"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_5.png" border="0" usemap="#asqlcpp_1_1VarMap" alt=""/>
@@ -164,7 +164,7 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 </td></tr>
 <tr><td><img src="inherit_graph_6.png" border="0" usemap="#asqlcpp_1_1version" alt=""/>
 <map name="asqlcpp_1_1version" id="asqlcpp_1_1version">
-<area shape="rect" href="structsqlcpp_1_1version.html" title=" " alt="" coords="5,5,125,32"/>
+<area shape="rect" href="structsqlcpp_1_1version.html" title="版本信息" alt="" coords="5,5,125,32"/>
 </map>
 </td></tr>
 </table>

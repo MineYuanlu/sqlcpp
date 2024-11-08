@@ -94,13 +94,16 @@ $(document).ready(function(){initNavTree('structsqlcpp_1_1Update.html',''); init
 </div><!--header-->
 <div class="contents">
 
+<p>更新语句构建器  
+ <a href="structsqlcpp_1_1Update.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="update_8hpp_source.html">update.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for sqlcpp::Update:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1Update__inherit__graph.png" border="0" usemap="#asqlcpp_1_1Update_inherit__map" alt="Inheritance graph"/></div>
 <map name="asqlcpp_1_1Update_inherit__map" id="asqlcpp_1_1Update_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,124,107"/>
+<area shape="rect" title="更新语句构建器" alt="" coords="5,80,124,107"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -109,7 +112,7 @@ Collaboration diagram for sqlcpp::Update:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1Update__coll__graph.png" border="0" usemap="#asqlcpp_1_1Update_coll__map" alt="Collaboration graph"/></div>
 <map name="asqlcpp_1_1Update_coll__map" id="asqlcpp_1_1Update_coll__map">
-<area shape="rect" title=" " alt="" coords="371,229,489,256"/>
+<area shape="rect" title="更新语句构建器" alt="" coords="371,229,489,256"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="56,5,175,32"/>
 <area shape="rect" title=" " alt="" coords="13,56,218,83"/>
 <area shape="rect" title=" " alt="" coords="5,107,225,149"/>
@@ -133,117 +136,171 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="structsqlcpp_1_1Update.html#af9f797e35d56bdd2b3c0bae51aef4817ae93c4076908b1cdf2babeb748aa23ea6">OR_REPLACE</a>
 <br />
  }</td></tr>
+<tr class="memdesc:af9f797e35d56bdd2b3c0bae51aef4817"><td class="mdescLeft">&#160;</td><td class="mdescRight">在update遇到约束冲突时的处理方式  <a href="structsqlcpp_1_1Update.html#af9f797e35d56bdd2b3c0bae51aef4817">More...</a><br /></td></tr>
 <tr class="separator:af9f797e35d56bdd2b3c0bae51aef4817"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a832ef3bec4a7fc698f377f82e885f087"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a832ef3bec4a7fc698f377f82e885f087">Update</a> ()=default</td></tr>
+<tr class="memdesc:a832ef3bec4a7fc698f377f82e885f087"><td class="mdescLeft">&#160;</td><td class="mdescRight">空构造  <a href="structsqlcpp_1_1Update.html#a832ef3bec4a7fc698f377f82e885f087">More...</a><br /></td></tr>
 <tr class="separator:a832ef3bec4a7fc698f377f82e885f087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a038b12cbf0bd5501cf5bac4a3a2344d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a038b12cbf0bd5501cf5bac4a3a2344d6">Update</a> (<a class="el" href="structsqlcpp_1_1Assigns.html">Assigns</a> assigns)</td></tr>
+<tr class="memdesc:a038b12cbf0bd5501cf5bac4a3a2344d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定赋值集合构造, 不指定表和条件  <a href="structsqlcpp_1_1Update.html#a038b12cbf0bd5501cf5bac4a3a2344d6">More...</a><br /></td></tr>
 <tr class="separator:a038b12cbf0bd5501cf5bac4a3a2344d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6be7352709427c19d30ec10c2205ad84"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a6be7352709427c19d30ec10c2205ad84">Update</a> (const char *<a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, std::optional&lt; <a class="el" href="structsqlcpp_1_1Assigns.html">Assigns</a> &gt; assigns=std::nullopt, std::optional&lt; <a class="el" href="structsqlcpp_1_1Where.html">Where</a> &gt; <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>=std::nullopt)</td></tr>
+<tr class="memdesc:a6be7352709427c19d30ec10c2205ad84"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#a6be7352709427c19d30ec10c2205ad84">More...</a><br /></td></tr>
 <tr class="separator:a6be7352709427c19d30ec10c2205ad84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62a273a15c778374e9acbf0e7da221f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a62a273a15c778374e9acbf0e7da221f8">Update</a> (std::string <a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, std::optional&lt; <a class="el" href="structsqlcpp_1_1Assigns.html">Assigns</a> &gt; assigns=std::nullopt, std::optional&lt; <a class="el" href="structsqlcpp_1_1Where.html">Where</a> &gt; <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>=std::nullopt)</td></tr>
+<tr class="memdesc:a62a273a15c778374e9acbf0e7da221f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#a62a273a15c778374e9acbf0e7da221f8">More...</a><br /></td></tr>
 <tr class="separator:a62a273a15c778374e9acbf0e7da221f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a893e6d053969eef4ec5078f7d307b508"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a893e6d053969eef4ec5078f7d307b508">Update</a> (<a class="el" href="structsqlcpp_1_1From.html">From</a> <a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, std::optional&lt; <a class="el" href="structsqlcpp_1_1Assigns.html">Assigns</a> &gt; assigns=std::nullopt, std::optional&lt; <a class="el" href="structsqlcpp_1_1Where.html">Where</a> &gt; <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>=std::nullopt)</td></tr>
+<tr class="memdesc:a893e6d053969eef4ec5078f7d307b508"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#a893e6d053969eef4ec5078f7d307b508">More...</a><br /></td></tr>
 <tr class="separator:a893e6d053969eef4ec5078f7d307b508"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a499d44697171816d16a9fff9bc4a60ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a499d44697171816d16a9fff9bc4a60ae">Update</a> (<a class="el" href="structsqlcpp_1_1RawFrom.html">RawFrom</a> <a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, std::optional&lt; <a class="el" href="structsqlcpp_1_1Assigns.html">Assigns</a> &gt; assigns=std::nullopt, std::optional&lt; <a class="el" href="structsqlcpp_1_1Where.html">Where</a> &gt; <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>=std::nullopt)</td></tr>
+<tr class="memdesc:a499d44697171816d16a9fff9bc4a60ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#a499d44697171816d16a9fff9bc4a60ae">More...</a><br /></td></tr>
 <tr class="separator:a499d44697171816d16a9fff9bc4a60ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acccc4e23157c06fd02c7aa2f4aad85ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#acccc4e23157c06fd02c7aa2f4aad85ef">Update</a> (<a class="el" href="structsqlcpp_1_1Froms.html">Froms</a> <a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, std::optional&lt; <a class="el" href="structsqlcpp_1_1Assigns.html">Assigns</a> &gt; assigns=std::nullopt, std::optional&lt; <a class="el" href="structsqlcpp_1_1Where.html">Where</a> &gt; <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>=std::nullopt)</td></tr>
+<tr class="memdesc:acccc4e23157c06fd02c7aa2f4aad85ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#acccc4e23157c06fd02c7aa2f4aad85ef">More...</a><br /></td></tr>
 <tr class="separator:acccc4e23157c06fd02c7aa2f4aad85ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a3273aff084c4be5173a5d8e409dc45"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a1a3273aff084c4be5173a5d8e409dc45">Update</a> (const char *<a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, <a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field, <a class="el" href="structsqlcpp_1_1ValueLike.html">ValueLike</a> value=<a class="el" href="namespacesqlcpp.html#a4ab907b55d5acbada1085a2ac39d7ca0">VAR</a>, std::optional&lt; <a class="el" href="structsqlcpp_1_1Where.html">Where</a> &gt; <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>=std::nullopt)</td></tr>
+<tr class="memdesc:a1a3273aff084c4be5173a5d8e409dc45"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#a1a3273aff084c4be5173a5d8e409dc45">More...</a><br /></td></tr>
 <tr class="separator:a1a3273aff084c4be5173a5d8e409dc45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58b30eb568111da350962665d1b31eae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a58b30eb568111da350962665d1b31eae">Update</a> (std::string <a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, <a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field, <a class="el" href="structsqlcpp_1_1ValueLike.html">ValueLike</a> value=<a class="el" href="namespacesqlcpp.html#a4ab907b55d5acbada1085a2ac39d7ca0">VAR</a>, std::optional&lt; <a class="el" href="structsqlcpp_1_1Where.html">Where</a> &gt; <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>=std::nullopt)</td></tr>
+<tr class="memdesc:a58b30eb568111da350962665d1b31eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#a58b30eb568111da350962665d1b31eae">More...</a><br /></td></tr>
 <tr class="separator:a58b30eb568111da350962665d1b31eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69eb27db4b071834485e542f9b3445ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a69eb27db4b071834485e542f9b3445ee">Update</a> (<a class="el" href="structsqlcpp_1_1From.html">From</a> <a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, <a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field, <a class="el" href="structsqlcpp_1_1ValueLike.html">ValueLike</a> value=<a class="el" href="namespacesqlcpp.html#a4ab907b55d5acbada1085a2ac39d7ca0">VAR</a>, std::optional&lt; <a class="el" href="structsqlcpp_1_1Where.html">Where</a> &gt; <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>=std::nullopt)</td></tr>
+<tr class="memdesc:a69eb27db4b071834485e542f9b3445ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#a69eb27db4b071834485e542f9b3445ee">More...</a><br /></td></tr>
 <tr class="separator:a69eb27db4b071834485e542f9b3445ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdd5ac2a392aab41f02fe044c752e879"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#afdd5ac2a392aab41f02fe044c752e879">Update</a> (<a class="el" href="structsqlcpp_1_1RawFrom.html">RawFrom</a> <a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, <a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field, <a class="el" href="structsqlcpp_1_1ValueLike.html">ValueLike</a> value=<a class="el" href="namespacesqlcpp.html#a4ab907b55d5acbada1085a2ac39d7ca0">VAR</a>, std::optional&lt; <a class="el" href="structsqlcpp_1_1Where.html">Where</a> &gt; <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>=std::nullopt)</td></tr>
+<tr class="memdesc:afdd5ac2a392aab41f02fe044c752e879"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#afdd5ac2a392aab41f02fe044c752e879">More...</a><br /></td></tr>
 <tr class="separator:afdd5ac2a392aab41f02fe044c752e879"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdbda8dbb5193b4ca584c15855e91243"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#acdbda8dbb5193b4ca584c15855e91243">Update</a> (<a class="el" href="structsqlcpp_1_1Froms.html">Froms</a> <a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, <a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field, <a class="el" href="structsqlcpp_1_1ValueLike.html">ValueLike</a> value=<a class="el" href="namespacesqlcpp.html#a4ab907b55d5acbada1085a2ac39d7ca0">VAR</a>, std::optional&lt; <a class="el" href="structsqlcpp_1_1Where.html">Where</a> &gt; <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>=std::nullopt)</td></tr>
+<tr class="memdesc:acdbda8dbb5193b4ca584c15855e91243"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#acdbda8dbb5193b4ca584c15855e91243">More...</a><br /></td></tr>
 <tr class="separator:acdbda8dbb5193b4ca584c15855e91243"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0097ef74508e0e67be36a733a9b70bbf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a0097ef74508e0e67be36a733a9b70bbf">Update</a> (const char *<a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, std::optional&lt; <a class="el" href="structsqlcpp_1_1Assigns.html">Assigns</a> &gt; assigns, <a class="el" href="structsqlcpp_1_1Condition.html">Condition</a> <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>)</td></tr>
+<tr class="memdesc:a0097ef74508e0e67be36a733a9b70bbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#a0097ef74508e0e67be36a733a9b70bbf">More...</a><br /></td></tr>
 <tr class="separator:a0097ef74508e0e67be36a733a9b70bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a441b811e96dcd1b50e0686a324a185c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a441b811e96dcd1b50e0686a324a185c3">Update</a> (std::string <a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, std::optional&lt; <a class="el" href="structsqlcpp_1_1Assigns.html">Assigns</a> &gt; assigns, <a class="el" href="structsqlcpp_1_1Condition.html">Condition</a> <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>)</td></tr>
+<tr class="memdesc:a441b811e96dcd1b50e0686a324a185c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#a441b811e96dcd1b50e0686a324a185c3">More...</a><br /></td></tr>
 <tr class="separator:a441b811e96dcd1b50e0686a324a185c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a339ee3ec171e22535059934015c18b65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a339ee3ec171e22535059934015c18b65">Update</a> (<a class="el" href="structsqlcpp_1_1From.html">From</a> <a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, std::optional&lt; <a class="el" href="structsqlcpp_1_1Assigns.html">Assigns</a> &gt; assigns, <a class="el" href="structsqlcpp_1_1Condition.html">Condition</a> <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>)</td></tr>
+<tr class="memdesc:a339ee3ec171e22535059934015c18b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#a339ee3ec171e22535059934015c18b65">More...</a><br /></td></tr>
 <tr class="separator:a339ee3ec171e22535059934015c18b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abeef17c7db3aff00ff28146336ef262f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#abeef17c7db3aff00ff28146336ef262f">Update</a> (<a class="el" href="structsqlcpp_1_1RawFrom.html">RawFrom</a> <a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, std::optional&lt; <a class="el" href="structsqlcpp_1_1Assigns.html">Assigns</a> &gt; assigns, <a class="el" href="structsqlcpp_1_1Condition.html">Condition</a> <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>)</td></tr>
+<tr class="memdesc:abeef17c7db3aff00ff28146336ef262f"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#abeef17c7db3aff00ff28146336ef262f">More...</a><br /></td></tr>
 <tr class="separator:abeef17c7db3aff00ff28146336ef262f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace5c68607be7dcecc9fad96943505643"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#ace5c68607be7dcecc9fad96943505643">Update</a> (<a class="el" href="structsqlcpp_1_1Froms.html">Froms</a> <a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, std::optional&lt; <a class="el" href="structsqlcpp_1_1Assigns.html">Assigns</a> &gt; assigns, <a class="el" href="structsqlcpp_1_1Condition.html">Condition</a> <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>)</td></tr>
+<tr class="memdesc:ace5c68607be7dcecc9fad96943505643"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#ace5c68607be7dcecc9fad96943505643">More...</a><br /></td></tr>
 <tr class="separator:ace5c68607be7dcecc9fad96943505643"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad024eb05f99bf52f50a72418949344ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#ad024eb05f99bf52f50a72418949344ad">Update</a> (const char *<a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, <a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field, <a class="el" href="structsqlcpp_1_1ValueLike.html">ValueLike</a> value, <a class="el" href="structsqlcpp_1_1Condition.html">Condition</a> <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>)</td></tr>
+<tr class="memdesc:ad024eb05f99bf52f50a72418949344ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#ad024eb05f99bf52f50a72418949344ad">More...</a><br /></td></tr>
 <tr class="separator:ad024eb05f99bf52f50a72418949344ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22a31b6ee42f34bf9cc69edeb434687b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a22a31b6ee42f34bf9cc69edeb434687b">Update</a> (std::string <a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, <a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field, <a class="el" href="structsqlcpp_1_1ValueLike.html">ValueLike</a> value, <a class="el" href="structsqlcpp_1_1Condition.html">Condition</a> <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>)</td></tr>
+<tr class="memdesc:a22a31b6ee42f34bf9cc69edeb434687b"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#a22a31b6ee42f34bf9cc69edeb434687b">More...</a><br /></td></tr>
 <tr class="separator:a22a31b6ee42f34bf9cc69edeb434687b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b7f65d9fbe35f1ea0df2c6bc6807b28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a9b7f65d9fbe35f1ea0df2c6bc6807b28">Update</a> (<a class="el" href="structsqlcpp_1_1From.html">From</a> <a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, <a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field, <a class="el" href="structsqlcpp_1_1ValueLike.html">ValueLike</a> value, <a class="el" href="structsqlcpp_1_1Condition.html">Condition</a> <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>)</td></tr>
+<tr class="memdesc:a9b7f65d9fbe35f1ea0df2c6bc6807b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#a9b7f65d9fbe35f1ea0df2c6bc6807b28">More...</a><br /></td></tr>
 <tr class="separator:a9b7f65d9fbe35f1ea0df2c6bc6807b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76a08542b03e4351ddbc7dcec494c826"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a76a08542b03e4351ddbc7dcec494c826">Update</a> (<a class="el" href="structsqlcpp_1_1RawFrom.html">RawFrom</a> <a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, <a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field, <a class="el" href="structsqlcpp_1_1ValueLike.html">ValueLike</a> value, <a class="el" href="structsqlcpp_1_1Condition.html">Condition</a> <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>)</td></tr>
+<tr class="memdesc:a76a08542b03e4351ddbc7dcec494c826"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#a76a08542b03e4351ddbc7dcec494c826">More...</a><br /></td></tr>
 <tr class="separator:a76a08542b03e4351ddbc7dcec494c826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af43694b3a9fe933cecb98091a21c2e47"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#af43694b3a9fe933cecb98091a21c2e47">Update</a> (<a class="el" href="structsqlcpp_1_1Froms.html">Froms</a> <a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a>, <a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field, <a class="el" href="structsqlcpp_1_1ValueLike.html">ValueLike</a> value, <a class="el" href="structsqlcpp_1_1Condition.html">Condition</a> <a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a>)</td></tr>
+<tr class="memdesc:af43694b3a9fe933cecb98091a21c2e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Update语句  <a href="structsqlcpp_1_1Update.html#af43694b3a9fe933cecb98091a21c2e47">More...</a><br /></td></tr>
 <tr class="separator:af43694b3a9fe933cecb98091a21c2e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5d35b221811eb828169fe007ed28a55"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#ac5d35b221811eb828169fe007ed28a55">low_priority</a> (bool v=true)</td></tr>
+<tr class="memdesc:ac5d35b221811eb828169fe007ed28a55"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置更新操作为低优先级  <a href="structsqlcpp_1_1Update.html#ac5d35b221811eb828169fe007ed28a55">More...</a><br /></td></tr>
 <tr class="separator:ac5d35b221811eb828169fe007ed28a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45565503c80173f480e64dfec3b5b68c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a45565503c80173f480e64dfec3b5b68c">ignore</a> (bool v=true)</td></tr>
+<tr class="memdesc:a45565503c80173f480e64dfec3b5b68c"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置在执行更新操作时忽略导致错误的行  <a href="structsqlcpp_1_1Update.html#a45565503c80173f480e64dfec3b5b68c">More...</a><br /></td></tr>
 <tr class="separator:a45565503c80173f480e64dfec3b5b68c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a812a135efc4f2b5f130efc929be59971"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a812a135efc4f2b5f130efc929be59971">update_or</a> (std::optional&lt; <a class="el" href="structsqlcpp_1_1Update.html#af9f797e35d56bdd2b3c0bae51aef4817">UpdateOr</a> &gt; v)</td></tr>
+<tr class="memdesc:a812a135efc4f2b5f130efc929be59971"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置sqlite中控制约束冲突时的行为  <a href="structsqlcpp_1_1Update.html#a812a135efc4f2b5f130efc929be59971">More...</a><br /></td></tr>
 <tr class="separator:a812a135efc4f2b5f130efc929be59971"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71ee06ee231a32b703ea9934779076b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">table</a> (std::string table)</td></tr>
+<tr class="memdesc:a71ee06ee231a32b703ea9934779076b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置要更新的表  <a href="structsqlcpp_1_1Update.html#a71ee06ee231a32b703ea9934779076b3">More...</a><br /></td></tr>
 <tr class="separator:a71ee06ee231a32b703ea9934779076b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a521ff3f023d74daacaf3def7e6fe1a7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a521ff3f023d74daacaf3def7e6fe1a7a">table</a> (<a class="el" href="structsqlcpp_1_1From.html">From</a> table)</td></tr>
+<tr class="memdesc:a521ff3f023d74daacaf3def7e6fe1a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置要更新的表  <a href="structsqlcpp_1_1Update.html#a521ff3f023d74daacaf3def7e6fe1a7a">More...</a><br /></td></tr>
 <tr class="separator:a521ff3f023d74daacaf3def7e6fe1a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab420e720b97d1424a08fd82119855b34"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#ab420e720b97d1424a08fd82119855b34">table</a> (<a class="el" href="structsqlcpp_1_1RawFrom.html">RawFrom</a> table)</td></tr>
+<tr class="memdesc:ab420e720b97d1424a08fd82119855b34"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置要更新的表  <a href="structsqlcpp_1_1Update.html#ab420e720b97d1424a08fd82119855b34">More...</a><br /></td></tr>
 <tr class="separator:ab420e720b97d1424a08fd82119855b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44e84bdc0392cbae52fa06bf5bd0b510"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a44e84bdc0392cbae52fa06bf5bd0b510">table</a> (<a class="el" href="structsqlcpp_1_1Froms.html">Froms</a> tables)</td></tr>
+<tr class="memdesc:a44e84bdc0392cbae52fa06bf5bd0b510"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置要更新的表  <a href="structsqlcpp_1_1Update.html#a44e84bdc0392cbae52fa06bf5bd0b510">More...</a><br /></td></tr>
 <tr class="separator:a44e84bdc0392cbae52fa06bf5bd0b510"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af374a002abdbdafb8258eafdd35c985a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#af374a002abdbdafb8258eafdd35c985a">assign</a> (<a class="el" href="structsqlcpp_1_1Assign.html">Assign</a> assign)</td></tr>
+<tr class="memdesc:af374a002abdbdafb8258eafdd35c985a"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置要更新的列和值  <a href="structsqlcpp_1_1Update.html#af374a002abdbdafb8258eafdd35c985a">More...</a><br /></td></tr>
 <tr class="separator:af374a002abdbdafb8258eafdd35c985a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad723faae45020a993a78fe2e9db2e400"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#ad723faae45020a993a78fe2e9db2e400">assign</a> (<a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field, <a class="el" href="structsqlcpp_1_1ValueLike.html">ValueLike</a> value=<a class="el" href="namespacesqlcpp.html#a4ab907b55d5acbada1085a2ac39d7ca0">VAR</a>)</td></tr>
+<tr class="memdesc:ad723faae45020a993a78fe2e9db2e400"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置要更新的列和值  <a href="structsqlcpp_1_1Update.html#ad723faae45020a993a78fe2e9db2e400">More...</a><br /></td></tr>
 <tr class="separator:ad723faae45020a993a78fe2e9db2e400"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad132cd60d9ce0a3c6e001cd3f3936152"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#ad132cd60d9ce0a3c6e001cd3f3936152">assign</a> (<a class="el" href="structsqlcpp_1_1Assigns.html">Assigns</a> assigns)</td></tr>
+<tr class="memdesc:ad132cd60d9ce0a3c6e001cd3f3936152"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置要更新的列和值的集合  <a href="structsqlcpp_1_1Update.html#ad132cd60d9ce0a3c6e001cd3f3936152">More...</a><br /></td></tr>
 <tr class="separator:ad132cd60d9ce0a3c6e001cd3f3936152"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af65f31fe88bf90be1cde59ba1c9ce74b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#af65f31fe88bf90be1cde59ba1c9ce74b">add_assign</a> (<a class="el" href="structsqlcpp_1_1Assign.html">Assign</a> <a class="el" href="structsqlcpp_1_1Update.html#af374a002abdbdafb8258eafdd35c985a">assign</a>)</td></tr>
+<tr class="memdesc:af65f31fe88bf90be1cde59ba1c9ce74b"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加要更新的列和值  <a href="structsqlcpp_1_1Update.html#af65f31fe88bf90be1cde59ba1c9ce74b">More...</a><br /></td></tr>
 <tr class="separator:af65f31fe88bf90be1cde59ba1c9ce74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23b5d13ae84c1bbf9ee2aab56f67df2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a23b5d13ae84c1bbf9ee2aab56f67df2e">add_assign</a> (<a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field, <a class="el" href="structsqlcpp_1_1ValueLike.html">ValueLike</a> value=<a class="el" href="namespacesqlcpp.html#a4ab907b55d5acbada1085a2ac39d7ca0">VAR</a>)</td></tr>
+<tr class="memdesc:a23b5d13ae84c1bbf9ee2aab56f67df2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加要更新的列和值  <a href="structsqlcpp_1_1Update.html#a23b5d13ae84c1bbf9ee2aab56f67df2e">More...</a><br /></td></tr>
 <tr class="separator:a23b5d13ae84c1bbf9ee2aab56f67df2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d4d43bcba3ddfaa2c29393af8073106"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a0d4d43bcba3ddfaa2c29393af8073106">add_assign</a> (const <a class="el" href="structsqlcpp_1_1Assigns.html">Assigns</a> &amp;assigns)</td></tr>
+<tr class="memdesc:a0d4d43bcba3ddfaa2c29393af8073106"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加要更新的列和值的集合  <a href="structsqlcpp_1_1Update.html#a0d4d43bcba3ddfaa2c29393af8073106">More...</a><br /></td></tr>
 <tr class="separator:a0d4d43bcba3ddfaa2c29393af8073106"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ac2ddd8bbb21e7cc8afd5cb00232227"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">where</a> (<a class="el" href="structsqlcpp_1_1Where.html">Where</a> where)</td></tr>
+<tr class="memdesc:a3ac2ddd8bbb21e7cc8afd5cb00232227"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置过滤条件  <a href="structsqlcpp_1_1Update.html#a3ac2ddd8bbb21e7cc8afd5cb00232227">More...</a><br /></td></tr>
 <tr class="separator:a3ac2ddd8bbb21e7cc8afd5cb00232227"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c775b554acdaa8c4d250d6e6ea4b1bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a0c775b554acdaa8c4d250d6e6ea4b1bf">where</a> (<a class="el" href="structsqlcpp_1_1Condition.html">Condition</a> where)</td></tr>
+<tr class="memdesc:a0c775b554acdaa8c4d250d6e6ea4b1bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置过滤条件  <a href="structsqlcpp_1_1Update.html#a0c775b554acdaa8c4d250d6e6ea4b1bf">More...</a><br /></td></tr>
 <tr class="separator:a0c775b554acdaa8c4d250d6e6ea4b1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f048e31f248944abe0586636984034e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a6f048e31f248944abe0586636984034e">order_by</a> (<a class="el" href="structsqlcpp_1_1OrderBy.html">OrderBy</a> order_by)</td></tr>
+<tr class="memdesc:a6f048e31f248944abe0586636984034e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置排序条件  <a href="structsqlcpp_1_1Update.html#a6f048e31f248944abe0586636984034e">More...</a><br /></td></tr>
 <tr class="separator:a6f048e31f248944abe0586636984034e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b71437d4ed67eace8ea18b41b3bd568"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a1b71437d4ed67eace8ea18b41b3bd568">order_by</a> (<a class="el" href="structsqlcpp_1_1Field.html">Field</a> field, <a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a> o=Order::ASC)</td></tr>
+<tr class="memdesc:a1b71437d4ed67eace8ea18b41b3bd568"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置排序条件  <a href="structsqlcpp_1_1Update.html#a1b71437d4ed67eace8ea18b41b3bd568">More...</a><br /></td></tr>
 <tr class="separator:a1b71437d4ed67eace8ea18b41b3bd568"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f0046aa4e27993e82c995efbb3897e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a9f0046aa4e27993e82c995efbb3897e3">order_by</a> (<a class="el" href="structsqlcpp_1_1RawField.html">RawField</a> field, <a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a> o=Order::ASC)</td></tr>
+<tr class="memdesc:a9f0046aa4e27993e82c995efbb3897e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置排序条件  <a href="structsqlcpp_1_1Update.html#a9f0046aa4e27993e82c995efbb3897e3">More...</a><br /></td></tr>
 <tr class="separator:a9f0046aa4e27993e82c995efbb3897e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65c5a428c9a6d5c39f47acb79e0ffa8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a65c5a428c9a6d5c39f47acb79e0ffa8c">order_by</a> (<a class="el" href="structsqlcpp_1_1FuncField.html">FuncField</a> field, <a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a> o=Order::ASC)</td></tr>
+<tr class="memdesc:a65c5a428c9a6d5c39f47acb79e0ffa8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置排序条件  <a href="structsqlcpp_1_1Update.html#a65c5a428c9a6d5c39f47acb79e0ffa8c">More...</a><br /></td></tr>
 <tr class="separator:a65c5a428c9a6d5c39f47acb79e0ffa8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fa02ffa150f8ac5fb5c9804530c281c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a2fa02ffa150f8ac5fb5c9804530c281c">order_by</a> (<a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field, <a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a> o=Order::ASC)</td></tr>
+<tr class="memdesc:a2fa02ffa150f8ac5fb5c9804530c281c"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置排序条件  <a href="structsqlcpp_1_1Update.html#a2fa02ffa150f8ac5fb5c9804530c281c">More...</a><br /></td></tr>
 <tr class="separator:a2fa02ffa150f8ac5fb5c9804530c281c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afee03aa7bf92da5bdb69c633684cb984"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#afee03aa7bf92da5bdb69c633684cb984">order_by</a> (<a class="el" href="structsqlcpp_1_1OrderByField.html">OrderByField</a> field)</td></tr>
+<tr class="memdesc:afee03aa7bf92da5bdb69c633684cb984"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置排序条件  <a href="structsqlcpp_1_1Update.html#afee03aa7bf92da5bdb69c633684cb984">More...</a><br /></td></tr>
 <tr class="separator:afee03aa7bf92da5bdb69c633684cb984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace85c8b2c18ae9e18104bace031f8820"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#ace85c8b2c18ae9e18104bace031f8820">limit</a> (size_t limit)</td></tr>
+<tr class="memdesc:ace85c8b2c18ae9e18104bace031f8820"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置限制条数  <a href="structsqlcpp_1_1Update.html#ace85c8b2c18ae9e18104bace031f8820">More...</a><br /></td></tr>
 <tr class="separator:ace85c8b2c18ae9e18104bace031f8820"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6ffe3585c7c1dadc03415eca87218a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#ac6ffe3585c7c1dadc03415eca87218a2">offset</a> (size_t offset)</td></tr>
+<tr class="memdesc:ac6ffe3585c7c1dadc03415eca87218a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置偏移量  <a href="structsqlcpp_1_1Update.html#ac6ffe3585c7c1dadc03415eca87218a2">More...</a><br /></td></tr>
 <tr class="separator:ac6ffe3585c7c1dadc03415eca87218a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12e2383acf900ba82164e85a49300d73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a12e2383acf900ba82164e85a49300d73">limit</a> (const <a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a> &amp;limit)</td></tr>
+<tr class="memdesc:a12e2383acf900ba82164e85a49300d73"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置限制条数  <a href="structsqlcpp_1_1Update.html#a12e2383acf900ba82164e85a49300d73">More...</a><br /></td></tr>
 <tr class="separator:a12e2383acf900ba82164e85a49300d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adeb23b6ddc6c6c036cc92e6118bfb7f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#adeb23b6ddc6c6c036cc92e6118bfb7f9">offset</a> (const <a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a> &amp;offset)</td></tr>
+<tr class="memdesc:adeb23b6ddc6c6c036cc92e6118bfb7f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置偏移量  <a href="structsqlcpp_1_1Update.html#adeb23b6ddc6c6c036cc92e6118bfb7f9">More...</a><br /></td></tr>
 <tr class="separator:adeb23b6ddc6c6c036cc92e6118bfb7f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadec6718edc62f099a5b83b9a7de5550"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#aadec6718edc62f099a5b83b9a7de5550">returning</a> (<a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> r)</td></tr>
+<tr class="memdesc:aadec6718edc62f099a5b83b9a7de5550"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置返回的列  <a href="structsqlcpp_1_1Update.html#aadec6718edc62f099a5b83b9a7de5550">More...</a><br /></td></tr>
 <tr class="separator:aadec6718edc62f099a5b83b9a7de5550"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d9098cc428491efa28d7c092e2f7959"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a8d9098cc428491efa28d7c092e2f7959">returning</a> (std::optional&lt; std::vector&lt; <a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> &gt;&gt; r)</td></tr>
+<tr class="memdesc:a8d9098cc428491efa28d7c092e2f7959"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置返回的列  <a href="structsqlcpp_1_1Update.html#a8d9098cc428491efa28d7c092e2f7959">More...</a><br /></td></tr>
 <tr class="separator:a8d9098cc428491efa28d7c092e2f7959"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7f41b82606465ba62356b1ba0c84beb"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
 <tr class="memitem:af7f41b82606465ba62356b1ba0c84beb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#af7f41b82606465ba62356b1ba0c84beb">returning</a> (Args &amp;&amp;...rs)</td></tr>
+<tr class="memdesc:af7f41b82606465ba62356b1ba0c84beb"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置返回的列  <a href="structsqlcpp_1_1Update.html#af7f41b82606465ba62356b1ba0c84beb">More...</a><br /></td></tr>
 <tr class="separator:af7f41b82606465ba62356b1ba0c84beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae914226fa6cffa9decc1ca884549e9a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#ae914226fa6cffa9decc1ca884549e9a0">add_returning</a> (<a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> rs)</td></tr>
+<tr class="memdesc:ae914226fa6cffa9decc1ca884549e9a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加返回的列  <a href="structsqlcpp_1_1Update.html#ae914226fa6cffa9decc1ca884549e9a0">More...</a><br /></td></tr>
 <tr class="separator:ae914226fa6cffa9decc1ca884549e9a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf8732b17daab91c9a2de78bd6cc073a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#adf8732b17daab91c9a2de78bd6cc073a">add_returning</a> (const std::vector&lt; <a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> &gt; &amp;rs)</td></tr>
+<tr class="memdesc:adf8732b17daab91c9a2de78bd6cc073a"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加返回的列  <a href="structsqlcpp_1_1Update.html#adf8732b17daab91c9a2de78bd6cc073a">More...</a><br /></td></tr>
 <tr class="separator:adf8732b17daab91c9a2de78bd6cc073a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbc11ab505fc9d28379e82acf318921b"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
 <tr class="memitem:acbc11ab505fc9d28379e82acf318921b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Update.html">Update</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#acbc11ab505fc9d28379e82acf318921b">add_returning</a> (Args &amp;&amp;...rs)</td></tr>
+<tr class="memdesc:acbc11ab505fc9d28379e82acf318921b"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加返回的列  <a href="structsqlcpp_1_1Update.html#acbc11ab505fc9d28379e82acf318921b">More...</a><br /></td></tr>
 <tr class="separator:acbc11ab505fc9d28379e82acf318921b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13741f94b6bf904326856e1cade3a72a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a13741f94b6bf904326856e1cade3a72a">build_s</a> (std::ostream &amp;oss, const <a class="el" href="structsqlcpp_1_1Type.html">Type</a> &amp;t=<a class="el" href="namespacesqlcpp.html#a19237f9b2742dd80678d8dfa286dcfd6">SQLCPP_DEFAULT_TYPE</a>) const override</td></tr>
 <tr class="memdesc:a13741f94b6bf904326856e1cade3a72a"><td class="mdescLeft">&#160;</td><td class="mdescRight">分步的将SQL语句输出到流中  <a href="structsqlcpp_1_1Update.html#a13741f94b6bf904326856e1cade3a72a">More...</a><br /></td></tr>
@@ -258,32 +315,39 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a5afafcf3ee195b0216018689407f51c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a5afafcf3ee195b0216018689407f51c5">LOW_PRIORITY</a> = false</td></tr>
-<tr class="memdesc:a5afafcf3ee195b0216018689407f51c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">mysql only  <a href="structsqlcpp_1_1Update.html#a5afafcf3ee195b0216018689407f51c5">More...</a><br /></td></tr>
+<tr class="memdesc:a5afafcf3ee195b0216018689407f51c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">mysql only - 指定更新操作为低优先级，通常用于减少对其他查询的锁竞争  <a href="structsqlcpp_1_1Update.html#a5afafcf3ee195b0216018689407f51c5">More...</a><br /></td></tr>
 <tr class="separator:a5afafcf3ee195b0216018689407f51c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a541e68a3ffd9f6ab37337010cda3dc80"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a541e68a3ffd9f6ab37337010cda3dc80">IGNORE</a> = false</td></tr>
-<tr class="memdesc:a541e68a3ffd9f6ab37337010cda3dc80"><td class="mdescLeft">&#160;</td><td class="mdescRight">mysql only  <a href="structsqlcpp_1_1Update.html#a541e68a3ffd9f6ab37337010cda3dc80">More...</a><br /></td></tr>
+<tr class="memdesc:a541e68a3ffd9f6ab37337010cda3dc80"><td class="mdescLeft">&#160;</td><td class="mdescRight">mysql only - 在执行更新操作时忽略导致错误的行，而不会引发错误  <a href="structsqlcpp_1_1Update.html#a541e68a3ffd9f6ab37337010cda3dc80">More...</a><br /></td></tr>
 <tr class="separator:a541e68a3ffd9f6ab37337010cda3dc80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45756076db1a5ad6583235d61d3e2af8"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structsqlcpp_1_1Update.html#af9f797e35d56bdd2b3c0bae51aef4817">UpdateOr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a45756076db1a5ad6583235d61d3e2af8">UPDATE_OR_</a> {}</td></tr>
-<tr class="memdesc:a45756076db1a5ad6583235d61d3e2af8"><td class="mdescLeft">&#160;</td><td class="mdescRight">sqlite only  <a href="structsqlcpp_1_1Update.html#a45756076db1a5ad6583235d61d3e2af8">More...</a><br /></td></tr>
+<tr class="memdesc:a45756076db1a5ad6583235d61d3e2af8"><td class="mdescLeft">&#160;</td><td class="mdescRight">sqlite only - 在sqlite中控制约束冲突时的行为  <a href="structsqlcpp_1_1Update.html#a45756076db1a5ad6583235d61d3e2af8">More...</a><br /></td></tr>
 <tr class="separator:a45756076db1a5ad6583235d61d3e2af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8793a9921718bfc8b260d97711f0e466"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structsqlcpp_1_1Froms.html">Froms</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a8793a9921718bfc8b260d97711f0e466">table_</a> {}</td></tr>
+<tr class="memdesc:a8793a9921718bfc8b260d97711f0e466"><td class="mdescLeft">&#160;</td><td class="mdescRight">要更新的表，指定更新操作的目标表  <a href="structsqlcpp_1_1Update.html#a8793a9921718bfc8b260d97711f0e466">More...</a><br /></td></tr>
 <tr class="separator:a8793a9921718bfc8b260d97711f0e466"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa49a8ae708aeddd99b4134a349634431"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structsqlcpp_1_1Assigns.html">Assigns</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#aa49a8ae708aeddd99b4134a349634431">assigns_</a> {}</td></tr>
+<tr class="memdesc:aa49a8ae708aeddd99b4134a349634431"><td class="mdescLeft">&#160;</td><td class="mdescRight">要更新的列和值的集合  <a href="structsqlcpp_1_1Update.html#aa49a8ae708aeddd99b4134a349634431">More...</a><br /></td></tr>
 <tr class="separator:aa49a8ae708aeddd99b4134a349634431"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ca04c20a5d3c32e1393702a49b211ea"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structsqlcpp_1_1Where.html">Where</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a1ca04c20a5d3c32e1393702a49b211ea">where_</a> {}</td></tr>
+<tr class="memdesc:a1ca04c20a5d3c32e1393702a49b211ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">条件子句，指定要更新的行  <a href="structsqlcpp_1_1Update.html#a1ca04c20a5d3c32e1393702a49b211ea">More...</a><br /></td></tr>
 <tr class="separator:a1ca04c20a5d3c32e1393702a49b211ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24f88bbd3b9e5c7451166fd7bdaa295e"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structsqlcpp_1_1OrderBy.html">OrderBy</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a24f88bbd3b9e5c7451166fd7bdaa295e">order_by_</a> {}</td></tr>
+<tr class="memdesc:a24f88bbd3b9e5c7451166fd7bdaa295e"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于指定更新顺序的排序子句  <a href="structsqlcpp_1_1Update.html#a24f88bbd3b9e5c7451166fd7bdaa295e">More...</a><br /></td></tr>
 <tr class="separator:a24f88bbd3b9e5c7451166fd7bdaa295e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9745d73b4113eb58d53daf5ea9c37fc"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::variant&lt; <a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a>, size_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#ad9745d73b4113eb58d53daf5ea9c37fc">limit_</a> {}</td></tr>
+<tr class="memdesc:ad9745d73b4113eb58d53daf5ea9c37fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">限制要更新的行数  <a href="structsqlcpp_1_1Update.html#ad9745d73b4113eb58d53daf5ea9c37fc">More...</a><br /></td></tr>
 <tr class="separator:ad9745d73b4113eb58d53daf5ea9c37fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afae00fb0aa2b056eac814cb3eb800d90"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::variant&lt; <a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a>, size_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#afae00fb0aa2b056eac814cb3eb800d90">offset_</a> {}</td></tr>
-<tr class="memdesc:afae00fb0aa2b056eac814cb3eb800d90"><td class="mdescLeft">&#160;</td><td class="mdescRight">sqlite only  <a href="structsqlcpp_1_1Update.html#afae00fb0aa2b056eac814cb3eb800d90">More...</a><br /></td></tr>
+<tr class="memdesc:afae00fb0aa2b056eac814cb3eb800d90"><td class="mdescLeft">&#160;</td><td class="mdescRight">sqlite only - 指定更新起始的行数偏移量  <a href="structsqlcpp_1_1Update.html#afae00fb0aa2b056eac814cb3eb800d90">More...</a><br /></td></tr>
 <tr class="separator:afae00fb0aa2b056eac814cb3eb800d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e8d695f74b6efb07e6e8b2fe076d956"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::vector&lt; <a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Update.html#a4e8d695f74b6efb07e6e8b2fe076d956">RETURNING_</a> {}</td></tr>
-<tr class="memdesc:a4e8d695f74b6efb07e6e8b2fe076d956"><td class="mdescLeft">&#160;</td><td class="mdescRight">sqlite only  <a href="structsqlcpp_1_1Update.html#a4e8d695f74b6efb07e6e8b2fe076d956">More...</a><br /></td></tr>
+<tr class="memdesc:a4e8d695f74b6efb07e6e8b2fe076d956"><td class="mdescLeft">&#160;</td><td class="mdescRight">sqlite only - 指定返回的列值集合，类似于select语句的作用  <a href="structsqlcpp_1_1Update.html#a4e8d695f74b6efb07e6e8b2fe076d956">More...</a><br /></td></tr>
 <tr class="separator:a4e8d695f74b6efb07e6e8b2fe076d956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>更新语句构建器 </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="af9f797e35d56bdd2b3c0bae51aef4817"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9f797e35d56bdd2b3c0bae51aef4817">&#9670;&nbsp;</a></span>UpdateOr</h2>
 
@@ -295,13 +359,19 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>在update遇到约束冲突时的处理方式 </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af9f797e35d56bdd2b3c0bae51aef4817a3471c85de2519d15d2411fb1f481768f"></a>OR_ROLLBACK&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af9f797e35d56bdd2b3c0bae51aef4817a9b9703eb79b0a781837013c5b0500524"></a>OR_ABORT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af9f797e35d56bdd2b3c0bae51aef4817abe2db47e6dd95f531f791e19bade227e"></a>OR_FAIL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af9f797e35d56bdd2b3c0bae51aef4817ad48a19c2afefe29de1e7f5c2e21b6d24"></a>OR_IGNORE&#160;</td><td class="fielddoc"><p>等于调用ignore, mysql支持 </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af9f797e35d56bdd2b3c0bae51aef4817a3471c85de2519d15d2411fb1f481768f"></a>OR_ROLLBACK&#160;</td><td class="fielddoc"><p>回滚当前事务, 如果没有事务，则仅回滚当前语句 </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af9f797e35d56bdd2b3c0bae51aef4817ae93c4076908b1cdf2babeb748aa23ea6"></a>OR_REPLACE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9f797e35d56bdd2b3c0bae51aef4817a9b9703eb79b0a781837013c5b0500524"></a>OR_ABORT&#160;</td><td class="fielddoc"><p>默认方式, 中止当前的操作，但不会回滚事务 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af9f797e35d56bdd2b3c0bae51aef4817abe2db47e6dd95f531f791e19bade227e"></a>OR_FAIL&#160;</td><td class="fielddoc"><p>类似于ABORT </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af9f797e35d56bdd2b3c0bae51aef4817ad48a19c2afefe29de1e7f5c2e21b6d24"></a>OR_IGNORE&#160;</td><td class="fielddoc"><p>忽略错误并继续执行剩余的操作, 等于调用ignore, mysql支持 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af9f797e35d56bdd2b3c0bae51aef4817ae93c4076908b1cdf2babeb748aa23ea6"></a>OR_REPLACE&#160;</td><td class="fielddoc"><p>试图通过删除导致冲突的现有记录并插入新的记录来解决约束冲突 </p>
+</td></tr>
 </table>
 
 </div>
@@ -330,6 +400,8 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>空构造 </p>
+
 </div>
 </div>
 <a id="a038b12cbf0bd5501cf5bac4a3a2344d6"></a>
@@ -347,6 +419,14 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>指定赋值集合构造, 不指定表和条件 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">assigns</td><td>赋值集合 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -382,6 +462,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">assigns</td><td>要更新的列和值的集合 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a62a273a15c778374e9acbf0e7da221f8"></a>
@@ -415,6 +505,16 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">assigns</td><td>要更新的列和值的集合 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -450,6 +550,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">assigns</td><td>要更新的列和值的集合 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a499d44697171816d16a9fff9bc4a60ae"></a>
@@ -484,6 +594,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">assigns</td><td>要更新的列和值的集合 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="acccc4e23157c06fd02c7aa2f4aad85ef"></a>
@@ -517,6 +637,16 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">assigns</td><td>要更新的列和值的集合 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -558,6 +688,17 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">field</td><td>要更新的列 </td></tr>
+    <tr><td class="paramname">value</td><td>要更新的值 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a58b30eb568111da350962665d1b31eae"></a>
@@ -597,6 +738,17 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">field</td><td>要更新的列 </td></tr>
+    <tr><td class="paramname">value</td><td>要更新的值 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -638,6 +790,17 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">field</td><td>要更新的列 </td></tr>
+    <tr><td class="paramname">value</td><td>要更新的值 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="afdd5ac2a392aab41f02fe044c752e879"></a>
@@ -677,6 +840,17 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">field</td><td>要更新的列 </td></tr>
+    <tr><td class="paramname">value</td><td>要更新的值 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -718,6 +892,17 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">field</td><td>要更新的列 </td></tr>
+    <tr><td class="paramname">value</td><td>要更新的值 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a0097ef74508e0e67be36a733a9b70bbf"></a>
@@ -751,6 +936,16 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">assigns</td><td>要更新的列和值的集合 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -786,6 +981,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">assigns</td><td>要更新的列和值的集合 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a339ee3ec171e22535059934015c18b65"></a>
@@ -819,6 +1024,16 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">assigns</td><td>要更新的列和值的集合 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -854,6 +1069,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">assigns</td><td>要更新的列和值的集合 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ace5c68607be7dcecc9fad96943505643"></a>
@@ -887,6 +1112,16 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">assigns</td><td>要更新的列和值的集合 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -928,6 +1163,17 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">field</td><td>要更新的列 </td></tr>
+    <tr><td class="paramname">value</td><td>要更新的值 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a22a31b6ee42f34bf9cc69edeb434687b"></a>
@@ -967,6 +1213,17 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">field</td><td>要更新的列 </td></tr>
+    <tr><td class="paramname">value</td><td>要更新的值 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1008,6 +1265,17 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">field</td><td>要更新的列 </td></tr>
+    <tr><td class="paramname">value</td><td>要更新的值 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a76a08542b03e4351ddbc7dcec494c826"></a>
@@ -1047,6 +1315,17 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">field</td><td>要更新的列 </td></tr>
+    <tr><td class="paramname">value</td><td>要更新的值 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1088,6 +1367,17 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>构造Update语句 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>要更新的表 </td></tr>
+    <tr><td class="paramname">field</td><td>要更新的列 </td></tr>
+    <tr><td class="paramname">value</td><td>要更新的值 </td></tr>
+    <tr><td class="paramname">where</td><td>条件子句 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -1107,6 +1397,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>添加要更新的列和值 </p>
+
 </div>
 </div>
 <a id="a0d4d43bcba3ddfaa2c29393af8073106"></a>
@@ -1124,6 +1416,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>添加要更新的列和值的集合 </p>
 
 </div>
 </div>
@@ -1153,6 +1447,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>添加要更新的列和值 </p>
+
 </div>
 </div>
 <a id="acbc11ab505fc9d28379e82acf318921b"></a>
@@ -1172,6 +1468,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>添加返回的列 </p>
 <dl class="section note"><dt>Note</dt><dd>sqlite only </dd></dl>
 
 </div>
@@ -1191,6 +1489,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>添加返回的列 </p>
 <dl class="section note"><dt>Note</dt><dd>sqlite only </dd></dl>
 
 </div>
@@ -1210,6 +1510,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>添加返回的列 </p>
 <dl class="section note"><dt>Note</dt><dd>sqlite only </dd></dl>
 
 </div>
@@ -1230,6 +1532,8 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>设置要更新的列和值 </p>
+
 </div>
 </div>
 <a id="ad132cd60d9ce0a3c6e001cd3f3936152"></a>
@@ -1247,6 +1551,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置要更新的列和值的集合 </p>
 
 </div>
 </div>
@@ -1275,6 +1581,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置要更新的列和值 </p>
 
 </div>
 </div>
@@ -1341,6 +1649,8 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>设置在执行更新操作时忽略导致错误的行 </p>
+
 </div>
 </div>
 <a id="a12e2383acf900ba82164e85a49300d73"></a>
@@ -1358,6 +1668,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置限制条数 </p>
 
 </div>
 </div>
@@ -1377,6 +1689,8 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>设置限制条数 </p>
+
 </div>
 </div>
 <a id="ac5d35b221811eb828169fe007ed28a55"></a>
@@ -1395,6 +1709,9 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>设置更新操作为低优先级 </p>
+<dl class="section note"><dt>Note</dt><dd>mysql only </dd></dl>
+
 </div>
 </div>
 <a id="adeb23b6ddc6c6c036cc92e6118bfb7f9"></a>
@@ -1412,6 +1729,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置偏移量 </p>
 <dl class="section note"><dt>Note</dt><dd>sqlite only </dd></dl>
 
 </div>
@@ -1431,6 +1750,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置偏移量 </p>
 <dl class="section note"><dt>Note</dt><dd>sqlite only </dd></dl>
 
 </div>
@@ -1461,6 +1782,8 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>设置排序条件 </p>
+
 </div>
 </div>
 <a id="a2fa02ffa150f8ac5fb5c9804530c281c"></a>
@@ -1488,6 +1811,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置排序条件 </p>
 
 </div>
 </div>
@@ -1517,6 +1842,8 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>设置排序条件 </p>
+
 </div>
 </div>
 <a id="a6f048e31f248944abe0586636984034e"></a>
@@ -1535,6 +1862,8 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>设置排序条件 </p>
+
 </div>
 </div>
 <a id="afee03aa7bf92da5bdb69c633684cb984"></a>
@@ -1552,6 +1881,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置排序条件 </p>
 
 </div>
 </div>
@@ -1581,6 +1912,8 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>设置排序条件 </p>
+
 </div>
 </div>
 <a id="af7f41b82606465ba62356b1ba0c84beb"></a>
@@ -1600,6 +1933,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置返回的列 </p>
 <dl class="section note"><dt>Note</dt><dd>sqlite only </dd></dl>
 
 </div>
@@ -1619,6 +1954,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置返回的列 </p>
 <dl class="section note"><dt>Note</dt><dd>sqlite only </dd></dl>
 
 </div>
@@ -1638,6 +1975,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置返回的列 </p>
 <dl class="section note"><dt>Note</dt><dd>sqlite only </dd></dl>
 
 </div>
@@ -1658,6 +1997,8 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>设置要更新的表 </p>
+
 </div>
 </div>
 <a id="a44e84bdc0392cbae52fa06bf5bd0b510"></a>
@@ -1675,6 +2016,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置要更新的表 </p>
 
 </div>
 </div>
@@ -1694,6 +2037,8 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>设置要更新的表 </p>
+
 </div>
 </div>
 <a id="a71ee06ee231a32b703ea9934779076b3"></a>
@@ -1711,6 +2056,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置要更新的表 </p>
 
 </div>
 </div>
@@ -1730,6 +2077,9 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>设置sqlite中控制约束冲突时的行为 </p>
+<dl class="section note"><dt>Note</dt><dd>sqlite only </dd></dl>
+
 </div>
 </div>
 <a id="a0c775b554acdaa8c4d250d6e6ea4b1bf"></a>
@@ -1747,6 +2097,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置过滤条件 </p>
 
 </div>
 </div>
@@ -1766,6 +2118,8 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>设置过滤条件 </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -1781,6 +2135,8 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>要更新的列和值的集合 </p>
+
 </div>
 </div>
 <a id="a541e68a3ffd9f6ab37337010cda3dc80"></a>
@@ -1795,7 +2151,7 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>mysql only </p>
+<p>mysql only - 在执行更新操作时忽略导致错误的行，而不会引发错误 </p>
 
 </div>
 </div>
@@ -1811,6 +2167,8 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>限制要更新的行数 </p>
+
 </div>
 </div>
 <a id="a5afafcf3ee195b0216018689407f51c5"></a>
@@ -1825,7 +2183,7 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>mysql only </p>
+<p>mysql only - 指定更新操作为低优先级，通常用于减少对其他查询的锁竞争 </p>
 
 </div>
 </div>
@@ -1841,7 +2199,7 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>sqlite only </p>
+<p>sqlite only - 指定更新起始的行数偏移量 </p>
 
 </div>
 </div>
@@ -1857,6 +2215,8 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>用于指定更新顺序的排序子句 </p>
+
 </div>
 </div>
 <a id="a4e8d695f74b6efb07e6e8b2fe076d956"></a>
@@ -1871,7 +2231,7 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>sqlite only </p>
+<p>sqlite only - 指定返回的列值集合，类似于select语句的作用 </p>
 
 </div>
 </div>
@@ -1887,6 +2247,8 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>要更新的表，指定更新操作的目标表 </p>
+
 </div>
 </div>
 <a id="a45756076db1a5ad6583235d61d3e2af8"></a>
@@ -1901,7 +2263,7 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>sqlite only </p>
+<p>sqlite only - 在sqlite中控制约束冲突时的行为 </p>
 
 </div>
 </div>
@@ -1916,6 +2278,8 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>条件子句，指定要更新的行 </p>
 
 </div>
 </div>

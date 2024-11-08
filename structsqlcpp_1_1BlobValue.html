@@ -92,13 +92,16 @@ $(document).ready(function(){initNavTree('structsqlcpp_1_1BlobValue.html',''); i
 </div><!--header-->
 <div class="contents">
 
+<p>二进制值, 会被转义  
+ <a href="structsqlcpp_1_1BlobValue.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="value_8hpp_source.html">value.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for sqlcpp::BlobValue:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1BlobValue__inherit__graph.png" border="0" usemap="#asqlcpp_1_1BlobValue_inherit__map" alt="Inheritance graph"/></div>
 <map name="asqlcpp_1_1BlobValue_inherit__map" id="asqlcpp_1_1BlobValue_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,143,107"/>
+<area shape="rect" title="二进制值, 会被转义" alt="" coords="5,80,143,107"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="15,5,133,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -107,7 +110,7 @@ Collaboration diagram for sqlcpp::BlobValue:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1BlobValue__coll__graph.png" border="0" usemap="#asqlcpp_1_1BlobValue_coll__map" alt="Collaboration graph"/></div>
 <map name="asqlcpp_1_1BlobValue_coll__map" id="asqlcpp_1_1BlobValue_coll__map">
-<area shape="rect" title=" " alt="" coords="5,80,143,107"/>
+<area shape="rect" title="二进制值, 会被转义" alt="" coords="5,80,143,107"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="15,5,133,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -115,18 +118,22 @@ Collaboration diagram for sqlcpp::BlobValue:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa38e32b3d4f977d95cc61577c2bd7bf8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1BlobValue.html#aa38e32b3d4f977d95cc61577c2bd7bf8">BlobValue</a> (const void *<a class="el" href="structsqlcpp_1_1BlobValue.html#a39c237cd98b384148aeea9fcc11e5c79">data</a>, size_t length, bool copy=false)</td></tr>
+<tr class="memdesc:aa38e32b3d4f977d95cc61577c2bd7bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">从指针构造BlobValue  <a href="structsqlcpp_1_1BlobValue.html#aa38e32b3d4f977d95cc61577c2bd7bf8">More...</a><br /></td></tr>
 <tr class="separator:aa38e32b3d4f977d95cc61577c2bd7bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89191b5d55d9fccda03a173c78f2a230"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a89191b5d55d9fccda03a173c78f2a230"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1BlobValue.html#a89191b5d55d9fccda03a173c78f2a230">BlobValue</a> (const std::vector&lt; T &gt; &amp;<a class="el" href="structsqlcpp_1_1BlobValue.html#a39c237cd98b384148aeea9fcc11e5c79">data</a>, bool copy=true)</td></tr>
+<tr class="memdesc:a89191b5d55d9fccda03a173c78f2a230"><td class="mdescLeft">&#160;</td><td class="mdescRight">从数据向量构造BlobValue  <a href="structsqlcpp_1_1BlobValue.html#a89191b5d55d9fccda03a173c78f2a230">More...</a><br /></td></tr>
 <tr class="separator:a89191b5d55d9fccda03a173c78f2a230"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9275b889cb27e9f29a98799b36c7984"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1BlobValue.html#ac9275b889cb27e9f29a98799b36c7984">BlobValue</a> (const std::string &amp;<a class="el" href="structsqlcpp_1_1BlobValue.html#a39c237cd98b384148aeea9fcc11e5c79">data</a>, bool copy=true)</td></tr>
+<tr class="memdesc:ac9275b889cb27e9f29a98799b36c7984"><td class="mdescLeft">&#160;</td><td class="mdescRight">从字符串构造BlobValue  <a href="structsqlcpp_1_1BlobValue.html#ac9275b889cb27e9f29a98799b36c7984">More...</a><br /></td></tr>
 <tr class="separator:ac9275b889cb27e9f29a98799b36c7984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39c237cd98b384148aeea9fcc11e5c79"><td class="memItemLeft" align="right" valign="top">const uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1BlobValue.html#a39c237cd98b384148aeea9fcc11e5c79">data</a> () const noexcept</td></tr>
+<tr class="memdesc:a39c237cd98b384148aeea9fcc11e5c79"><td class="mdescLeft">&#160;</td><td class="mdescRight">二进制数据指针  <a href="structsqlcpp_1_1BlobValue.html#a39c237cd98b384148aeea9fcc11e5c79">More...</a><br /></td></tr>
 <tr class="separator:a39c237cd98b384148aeea9fcc11e5c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ade3fd09675ab1ff7ff8ebd0340d4c1"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1BlobValue.html#a9ade3fd09675ab1ff7ff8ebd0340d4c1">size</a> () const noexcept</td></tr>
+<tr class="memdesc:a9ade3fd09675ab1ff7ff8ebd0340d4c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">二进制数据长度  <a href="structsqlcpp_1_1BlobValue.html#a9ade3fd09675ab1ff7ff8ebd0340d4c1">More...</a><br /></td></tr>
 <tr class="separator:a9ade3fd09675ab1ff7ff8ebd0340d4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a831b29c6aca9e0a3ae74479fe4461059"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1BlobValue.html#a831b29c6aca9e0a3ae74479fe4461059">build_s</a> (std::ostream &amp;oss, const <a class="el" href="structsqlcpp_1_1Type.html">Type</a> &amp;t=<a class="el" href="namespacesqlcpp.html#a19237f9b2742dd80678d8dfa286dcfd6">SQLCPP_DEFAULT_TYPE</a>) const override</td></tr>
-<tr class="memdesc:a831b29c6aca9e0a3ae74479fe4461059"><td class="mdescLeft">&#160;</td><td class="mdescRight">分步的将SQL语句输出到流中  <a href="structsqlcpp_1_1BlobValue.html#a831b29c6aca9e0a3ae74479fe4461059">More...</a><br /></td></tr>
 <tr class="separator:a831b29c6aca9e0a3ae74479fe4461059"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structsqlcpp_1_1Builder"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structsqlcpp_1_1Builder')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structsqlcpp_1_1Builder.html">sqlcpp::Builder</a></td></tr>
 <tr class="memitem:aa7c60ee0415e90c24cb56e277202d90d inherit pub_methods_structsqlcpp_1_1Builder"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Builder.html#aa7c60ee0415e90c24cb56e277202d90d">build</a> (const <a class="el" href="structsqlcpp_1_1Type.html">Type</a> &amp;t=<a class="el" href="namespacesqlcpp.html#a19237f9b2742dd80678d8dfa286dcfd6">SQLCPP_DEFAULT_TYPE</a>) const</td></tr>
@@ -135,7 +142,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8e530fc93bc44c93ea26f57b9601b59a inherit pub_methods_structsqlcpp_1_1Builder"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Builder.html#a8e530fc93bc44c93ea26f57b9601b59a">~Builder</a> ()=default</td></tr>
 <tr class="separator:a8e530fc93bc44c93ea26f57b9601b59a inherit pub_methods_structsqlcpp_1_1Builder"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>二进制值, 会被转义 </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa38e32b3d4f977d95cc61577c2bd7bf8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa38e32b3d4f977d95cc61577c2bd7bf8">&#9670;&nbsp;</a></span>BlobValue() <span class="overload">[1/3]</span></h2>
 
@@ -167,6 +176,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>从指针构造BlobValue </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>二进制数据指针 </td></tr>
+    <tr><td class="paramname">length</td><td>二进制数据长度 </td></tr>
+    <tr><td class="paramname">copy</td><td>是否复制数据(对于copy为false的情况, 构造函数不会复制数据, 因此需要保证数据在生命周期内有效) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -206,6 +225,15 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>从数据向量构造BlobValue </p>
+<p>允许任意类型的vector, 但会被转化为uint8_t*使用 </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>数据向量 </td></tr>
+    <tr><td class="paramname">copy</td><td>是否复制数据(对于copy为false的情况, 构造函数不会复制数据, 因此需要保证数据在生命周期内有效) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ac9275b889cb27e9f29a98799b36c7984"></a>
@@ -241,6 +269,15 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>从字符串构造BlobValue </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>字符串数据 </td></tr>
+    <tr><td class="paramname">copy</td><td>是否复制数据(对于copy为false的情况, 构造函数不会复制数据, 因此需要保证数据在生命周期内有效) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -278,15 +315,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>分步的将SQL语句输出到流中 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">oss</td><td>输出流 </td></tr>
-    <tr><td class="paramname">t</td><td>数据库类型，默认为 SQLCPP_DEFAULT_TYPE </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>MYSQL: 0x, SQLITE: x'</p>
+<p>大写HEX表示 </p>
 
 <p>Implements <a class="el" href="structsqlcpp_1_1Builder.html#a18829770c3d514b233b3a94d8fe16035">sqlcpp::Builder</a>.</p>
 
@@ -315,6 +345,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>二进制数据指针 </p>
+
 </div>
 </div>
 <a id="a9ade3fd09675ab1ff7ff8ebd0340d4c1"></a>
@@ -339,6 +371,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>二进制数据长度 </p>
 
 </div>
 </div>

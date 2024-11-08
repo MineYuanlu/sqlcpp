@@ -10,10 +10,10 @@
 <area shape="rect" id="node15" href="$structsqlcpp_1_1OrderBy.html" title="多个字段的排序条件" alt="" coords="207,487,333,513"/>
 <area shape="rect" id="node16" href="$structsqlcpp_1_1OrderByField.html" title="单个字段的排序条件" alt="" coords="192,537,348,564"/>
 <area shape="rect" id="node17" href="$structsqlcpp_1_1RawField.html" title="原生字段, 不会进行任何转义, 用于查询/更新/删除/条件等操作" alt="" coords="205,588,335,615"/>
-<area shape="rect" id="node18" href="$structsqlcpp_1_1Select.html" title=" " alt="" coords="214,639,326,665"/>
-<area shape="rect" id="node19" href="$structsqlcpp_1_1ValueLike.html" title=" " alt="" coords="203,689,337,716"/>
+<area shape="rect" id="node18" href="$structsqlcpp_1_1Select.html" title="选择语句构建器" alt="" coords="214,639,326,665"/>
+<area shape="rect" id="node19" href="$structsqlcpp_1_1ValueLike.html" title="所有形似值表示的类" alt="" coords="203,689,337,716"/>
 <area shape="rect" id="node20" href="$structsqlcpp_1_1VarValue.html" title="普通占位符, 表示形式为&quot;?&quot;, 可以使用VAR(N)代表有索引的占位符" alt="" coords="205,740,335,767"/>
-<area shape="rect" id="node22" href="$structsqlcpp_1_1Where.html" title=" " alt="" coords="213,791,327,817"/>
+<area shape="rect" id="node22" href="$structsqlcpp_1_1Where.html" title="筛选组件" alt="" coords="213,791,327,817"/>
 <area shape="rect" id="node3" href="$structsqlcpp_1_1CondBetween.html" title="BETWEEN条件" alt="" coords="405,5,567,32"/>
 <area shape="rect" id="node4" href="$structsqlcpp_1_1CondCmp.html" title="比较条件" alt="" coords="419,56,553,83"/>
 <area shape="rect" id="node5" href="$structsqlcpp_1_1CondIn.html" title="IN条件" alt="" coords="427,107,545,133"/>

@@ -93,13 +93,16 @@ $(document).ready(function(){initNavTree('structsqlcpp_1_1Select.html',''); init
 </div><!--header-->
 <div class="contents">
 
+<p>选择语句构建器  
+ <a href="structsqlcpp_1_1Select.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="select_8hpp_source.html">select.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for sqlcpp::Select:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1Select__inherit__graph.png" border="0" usemap="#asqlcpp_1_1Select_inherit__map" alt="Inheritance graph"/></div>
 <map name="asqlcpp_1_1Select_inherit__map" id="asqlcpp_1_1Select_inherit__map">
-<area shape="rect" title=" " alt="" coords="85,80,197,107"/>
+<area shape="rect" title="选择语句构建器" alt="" coords="85,80,197,107"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
 <area shape="rect" href="structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="149,5,287,32"/>
 </map>
@@ -109,7 +112,7 @@ Collaboration diagram for sqlcpp::Select:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1Select__coll__graph.png" border="0" usemap="#asqlcpp_1_1Select_coll__map" alt="Collaboration graph"/></div>
 <map name="asqlcpp_1_1Select_coll__map" id="asqlcpp_1_1Select_coll__map">
-<area shape="rect" title=" " alt="" coords="340,208,452,235"/>
+<area shape="rect" title="选择语句构建器" alt="" coords="340,208,452,235"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="53,5,172,32"/>
 <area shape="rect" href="structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="43,56,182,83"/>
 <area shape="rect" title=" " alt="" coords="13,107,213,133"/>
@@ -133,68 +136,99 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a88c9d5ef3d932e55b239b8a233e791b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a88c9d5ef3d932e55b239b8a233e791b3">operator=</a> (const <a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;)=default</td></tr>
 <tr class="separator:a88c9d5ef3d932e55b239b8a233e791b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a296bb069265a5412c6ad4b67bba2ba93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a296bb069265a5412c6ad4b67bba2ba93">Select</a> ()=default</td></tr>
+<tr class="memdesc:a296bb069265a5412c6ad4b67bba2ba93"><td class="mdescLeft">&#160;</td><td class="mdescRight">空构造函数  <a href="structsqlcpp_1_1Select.html#a296bb069265a5412c6ad4b67bba2ba93">More...</a><br /></td></tr>
 <tr class="separator:a296bb069265a5412c6ad4b67bba2ba93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a822f6a5328b03bcbcbf8ee68951e5b6a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a822f6a5328b03bcbcbf8ee68951e5b6a">Select</a> (<a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field)</td></tr>
+<tr class="memdesc:a822f6a5328b03bcbcbf8ee68951e5b6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">单字段构造函数  <a href="structsqlcpp_1_1Select.html#a822f6a5328b03bcbcbf8ee68951e5b6a">More...</a><br /></td></tr>
 <tr class="separator:a822f6a5328b03bcbcbf8ee68951e5b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9d8ca344d63fbcf02b0937f82cb2875"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#ae9d8ca344d63fbcf02b0937f82cb2875">Select</a> (std::vector&lt; <a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> &gt; fields)</td></tr>
+<tr class="memdesc:ae9d8ca344d63fbcf02b0937f82cb2875"><td class="mdescLeft">&#160;</td><td class="mdescRight">多字段构造函数  <a href="structsqlcpp_1_1Select.html#ae9d8ca344d63fbcf02b0937f82cb2875">More...</a><br /></td></tr>
 <tr class="separator:ae9d8ca344d63fbcf02b0937f82cb2875"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f7b3a8ccf3ec6d20237416e935af1d7"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;                        (std::is_convertible_v&lt;std::decay_t&lt;T&gt;, Field&gt; || std::is_convertible_v&lt;std::decay_t&lt;T&gt;, RawField&gt; || std::is_convertible_v&lt;std::decay_t&lt;T&gt;, FuncField&gt;) &amp;&amp;(sizeof...(Args) &gt; 0)&gt;&gt; </td></tr>
 <tr class="memitem:a2f7b3a8ccf3ec6d20237416e935af1d7"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a2f7b3a8ccf3ec6d20237416e935af1d7">Select</a> (T field, Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:a2f7b3a8ccf3ec6d20237416e935af1d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">多字段构造函数  <a href="structsqlcpp_1_1Select.html#a2f7b3a8ccf3ec6d20237416e935af1d7">More...</a><br /></td></tr>
 <tr class="separator:a2f7b3a8ccf3ec6d20237416e935af1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63405bd1fa46c637dbec50ecf7bd3f2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a63405bd1fa46c637dbec50ecf7bd3f2a">select</a> (const char *field)</td></tr>
+<tr class="memdesc:a63405bd1fa46c637dbec50ecf7bd3f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">选择字段  <a href="structsqlcpp_1_1Select.html#a63405bd1fa46c637dbec50ecf7bd3f2a">More...</a><br /></td></tr>
 <tr class="separator:a63405bd1fa46c637dbec50ecf7bd3f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5859a2c3264da7b68b6247f0812378a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#af5859a2c3264da7b68b6247f0812378a">select</a> (std::string field)</td></tr>
+<tr class="memdesc:af5859a2c3264da7b68b6247f0812378a"><td class="mdescLeft">&#160;</td><td class="mdescRight">选择字段  <a href="structsqlcpp_1_1Select.html#af5859a2c3264da7b68b6247f0812378a">More...</a><br /></td></tr>
 <tr class="separator:af5859a2c3264da7b68b6247f0812378a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a379ebcfe1de28b951c4ed5ab1716b6ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a379ebcfe1de28b951c4ed5ab1716b6ee">select</a> (<a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field)</td></tr>
+<tr class="memdesc:a379ebcfe1de28b951c4ed5ab1716b6ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">选择字段  <a href="structsqlcpp_1_1Select.html#a379ebcfe1de28b951c4ed5ab1716b6ee">More...</a><br /></td></tr>
 <tr class="separator:a379ebcfe1de28b951c4ed5ab1716b6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a364e5ffa953ac8a819f4309b3bc64df6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a364e5ffa953ac8a819f4309b3bc64df6">select</a> (<a class="el" href="structsqlcpp_1_1Field.html">Field</a> field)</td></tr>
+<tr class="memdesc:a364e5ffa953ac8a819f4309b3bc64df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">选择字段  <a href="structsqlcpp_1_1Select.html#a364e5ffa953ac8a819f4309b3bc64df6">More...</a><br /></td></tr>
 <tr class="separator:a364e5ffa953ac8a819f4309b3bc64df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf3c936b96ae65df776f222545bf06a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#aaf3c936b96ae65df776f222545bf06a8">select</a> (<a class="el" href="structsqlcpp_1_1RawField.html">RawField</a> field)</td></tr>
+<tr class="memdesc:aaf3c936b96ae65df776f222545bf06a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">选择字段  <a href="structsqlcpp_1_1Select.html#aaf3c936b96ae65df776f222545bf06a8">More...</a><br /></td></tr>
 <tr class="separator:aaf3c936b96ae65df776f222545bf06a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab418c65d01713c92750cd9337d1ce86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#aab418c65d01713c92750cd9337d1ce86">select</a> (<a class="el" href="structsqlcpp_1_1FuncField.html">FuncField</a> field)</td></tr>
+<tr class="memdesc:aab418c65d01713c92750cd9337d1ce86"><td class="mdescLeft">&#160;</td><td class="mdescRight">选择字段  <a href="structsqlcpp_1_1Select.html#aab418c65d01713c92750cd9337d1ce86">More...</a><br /></td></tr>
 <tr class="separator:aab418c65d01713c92750cd9337d1ce86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78181615611e8a0f8d1e35f6050692b1"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;                        (std::is_convertible_v&lt;std::decay_t&lt;T&gt;, Field&gt; || std::is_convertible_v&lt;std::decay_t&lt;T&gt;, RawField&gt; || std::is_convertible_v&lt;std::decay_t&lt;T&gt;, FuncField&gt;) &amp;&amp;(sizeof...(Args) &gt; 0)&gt;&gt; </td></tr>
 <tr class="memitem:a78181615611e8a0f8d1e35f6050692b1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a78181615611e8a0f8d1e35f6050692b1">select</a> (T field, Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:a78181615611e8a0f8d1e35f6050692b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">选择字段  <a href="structsqlcpp_1_1Select.html#a78181615611e8a0f8d1e35f6050692b1">More...</a><br /></td></tr>
 <tr class="separator:a78181615611e8a0f8d1e35f6050692b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6b4e5c612e984e04e8f1b6b77c1c113"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#af6b4e5c612e984e04e8f1b6b77c1c113">from</a> (<a class="el" href="structsqlcpp_1_1Froms.html">Froms</a> from)</td></tr>
+<tr class="memdesc:af6b4e5c612e984e04e8f1b6b77c1c113"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置完整的from关系  <a href="structsqlcpp_1_1Select.html#af6b4e5c612e984e04e8f1b6b77c1c113">More...</a><br /></td></tr>
 <tr class="separator:af6b4e5c612e984e04e8f1b6b77c1c113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9007b37ebd070258087a1d80d66ce939"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a9007b37ebd070258087a1d80d66ce939">from</a> (<a class="el" href="structsqlcpp_1_1From.html">From</a> from)</td></tr>
+<tr class="memdesc:a9007b37ebd070258087a1d80d66ce939"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置单表from  <a href="structsqlcpp_1_1Select.html#a9007b37ebd070258087a1d80d66ce939">More...</a><br /></td></tr>
 <tr class="separator:a9007b37ebd070258087a1d80d66ce939"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c0e362b1d7c910875d6ed9eef3099ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a6c0e362b1d7c910875d6ed9eef3099ea">from</a> (<a class="el" href="structsqlcpp_1_1RawFrom.html">RawFrom</a> from)</td></tr>
+<tr class="memdesc:a6c0e362b1d7c910875d6ed9eef3099ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置from  <a href="structsqlcpp_1_1Select.html#a6c0e362b1d7c910875d6ed9eef3099ea">More...</a><br /></td></tr>
 <tr class="separator:a6c0e362b1d7c910875d6ed9eef3099ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a176971a4ec46d9a60c6650092ccb8086"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a176971a4ec46d9a60c6650092ccb8086">where</a> (<a class="el" href="structsqlcpp_1_1Where.html">Where</a> where)</td></tr>
+<tr class="memdesc:a176971a4ec46d9a60c6650092ccb8086"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置过滤条件  <a href="structsqlcpp_1_1Select.html#a176971a4ec46d9a60c6650092ccb8086">More...</a><br /></td></tr>
 <tr class="separator:a176971a4ec46d9a60c6650092ccb8086"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f45365e909e6a1488df2b6c77445c7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a9f45365e909e6a1488df2b6c77445c7a">where</a> (<a class="el" href="structsqlcpp_1_1Condition.html">Condition</a> where)</td></tr>
+<tr class="memdesc:a9f45365e909e6a1488df2b6c77445c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置过滤条件  <a href="structsqlcpp_1_1Select.html#a9f45365e909e6a1488df2b6c77445c7a">More...</a><br /></td></tr>
 <tr class="separator:a9f45365e909e6a1488df2b6c77445c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb8a2a9a406d20d13d2225689c2bf851"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#abb8a2a9a406d20d13d2225689c2bf851">group_by</a> (<a class="el" href="structsqlcpp_1_1GroupBy.html">GroupBy</a> group_by)</td></tr>
+<tr class="memdesc:abb8a2a9a406d20d13d2225689c2bf851"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置分组条件  <a href="structsqlcpp_1_1Select.html#abb8a2a9a406d20d13d2225689c2bf851">More...</a><br /></td></tr>
 <tr class="separator:abb8a2a9a406d20d13d2225689c2bf851"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1dd624a2953ebd475e249a1fe8f7da9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#ae1dd624a2953ebd475e249a1fe8f7da9">having</a> (<a class="el" href="structsqlcpp_1_1Having.html">Having</a> having)</td></tr>
+<tr class="memdesc:ae1dd624a2953ebd475e249a1fe8f7da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置分组过滤条件  <a href="structsqlcpp_1_1Select.html#ae1dd624a2953ebd475e249a1fe8f7da9">More...</a><br /></td></tr>
 <tr class="separator:ae1dd624a2953ebd475e249a1fe8f7da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa12dacb0bc60ee242934b0861842750b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#aa12dacb0bc60ee242934b0861842750b">having</a> (<a class="el" href="structsqlcpp_1_1Condition.html">Condition</a> having)</td></tr>
+<tr class="memdesc:aa12dacb0bc60ee242934b0861842750b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置分组过滤条件  <a href="structsqlcpp_1_1Select.html#aa12dacb0bc60ee242934b0861842750b">More...</a><br /></td></tr>
 <tr class="separator:aa12dacb0bc60ee242934b0861842750b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ba22edeb0cf155c66914fa345389963"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a7ba22edeb0cf155c66914fa345389963">order_by</a> (<a class="el" href="structsqlcpp_1_1OrderBy.html">OrderBy</a> order_by)</td></tr>
+<tr class="memdesc:a7ba22edeb0cf155c66914fa345389963"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置排序条件  <a href="structsqlcpp_1_1Select.html#a7ba22edeb0cf155c66914fa345389963">More...</a><br /></td></tr>
 <tr class="separator:a7ba22edeb0cf155c66914fa345389963"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5af2b908c312accd9c52c318951d038e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a5af2b908c312accd9c52c318951d038e">order_by</a> (<a class="el" href="structsqlcpp_1_1Field.html">Field</a> field, <a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a> o=Order::ASC)</td></tr>
+<tr class="memdesc:a5af2b908c312accd9c52c318951d038e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置排序条件  <a href="structsqlcpp_1_1Select.html#a5af2b908c312accd9c52c318951d038e">More...</a><br /></td></tr>
 <tr class="separator:a5af2b908c312accd9c52c318951d038e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18381139e63688701d49c2dd356da630"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a18381139e63688701d49c2dd356da630">order_by</a> (<a class="el" href="structsqlcpp_1_1RawField.html">RawField</a> field, <a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a> o=Order::ASC)</td></tr>
+<tr class="memdesc:a18381139e63688701d49c2dd356da630"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置排序条件  <a href="structsqlcpp_1_1Select.html#a18381139e63688701d49c2dd356da630">More...</a><br /></td></tr>
 <tr class="separator:a18381139e63688701d49c2dd356da630"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac49010d76c6163a22d66717569eccaf6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#ac49010d76c6163a22d66717569eccaf6">order_by</a> (<a class="el" href="structsqlcpp_1_1FuncField.html">FuncField</a> field, <a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a> o=Order::ASC)</td></tr>
+<tr class="memdesc:ac49010d76c6163a22d66717569eccaf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置排序条件  <a href="structsqlcpp_1_1Select.html#ac49010d76c6163a22d66717569eccaf6">More...</a><br /></td></tr>
 <tr class="separator:ac49010d76c6163a22d66717569eccaf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c394636efe691a28b33fafab0c4665e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a5c394636efe691a28b33fafab0c4665e">order_by</a> (<a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field, <a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a> o=Order::ASC)</td></tr>
+<tr class="memdesc:a5c394636efe691a28b33fafab0c4665e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置排序条件  <a href="structsqlcpp_1_1Select.html#a5c394636efe691a28b33fafab0c4665e">More...</a><br /></td></tr>
 <tr class="separator:a5c394636efe691a28b33fafab0c4665e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaba46ae0d162ab3f0f62b52098fd7b32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#aaba46ae0d162ab3f0f62b52098fd7b32">order_by</a> (<a class="el" href="structsqlcpp_1_1OrderByField.html">OrderByField</a> field)</td></tr>
+<tr class="memdesc:aaba46ae0d162ab3f0f62b52098fd7b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置排序条件  <a href="structsqlcpp_1_1Select.html#aaba46ae0d162ab3f0f62b52098fd7b32">More...</a><br /></td></tr>
 <tr class="separator:aaba46ae0d162ab3f0f62b52098fd7b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2787e44b52a854366524b7444cd2fa8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a2787e44b52a854366524b7444cd2fa8f">limit</a> (size_t limit)</td></tr>
+<tr class="memdesc:a2787e44b52a854366524b7444cd2fa8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置限制条数  <a href="structsqlcpp_1_1Select.html#a2787e44b52a854366524b7444cd2fa8f">More...</a><br /></td></tr>
 <tr class="separator:a2787e44b52a854366524b7444cd2fa8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a178b423f5d881d0b94b0b95dd8e970d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a178b423f5d881d0b94b0b95dd8e970d6">offset</a> (size_t offset)</td></tr>
+<tr class="memdesc:a178b423f5d881d0b94b0b95dd8e970d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置偏移量  <a href="structsqlcpp_1_1Select.html#a178b423f5d881d0b94b0b95dd8e970d6">More...</a><br /></td></tr>
 <tr class="separator:a178b423f5d881d0b94b0b95dd8e970d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba6604f5fe9793bccbbb920571e1ef33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#aba6604f5fe9793bccbbb920571e1ef33">limit</a> (const <a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a> &amp;limit)</td></tr>
+<tr class="memdesc:aba6604f5fe9793bccbbb920571e1ef33"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置限制条数  <a href="structsqlcpp_1_1Select.html#aba6604f5fe9793bccbbb920571e1ef33">More...</a><br /></td></tr>
 <tr class="separator:aba6604f5fe9793bccbbb920571e1ef33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92f386b3a9222b2d5ce2256f67645ff6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a92f386b3a9222b2d5ce2256f67645ff6">offset</a> (const <a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a> &amp;offset)</td></tr>
+<tr class="memdesc:a92f386b3a9222b2d5ce2256f67645ff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置偏移量  <a href="structsqlcpp_1_1Select.html#a92f386b3a9222b2d5ce2256f67645ff6">More...</a><br /></td></tr>
 <tr class="separator:a92f386b3a9222b2d5ce2256f67645ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6adaa7fc6efea06ab07ae4861c697792"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a6adaa7fc6efea06ab07ae4861c697792">limit</a> (const <a class="el" href="structsqlcpp_1_1IndexedVarValue.html">IndexedVarValue</a> &amp;limit)</td></tr>
+<tr class="memdesc:a6adaa7fc6efea06ab07ae4861c697792"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置限制条数  <a href="structsqlcpp_1_1Select.html#a6adaa7fc6efea06ab07ae4861c697792">More...</a><br /></td></tr>
 <tr class="separator:a6adaa7fc6efea06ab07ae4861c697792"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42459d8e4af0b7c7d5e43f3b7cebae90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a42459d8e4af0b7c7d5e43f3b7cebae90">offset</a> (const <a class="el" href="structsqlcpp_1_1IndexedVarValue.html">IndexedVarValue</a> &amp;offset)</td></tr>
+<tr class="memdesc:a42459d8e4af0b7c7d5e43f3b7cebae90"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置偏移量  <a href="structsqlcpp_1_1Select.html#a42459d8e4af0b7c7d5e43f3b7cebae90">More...</a><br /></td></tr>
 <tr class="separator:a42459d8e4af0b7c7d5e43f3b7cebae90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca5837e7d46aa0831a781015665cff38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#aca5837e7d46aa0831a781015665cff38">build_s</a> (std::ostream &amp;oss, const <a class="el" href="structsqlcpp_1_1Type.html">Type</a> &amp;t=<a class="el" href="namespacesqlcpp.html#a19237f9b2742dd80678d8dfa286dcfd6">SQLCPP_DEFAULT_TYPE</a>) const override</td></tr>
 <tr class="memdesc:aca5837e7d46aa0831a781015665cff38"><td class="mdescLeft">&#160;</td><td class="mdescRight">分步的将SQL语句输出到流中  <a href="structsqlcpp_1_1Select.html#aca5837e7d46aa0831a781015665cff38">More...</a><br /></td></tr>
@@ -214,23 +248,33 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:af38dd369573b7b76d7067fedf47d5ec7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#af38dd369573b7b76d7067fedf47d5ec7">fields_</a> {}</td></tr>
+<tr class="memdesc:af38dd369573b7b76d7067fedf47d5ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">选择的字段  <a href="structsqlcpp_1_1Select.html#af38dd369573b7b76d7067fedf47d5ec7">More...</a><br /></td></tr>
 <tr class="separator:af38dd369573b7b76d7067fedf47d5ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f35e4c74a9b7463fc8ca95ae9734a37"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structsqlcpp_1_1Froms.html">Froms</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a3f35e4c74a9b7463fc8ca95ae9734a37">from_</a> {}</td></tr>
+<tr class="memdesc:a3f35e4c74a9b7463fc8ca95ae9734a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">表名(和join关系)  <a href="structsqlcpp_1_1Select.html#a3f35e4c74a9b7463fc8ca95ae9734a37">More...</a><br /></td></tr>
 <tr class="separator:a3f35e4c74a9b7463fc8ca95ae9734a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46317b2b36fc9034ef2843504b4c9e7c"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structsqlcpp_1_1Where.html">Where</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a46317b2b36fc9034ef2843504b4c9e7c">where_</a> {}</td></tr>
+<tr class="memdesc:a46317b2b36fc9034ef2843504b4c9e7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">过滤条件  <a href="structsqlcpp_1_1Select.html#a46317b2b36fc9034ef2843504b4c9e7c">More...</a><br /></td></tr>
 <tr class="separator:a46317b2b36fc9034ef2843504b4c9e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71b55979789d36ff8f386503ae77e8c5"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structsqlcpp_1_1GroupBy.html">GroupBy</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a71b55979789d36ff8f386503ae77e8c5">group_by_</a> {}</td></tr>
+<tr class="memdesc:a71b55979789d36ff8f386503ae77e8c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">分组条件  <a href="structsqlcpp_1_1Select.html#a71b55979789d36ff8f386503ae77e8c5">More...</a><br /></td></tr>
 <tr class="separator:a71b55979789d36ff8f386503ae77e8c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25d96fb9b60c0f78edd27810684f9369"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structsqlcpp_1_1Having.html">Having</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a25d96fb9b60c0f78edd27810684f9369">having_</a> {}</td></tr>
+<tr class="memdesc:a25d96fb9b60c0f78edd27810684f9369"><td class="mdescLeft">&#160;</td><td class="mdescRight">分组后的过滤条件  <a href="structsqlcpp_1_1Select.html#a25d96fb9b60c0f78edd27810684f9369">More...</a><br /></td></tr>
 <tr class="separator:a25d96fb9b60c0f78edd27810684f9369"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57f1f8606776740325e95e7ebd2a840c"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structsqlcpp_1_1OrderBy.html">OrderBy</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a57f1f8606776740325e95e7ebd2a840c">order_by_</a> {}</td></tr>
+<tr class="memdesc:a57f1f8606776740325e95e7ebd2a840c"><td class="mdescLeft">&#160;</td><td class="mdescRight">排序条件  <a href="structsqlcpp_1_1Select.html#a57f1f8606776740325e95e7ebd2a840c">More...</a><br /></td></tr>
 <tr class="separator:a57f1f8606776740325e95e7ebd2a840c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63dbf633393e6e3a707fb917937d6b88"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::variant&lt; <a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a>, <a class="el" href="structsqlcpp_1_1IndexedVarValue.html">IndexedVarValue</a>, size_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a63dbf633393e6e3a707fb917937d6b88">limit_</a> {}</td></tr>
+<tr class="memdesc:a63dbf633393e6e3a707fb917937d6b88"><td class="mdescLeft">&#160;</td><td class="mdescRight">限制条数  <a href="structsqlcpp_1_1Select.html#a63dbf633393e6e3a707fb917937d6b88">More...</a><br /></td></tr>
 <tr class="separator:a63dbf633393e6e3a707fb917937d6b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af121cbfce3bdd7f749a0ba6581425c85"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::variant&lt; <a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a>, <a class="el" href="structsqlcpp_1_1IndexedVarValue.html">IndexedVarValue</a>, size_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#af121cbfce3bdd7f749a0ba6581425c85">offset_</a> {}</td></tr>
+<tr class="memdesc:af121cbfce3bdd7f749a0ba6581425c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">偏移量  <a href="structsqlcpp_1_1Select.html#af121cbfce3bdd7f749a0ba6581425c85">More...</a><br /></td></tr>
 <tr class="separator:af121cbfce3bdd7f749a0ba6581425c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>选择语句构建器 </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa7652164c0e2645970c701a68fb7602d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa7652164c0e2645970c701a68fb7602d">&#9670;&nbsp;</a></span>Select() <span class="overload">[1/6]</span></h2>
 
@@ -306,6 +350,8 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>空构造函数 </p>
+
 </div>
 </div>
 <a id="a822f6a5328b03bcbcbf8ee68951e5b6a"></a>
@@ -324,6 +370,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>单字段构造函数 </p>
+
 </div>
 </div>
 <a id="ae9d8ca344d63fbcf02b0937f82cb2875"></a>
@@ -341,6 +389,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>多字段构造函数 </p>
 
 </div>
 </div>
@@ -379,6 +429,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>多字段构造函数 </p>
 
 </div>
 </div>
@@ -474,6 +526,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
       </table>
 </div><div class="memdoc">
 
+<p>设置单表from </p>
+
 </div>
 </div>
 <a id="af6b4e5c612e984e04e8f1b6b77c1c113"></a>
@@ -491,6 +545,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置完整的from关系 </p>
 
 </div>
 </div>
@@ -510,6 +566,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
       </table>
 </div><div class="memdoc">
 
+<p>设置from </p>
+
 </div>
 </div>
 <a id="abb8a2a9a406d20d13d2225689c2bf851"></a>
@@ -527,6 +585,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置分组条件 </p>
 
 </div>
 </div>
@@ -546,6 +606,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
       </table>
 </div><div class="memdoc">
 
+<p>设置分组过滤条件 </p>
+
 </div>
 </div>
 <a id="ae1dd624a2953ebd475e249a1fe8f7da9"></a>
@@ -563,6 +625,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置分组过滤条件 </p>
 
 </div>
 </div>
@@ -582,6 +646,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
       </table>
 </div><div class="memdoc">
 
+<p>设置限制条数 </p>
+
 </div>
 </div>
 <a id="aba6604f5fe9793bccbbb920571e1ef33"></a>
@@ -599,6 +665,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置限制条数 </p>
 
 </div>
 </div>
@@ -618,6 +686,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
       </table>
 </div><div class="memdoc">
 
+<p>设置限制条数 </p>
+
 </div>
 </div>
 <a id="a42459d8e4af0b7c7d5e43f3b7cebae90"></a>
@@ -635,6 +705,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置偏移量 </p>
 
 </div>
 </div>
@@ -654,6 +726,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
       </table>
 </div><div class="memdoc">
 
+<p>设置偏移量 </p>
+
 </div>
 </div>
 <a id="a178b423f5d881d0b94b0b95dd8e970d6"></a>
@@ -671,6 +745,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置偏移量 </p>
 
 </div>
 </div>
@@ -752,6 +828,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
       </table>
 </div><div class="memdoc">
 
+<p>设置排序条件 </p>
+
 </div>
 </div>
 <a id="a5c394636efe691a28b33fafab0c4665e"></a>
@@ -779,6 +857,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置排序条件 </p>
 
 </div>
 </div>
@@ -808,6 +888,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
       </table>
 </div><div class="memdoc">
 
+<p>设置排序条件 </p>
+
 </div>
 </div>
 <a id="a7ba22edeb0cf155c66914fa345389963"></a>
@@ -826,6 +908,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
       </table>
 </div><div class="memdoc">
 
+<p>设置排序条件 </p>
+
 </div>
 </div>
 <a id="aaba46ae0d162ab3f0f62b52098fd7b32"></a>
@@ -843,6 +927,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置排序条件 </p>
 
 </div>
 </div>
@@ -872,6 +958,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
       </table>
 </div><div class="memdoc">
 
+<p>设置排序条件 </p>
+
 </div>
 </div>
 <a id="a63405bd1fa46c637dbec50ecf7bd3f2a"></a>
@@ -889,6 +977,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>选择字段 </p>
 
 </div>
 </div>
@@ -908,6 +998,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
       </table>
 </div><div class="memdoc">
 
+<p>选择字段 </p>
+
 </div>
 </div>
 <a id="a379ebcfe1de28b951c4ed5ab1716b6ee"></a>
@@ -925,6 +1017,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>选择字段 </p>
 
 </div>
 </div>
@@ -944,6 +1038,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
       </table>
 </div><div class="memdoc">
 
+<p>选择字段 </p>
+
 </div>
 </div>
 <a id="aaf3c936b96ae65df776f222545bf06a8"></a>
@@ -962,6 +1058,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
       </table>
 </div><div class="memdoc">
 
+<p>选择字段 </p>
+
 </div>
 </div>
 <a id="af5859a2c3264da7b68b6247f0812378a"></a>
@@ -979,6 +1077,8 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>选择字段 </p>
 
 </div>
 </div>
@@ -1018,6 +1118,8 @@ template&lt;typename T , typename... Args, typename &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>选择字段 </p>
+
 </div>
 </div>
 <a id="a9f45365e909e6a1488df2b6c77445c7a"></a>
@@ -1035,6 +1137,8 @@ template&lt;typename T , typename... Args, typename &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置过滤条件 </p>
 
 </div>
 </div>
@@ -1054,6 +1158,8 @@ template&lt;typename T , typename... Args, typename &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>设置过滤条件 </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -1069,6 +1175,8 @@ template&lt;typename T , typename... Args, typename &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>选择的字段 </p>
+
 </div>
 </div>
 <a id="a3f35e4c74a9b7463fc8ca95ae9734a37"></a>
@@ -1082,6 +1190,8 @@ template&lt;typename T , typename... Args, typename &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>表名(和join关系) </p>
 
 </div>
 </div>
@@ -1097,6 +1207,8 @@ template&lt;typename T , typename... Args, typename &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>分组条件 </p>
+
 </div>
 </div>
 <a id="a25d96fb9b60c0f78edd27810684f9369"></a>
@@ -1110,6 +1222,8 @@ template&lt;typename T , typename... Args, typename &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>分组后的过滤条件 </p>
 
 </div>
 </div>
@@ -1125,6 +1239,8 @@ template&lt;typename T , typename... Args, typename &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>限制条数 </p>
+
 </div>
 </div>
 <a id="af121cbfce3bdd7f749a0ba6581425c85"></a>
@@ -1138,6 +1254,8 @@ template&lt;typename T , typename... Args, typename &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>偏移量 </p>
 
 </div>
 </div>
@@ -1153,6 +1271,8 @@ template&lt;typename T , typename... Args, typename &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>排序条件 </p>
+
 </div>
 </div>
 <a id="a46317b2b36fc9034ef2843504b4c9e7c"></a>
@@ -1166,6 +1286,8 @@ template&lt;typename T , typename... Args, typename &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>过滤条件 </p>
 
 </div>
 </div>

@@ -2,13 +2,13 @@ var namespacesqlcpp =
 [
     [ "F", "namespacesqlcpp_1_1F.html", "namespacesqlcpp_1_1F" ],
     [ "str", "namespacesqlcpp_1_1str.html", [
-      [ "hex_stream", "namespacesqlcpp_1_1str.html#a3bcc7a258522399bfb22eff1996e49b8", null ],
-      [ "join", "namespacesqlcpp_1_1str.html#a4bb998013a06dcf890b3b6a238de0180", null ],
+      [ "hex_stream", "namespacesqlcpp_1_1str.html#ac7701e2ee24cab98d469ca8e76be27a6", null ],
+      [ "join", "namespacesqlcpp_1_1str.html#a152066bd6a9d4c9e6ceaf1b3649d665d", null ],
       [ "package_string", "namespacesqlcpp_1_1str.html#ab70e3b6a179130e2bb093ff0aedc1e95", null ],
       [ "safe_field", "namespacesqlcpp_1_1str.html#aca86616b717c880a704bd6091de64d97", null ],
       [ "safe_table", "namespacesqlcpp_1_1str.html#a65d3c00ddaadebf3cdf7f871cdc4c1f8", null ],
       [ "safe_value", "namespacesqlcpp_1_1str.html#a0cce2c9081f2cc99c6de684995f207c6", null ],
-      [ "safe_values", "namespacesqlcpp_1_1str.html#aa0ae16f2c6df88f08c4c737bbf61125a", null ],
+      [ "safe_values", "namespacesqlcpp_1_1str.html#af02a3f397b6bd7133c5c9941ad53f0be", null ],
       [ "toLowerCase", "namespacesqlcpp_1_1str.html#a91b7fbc5edbd2bf59867bcc0448dc949", null ],
       [ "toUpperCase", "namespacesqlcpp_1_1str.html#ae32aa92414cbf1fc31deef906a237c87", null ]
     ] ],

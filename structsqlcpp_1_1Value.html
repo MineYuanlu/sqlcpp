@@ -93,13 +93,16 @@ $(document).ready(function(){initNavTree('structsqlcpp_1_1Value.html',''); initR
 </div><!--header-->
 <div class="contents">
 
+<p>普通值, 会被转义  
+ <a href="structsqlcpp_1_1Value.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="value_8hpp_source.html">value.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for sqlcpp::Value:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1Value__inherit__graph.png" border="0" usemap="#asqlcpp_1_1Value_inherit__map" alt="Inheritance graph"/></div>
 <map name="asqlcpp_1_1Value_inherit__map" id="asqlcpp_1_1Value_inherit__map">
-<area shape="rect" title=" " alt="" coords="11,80,119,107"/>
+<area shape="rect" title="普通值, 会被转义" alt="" coords="11,80,119,107"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -108,7 +111,7 @@ Collaboration diagram for sqlcpp::Value:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1Value__coll__graph.png" border="0" usemap="#asqlcpp_1_1Value_coll__map" alt="Collaboration graph"/></div>
 <map name="asqlcpp_1_1Value_coll__map" id="asqlcpp_1_1Value_coll__map">
-<area shape="rect" title=" " alt="" coords="99,124,207,151"/>
+<area shape="rect" title="普通值, 会被转义" alt="" coords="99,124,207,151"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,20,124,47"/>
 <area shape="rect" title=" " alt="" coords="148,5,336,61"/>
 </map>
@@ -117,8 +120,10 @@ Collaboration diagram for sqlcpp::Value:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a649c6381a2e08737201c82ce417fed43"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Value.html#a649c6381a2e08737201c82ce417fed43">Value</a> (const char *value)</td></tr>
+<tr class="memdesc:a649c6381a2e08737201c82ce417fed43"><td class="mdescLeft">&#160;</td><td class="mdescRight">从字符串构造Value  <a href="structsqlcpp_1_1Value.html#a649c6381a2e08737201c82ce417fed43">More...</a><br /></td></tr>
 <tr class="separator:a649c6381a2e08737201c82ce417fed43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c21910d45cee48bb481947613f8a3e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Value.html#a3c21910d45cee48bb481947613f8a3e2">Value</a> (std::string value)</td></tr>
+<tr class="memdesc:a3c21910d45cee48bb481947613f8a3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">从字符串构造Value  <a href="structsqlcpp_1_1Value.html#a3c21910d45cee48bb481947613f8a3e2">More...</a><br /></td></tr>
 <tr class="separator:a3c21910d45cee48bb481947613f8a3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9982e3966bb0b1118ed72c3cdfa99082"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Value.html#a9982e3966bb0b1118ed72c3cdfa99082">Value</a> (int64_t value)</td></tr>
 <tr class="separator:a9982e3966bb0b1118ed72c3cdfa99082"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,7 +150,10 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a2949bda98132b5e7392f7ac9566b5339"><td class="memItemLeft" align="right" valign="top">std::variant&lt; std::string, int64_t, uint64_t, double, float, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Value.html#a2949bda98132b5e7392f7ac9566b5339">value_</a></td></tr>
 <tr class="separator:a2949bda98132b5e7392f7ac9566b5339"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>普通值, 会被转义 </p>
+<p>支持数字、字符串、布尔 </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a649c6381a2e08737201c82ce417fed43"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a649c6381a2e08737201c82ce417fed43">&#9670;&nbsp;</a></span>Value() <span class="overload">[1/7]</span></h2>
 
@@ -161,6 +169,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>从字符串构造Value </p>
+<p>字符串会被转义 </p>
 
 </div>
 </div>
@@ -179,6 +190,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>从字符串构造Value </p>
+<p>字符串会被转义 </p>
 
 </div>
 </div>
