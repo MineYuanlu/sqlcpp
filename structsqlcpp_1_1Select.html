@@ -109,16 +109,16 @@ Collaboration diagram for sqlcpp::Select:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1Select__coll__graph.png" border="0" usemap="#asqlcpp_1_1Select_coll__map" alt="Collaboration graph"/></div>
 <map name="asqlcpp_1_1Select_coll__map" id="asqlcpp_1_1Select_coll__map">
-<area shape="rect" title=" " alt="" coords="345,217,457,244"/>
-<area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="56,5,175,32"/>
-<area shape="rect" href="structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="46,56,185,83"/>
-<area shape="rect" title=" " alt="" coords="15,107,215,133"/>
-<area shape="rect" title=" " alt="" coords="10,157,221,184"/>
-<area shape="rect" title=" " alt="" coords="5,209,225,250"/>
-<area shape="rect" title=" " alt="" coords="15,275,216,301"/>
-<area shape="rect" title=" " alt="" coords="18,325,213,352"/>
-<area shape="rect" title=" " alt="" coords="11,376,219,403"/>
-<area shape="rect" title=" " alt="" coords="17,427,214,453"/>
+<area shape="rect" title=" " alt="" coords="340,208,452,235"/>
+<area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="53,5,172,32"/>
+<area shape="rect" href="structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="43,56,182,83"/>
+<area shape="rect" title=" " alt="" coords="13,107,213,133"/>
+<area shape="rect" title=" " alt="" coords="7,157,218,184"/>
+<area shape="rect" title=" " alt="" coords="12,208,213,235"/>
+<area shape="rect" title=" " alt="" coords="15,259,210,285"/>
+<area shape="rect" title=" " alt="" coords="9,309,217,336"/>
+<area shape="rect" title=" " alt="" coords="14,360,211,387"/>
+<area shape="rect" title=" " alt="" coords="5,411,220,467"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -192,6 +192,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aba6604f5fe9793bccbbb920571e1ef33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92f386b3a9222b2d5ce2256f67645ff6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a92f386b3a9222b2d5ce2256f67645ff6">offset</a> (const <a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a> &amp;offset)</td></tr>
 <tr class="separator:a92f386b3a9222b2d5ce2256f67645ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6adaa7fc6efea06ab07ae4861c697792"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a6adaa7fc6efea06ab07ae4861c697792">limit</a> (const <a class="el" href="structsqlcpp_1_1IndexedVarValue.html">IndexedVarValue</a> &amp;limit)</td></tr>
+<tr class="separator:a6adaa7fc6efea06ab07ae4861c697792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42459d8e4af0b7c7d5e43f3b7cebae90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a42459d8e4af0b7c7d5e43f3b7cebae90">offset</a> (const <a class="el" href="structsqlcpp_1_1IndexedVarValue.html">IndexedVarValue</a> &amp;offset)</td></tr>
+<tr class="separator:a42459d8e4af0b7c7d5e43f3b7cebae90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca5837e7d46aa0831a781015665cff38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#aca5837e7d46aa0831a781015665cff38">build_s</a> (std::ostream &amp;oss, const <a class="el" href="structsqlcpp_1_1Type.html">Type</a> &amp;t=<a class="el" href="namespacesqlcpp.html#a19237f9b2742dd80678d8dfa286dcfd6">SQLCPP_DEFAULT_TYPE</a>) const override</td></tr>
 <tr class="memdesc:aca5837e7d46aa0831a781015665cff38"><td class="mdescLeft">&#160;</td><td class="mdescRight">分步的将SQL语句输出到流中  <a href="structsqlcpp_1_1Select.html#aca5837e7d46aa0831a781015665cff38">More...</a><br /></td></tr>
 <tr class="separator:aca5837e7d46aa0831a781015665cff38"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -221,10 +225,10 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a25d96fb9b60c0f78edd27810684f9369"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57f1f8606776740325e95e7ebd2a840c"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structsqlcpp_1_1OrderBy.html">OrderBy</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a57f1f8606776740325e95e7ebd2a840c">order_by_</a> {}</td></tr>
 <tr class="separator:a57f1f8606776740325e95e7ebd2a840c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cfb843b1c8d8b73c99f722f82ba0392"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::variant&lt; <a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a>, size_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a3cfb843b1c8d8b73c99f722f82ba0392">limit_</a> {}</td></tr>
-<tr class="separator:a3cfb843b1c8d8b73c99f722f82ba0392"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a92df714f680bbdfa14fbd5a200718c"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::variant&lt; <a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a>, size_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a9a92df714f680bbdfa14fbd5a200718c">offset_</a> {}</td></tr>
-<tr class="separator:a9a92df714f680bbdfa14fbd5a200718c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63dbf633393e6e3a707fb917937d6b88"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::variant&lt; <a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a>, <a class="el" href="structsqlcpp_1_1IndexedVarValue.html">IndexedVarValue</a>, size_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a63dbf633393e6e3a707fb917937d6b88">limit_</a> {}</td></tr>
+<tr class="separator:a63dbf633393e6e3a707fb917937d6b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af121cbfce3bdd7f749a0ba6581425c85"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::variant&lt; <a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a>, <a class="el" href="structsqlcpp_1_1IndexedVarValue.html">IndexedVarValue</a>, size_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#af121cbfce3bdd7f749a0ba6581425c85">offset_</a> {}</td></tr>
+<tr class="separator:af121cbfce3bdd7f749a0ba6581425c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa7652164c0e2645970c701a68fb7602d"></a>
@@ -562,8 +566,26 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
 
 </div>
 </div>
+<a id="a6adaa7fc6efea06ab07ae4861c697792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6adaa7fc6efea06ab07ae4861c697792">&#9670;&nbsp;</a></span>limit() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp; sqlcpp::Select::limit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structsqlcpp_1_1IndexedVarValue.html">IndexedVarValue</a> &amp;&#160;</td>
+          <td class="paramname"><em>limit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aba6604f5fe9793bccbbb920571e1ef33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba6604f5fe9793bccbbb920571e1ef33">&#9670;&nbsp;</a></span>limit() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aba6604f5fe9793bccbbb920571e1ef33">&#9670;&nbsp;</a></span>limit() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -581,7 +603,7 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
 </div>
 </div>
 <a id="a2787e44b52a854366524b7444cd2fa8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2787e44b52a854366524b7444cd2fa8f">&#9670;&nbsp;</a></span>limit() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2787e44b52a854366524b7444cd2fa8f">&#9670;&nbsp;</a></span>limit() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -598,8 +620,26 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
 
 </div>
 </div>
+<a id="a42459d8e4af0b7c7d5e43f3b7cebae90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42459d8e4af0b7c7d5e43f3b7cebae90">&#9670;&nbsp;</a></span>offset() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp; sqlcpp::Select::offset </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structsqlcpp_1_1IndexedVarValue.html">IndexedVarValue</a> &amp;&#160;</td>
+          <td class="paramname"><em>offset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a92f386b3a9222b2d5ce2256f67645ff6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92f386b3a9222b2d5ce2256f67645ff6">&#9670;&nbsp;</a></span>offset() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a92f386b3a9222b2d5ce2256f67645ff6">&#9670;&nbsp;</a></span>offset() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -617,7 +657,7 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
 </div>
 </div>
 <a id="a178b423f5d881d0b94b0b95dd8e970d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a178b423f5d881d0b94b0b95dd8e970d6">&#9670;&nbsp;</a></span>offset() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a178b423f5d881d0b94b0b95dd8e970d6">&#9670;&nbsp;</a></span>offset() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1073,28 +1113,28 @@ template&lt;typename T , typename... Args, typename &gt; </div>
 
 </div>
 </div>
-<a id="a3cfb843b1c8d8b73c99f722f82ba0392"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cfb843b1c8d8b73c99f722f82ba0392">&#9670;&nbsp;</a></span>limit_</h2>
+<a id="a63dbf633393e6e3a707fb917937d6b88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63dbf633393e6e3a707fb917937d6b88">&#9670;&nbsp;</a></span>limit_</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt;std::variant&lt;<a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a>, size_t&gt; &gt; sqlcpp::Select::limit_ {}</td>
+          <td class="memname">std::optional&lt;std::variant&lt;<a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a>, <a class="el" href="structsqlcpp_1_1IndexedVarValue.html">IndexedVarValue</a>, size_t&gt; &gt; sqlcpp::Select::limit_ {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a9a92df714f680bbdfa14fbd5a200718c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a92df714f680bbdfa14fbd5a200718c">&#9670;&nbsp;</a></span>offset_</h2>
+<a id="af121cbfce3bdd7f749a0ba6581425c85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af121cbfce3bdd7f749a0ba6581425c85">&#9670;&nbsp;</a></span>offset_</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt;std::variant&lt;<a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a>, size_t&gt; &gt; sqlcpp::Select::offset_ {}</td>
+          <td class="memname">std::optional&lt;std::variant&lt;<a class="el" href="structsqlcpp_1_1VarValue.html">VarValue</a>, <a class="el" href="structsqlcpp_1_1IndexedVarValue.html">IndexedVarValue</a>, size_t&gt; &gt; sqlcpp::Select::offset_ {}</td>
         </tr>
       </table>
 </div><div class="memdoc">

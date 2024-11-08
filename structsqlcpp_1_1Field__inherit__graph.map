@@ -1,4 +1,5 @@
 <map id="sqlcpp::Field" name="sqlcpp::Field">
-<area shape="rect" id="node1" title="一个普通字段, 用于查询/更新/删除/条件等操作" alt="" coords="13,80,116,107"/>
+<area shape="rect" id="node1" title="一个普通字段, 用于查询/更新/删除/条件等操作" alt="" coords="89,80,192,107"/>
 <area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node3" href="$structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="149,5,287,32"/>
 </map>

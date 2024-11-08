@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['offset_5f_790',['offset_',['../structsqlcpp_1_1Delete.html#ac9cb78d9ed9e1cc76fd60fdeb7b9355d',1,'sqlcpp::Delete::offset_()'],['../structsqlcpp_1_1Select.html#a9a92df714f680bbdfa14fbd5a200718c',1,'sqlcpp::Select::offset_()'],['../structsqlcpp_1_1Update.html#afae00fb0aa2b056eac814cb3eb800d90',1,'sqlcpp::Update::offset_()']]],
+  ['offset_5f_790',['offset_',['../structsqlcpp_1_1Delete.html#ac9cb78d9ed9e1cc76fd60fdeb7b9355d',1,'sqlcpp::Delete::offset_()'],['../structsqlcpp_1_1Select.html#af121cbfce3bdd7f749a0ba6581425c85',1,'sqlcpp::Select::offset_()'],['../structsqlcpp_1_1Update.html#afae00fb0aa2b056eac814cb3eb800d90',1,'sqlcpp::Update::offset_()']]],
   ['on_5fdelete_5f_791',['ON_DELETE_',['../structsqlcpp_1_1ForeignKey.html#a1401971f92ca164fa53ea4612cfb8dff',1,'sqlcpp::ForeignKey']]],
   ['on_5fupdate_5f_792',['ON_UPDATE_',['../structsqlcpp_1_1ForeignKey.html#ab4cbbed12e5ab523b13823f5ab3b7124',1,'sqlcpp::ForeignKey::ON_UPDATE_()'],['../structsqlcpp_1_1Column.html#aed3e4bc9341e36b559e616b3da5f1f1b',1,'sqlcpp::Column::ON_UPDATE_()']]],
   ['op_5f_793',['op_',['../structsqlcpp_1_1CondCmp.html#ab4c01e295233d4ccc20cf17ebbc8f7e9',1,'sqlcpp::CondCmp::op_()'],['../structsqlcpp_1_1CondOp.html#a55e39fcaf81e3409a5fc58de20d9abce',1,'sqlcpp::CondOp::op_()']]],

@@ -14,8 +14,10 @@ var structsqlcpp_1_1Select =
     [ "group_by", "structsqlcpp_1_1Select.html#abb8a2a9a406d20d13d2225689c2bf851", null ],
     [ "having", "structsqlcpp_1_1Select.html#aa12dacb0bc60ee242934b0861842750b", null ],
     [ "having", "structsqlcpp_1_1Select.html#ae1dd624a2953ebd475e249a1fe8f7da9", null ],
+    [ "limit", "structsqlcpp_1_1Select.html#a6adaa7fc6efea06ab07ae4861c697792", null ],
     [ "limit", "structsqlcpp_1_1Select.html#aba6604f5fe9793bccbbb920571e1ef33", null ],
     [ "limit", "structsqlcpp_1_1Select.html#a2787e44b52a854366524b7444cd2fa8f", null ],
+    [ "offset", "structsqlcpp_1_1Select.html#a42459d8e4af0b7c7d5e43f3b7cebae90", null ],
     [ "offset", "structsqlcpp_1_1Select.html#a92f386b3a9222b2d5ce2256f67645ff6", null ],
     [ "offset", "structsqlcpp_1_1Select.html#a178b423f5d881d0b94b0b95dd8e970d6", null ],
     [ "operator=", "structsqlcpp_1_1Select.html#a88c9d5ef3d932e55b239b8a233e791b3", null ],
@@ -39,8 +41,8 @@ var structsqlcpp_1_1Select =
     [ "from_", "structsqlcpp_1_1Select.html#a3f35e4c74a9b7463fc8ca95ae9734a37", null ],
     [ "group_by_", "structsqlcpp_1_1Select.html#a71b55979789d36ff8f386503ae77e8c5", null ],
     [ "having_", "structsqlcpp_1_1Select.html#a25d96fb9b60c0f78edd27810684f9369", null ],
-    [ "limit_", "structsqlcpp_1_1Select.html#a3cfb843b1c8d8b73c99f722f82ba0392", null ],
-    [ "offset_", "structsqlcpp_1_1Select.html#a9a92df714f680bbdfa14fbd5a200718c", null ],
+    [ "limit_", "structsqlcpp_1_1Select.html#a63dbf633393e6e3a707fb917937d6b88", null ],
+    [ "offset_", "structsqlcpp_1_1Select.html#af121cbfce3bdd7f749a0ba6581425c85", null ],
     [ "order_by_", "structsqlcpp_1_1Select.html#a57f1f8606776740325e95e7ebd2a840c", null ],
     [ "where_", "structsqlcpp_1_1Select.html#a46317b2b36fc9034ef2843504b4c9e7c", null ]
 ];

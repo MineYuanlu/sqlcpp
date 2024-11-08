@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['between_26',['BETWEEN',['../structsqlcpp_1_1FieldLike.html#a657fa1da81c157b0b0c52d35ea607745',1,'sqlcpp::FieldLike']]],
+  ['between_26',['BETWEEN',['../structsqlcpp_1_1Field.html#a529f9c58c42914b4881ce1f2236459c5',1,'sqlcpp::Field::BETWEEN()'],['../structsqlcpp_1_1FieldLike.html#a657fa1da81c157b0b0c52d35ea607745',1,'sqlcpp::FieldLike::BETWEEN()']]],
   ['bigint_27',['BIGINT',['../structsqlcpp_1_1Column.html#afe00d0b816e87d06bf239502df61b22b',1,'sqlcpp::Column']]],
   ['binary_28',['BINARY',['../structsqlcpp_1_1Column.html#a43137d4fbb6a988b08a27fce21da6936',1,'sqlcpp::Column']]],
   ['bind_29',['bind',['../structsqlcpp_1_1VarMap.html#a1164483392b635dabedaa8f7705de9fc',1,'sqlcpp::VarMap']]],
