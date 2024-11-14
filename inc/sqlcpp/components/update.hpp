@@ -200,7 +200,7 @@ namespace sqlcpp {
         /// @brief 设置排序条件
         Update &order_by(RawField field, Order o = Order::ASC);
         /// @brief 设置排序条件
-        Update &order_by(FuncField field, Order o = Order::ASC);
+        Update &order_by(Expr field, Order o = Order::ASC);
         /// @brief 设置排序条件
         Update &order_by(FieldLike field, Order o = Order::ASC);
         /// @brief 设置排序条件

@@ -65,7 +65,7 @@ namespace sqlcpp {
         order_by_.emplace(std::move(field), std::move(o));
         return *this;
     }
-    Delete &Delete::order_by(FuncField field, Order o) {
+    Delete &Delete::order_by(Expr field, Order o) {
         order_by_.emplace(std::move(field), std::move(o));
         return *this;
     }

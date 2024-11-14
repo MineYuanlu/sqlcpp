@@ -4,7 +4,7 @@
 /// Licence: MIT
 #ifndef SQLCPP_COMPONENTS_FUNCS__HPP_GUARD
 #define SQLCPP_COMPONENTS_FUNCS__HPP_GUARD
-#include "sqlcpp/components/field.hpp"
+#include "sqlcpp/components/expr.hpp"
 #include <string>
 /// @namespace sqlcpp::F
 /// @brief sqlcpp的方言函数组件
@@ -13,10 +13,16 @@ namespace sqlcpp::F {
     struct NamedFunc final {
         /// 函数名
         std::string name_;
-        /// @brief 用此函数包裹一个字段
-        FuncField operator()(Field arg) const;
-        /// @brief 用此函数包裹一个raw字段
-        FuncField operator()(RawField arg) const;
+
+        /// @brief 通过此预命名函数构造一个函数表达式
+        /// @tparam Args 表达式参数类型
+        /// @param args 表达式参数
+        /// @return 函数表达式
+        template<typename... Args>
+        FuncExpr operator()(Args... args) const {
+            FuncExpr expr(name_, std::forward<Args>(args)...);
+            return expr;
+        }
     };
     static const NamedFunc COUNT{"COUNT"};                        ///< COUNT: 统计符合条件的记录数。
     static const NamedFunc SUM{"SUM"};                            ///< SUM: 计算数值列的总和。

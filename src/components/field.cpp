@@ -28,6 +28,10 @@ namespace sqlcpp {
         alias_ = std::move(alias);
         return *this;
     }
+    Field &Field::distinct(bool v) {
+        distinct_ = v;
+        return *this;
+    }
 
     OrderByField Field::asc() const {
         return {*this, Order::ASC};
@@ -37,6 +41,7 @@ namespace sqlcpp {
     }
 
     void Field::build_s(std::ostream &oss, const Type &t) const {
+        if (distinct_) oss << "DISTINCT ";
         if (table_name_) oss << safe_table(*table_name_, t) << ".";
         oss << safe_field(field_name_, t);
         if (alias_) oss << " AS " << safe_field(*alias_, t);
@@ -77,35 +82,13 @@ namespace sqlcpp {
     }
 
 
-    FuncField::FuncField(std::string func_name, std::variant<Field, RawField> args)
-        : func_name_(std::move(func_name)), args_(std::move(args)) {}
-    FuncField::FuncField(std::string func_name, std::variant<Field, RawField> args, std::string alias)
-        : func_name_(std::move(func_name)), args_(std::move(args)), alias_(std::move(alias)) {}
-    FuncField &FuncField::alias(std::string alias) {
-        this->alias_ = std::move(alias);
-        return *this;
-    }
-    FuncField &FuncField::as(std::string alias) {
-        this->alias_ = std::move(alias);
-        return *this;
-    }
-    void FuncField::build_s(std::ostream &oss, const Type &t) const {
-        oss << func_name_ << "(";
-        std::visit([&](const auto &arg) { arg.build_s(oss, t); }, args_);
-        oss << ")";
-        if (alias_) oss << " AS " << safe_field(*alias_, t);
-    }
-    void FuncField::edit_var_map(VarMap &var_map) const {
-        std::visit([&](const auto &arg) { arg.edit_var_map(var_map); }, args_);
-    }
-
     FieldLike::FieldLike(const char *field) : FieldLike(Field{std::move(field)}) {}
     FieldLike::FieldLike(std::string field) : FieldLike(Field{std::move(field)}) {}
     FieldLike::FieldLike(std::string table, std::string field) : FieldLike(Field{std::move(table), std::move(field)}) {}
     FieldLike::FieldLike(std::string table, std::string field, std::string alias) : FieldLike(Field{std::move(table), std::move(field), std::move(alias)}) {}
     FieldLike::FieldLike(Field field) : field_(std::move(field)) {}
     FieldLike::FieldLike(RawField field) : field_(std::move(field)) {}
-    FieldLike::FieldLike(FuncField field) : field_(std::move(field)) {}
+    FieldLike::FieldLike(Expr field) : field_(std::move(field)) {}
     void FieldLike::build_s(std::ostream &oss, const Type &t) const {
         std::visit([&](const auto &arg) { arg.build_s(oss, t); }, field_);
     }

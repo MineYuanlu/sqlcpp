@@ -150,7 +150,7 @@ namespace sqlcpp {
         order_by_.emplace(std::move(field), std::move(o));
         return *this;
     }
-    Update &Update::order_by(FuncField field, Order o) {
+    Update &Update::order_by(Expr field, Order o) {
         order_by_.emplace(std::move(field), std::move(o));
         return *this;
     }

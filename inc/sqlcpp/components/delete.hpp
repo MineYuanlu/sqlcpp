@@ -53,7 +53,7 @@ namespace sqlcpp {
         Delete &order_by(OrderBy order_by);
         Delete &order_by(Field field, Order o = Order::ASC);
         Delete &order_by(RawField field, Order o = Order::ASC);
-        Delete &order_by(FuncField field, Order o = Order::ASC);
+        Delete &order_by(Expr field, Order o = Order::ASC);
         Delete &order_by(FieldLike field, Order o = Order::ASC);
         Delete &order_by(OrderByField field);
 

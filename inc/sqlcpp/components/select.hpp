@@ -45,7 +45,7 @@ namespace sqlcpp {
                 typename T,
                 typename... Args,
                 typename = std::enable_if_t<
-                        (std::is_convertible_v<std::decay_t<T>, Field> || std::is_convertible_v<std::decay_t<T>, RawField> || std::is_convertible_v<std::decay_t<T>, FuncField>) &&(sizeof...(Args) > 0)>>
+                        (std::is_convertible_v<std::decay_t<T>, Field> || std::is_convertible_v<std::decay_t<T>, RawField> || std::is_convertible_v<std::decay_t<T>, Expr>) &&(sizeof...(Args) > 0)>>
         Select(T field, Args &&...args) { select(field, std::forward<Args>(args)...); }
 
         /// @brief 选择字段
@@ -59,13 +59,13 @@ namespace sqlcpp {
         /// @brief 选择字段
         Select &select(RawField field);
         /// @brief 选择字段
-        Select &select(FuncField field);
+        Select &select(Expr field);
         /// @brief 选择字段
         template<
                 typename T,
                 typename... Args,
                 typename = std::enable_if_t<
-                        (std::is_convertible_v<std::decay_t<T>, Field> || std::is_convertible_v<std::decay_t<T>, RawField> || std::is_convertible_v<std::decay_t<T>, FuncField>) &&(sizeof...(Args) > 0)>>
+                        (std::is_convertible_v<std::decay_t<T>, Field> || std::is_convertible_v<std::decay_t<T>, RawField> || std::is_convertible_v<std::decay_t<T>, Expr>) &&(sizeof...(Args) > 0)>>
         inline Select &select(T field, Args &&...args);
 
         /// @brief 设置完整的from关系
@@ -92,7 +92,7 @@ namespace sqlcpp {
         /// @brief 设置排序条件
         Select &order_by(RawField field, Order o = Order::ASC);
         /// @brief 设置排序条件
-        Select &order_by(FuncField field, Order o = Order::ASC);
+        Select &order_by(Expr field, Order o = Order::ASC);
         /// @brief 设置排序条件
         Select &order_by(FieldLike field, Order o = Order::ASC);
         /// @brief 设置排序条件
@@ -112,6 +112,7 @@ namespace sqlcpp {
 
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void build_s(std::ostream &oss, const Type &t, bool is_subquery) const;
         void edit_var_map(VarMap &var_map) const override;
     };
 

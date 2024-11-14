@@ -122,9 +122,9 @@ namespace sqlcpp {
 
 
     /// @brief 所有形似值表示的类
-    /// @details 包括值(Value, Raw, Null, Blob), 占位符(Var, IndexedVar), 字段(Field, RawField, FuncField)
+    /// @details 包括值(Value, Raw, Null, Blob), 占位符(Var, IndexedVar), 字段(Field, RawField, Expr)
     struct ValueLike final : public Builder, public VarBuilder {
-        std::variant<Value, RawValue, NullValue, IndexedVarValue, VarValue, BlobValue, Field, RawField, FuncField> value_;
+        std::variant<Value, RawValue, NullValue, IndexedVarValue, VarValue, BlobValue, Field, RawField, Expr> value_;
         ValueLike(Value value);
         ValueLike(RawValue value);
         ValueLike(NullValue value);
@@ -133,7 +133,7 @@ namespace sqlcpp {
         ValueLike(BlobValue value);
         ValueLike(Field value);
         ValueLike(RawField value);
-        ValueLike(FuncField value);
+        ValueLike(Expr value);
         ValueLike(const char *value);
         ValueLike(std::string value);
         ValueLike(int64_t value);
@@ -143,10 +143,10 @@ namespace sqlcpp {
         ValueLike(bool value);
         /// @brief 对于任意宽度的有符号整数, 构造ValueLike时会自动转换为int64_t
         template<typename T, typename std::enable_if<std::is_integral<T>::value && std::is_signed<T>::value>::type * = nullptr>
-        ValueLike(T value) : value_(static_cast<int64_t>(value)) {}
+        ValueLike(T value) : value_(Value{static_cast<int64_t>(value)}) {}
         /// @brief 对于任意宽度的无符号整数, 构造ValueLike时会自动转换为uint64_t
         template<typename T, typename std::enable_if<std::is_integral<T>::value && std::is_unsigned<T>::value>::type * = nullptr>
-        ValueLike(T value) : value_(static_cast<uint64_t>(value)) {}
+        ValueLike(T value) : value_(Value{static_cast<uint64_t>(value)}) {}
         ValueLike(std::nullptr_t);
         ValueLike(std::nullopt_t);
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;

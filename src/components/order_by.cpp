@@ -3,7 +3,7 @@ namespace sqlcpp {
     OrderByField::OrderByField(FieldLike field, Order o) : field_(field), direction_(o) {}
     OrderByField::OrderByField(Field field, Order o) : field_(field), direction_(o) {}
     OrderByField::OrderByField(RawField field, Order o) : field_(field), direction_(o) {}
-    OrderByField::OrderByField(FuncField field, Order o) : field_(field), direction_(o) {}
+    OrderByField::OrderByField(Expr field, Order o) : field_(field), direction_(o) {}
 
     void OrderByField::build_s(std::ostream &oss, const Type &t) const {
         field_.build_s(oss, t);
@@ -18,7 +18,7 @@ namespace sqlcpp {
 
     OrderBy::OrderBy(Field field, Order o) : OrderBy(OrderByField{std::move(field), o}) {}
     OrderBy::OrderBy(RawField field, Order o) : OrderBy(OrderByField{std::move(field), o}) {}
-    OrderBy::OrderBy(FuncField field, Order o) : OrderBy(OrderByField{std::move(field), o}) {}
+    OrderBy::OrderBy(Expr field, Order o) : OrderBy(OrderByField{std::move(field), o}) {}
     OrderBy::OrderBy(FieldLike field, Order o) : OrderBy(OrderByField{std::move(field), o}) {}
     OrderBy::OrderBy(OrderByField field) : fields_({std::move(field)}) {}
     OrderBy::OrderBy(std::vector<OrderByField> fields) : fields_(std::move(fields)) {}
@@ -31,7 +31,7 @@ namespace sqlcpp {
         fields_.emplace_back(std::move(field), o);
         return *this;
     }
-    OrderBy &OrderBy::by(FuncField field, Order o) {
+    OrderBy &OrderBy::by(Expr field, Order o) {
         fields_.emplace_back(std::move(field), o);
         return *this;
     }
