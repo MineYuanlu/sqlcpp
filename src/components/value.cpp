@@ -63,7 +63,7 @@ namespace sqlcpp {
     void VarValue::build_s(std::ostream &oss, [[maybe_unused]] const Type &t) const {
         oss << '?';
     }
-    void VarValue::edit_var_map(VarMap &var_map) const {
+    void VarValue::edit_var_map([[maybe_unused]] VarMap &var_map) const {
         throw std::invalid_argument("[sqlcpp] (NonIndexed)VarValue cannot use var map.");
     }
 
