@@ -40,7 +40,8 @@ namespace sqlcpp {
                 std::shared_ptr<Select>
                 //
                 >;
-        InnerValue value_;///< 数据代理
+        InnerValue value_;                ///< 数据代理
+        std::optional<std::string> alias_;///< 别名
 
         Expr(InnerValue v);                                           ///< 直接构造
         Expr(OpExpr expr);                                            ///< 运算表达式构造
@@ -74,6 +75,10 @@ namespace sqlcpp {
         Expr(std::nullptr_t);///< 字面量构造
         Expr(std::nullopt_t);///< 字面量构造
 
+        Expr &alias(std::string alias);///< 设置别名
+        Expr &as(std::string alias);   ///< 设置别名
+
+
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
         void edit_var_map(VarMap &var_map) const override;
     };
@@ -106,7 +111,12 @@ namespace sqlcpp {
         Expr a;///< 左操作数
         Expr b;///< 右操作数
         Op op; ///< 运算符
+
+        std::optional<std::string> alias_;///< 别名
         OpExpr(Op op, Expr a, Expr b);
+
+        OpExpr &alias(std::string alias);///< 设置别名
+        OpExpr &as(std::string alias);   ///< 设置别名
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
         void edit_var_map(VarMap &var_map) const override;
@@ -133,6 +143,8 @@ namespace sqlcpp {
         std::optional<Expr> expr_;                                                          ///< switch值
         std::vector<std::pair<std::variant<std::shared_ptr<Condition>, Expr>, Expr>> cases_;///< case值: 条件 - 值
         std::optional<Expr> else_;                                                          ///< default值
+
+        std::optional<std::string> alias_;///< 别名
 
         /// @brief 构造条件表达式
         /// @details 接受任意 expr, [check1, val1], ..., [checkN, valN], [default] 作为参数, 如:
@@ -167,7 +179,6 @@ namespace sqlcpp {
             }
         }
 
-
         /// @brief 设置被switch的值
         CaseExpr &set_expr(Expr expr);
         /// @brief 添加case
@@ -192,6 +203,10 @@ namespace sqlcpp {
             return *this;
         }
 
+
+        CaseExpr &alias(std::string alias);///< 设置别名
+        CaseExpr &as(std::string alias);   ///< 设置别名
+
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
         void edit_var_map(VarMap &var_map) const override;
     };
@@ -199,11 +214,13 @@ namespace sqlcpp {
     /// @brief 函数表达式
     /// @details 代表一个函数调用, 如: ABS(B), LENGTH(C), MAX(D, E), COUNT(*)
     struct FuncExpr final : public Builder, public VarBuilder {
-        std::string name_;
-        std::vector<Expr> args_;
+        std::string name_;      ///< 函数名
+        std::vector<Expr> args_;///< 参数列表
+
+        std::optional<std::string> alias_;///< 别名
 
         FuncExpr(std::string name, std::vector<Expr> args) : name_(std::move(name)), args_(std::move(args)) {}
-        template<typename... Args, typename = std::enable_if_t<std::conjunction_v<std::is_convertible<Args, Expr>...>>>
+        template<typename... Args, typename = std::enable_if_t<(std::is_convertible_v<Args, Expr> && ...)>>
         FuncExpr(std::string name, Args &&...args) : name_(std::move(name)) {
             args_.reserve(sizeof...(args));
             (args_.emplace_back(std::forward<Args>(args)), ...);
@@ -218,6 +235,9 @@ namespace sqlcpp {
             (add_arg(std::forward<Args>(args)), ...);
             return *this;
         }
+
+        FuncExpr &alias(std::string alias);///< 设置别名
+        FuncExpr &as(std::string alias);   ///< 设置别名
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
         void edit_var_map(VarMap &var_map) const override;

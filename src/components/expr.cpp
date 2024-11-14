@@ -8,15 +8,6 @@
 #include <stdexcept>
 #include <variant>
 namespace sqlcpp {
-    using InnerValue = std::variant<
-            std::shared_ptr<OpExpr>,
-            std::shared_ptr<CaseExpr>,
-            std::shared_ptr<FuncExpr>,
-            std::shared_ptr<FieldLike>,
-            std::shared_ptr<ValueLike>,
-            std::shared_ptr<Select>
-            //
-            >;
     Expr::Expr(InnerValue v) : value_(std::move(v)) {}
     Expr::Expr(OpExpr expr) : value_(std::make_shared<OpExpr>(std::move(expr))) {}
     Expr::Expr(CaseExpr expr) : value_(std::make_shared<CaseExpr>(std::move(expr))) {}
@@ -43,21 +34,44 @@ namespace sqlcpp {
     Expr::Expr(std::nullptr_t) : value_(std::make_shared<ValueLike>(nullptr)) {}
     Expr::Expr(std::nullopt_t) : value_(std::make_shared<ValueLike>(std::nullopt)) {}
 
+    Expr &Expr::alias(std::string alias) {
+        alias_ = std::move(alias);
+        return *this;
+    }
+    Expr &Expr::as(std::string alias) {
+        alias_ = std::move(alias);
+        return *this;
+    }
+
     void Expr::build_s(std::ostream &oss, const Type &t) const {
+        if (alias_) oss << '(';
         if (auto *select = std::get_if<std::shared_ptr<Select>>(&value_); select) {
             (*select)->build_s(oss, t, true);// select 语句特殊化: 指定为子查询, 即抛弃结尾的分号
         } else {
             std::visit([&](auto &&arg) { arg->build_s(oss, t); }, value_);
         }
+        if (alias_) oss << ") AS " << *alias_;
     }
     void Expr::edit_var_map(VarMap &var_map) const {
         std::visit([&](auto &&arg) { arg->edit_var_map(var_map); }, value_);
     }
     OpExpr::OpExpr(Op op, Expr a, Expr b) : a(std::move(a)), b(std::move(b)), op(op) {}
+
+    OpExpr &OpExpr::alias(std::string alias) {
+        alias_ = std::move(alias);
+        return *this;
+    }
+    OpExpr &OpExpr::as(std::string alias) {
+        alias_ = std::move(alias);
+        return *this;
+    }
+
     void OpExpr::build_s(std::ostream &oss, const Type &t) const {
+        if (alias_) oss << '(';
         a.build_s(oss, t);
         oss << op_name(op);
         b.build_s(oss, t);
+        if (alias_) oss << ") AS " << *alias_;
     }
     void OpExpr::edit_var_map(VarMap &var_map) const {
         a.edit_var_map(var_map);
@@ -81,7 +95,16 @@ namespace sqlcpp {
         else_ = std::move(expr);
         return *this;
     }
+    CaseExpr &CaseExpr::alias(std::string alias) {
+        alias_ = std::move(alias);
+        return *this;
+    }
+    CaseExpr &CaseExpr::as(std::string alias) {
+        alias_ = std::move(alias);
+        return *this;
+    }
     void CaseExpr::build_s(std::ostream &oss, const Type &t) const {
+        if (alias_) oss << '(';
         oss << "CASE ";
         if (expr_) {
             expr_->build_s(oss, t);
@@ -105,6 +128,7 @@ namespace sqlcpp {
             else_->build_s(oss, t);
         }
         oss << " END";
+        if (alias_) oss << ") AS " << *alias_;
     }
     void CaseExpr::edit_var_map(VarMap &var_map) const {
         for (auto &c: cases_) {
@@ -127,6 +151,14 @@ namespace sqlcpp {
         args_.emplace_back(std::move(arg));
         return *this;
     }
+    FuncExpr &FuncExpr::alias(std::string alias) {
+        alias_ = std::move(alias);
+        return *this;
+    }
+    FuncExpr &FuncExpr::as(std::string alias) {
+        alias_ = std::move(alias);
+        return *this;
+    }
     void FuncExpr::build_s(std::ostream &oss, const Type &t) const {
         oss << name_ << '(';
         for (size_t i = 0; i < args_.size(); ++i) {
@@ -134,6 +166,7 @@ namespace sqlcpp {
             args_[i].build_s(oss, t);
         }
         oss << ')';
+        if (alias_) oss << " AS " << *alias_;
     }
     void FuncExpr::edit_var_map(VarMap &var_map) const {
         for (auto &arg: args_) {
