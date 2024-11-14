@@ -13,6 +13,7 @@
 #include "sqlcpp/components/where.hpp"
 #include "sqlcpp/defs.hpp"
 #include <optional>
+#include <type_traits>
 #include <vector>
 namespace sqlcpp {
 
@@ -41,12 +42,12 @@ namespace sqlcpp {
         /// @brief 多字段构造函数
         Select(std::vector<FieldLike> fields);
         /// @brief 多字段构造函数
-        template<
-                typename T,
-                typename... Args,
-                typename = std::enable_if_t<
-                        (std::is_convertible_v<std::decay_t<T>, Field> || std::is_convertible_v<std::decay_t<T>, RawField> || std::is_convertible_v<std::decay_t<T>, Expr>) &&(sizeof...(Args) > 0)>>
-        Select(T field, Args &&...args) { select(field, std::forward<Args>(args)...); }
+        template<typename... Args,
+                 typename = std::enable_if_t<(
+                         (std::is_convertible_v<Args, Field> ||
+                          std::is_convertible_v<Args, RawField> ||
+                          std::is_convertible_v<Args, Expr>) &&...)>>
+        Select(Args &&...args) { select(std::forward<Args>(args)...); }
 
         /// @brief 选择字段
         Select &select(const char *field);
@@ -65,7 +66,12 @@ namespace sqlcpp {
                 typename T,
                 typename... Args,
                 typename = std::enable_if_t<
-                        (std::is_convertible_v<std::decay_t<T>, Field> || std::is_convertible_v<std::decay_t<T>, RawField> || std::is_convertible_v<std::decay_t<T>, Expr>) &&(sizeof...(Args) > 0)>>
+                        (std::is_convertible_v<T, Field> ||
+                         std::is_convertible_v<T, RawField> ||
+                         std::is_convertible_v<T, Expr>) &&(sizeof...(Args) > 0) &&
+                        ((std::is_convertible_v<Args, Field> ||
+                          std::is_convertible_v<Args, RawField> ||
+                          std::is_convertible_v<Args, Expr>) &&...)>>
         inline Select &select(T field, Args &&...args);
 
         /// @brief 设置完整的from关系

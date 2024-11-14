@@ -4,6 +4,7 @@
 /// Licence: MIT
 #ifndef SQLCPP_COMPONENTS_COND__HPP_GUARD
 #define SQLCPP_COMPONENTS_COND__HPP_GUARD
+#include "sqlcpp/components/expr.hpp"
 #include "sqlcpp/components/field.hpp"
 #include "sqlcpp/components/value.hpp"
 #include "sqlcpp/defs.hpp"
@@ -181,6 +182,7 @@ namespace sqlcpp {
         Condition(CondBetween cond);
         Condition(CondRaw cond);
         Condition(Expr cond);
+        Condition(FuncExpr cond);
         Condition(const Cond *cond);
 
 

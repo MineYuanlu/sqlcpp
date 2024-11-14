@@ -74,6 +74,7 @@ namespace sqlcpp {
         Expr(T value) : Expr(static_cast<uint64_t>(value)) {}
         Expr(std::nullptr_t);///< 字面量构造
         Expr(std::nullopt_t);///< 字面量构造
+        Expr(Select select); ///< 子查询构造
 
         Expr &alias(std::string alias);///< 设置别名
         Expr &as(std::string alias);   ///< 设置别名

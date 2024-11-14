@@ -1,4 +1,5 @@
 #include "sqlcpp/components/cond.hpp"
+#include "sqlcpp/components/expr.hpp"
 #include <stdexcept>
 namespace sqlcpp {
 
@@ -124,6 +125,7 @@ namespace sqlcpp {
     Condition::Condition(CondBetween cond) : conditions_(std::move(cond)){};
     Condition::Condition(CondRaw cond) : conditions_(std::move(cond)){};
     Condition::Condition(Expr cond) : conditions_(std::move(cond)){};
+    Condition::Condition(FuncExpr cond) : conditions_(std::move(cond)){};
     Condition::Condition(const Cond *cond) : Condition(CAST(cond)){};
 
     Condition Condition::CAST(const Cond *cond) {

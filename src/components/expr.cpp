@@ -33,6 +33,7 @@ namespace sqlcpp {
     Expr::Expr(bool value) : value_(std::make_shared<ValueLike>(std::move(value))) {}
     Expr::Expr(std::nullptr_t) : value_(std::make_shared<ValueLike>(nullptr)) {}
     Expr::Expr(std::nullopt_t) : value_(std::make_shared<ValueLike>(std::nullopt)) {}
+    Expr::Expr(Select select) : value_(std::make_shared<Select>(std::move(select))) {}
 
     Expr &Expr::alias(std::string alias) {
         alias_ = std::move(alias);
