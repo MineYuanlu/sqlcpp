@@ -6,12 +6,14 @@
 #include <memory>
 #include <optional>
 #include <stdexcept>
+#include <utility>
 #include <variant>
 namespace sqlcpp {
     Expr::Expr(InnerValue v) : value_(std::move(v)) {}
-    Expr::Expr(OpExpr expr) : value_(std::make_shared<OpExpr>(std::move(expr))) {}
-    Expr::Expr(CaseExpr expr) : value_(std::make_shared<CaseExpr>(std::move(expr))) {}
-    Expr::Expr(FuncExpr expr) : value_(std::make_shared<FuncExpr>(std::move(expr))) {}
+    Expr::Expr(OpExpr expr) : value_(std::make_shared<ExprLike>(std::move(expr))) {}
+    Expr::Expr(CaseExpr expr) : value_(std::make_shared<ExprLike>(std::move(expr))) {}
+    Expr::Expr(FuncExpr expr) : value_(std::make_shared<ExprLike>(std::move(expr))) {}
+    Expr::Expr(ExprLike expr) : value_(std::make_shared<ExprLike>(std::move(expr))) {}
     Expr::Expr(FieldLike field) : value_(std::make_shared<FieldLike>(std::move(field))) {}
     Expr::Expr(Field field) : value_(std::make_shared<FieldLike>(std::move(field))) {}
     Expr::Expr(std::string table, std::string field) : value_(std::make_shared<FieldLike>(std::move(table), std::move(field))) {}
@@ -35,23 +37,13 @@ namespace sqlcpp {
     Expr::Expr(std::nullopt_t) : value_(std::make_shared<ValueLike>(std::nullopt)) {}
     Expr::Expr(Select select) : value_(std::make_shared<Select>(std::move(select))) {}
 
-    Expr &Expr::alias(std::string alias) {
-        alias_ = std::move(alias);
-        return *this;
-    }
-    Expr &Expr::as(std::string alias) {
-        alias_ = std::move(alias);
-        return *this;
-    }
 
     void Expr::build_s(std::ostream &oss, const Type &t) const {
-        if (alias_) oss << '(';
         if (auto *select = std::get_if<std::shared_ptr<Select>>(&value_); select) {
             (*select)->build_s(oss, t, true);// select 语句特殊化: 指定为子查询, 即抛弃结尾的分号
         } else {
             std::visit([&](auto &&arg) { arg->build_s(oss, t); }, value_);
         }
-        if (alias_) oss << ") AS " << *alias_;
     }
     void Expr::edit_var_map(VarMap &var_map) const {
         std::visit([&](auto &&arg) { arg->edit_var_map(var_map); }, value_);
@@ -173,5 +165,14 @@ namespace sqlcpp {
         for (auto &arg: args_) {
             arg.edit_var_map(var_map);
         }
+    }
+    ExprLike::ExprLike(OpExpr expr) : expr_(std::move(expr)) {}
+    ExprLike::ExprLike(CaseExpr expr) : expr_(std::move(expr)) {}
+    ExprLike::ExprLike(FuncExpr expr) : expr_(std::move(expr)) {}
+    void ExprLike::build_s(std::ostream &oss, const Type &t) const {
+        std::visit([&](auto &&arg) { arg.build_s(oss, t); }, expr_);
+    }
+    void ExprLike::edit_var_map(VarMap &var_map) const {
+        std::visit([&](auto &&arg) { arg.edit_var_map(var_map); }, expr_);
     }
 }// namespace sqlcpp

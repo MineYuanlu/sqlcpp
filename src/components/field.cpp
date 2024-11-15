@@ -1,6 +1,7 @@
 #include "sqlcpp/components/field.hpp"
 #include "sqlcpp/components/assign.hpp"
 #include "sqlcpp/components/cond.hpp"
+#include "sqlcpp/components/expr.hpp"
 #include "sqlcpp/components/order_by.hpp"
 #include "sqlcpp/components/value.hpp"
 #include "sqlcpp/str.hpp"
@@ -88,7 +89,10 @@ namespace sqlcpp {
     FieldLike::FieldLike(std::string table, std::string field, std::string alias) : FieldLike(Field{std::move(table), std::move(field), std::move(alias)}) {}
     FieldLike::FieldLike(Field field) : field_(std::move(field)) {}
     FieldLike::FieldLike(RawField field) : field_(std::move(field)) {}
-    FieldLike::FieldLike(Expr field) : field_(std::move(field)) {}
+    FieldLike::FieldLike(OpExpr field) : field_(std::move(field)) {}
+    FieldLike::FieldLike(CaseExpr field) : field_(std::move(field)) {}
+    FieldLike::FieldLike(FuncExpr field) : field_(std::move(field)) {}
+    FieldLike::FieldLike(ExprLike field) : field_(std::move(field)) {}
     void FieldLike::build_s(std::ostream &oss, const Type &t) const {
         std::visit([&](const auto &arg) { arg.build_s(oss, t); }, field_);
     }

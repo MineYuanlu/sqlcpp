@@ -1,4 +1,5 @@
 #include "sqlcpp/components/update.hpp"
+#include "sqlcpp/components/expr.hpp"
 #include "sqlcpp/components/field.hpp"
 #include "sqlcpp/components/from.hpp"
 #include "sqlcpp/components/where.hpp"
@@ -150,7 +151,7 @@ namespace sqlcpp {
         order_by_.emplace(std::move(field), std::move(o));
         return *this;
     }
-    Update &Update::order_by(Expr field, Order o) {
+    Update &Update::order_by(ExprLike field, Order o) {
         order_by_.emplace(std::move(field), std::move(o));
         return *this;
     }

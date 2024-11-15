@@ -172,16 +172,15 @@ namespace sqlcpp {
 
     /// @brief 条件接口
     struct Condition final : public Builder, public VarBuilder {
-        std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw, Expr> conditions_;
+        std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw, FuncExpr> conditions_;
 
-        Condition(std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw, Expr> cond);
+        Condition(std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw, FuncExpr> cond);
         Condition(CondOp cond);
         Condition(CondCmp cond);
         Condition(CondIn cond);
         Condition(CondNotIn cond);
         Condition(CondBetween cond);
         Condition(CondRaw cond);
-        Condition(Expr cond);
         Condition(FuncExpr cond);
         Condition(const Cond *cond);
 

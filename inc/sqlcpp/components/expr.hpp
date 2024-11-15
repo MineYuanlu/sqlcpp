@@ -14,6 +14,7 @@ namespace sqlcpp {
     struct OpExpr;
     struct CaseExpr;
     struct FuncExpr;
+    struct ExprLike;
     struct FieldLike;
     struct Field;
     struct RawField;
@@ -32,21 +33,19 @@ namespace sqlcpp {
     /// @details 代表一个通用的表达式, 可以是基本的字段、字面量、变量, 也可以是函数、运算表达式、case、子查询等复杂表达式
     struct Expr final : public Builder, public VarBuilder {
         using InnerValue = std::variant<
-                std::shared_ptr<OpExpr>,
-                std::shared_ptr<CaseExpr>,
-                std::shared_ptr<FuncExpr>,
+                std::shared_ptr<ExprLike>,
                 std::shared_ptr<FieldLike>,
                 std::shared_ptr<ValueLike>,
                 std::shared_ptr<Select>
                 //
                 >;
-        InnerValue value_;                ///< 数据代理
-        std::optional<std::string> alias_;///< 别名
+        InnerValue value_;///< 数据代理
 
         Expr(InnerValue v);                                           ///< 直接构造
         Expr(OpExpr expr);                                            ///< 运算表达式构造
         Expr(CaseExpr expr);                                          ///< 条件表达式构造
         Expr(FuncExpr expr);                                          ///< 函数表达式构造
+        Expr(ExprLike expr);                                          ///< 表达式构造
         Expr(FieldLike field);                                        ///< 字段构造
         Expr(Field field);                                            ///< 字段构造
         Expr(std::string table, std::string field);                   ///< 字段构造
@@ -75,10 +74,6 @@ namespace sqlcpp {
         Expr(std::nullptr_t);///< 字面量构造
         Expr(std::nullopt_t);///< 字面量构造
         Expr(Select select); ///< 子查询构造
-
-        Expr &alias(std::string alias);///< 设置别名
-        Expr &as(std::string alias);   ///< 设置别名
-
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
         void edit_var_map(VarMap &var_map) const override;
@@ -156,7 +151,7 @@ namespace sqlcpp {
         /// CaseExpr(expr, default)
         /// @endcode
         template<typename... Args>
-        CaseExpr(Expr expr, Args... args) : expr_(std::move(expr)) {
+        explicit CaseExpr(Expr expr, Args... args) : expr_(std::move(expr)) {
             if constexpr (sizeof...(args) >= 2) {
                 add_cases(std::forward<Args>(args)...);
             } else if constexpr (sizeof...(args) == 1) {
@@ -171,8 +166,8 @@ namespace sqlcpp {
         /// CaseExpr(cond1, val1, cond2, val2, default)
         /// CaseExpr(default)
         /// @endcode
-        template<typename... Args>
-        CaseExpr(Args... args) {
+        template<typename... Args>//TODO
+        explicit CaseExpr(Args... args) {
             if constexpr (sizeof...(args) >= 2) {
                 add_cases(std::forward<Args>(args)...);
             } else if constexpr (sizeof...(args) == 1) {
@@ -227,9 +222,9 @@ namespace sqlcpp {
             (args_.emplace_back(std::forward<Args>(args)), ...);
         }
 
-        FuncExpr &set_name(std::string name);
+        FuncExpr &set_name(std::string name);///< 设置函数名
 
-        FuncExpr &add_arg(Expr arg);
+        FuncExpr &add_arg(Expr arg);///< 添加参数
 
         template<typename... Args, typename = std::enable_if_t<std::conjunction_v<std::is_convertible<Args, Expr>...>>>
         FuncExpr &add_args(Args &&...args) {
@@ -242,6 +237,21 @@ namespace sqlcpp {
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
         void edit_var_map(VarMap &var_map) const override;
+    };
+
+
+    /// @brief 基本表达式
+    /// @details OpExpr, CaseExpr, FuncExpr 被算作基本表达式, 使用 ExprLike 来包装。
+    /// @details 而 ExprLike, FieldLike, ValueLike, Select 等不被算作基本表达式, 使用 Expr 来包装
+    struct ExprLike : public Builder, public VarBuilder {
+        std::variant<OpExpr, CaseExpr, FuncExpr> expr_;///< 基本表达式
+
+        ExprLike(OpExpr expr);  ///< 运算表达式构造
+        ExprLike(CaseExpr expr);///< 条件表达式构造
+        ExprLike(FuncExpr expr);///< 函数表达式构造
+
+        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const;
+        void edit_var_map(VarMap &var_map) const;
     };
 
 }// namespace sqlcpp

@@ -1,4 +1,5 @@
 #include "sqlcpp/components/select.hpp"
+#include "sqlcpp/components/expr.hpp"
 #include "sqlcpp/components/value.hpp"
 namespace sqlcpp {
     Select::Select(FieldLike field) : fields_({std::move(field)}) {}
@@ -24,7 +25,7 @@ namespace sqlcpp {
         fields_.emplace_back(std::move(field));
         return *this;
     }
-    Select &Select::select(Expr field) {
+    Select &Select::select(ExprLike field) {
         fields_.emplace_back(std::move(field));
         return *this;
     }
@@ -72,7 +73,7 @@ namespace sqlcpp {
         order_by_.emplace(std::move(field), std::move(o));
         return *this;
     }
-    Select &Select::order_by(Expr field, Order o) {
+    Select &Select::order_by(ExprLike field, Order o) {
         order_by_.emplace(std::move(field), std::move(o));
         return *this;
     }

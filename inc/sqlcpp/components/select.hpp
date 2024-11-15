@@ -4,6 +4,7 @@
 /// Licence: MIT
 #ifndef SQLCPP_COMPONENTS_SELECT__HPP_GUARD
 #define SQLCPP_COMPONENTS_SELECT__HPP_GUARD
+#include "sqlcpp/components/expr.hpp"
 #include "sqlcpp/components/field.hpp"
 #include "sqlcpp/components/from.hpp"
 #include "sqlcpp/components/group_by.hpp"
@@ -46,7 +47,7 @@ namespace sqlcpp {
                  typename = std::enable_if_t<(
                          (std::is_convertible_v<Args, Field> ||
                           std::is_convertible_v<Args, RawField> ||
-                          std::is_convertible_v<Args, Expr>) &&...)>>
+                          std::is_convertible_v<Args, ExprLike>) &&...)>>
         Select(Args &&...args) { select(std::forward<Args>(args)...); }
 
         /// @brief 选择字段
@@ -60,7 +61,7 @@ namespace sqlcpp {
         /// @brief 选择字段
         Select &select(RawField field);
         /// @brief 选择字段
-        Select &select(Expr field);
+        Select &select(ExprLike field);
         /// @brief 选择字段
         template<
                 typename T,
@@ -68,10 +69,10 @@ namespace sqlcpp {
                 typename = std::enable_if_t<
                         (std::is_convertible_v<T, Field> ||
                          std::is_convertible_v<T, RawField> ||
-                         std::is_convertible_v<T, Expr>) &&(sizeof...(Args) > 0) &&
+                         std::is_convertible_v<T, ExprLike>) &&(sizeof...(Args) > 0) &&
                         ((std::is_convertible_v<Args, Field> ||
                           std::is_convertible_v<Args, RawField> ||
-                          std::is_convertible_v<Args, Expr>) &&...)>>
+                          std::is_convertible_v<Args, ExprLike>) &&...)>>
         inline Select &select(T field, Args &&...args);
 
         /// @brief 设置完整的from关系
@@ -98,7 +99,7 @@ namespace sqlcpp {
         /// @brief 设置排序条件
         Select &order_by(RawField field, Order o = Order::ASC);
         /// @brief 设置排序条件
-        Select &order_by(Expr field, Order o = Order::ASC);
+        Select &order_by(ExprLike field, Order o = Order::ASC);
         /// @brief 设置排序条件
         Select &order_by(FieldLike field, Order o = Order::ASC);
         /// @brief 设置排序条件

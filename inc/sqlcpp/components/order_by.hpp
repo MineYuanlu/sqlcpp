@@ -4,6 +4,7 @@
 /// Licence: MIT
 #ifndef SQLCPP_COMPONENTS_ORDER_BY__HPP_GUARD
 #define SQLCPP_COMPONENTS_ORDER_BY__HPP_GUARD
+#include "sqlcpp/components/expr.hpp"
 #include "sqlcpp/components/field.hpp"
 #include "sqlcpp/defs.hpp"
 #include <vector>
@@ -29,7 +30,7 @@ namespace sqlcpp {
         OrderByField(FieldLike field, Order o = Order::ASC);
         OrderByField(Field field, Order o = Order::ASC);
         OrderByField(RawField field, Order o = Order::ASC);
-        OrderByField(Expr field, Order o = Order::ASC);
+        OrderByField(ExprLike field, Order o = Order::ASC);
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
         void edit_var_map(VarMap &var_map) const override;
@@ -42,7 +43,7 @@ namespace sqlcpp {
 
         OrderBy(Field field, Order o = Order::ASC);
         OrderBy(RawField field, Order o = Order::ASC);
-        OrderBy(Expr field, Order o = Order::ASC);
+        OrderBy(ExprLike field, Order o = Order::ASC);
         OrderBy(FieldLike field, Order o = Order::ASC);
         OrderBy(OrderByField field);
         OrderBy(std::vector<OrderByField> fields);
@@ -52,7 +53,7 @@ namespace sqlcpp {
         }
         OrderBy &by(Field field, Order o = Order::ASC);
         OrderBy &by(RawField field, Order o = Order::ASC);
-        OrderBy &by(Expr field, Order o = Order::ASC);
+        OrderBy &by(ExprLike field, Order o = Order::ASC);
         OrderBy &by(FieldLike field, Order o = Order::ASC);
         OrderBy &by(OrderByField field);
         template<typename... Args>

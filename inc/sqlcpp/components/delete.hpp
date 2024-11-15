@@ -4,6 +4,7 @@
 /// Licence: MIT
 #ifndef SQLCPP_COMPONENTS_DELETE__HPP_GUARD
 #define SQLCPP_COMPONENTS_DELETE__HPP_GUARD
+#include "sqlcpp/components/expr.hpp"
 #include "sqlcpp/components/from.hpp"
 #include "sqlcpp/components/order_by.hpp"
 #include "sqlcpp/components/where.hpp"
@@ -53,7 +54,7 @@ namespace sqlcpp {
         Delete &order_by(OrderBy order_by);
         Delete &order_by(Field field, Order o = Order::ASC);
         Delete &order_by(RawField field, Order o = Order::ASC);
-        Delete &order_by(Expr field, Order o = Order::ASC);
+        Delete &order_by(ExprLike field, Order o = Order::ASC);
         Delete &order_by(FieldLike field, Order o = Order::ASC);
         Delete &order_by(OrderByField field);
 
