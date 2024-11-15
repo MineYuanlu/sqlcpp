@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['value_5f_832',['value_',['../structsqlcpp_1_1Assign.html#a976a40be3af1ad2697f9e1606a6ed5c3',1,'sqlcpp::Assign::value_()'],['../structsqlcpp_1_1CondCmp.html#a2f0a43bdf484380b96f3edc4b90aadeb',1,'sqlcpp::CondCmp::value_()'],['../structsqlcpp_1_1Value.html#a2949bda98132b5e7392f7ac9566b5339',1,'sqlcpp::Value::value_()'],['../structsqlcpp_1_1ValueLike.html#a05032022e9117d8ccb19d46d3bfbd821',1,'sqlcpp::ValueLike::value_()']]],
-  ['values_833',['VALUES',['../namespacesqlcpp_1_1F.html#a10110ba5851b61e3bf5616720565360b',1,'sqlcpp::F']]],
-  ['values_5f_834',['values_',['../structsqlcpp_1_1CondIn.html#a87c7fc2391747da5d2e5fc1371ebfe7b',1,'sqlcpp::CondIn::values_()'],['../structsqlcpp_1_1CondNotIn.html#a1209f2de0677660f9504a4cd11551f43',1,'sqlcpp::CondNotIn::values_()'],['../structsqlcpp_1_1Insert.html#aeb206464c43aa49f18d7c35496637a58',1,'sqlcpp::Insert::values_()']]],
-  ['var_835',['VAR',['../namespacesqlcpp.html#a4ab907b55d5acbada1085a2ac39d7ca0',1,'sqlcpp']]]
+  ['unique_5f_886',['UNIQUE_',['../structsqlcpp_1_1Column.html#ae7e911496876c67707ada2075df00b43',1,'sqlcpp::Column']]],
+  ['unique_5f_887',['unique_',['../structsqlcpp_1_1Index.html#a5c59442847090f56d04bebf2fe2eb297',1,'sqlcpp::Index']]],
+  ['update_5for_5f_888',['UPDATE_OR_',['../structsqlcpp_1_1Update.html#a45756076db1a5ad6583235d61d3e2af8',1,'sqlcpp::Update']]],
+  ['upper_889',['UPPER',['../namespacesqlcpp_1_1F.html#a7f029085dfa2d918dfcb1f89ad0f6791',1,'sqlcpp::F']]],
+  ['user_5fset_5fname_890',['user_set_name',['../structsqlcpp_1_1Index.html#a92cda67cba6110f1f7777a4a1e2d9827',1,'sqlcpp::Index']]]
 ];

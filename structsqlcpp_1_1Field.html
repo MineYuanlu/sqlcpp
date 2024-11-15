@@ -112,11 +112,12 @@ Collaboration diagram for sqlcpp::Field:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1Field__coll__graph.png" border="0" usemap="#asqlcpp_1_1Field_coll__map" alt="Collaboration graph"/></div>
 <map name="asqlcpp_1_1Field_coll__map" id="asqlcpp_1_1Field_coll__map">
-<area shape="rect" title="一个普通字段, 用于查询/更新/删除/条件等操作" alt="" coords="228,109,331,136"/>
+<area shape="rect" title="一个普通字段, 用于查询/更新/删除/条件等操作" alt="" coords="279,109,381,136"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
 <area shape="rect" href="structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="149,5,287,32"/>
-<area shape="rect" title=" " alt="" coords="311,5,370,32"/>
-<area shape="rect" title=" " alt="" coords="394,5,565,32"/>
+<area shape="rect" title=" " alt="" coords="311,5,362,32"/>
+<area shape="rect" title=" " alt="" coords="391,5,450,32"/>
+<area shape="rect" title=" " alt="" coords="474,5,645,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -143,6 +144,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a67bad2065d599275b742431bb79fb345"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Field.html">Field</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Field.html#a67bad2065d599275b742431bb79fb345">as</a> (std::string <a class="el" href="structsqlcpp_1_1Field.html#acf265965474a2c357aef28ca5de9254e">alias</a>)</td></tr>
 <tr class="memdesc:a67bad2065d599275b742431bb79fb345"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置别称  <a href="structsqlcpp_1_1Field.html#a67bad2065d599275b742431bb79fb345">More...</a><br /></td></tr>
 <tr class="separator:a67bad2065d599275b742431bb79fb345"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab38364634b6c99d1946c0874597590fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Field.html">Field</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Field.html#ab38364634b6c99d1946c0874597590fb">distinct</a> (bool v=true)</td></tr>
+<tr class="memdesc:ab38364634b6c99d1946c0874597590fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否为distinct查询  <a href="structsqlcpp_1_1Field.html#ab38364634b6c99d1946c0874597590fb">More...</a><br /></td></tr>
+<tr class="separator:ab38364634b6c99d1946c0874597590fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad344ffb8c832505d8ea2b8570c2e50ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1OrderByField.html">OrderByField</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Field.html#ad344ffb8c832505d8ea2b8570c2e50ff">asc</a> () const</td></tr>
 <tr class="memdesc:ad344ffb8c832505d8ea2b8570c2e50ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回此字段的升序排序语句  <a href="structsqlcpp_1_1Field.html#ad344ffb8c832505d8ea2b8570c2e50ff">More...</a><br /></td></tr>
 <tr class="separator:ad344ffb8c832505d8ea2b8570c2e50ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -196,6 +200,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a7df3c5b1cf0671de7f957bb2be92fe1c"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Field.html#a7df3c5b1cf0671de7f957bb2be92fe1c">alias_</a> {}</td></tr>
 <tr class="memdesc:a7df3c5b1cf0671de7f957bb2be92fe1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">别称  <a href="structsqlcpp_1_1Field.html#a7df3c5b1cf0671de7f957bb2be92fe1c">More...</a><br /></td></tr>
 <tr class="separator:a7df3c5b1cf0671de7f957bb2be92fe1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade4070b236e88f8f0bc2616e7428cc23"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Field.html#ade4070b236e88f8f0bc2616e7428cc23">distinct_</a> {false}</td></tr>
+<tr class="memdesc:ade4070b236e88f8f0bc2616e7428cc23"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否为distinct查询  <a href="structsqlcpp_1_1Field.html#ade4070b236e88f8f0bc2616e7428cc23">More...</a><br /></td></tr>
+<tr class="separator:ade4070b236e88f8f0bc2616e7428cc23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>一个普通字段, 用于查询/更新/删除/条件等操作 </p>
@@ -483,6 +490,26 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab38364634b6c99d1946c0874597590fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab38364634b6c99d1946c0874597590fb">&#9670;&nbsp;</a></span>distinct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsqlcpp_1_1Field.html">Field</a> &amp; sqlcpp::Field::distinct </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>v</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置是否为distinct查询 </p>
+
+</div>
+</div>
 <a id="a937255337c7f76f1263747655cb7ff0d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a937255337c7f76f1263747655cb7ff0d">&#9670;&nbsp;</a></span>edit_var_map()</h2>
 
@@ -645,6 +672,22 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>别称 </p>
+
+</div>
+</div>
+<a id="ade4070b236e88f8f0bc2616e7428cc23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade4070b236e88f8f0bc2616e7428cc23">&#9670;&nbsp;</a></span>distinct_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool sqlcpp::Field::distinct_ {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>是否为distinct查询 </p>
 
 </div>
 </div>

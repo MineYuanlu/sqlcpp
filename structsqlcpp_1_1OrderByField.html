@@ -114,7 +114,7 @@ Collaboration diagram for sqlcpp::OrderByField:</div>
 <map name="asqlcpp_1_1OrderByField_coll__map" id="asqlcpp_1_1OrderByField_coll__map">
 <area shape="rect" title="单个字段的排序条件" alt="" coords="235,213,391,240"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,20,124,47"/>
-<area shape="rect" href="structsqlcpp_1_1FieldLike.html" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / FuncField" alt="" coords="176,124,305,151"/>
+<area shape="rect" href="structsqlcpp_1_1FieldLike.html" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / Expr" alt="" coords="176,124,305,151"/>
 <area shape="rect" href="structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="358,20,497,47"/>
 <area shape="rect" title=" " alt="" coords="148,5,333,61"/>
 <area shape="rect" title=" " alt="" coords="381,124,439,151"/>
@@ -129,8 +129,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0f922183d4e2df0231dbabc02e9b0e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd582977c956b31af11c21f09a1a9403"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1OrderByField.html#acd582977c956b31af11c21f09a1a9403">OrderByField</a> (<a class="el" href="structsqlcpp_1_1RawField.html">RawField</a> field, <a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a> o=Order::ASC)</td></tr>
 <tr class="separator:acd582977c956b31af11c21f09a1a9403"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5537305f89da3ae16beea56d27d4aaa4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1OrderByField.html#a5537305f89da3ae16beea56d27d4aaa4">OrderByField</a> (<a class="el" href="structsqlcpp_1_1FuncField.html">FuncField</a> field, <a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a> o=Order::ASC)</td></tr>
-<tr class="separator:a5537305f89da3ae16beea56d27d4aaa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2171112714447a7696ca6cf49b0ef18e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1OrderByField.html#a2171112714447a7696ca6cf49b0ef18e">OrderByField</a> (<a class="el" href="structsqlcpp_1_1ExprLike.html">ExprLike</a> field, <a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a> o=Order::ASC)</td></tr>
+<tr class="separator:a2171112714447a7696ca6cf49b0ef18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3c7ba8a50302de1c09127eef33d3da6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1OrderByField.html#ae3c7ba8a50302de1c09127eef33d3da6">build_s</a> (std::ostream &amp;oss, const <a class="el" href="structsqlcpp_1_1Type.html">Type</a> &amp;t=<a class="el" href="namespacesqlcpp.html#a19237f9b2742dd80678d8dfa286dcfd6">SQLCPP_DEFAULT_TYPE</a>) const override</td></tr>
 <tr class="memdesc:ae3c7ba8a50302de1c09127eef33d3da6"><td class="mdescLeft">&#160;</td><td class="mdescRight">分步的将SQL语句输出到流中  <a href="structsqlcpp_1_1OrderByField.html#ae3c7ba8a50302de1c09127eef33d3da6">More...</a><br /></td></tr>
 <tr class="separator:ae3c7ba8a50302de1c09127eef33d3da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -242,8 +242,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a5537305f89da3ae16beea56d27d4aaa4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5537305f89da3ae16beea56d27d4aaa4">&#9670;&nbsp;</a></span>OrderByField() <span class="overload">[4/4]</span></h2>
+<a id="a2171112714447a7696ca6cf49b0ef18e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2171112714447a7696ca6cf49b0ef18e">&#9670;&nbsp;</a></span>OrderByField() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -251,7 +251,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">sqlcpp::OrderByField::OrderByField </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structsqlcpp_1_1FuncField.html">FuncField</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structsqlcpp_1_1ExprLike.html">ExprLike</a>&#160;</td>
           <td class="paramname"><em>field</em>, </td>
         </tr>
         <tr>

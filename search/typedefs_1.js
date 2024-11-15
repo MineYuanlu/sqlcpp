@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['refdata_840',['RefData',['../structsqlcpp_1_1Column.html#ad401bac72ca5d25ab32b3162fb14dcdb',1,'sqlcpp::Column']]]
+  ['innervalue_899',['InnerValue',['../structsqlcpp_1_1Expr.html#ac14a0f75f1309f7474d908bc575878ef',1,'sqlcpp::Expr']]]
 ];

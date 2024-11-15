@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['unique_455',['Unique',['../structsqlcpp_1_1Unique.html',1,'sqlcpp']]],
-  ['update_456',['Update',['../structsqlcpp_1_1Update.html',1,'sqlcpp']]]
+  ['table_489',['Table',['../structsqlcpp_1_1Table.html',1,'sqlcpp']]],
+  ['type_490',['Type',['../structsqlcpp_1_1Type.html',1,'sqlcpp']]]
 ];

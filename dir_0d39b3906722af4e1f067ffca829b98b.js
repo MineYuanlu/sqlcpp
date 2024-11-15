@@ -12,10 +12,10 @@ var dir_0d39b3906722af4e1f067ffca829b98b =
     [ "delete.hpp", "delete_8hpp.html", [
       [ "Delete", "structsqlcpp_1_1Delete.html", "structsqlcpp_1_1Delete" ]
     ] ],
+    [ "expr.hpp", "expr_8hpp.html", "expr_8hpp" ],
     [ "field.hpp", "field_8hpp.html", [
       [ "Field", "structsqlcpp_1_1Field.html", "structsqlcpp_1_1Field" ],
       [ "RawField", "structsqlcpp_1_1RawField.html", "structsqlcpp_1_1RawField" ],
-      [ "FuncField", "structsqlcpp_1_1FuncField.html", "structsqlcpp_1_1FuncField" ],
       [ "FieldLike", "structsqlcpp_1_1FieldLike.html", "structsqlcpp_1_1FieldLike" ]
     ] ],
     [ "from.hpp", "from_8hpp.html", "from_8hpp" ],

@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['raw_5fcond_5f_803',['raw_cond_',['../structsqlcpp_1_1CondRaw.html#acf84975089d4c3a7ad34aef07a11f274',1,'sqlcpp::CondRaw']]],
-  ['raw_5ffield_5f_804',['raw_field_',['../structsqlcpp_1_1RawField.html#a3dffef02258a9d90e2dab1d66c396ef9',1,'sqlcpp::RawField']]],
-  ['raw_5ffrom_5f_805',['raw_from_',['../structsqlcpp_1_1RawFrom.html#aa2853e56d3936fe0530d5927acc38bf7',1,'sqlcpp::RawFrom']]],
-  ['raw_5fvalue_5f_806',['raw_value_',['../structsqlcpp_1_1RawValue.html#a06063a93c82566795b752d08c15c2101',1,'sqlcpp::RawValue']]],
-  ['references_5f_807',['REFERENCES_',['../structsqlcpp_1_1Column.html#a09378ba6a15cba46b664f9f1edb53e05',1,'sqlcpp::Column']]],
-  ['replace_808',['REPLACE',['../namespacesqlcpp_1_1F.html#a1465f8d50b9368492bfc6c9e46b5937d',1,'sqlcpp::F']]],
-  ['returning_5f_809',['RETURNING_',['../structsqlcpp_1_1Insert.html#aa3cd5bd8f1e5464f3dad33f49fbcb0d4',1,'sqlcpp::Insert::RETURNING_()'],['../structsqlcpp_1_1Update.html#a4e8d695f74b6efb07e6e8b2fe076d956',1,'sqlcpp::Update::RETURNING_()']]],
-  ['rtrim_810',['RTRIM',['../namespacesqlcpp_1_1F.html#a3f82316593c0f583ef1c8a2c83b96f26',1,'sqlcpp::F']]]
+  ['quick_858',['QUICK',['../structsqlcpp_1_1Delete.html#a10ece40f7bb898600d0caa5928492dc7',1,'sqlcpp::Delete']]],
+  ['quote_5ffield_859',['quote_field',['../structsqlcpp_1_1Type.html#a067593d3ea05d9ab67ccdc1d2bc3c329',1,'sqlcpp::Type']]],
+  ['quote_5ftable_860',['quote_table',['../structsqlcpp_1_1Type.html#ae238d57dd2efc4b3f743b72c4b7ad212',1,'sqlcpp::Type']]],
+  ['quote_5fvalue_861',['quote_value',['../structsqlcpp_1_1Type.html#a35c48e2a93d4e04f6ff69ae4a33609e0',1,'sqlcpp::Type']]]
 ];

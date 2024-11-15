@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('structsqlcpp_1_1FieldLike.html',''); i
 </div><!--header-->
 <div class="contents">
 
-<p>形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 <a class="el" href="structsqlcpp_1_1Field.html" title="一个普通字段, 用于查询/更新/删除/条件等操作">Field</a> / <a class="el" href="structsqlcpp_1_1RawField.html" title="原生字段, 不会进行任何转义, 用于查询/更新/删除/条件等操作">RawField</a> / <a class="el" href="structsqlcpp_1_1FuncField.html" title="函数字段, 用于查询/更新/删除/条件等操作">FuncField</a>  
+<p>形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 <a class="el" href="structsqlcpp_1_1Field.html" title="一个普通字段, 用于查询/更新/删除/条件等操作">Field</a> / <a class="el" href="structsqlcpp_1_1RawField.html" title="原生字段, 不会进行任何转义, 用于查询/更新/删除/条件等操作">RawField</a> / <a class="el" href="structsqlcpp_1_1Expr.html" title="表达式基类">Expr</a>  
  <a href="structsqlcpp_1_1FieldLike.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="field_8hpp_source.html">field.hpp</a>&gt;</code></p>
@@ -102,7 +102,7 @@ Inheritance diagram for sqlcpp::FieldLike:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1FieldLike__inherit__graph.png" border="0" usemap="#asqlcpp_1_1FieldLike_inherit__map" alt="Inheritance graph"/></div>
 <map name="asqlcpp_1_1FieldLike_inherit__map" id="asqlcpp_1_1FieldLike_inherit__map">
-<area shape="rect" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / FuncField" alt="" coords="76,80,205,107"/>
+<area shape="rect" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / Expr" alt="" coords="76,80,205,107"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="5,5,124,32"/>
 <area shape="rect" href="structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="149,5,287,32"/>
 </map>
@@ -112,7 +112,7 @@ Collaboration diagram for sqlcpp::FieldLike:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsqlcpp_1_1FieldLike__coll__graph.png" border="0" usemap="#asqlcpp_1_1FieldLike_coll__map" alt="Collaboration graph"/></div>
 <map name="asqlcpp_1_1FieldLike_coll__map" id="asqlcpp_1_1FieldLike_coll__map">
-<area shape="rect" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / FuncField" alt="" coords="279,56,408,83"/>
+<area shape="rect" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / Expr" alt="" coords="279,56,408,83"/>
 <area shape="rect" href="structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="39,5,157,32"/>
 <area shape="rect" href="structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="29,56,167,83"/>
 <area shape="rect" title=" " alt="" coords="5,107,191,163"/>
@@ -139,9 +139,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a855478dead768616952a9b950c06c4bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FieldLike.html#a855478dead768616952a9b950c06c4bb">FieldLike</a> (<a class="el" href="structsqlcpp_1_1RawField.html">RawField</a> field)</td></tr>
 <tr class="memdesc:a855478dead768616952a9b950c06c4bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用字段构造  <a href="structsqlcpp_1_1FieldLike.html#a855478dead768616952a9b950c06c4bb">More...</a><br /></td></tr>
 <tr class="separator:a855478dead768616952a9b950c06c4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a1b8b6363f66200d4dd8bf4e4fd56eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FieldLike.html#a2a1b8b6363f66200d4dd8bf4e4fd56eb">FieldLike</a> (<a class="el" href="structsqlcpp_1_1FuncField.html">FuncField</a> field)</td></tr>
-<tr class="memdesc:a2a1b8b6363f66200d4dd8bf4e4fd56eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用字段构造  <a href="structsqlcpp_1_1FieldLike.html#a2a1b8b6363f66200d4dd8bf4e4fd56eb">More...</a><br /></td></tr>
-<tr class="separator:a2a1b8b6363f66200d4dd8bf4e4fd56eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6380b4f85f549710952880b44533de0c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FieldLike.html#a6380b4f85f549710952880b44533de0c">FieldLike</a> (<a class="el" href="structsqlcpp_1_1OpExpr.html">OpExpr</a> field)</td></tr>
+<tr class="memdesc:a6380b4f85f549710952880b44533de0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用表达式构造  <a href="structsqlcpp_1_1FieldLike.html#a6380b4f85f549710952880b44533de0c">More...</a><br /></td></tr>
+<tr class="separator:a6380b4f85f549710952880b44533de0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf7e8c571a91472570449065f46e1a26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FieldLike.html#acf7e8c571a91472570449065f46e1a26">FieldLike</a> (<a class="el" href="structsqlcpp_1_1CaseExpr.html">CaseExpr</a> field)</td></tr>
+<tr class="memdesc:acf7e8c571a91472570449065f46e1a26"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用表达式构造  <a href="structsqlcpp_1_1FieldLike.html#acf7e8c571a91472570449065f46e1a26">More...</a><br /></td></tr>
+<tr class="separator:acf7e8c571a91472570449065f46e1a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fe75984a045df08695cfb95f9ac54d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FieldLike.html#a9fe75984a045df08695cfb95f9ac54d5">FieldLike</a> (<a class="el" href="structsqlcpp_1_1FuncExpr.html">FuncExpr</a> field)</td></tr>
+<tr class="memdesc:a9fe75984a045df08695cfb95f9ac54d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用表达式构造  <a href="structsqlcpp_1_1FieldLike.html#a9fe75984a045df08695cfb95f9ac54d5">More...</a><br /></td></tr>
+<tr class="separator:a9fe75984a045df08695cfb95f9ac54d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1df7574817b15034d6c8f2da38be6c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FieldLike.html#ad1df7574817b15034d6c8f2da38be6c7">FieldLike</a> (<a class="el" href="structsqlcpp_1_1ExprLike.html">ExprLike</a> field)</td></tr>
+<tr class="memdesc:ad1df7574817b15034d6c8f2da38be6c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用表达式构造  <a href="structsqlcpp_1_1FieldLike.html#ad1df7574817b15034d6c8f2da38be6c7">More...</a><br /></td></tr>
+<tr class="separator:ad1df7574817b15034d6c8f2da38be6c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dbee5f8872f48223704a51227a55f97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FieldLike.html#a4dbee5f8872f48223704a51227a55f97">build_s</a> (std::ostream &amp;oss, const <a class="el" href="structsqlcpp_1_1Type.html">Type</a> &amp;t=<a class="el" href="namespacesqlcpp.html#a19237f9b2742dd80678d8dfa286dcfd6">SQLCPP_DEFAULT_TYPE</a>) const override</td></tr>
 <tr class="memdesc:a4dbee5f8872f48223704a51227a55f97"><td class="mdescLeft">&#160;</td><td class="mdescRight">分步的将SQL语句输出到流中  <a href="structsqlcpp_1_1FieldLike.html#a4dbee5f8872f48223704a51227a55f97">More...</a><br /></td></tr>
 <tr class="separator:a4dbee5f8872f48223704a51227a55f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,15 +189,15 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a29b8b990549e218f3f3fe5ab971123c4"><td class="memItemLeft" align="right" valign="top">std::variant&lt; <a class="el" href="structsqlcpp_1_1Field.html">Field</a>, <a class="el" href="structsqlcpp_1_1RawField.html">RawField</a>, <a class="el" href="structsqlcpp_1_1FuncField.html">FuncField</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FieldLike.html#a29b8b990549e218f3f3fe5ab971123c4">field_</a></td></tr>
-<tr class="memdesc:a29b8b990549e218f3f3fe5ab971123c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">实际字段  <a href="structsqlcpp_1_1FieldLike.html#a29b8b990549e218f3f3fe5ab971123c4">More...</a><br /></td></tr>
-<tr class="separator:a29b8b990549e218f3f3fe5ab971123c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e57d5d322742cc5acf2cdfb10f62b83"><td class="memItemLeft" align="right" valign="top">std::variant&lt; <a class="el" href="structsqlcpp_1_1Field.html">Field</a>, <a class="el" href="structsqlcpp_1_1RawField.html">RawField</a>, <a class="el" href="structsqlcpp_1_1ExprLike.html">ExprLike</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1FieldLike.html#a5e57d5d322742cc5acf2cdfb10f62b83">field_</a></td></tr>
+<tr class="memdesc:a5e57d5d322742cc5acf2cdfb10f62b83"><td class="mdescLeft">&#160;</td><td class="mdescRight">实际字段  <a href="structsqlcpp_1_1FieldLike.html#a5e57d5d322742cc5acf2cdfb10f62b83">More...</a><br /></td></tr>
+<tr class="separator:a5e57d5d322742cc5acf2cdfb10f62b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 <a class="el" href="structsqlcpp_1_1Field.html" title="一个普通字段, 用于查询/更新/删除/条件等操作">Field</a> / <a class="el" href="structsqlcpp_1_1RawField.html" title="原生字段, 不会进行任何转义, 用于查询/更新/删除/条件等操作">RawField</a> / <a class="el" href="structsqlcpp_1_1FuncField.html" title="函数字段, 用于查询/更新/删除/条件等操作">FuncField</a> </p>
+<div class="textblock"><p>形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 <a class="el" href="structsqlcpp_1_1Field.html" title="一个普通字段, 用于查询/更新/删除/条件等操作">Field</a> / <a class="el" href="structsqlcpp_1_1RawField.html" title="原生字段, 不会进行任何转义, 用于查询/更新/删除/条件等操作">RawField</a> / <a class="el" href="structsqlcpp_1_1Expr.html" title="表达式基类">Expr</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac7192d4d6235f09f1f542c9ff2503fbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7192d4d6235f09f1f542c9ff2503fbc">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[1/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7192d4d6235f09f1f542c9ff2503fbc">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[1/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,7 +218,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a6d0036528adf7b06bd7f7b3b1598a1fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d0036528adf7b06bd7f7b3b1598a1fb">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[2/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d0036528adf7b06bd7f7b3b1598a1fb">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[2/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,7 +239,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a078ac93637475cfb74996e6370b4c1eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a078ac93637475cfb74996e6370b4c1eb">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[3/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a078ac93637475cfb74996e6370b4c1eb">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[3/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -261,7 +270,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="aff711614ea88ac84afc95c9f2adc4eb0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff711614ea88ac84afc95c9f2adc4eb0">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[4/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aff711614ea88ac84afc95c9f2adc4eb0">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[4/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -298,7 +307,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a649707b11ef22b1b513644b3f13b23f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a649707b11ef22b1b513644b3f13b23f8">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[5/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a649707b11ef22b1b513644b3f13b23f8">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[5/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -318,7 +327,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a855478dead768616952a9b950c06c4bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a855478dead768616952a9b950c06c4bb">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[6/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a855478dead768616952a9b950c06c4bb">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[6/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -337,8 +346,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a2a1b8b6363f66200d4dd8bf4e4fd56eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a1b8b6363f66200d4dd8bf4e4fd56eb">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[7/7]</span></h2>
+<a id="a6380b4f85f549710952880b44533de0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6380b4f85f549710952880b44533de0c">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[7/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -346,14 +355,74 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">sqlcpp::FieldLike::FieldLike </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structsqlcpp_1_1FuncField.html">FuncField</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structsqlcpp_1_1OpExpr.html">OpExpr</a>&#160;</td>
           <td class="paramname"><em>field</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>使用字段构造 </p>
+<p>使用表达式构造 </p>
+
+</div>
+</div>
+<a id="acf7e8c571a91472570449065f46e1a26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf7e8c571a91472570449065f46e1a26">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[8/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sqlcpp::FieldLike::FieldLike </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsqlcpp_1_1CaseExpr.html">CaseExpr</a>&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用表达式构造 </p>
+
+</div>
+</div>
+<a id="a9fe75984a045df08695cfb95f9ac54d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fe75984a045df08695cfb95f9ac54d5">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[9/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sqlcpp::FieldLike::FieldLike </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsqlcpp_1_1FuncExpr.html">FuncExpr</a>&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用表达式构造 </p>
+
+</div>
+</div>
+<a id="ad1df7574817b15034d6c8f2da38be6c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1df7574817b15034d6c8f2da38be6c7">&#9670;&nbsp;</a></span>FieldLike() <span class="overload">[10/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sqlcpp::FieldLike::FieldLike </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsqlcpp_1_1ExprLike.html">ExprLike</a>&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用表达式构造 </p>
 
 </div>
 </div>
@@ -584,14 +653,14 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a29b8b990549e218f3f3fe5ab971123c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29b8b990549e218f3f3fe5ab971123c4">&#9670;&nbsp;</a></span>field_</h2>
+<a id="a5e57d5d322742cc5acf2cdfb10f62b83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e57d5d322742cc5acf2cdfb10f62b83">&#9670;&nbsp;</a></span>field_</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::variant&lt;<a class="el" href="structsqlcpp_1_1Field.html">Field</a>, <a class="el" href="structsqlcpp_1_1RawField.html">RawField</a>, <a class="el" href="structsqlcpp_1_1FuncField.html">FuncField</a>&gt; sqlcpp::FieldLike::field_</td>
+          <td class="memname">std::variant&lt;<a class="el" href="structsqlcpp_1_1Field.html">Field</a>, <a class="el" href="structsqlcpp_1_1RawField.html">RawField</a>, <a class="el" href="structsqlcpp_1_1ExprLike.html">ExprLike</a>&gt; sqlcpp::FieldLike::field_</td>
         </tr>
       </table>
 </div><div class="memdoc">

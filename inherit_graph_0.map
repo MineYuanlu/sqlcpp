@@ -1,44 +1,48 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="15,936,134,962"/>
-<area shape="rect" id="node2" href="$structsqlcpp_1_1Assign.html" title="赋值组件, 代表对一个字段的赋值操作" alt="" coords="213,860,327,886"/>
-<area shape="rect" id="node3" href="$structsqlcpp_1_1Assigns.html" title="赋值组组件, 代表一组赋值操作" alt="" coords="209,910,331,937"/>
-<area shape="rect" id="node4" href="$structsqlcpp_1_1BlobValue.html" title="二进制值, 会被转义" alt="" coords="201,961,339,988"/>
-<area shape="rect" id="node5" href="$structsqlcpp_1_1Check.html" title="CHECK约束，用于定义数据表中的检查条件" alt="" coords="214,1012,326,1038"/>
-<area shape="rect" id="node6" href="$structsqlcpp_1_1Column.html" title="字段定义, 用于构建CREATE TABLE语句" alt="" coords="209,1062,331,1089"/>
-<area shape="rect" id="node7" href="$structsqlcpp_1_1CondBetween.html" title="BETWEEN条件" alt="" coords="405,1196,567,1222"/>
-<area shape="rect" id="node8" href="$structsqlcpp_1_1CondCmp.html" title="比较条件" alt="" coords="419,1329,553,1356"/>
-<area shape="rect" id="node9" href="$structsqlcpp_1_1CondIn.html" title="IN条件" alt="" coords="427,1544,545,1570"/>
-<area shape="rect" id="node10" href="$structsqlcpp_1_1CondNotIn.html" title="NOT IN条件" alt="" coords="416,338,556,365"/>
-<area shape="rect" id="node11" href="$structsqlcpp_1_1CondOp.html" title="连接条件" alt="" coords="425,729,547,756"/>
-<area shape="rect" id="node12" href="$structsqlcpp_1_1CondRaw.html" title="原生条件" alt="" coords="419,901,553,928"/>
-<area shape="rect" id="node13" href="$structsqlcpp_1_1Condition.html" title="条件接口" alt="" coords="203,1518,337,1545"/>
-<area shape="rect" id="node14" href="$structsqlcpp_1_1Delete.html" title="删除语句构建器" alt="" coords="213,49,327,76"/>
-<area shape="rect" id="node15" href="$structsqlcpp_1_1Field.html" title="一个普通字段, 用于查询/更新/删除/条件等操作" alt="" coords="219,1569,321,1596"/>
-<area shape="rect" id="node16" href="$structsqlcpp_1_1FieldLike.html" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / FuncField" alt="" coords="205,1620,335,1646"/>
-<area shape="rect" id="node17" href="$structsqlcpp_1_1ForeignKey.html" title="外键定义, 用于构建CREATE TABLE语句" alt="" coords="198,100,342,126"/>
-<area shape="rect" id="node18" href="$structsqlcpp_1_1From.html" title="代表一个数据表引用" alt="" coords="217,150,323,177"/>
-<area shape="rect" id="node19" href="$structsqlcpp_1_1Froms.html" title="多个表的连接" alt="" coords="214,201,326,228"/>
-<area shape="rect" id="node20" href="$structsqlcpp_1_1FuncField.html" title="函数字段, 用于查询/更新/删除/条件等操作" alt="" coords="203,1670,337,1697"/>
-<area shape="rect" id="node21" href="$structsqlcpp_1_1GroupBy.html" title="分组组件, 按某一列或多列的值进行分组, 将具有相同值的行归为一组" alt="" coords="206,1721,334,1748"/>
-<area shape="rect" id="node22" href="$structsqlcpp_1_1Having.html" title="过滤组件, 基于聚合后的数据来进行条件筛选" alt="" coords="211,1772,329,1798"/>
-<area shape="rect" id="node23" href="$structsqlcpp_1_1Index.html" title="索引组件, 创建字段一般的(普通/唯一)索引" alt="" coords="216,252,324,278"/>
-<area shape="rect" id="node24" href="$structsqlcpp_1_1Insert.html" title="插入语句构建器" alt="" coords="215,302,325,329"/>
-<area shape="rect" id="node25" href="$structsqlcpp_1_1NullValue.html" title="空值, 表示NULL" alt="" coords="203,353,337,380"/>
-<area shape="rect" id="node26" href="$structsqlcpp_1_1OrderBy.html" title="多个字段的排序条件" alt="" coords="207,1822,333,1849"/>
-<area shape="rect" id="node27" href="$structsqlcpp_1_1OrderByField.html" title="单个字段的排序条件" alt="" coords="192,1265,348,1292"/>
-<area shape="rect" id="node28" href="$structsqlcpp_1_1PrimaryKey.html" title="主键定义, 用于构建CREATE TABLE语句" alt="" coords="197,404,343,430"/>
-<area shape="rect" id="node29" href="$structsqlcpp_1_1RawField.html" title="原生字段, 不会进行任何转义, 用于查询/更新/删除/条件等操作" alt="" coords="205,1316,335,1342"/>
-<area shape="rect" id="node30" href="$structsqlcpp_1_1RawFrom.html" title="原生数据表引用" alt="" coords="203,454,337,481"/>
-<area shape="rect" id="node31" href="$structsqlcpp_1_1RawValue.html" title="原生值, 不会被转义" alt="" coords="202,505,338,532"/>
-<area shape="rect" id="node32" href="$structsqlcpp_1_1Select.html" title="选择语句构建器" alt="" coords="214,1366,326,1393"/>
-<area shape="rect" id="node33" href="$structsqlcpp_1_1Table.html" title="表构建器" alt="" coords="217,556,323,582"/>
-<area shape="rect" id="node34" href="$structsqlcpp_1_1Unique.html" title="唯一索引定义, 用于构建CREATE TABLE语句" alt="" coords="211,708,329,734"/>
-<area shape="rect" id="node35" href="$structsqlcpp_1_1Update.html" title="更新语句构建器" alt="" coords="211,758,329,785"/>
-<area shape="rect" id="node36" href="$structsqlcpp_1_1Value.html" title="普通值, 会被转义" alt="" coords="216,809,324,836"/>
-<area shape="rect" id="node37" href="$structsqlcpp_1_1ValueLike.html" title="所有形似值表示的类" alt="" coords="203,1417,337,1444"/>
-<area shape="rect" id="node38" href="$structsqlcpp_1_1VarValue.html" title="普通占位符, 表示形式为&quot;?&quot;, 可以使用VAR(N)代表有索引的占位符" alt="" coords="205,1924,335,1950"/>
-<area shape="rect" id="node40" href="$structsqlcpp_1_1Where.html" title="筛选组件" alt="" coords="213,1468,327,1494"/>
-<area shape="rect" id="node39" href="$structsqlcpp_1_1IndexedVarValue.html" title="带有索引的占位符, 表示形式为&quot;?&quot; /" alt="" coords="396,1924,576,1950"/>
-<area shape="rect" id="node41" href="$structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="5,1594,144,1621"/>
-<area shape="rect" id="node42" href="$structsqlcpp_1_1Cond.html" title="条件构建器接口" alt="" coords="217,1873,323,1900"/>
+<area shape="rect" id="node1" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="15,1095,134,1121"/>
+<area shape="rect" id="node2" href="$structsqlcpp_1_1Assign.html" title="赋值组件, 代表对一个字段的赋值操作" alt="" coords="213,1272,327,1299"/>
+<area shape="rect" id="node3" href="$structsqlcpp_1_1Assigns.html" title="赋值组组件, 代表一组赋值操作" alt="" coords="209,1323,331,1349"/>
+<area shape="rect" id="node4" href="$structsqlcpp_1_1BlobValue.html" title="二进制值, 会被转义" alt="" coords="201,1373,339,1400"/>
+<area shape="rect" id="node5" href="$structsqlcpp_1_1CaseExpr.html" title=" " alt="" coords="203,715,337,741"/>
+<area shape="rect" id="node6" href="$structsqlcpp_1_1Check.html" title="CHECK约束，用于定义数据表中的检查条件" alt="" coords="214,1627,326,1653"/>
+<area shape="rect" id="node7" href="$structsqlcpp_1_1Column.html" title="字段定义, 用于构建CREATE TABLE语句" alt="" coords="209,1677,331,1704"/>
+<area shape="rect" id="node8" href="$structsqlcpp_1_1CondBetween.html" title="BETWEEN条件" alt="" coords="405,917,567,944"/>
+<area shape="rect" id="node9" href="$structsqlcpp_1_1CondCmp.html" title="比较条件" alt="" coords="419,1703,553,1729"/>
+<area shape="rect" id="node10" href="$structsqlcpp_1_1CondIn.html" title="IN条件" alt="" coords="427,1829,545,1856"/>
+<area shape="rect" id="node11" href="$structsqlcpp_1_1CondNotIn.html" title="NOT IN条件" alt="" coords="416,31,556,57"/>
+<area shape="rect" id="node12" href="$structsqlcpp_1_1CondOp.html" title="连接条件" alt="" coords="425,321,547,348"/>
+<area shape="rect" id="node13" href="$structsqlcpp_1_1CondRaw.html" title="原生条件" alt="" coords="419,701,553,728"/>
+<area shape="rect" id="node14" href="$structsqlcpp_1_1Condition.html" title="条件接口" alt="" coords="203,765,337,792"/>
+<area shape="rect" id="node15" href="$structsqlcpp_1_1Delete.html" title="删除语句构建器" alt="" coords="213,1728,327,1755"/>
+<area shape="rect" id="node16" href="$structsqlcpp_1_1Expr.html" title="表达式基类" alt="" coords="219,816,321,843"/>
+<area shape="rect" id="node17" href="$structsqlcpp_1_1ExprLike.html" title="基本表达式" alt="" coords="207,867,333,893"/>
+<area shape="rect" id="node18" href="$structsqlcpp_1_1Field.html" title="一个普通字段, 用于查询/更新/删除/条件等操作" alt="" coords="219,56,321,83"/>
+<area shape="rect" id="node19" href="$structsqlcpp_1_1FieldLike.html" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / Expr" alt="" coords="205,157,335,184"/>
+<area shape="rect" id="node20" href="$structsqlcpp_1_1ForeignKey.html" title="外键定义, 用于构建CREATE TABLE语句" alt="" coords="198,1880,342,1907"/>
+<area shape="rect" id="node21" href="$structsqlcpp_1_1From.html" title="代表一个数据表引用" alt="" coords="217,1931,323,1957"/>
+<area shape="rect" id="node22" href="$structsqlcpp_1_1Froms.html" title="多个表的连接" alt="" coords="214,1981,326,2008"/>
+<area shape="rect" id="node23" href="$structsqlcpp_1_1FuncExpr.html" title="函数表达式" alt="" coords="205,208,335,235"/>
+<area shape="rect" id="node24" href="$structsqlcpp_1_1GroupBy.html" title="分组组件, 按某一列或多列的值进行分组, 将具有相同值的行归为一组" alt="" coords="206,259,334,285"/>
+<area shape="rect" id="node25" href="$structsqlcpp_1_1Having.html" title="过滤组件, 基于聚合后的数据来进行条件筛选" alt="" coords="211,309,329,336"/>
+<area shape="rect" id="node26" href="$structsqlcpp_1_1Index.html" title="索引组件, 创建字段一般的(普通/唯一)索引" alt="" coords="216,2032,324,2059"/>
+<area shape="rect" id="node27" href="$structsqlcpp_1_1Insert.html" title="插入语句构建器" alt="" coords="215,2083,325,2109"/>
+<area shape="rect" id="node28" href="$structsqlcpp_1_1NullValue.html" title="空值, 表示NULL" alt="" coords="203,2133,337,2160"/>
+<area shape="rect" id="node29" href="$structsqlcpp_1_1OpExpr.html" title="运算表达式" alt="" coords="211,360,329,387"/>
+<area shape="rect" id="node30" href="$structsqlcpp_1_1OrderBy.html" title="多个字段的排序条件" alt="" coords="207,411,333,437"/>
+<area shape="rect" id="node31" href="$structsqlcpp_1_1OrderByField.html" title="单个字段的排序条件" alt="" coords="192,461,348,488"/>
+<area shape="rect" id="node32" href="$structsqlcpp_1_1PrimaryKey.html" title="主键定义, 用于构建CREATE TABLE语句" alt="" coords="197,968,343,995"/>
+<area shape="rect" id="node33" href="$structsqlcpp_1_1RawField.html" title="原生字段, 不会进行任何转义, 用于查询/更新/删除/条件等操作" alt="" coords="205,512,335,539"/>
+<area shape="rect" id="node34" href="$structsqlcpp_1_1RawFrom.html" title="原生数据表引用" alt="" coords="203,1019,337,1045"/>
+<area shape="rect" id="node35" href="$structsqlcpp_1_1RawValue.html" title="原生值, 不会被转义" alt="" coords="202,1069,338,1096"/>
+<area shape="rect" id="node36" href="$structsqlcpp_1_1Select.html" title="选择语句构建器" alt="" coords="214,563,326,589"/>
+<area shape="rect" id="node37" href="$structsqlcpp_1_1Table.html" title="表构建器" alt="" coords="217,1120,323,1147"/>
+<area shape="rect" id="node38" href="$structsqlcpp_1_1Unique.html" title="唯一索引定义, 用于构建CREATE TABLE语句" alt="" coords="211,1171,329,1197"/>
+<area shape="rect" id="node39" href="$structsqlcpp_1_1Update.html" title="更新语句构建器" alt="" coords="211,1221,329,1248"/>
+<area shape="rect" id="node40" href="$structsqlcpp_1_1Value.html" title="普通值, 会被转义" alt="" coords="216,1475,324,1501"/>
+<area shape="rect" id="node41" href="$structsqlcpp_1_1ValueLike.html" title="所有形似值表示的类" alt="" coords="203,613,337,640"/>
+<area shape="rect" id="node42" href="$structsqlcpp_1_1VarValue.html" title="普通占位符, 表示形式为&quot;?&quot;, 可以使用VAR(N)代表有索引的占位符" alt="" coords="205,107,335,133"/>
+<area shape="rect" id="node44" href="$structsqlcpp_1_1Where.html" title="筛选组件" alt="" coords="213,664,327,691"/>
+<area shape="rect" id="node43" href="$structsqlcpp_1_1IndexedVarValue.html" title="带有索引的占位符, 表示形式为&quot;?&quot; /" alt="" coords="396,107,576,133"/>
+<area shape="rect" id="node45" href="$structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="5,436,144,463"/>
+<area shape="rect" id="node46" href="$structsqlcpp_1_1Cond.html" title="条件构建器接口" alt="" coords="217,5,323,32"/>
 </map>

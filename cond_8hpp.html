@@ -94,30 +94,36 @@ $(document).ready(function(){initNavTree('cond_8hpp.html',''); initResizable(); 
 <div class="title">cond.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="field_8hpp_source.html">sqlcpp/components/field.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="expr_8hpp_source.html">sqlcpp/components/expr.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="field_8hpp_source.html">sqlcpp/components/field.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="value_8hpp_source.html">sqlcpp/components/value.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="defs_8hpp_source.html">sqlcpp/defs.hpp</a>&quot;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for cond.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="cond_8hpp__incl.png" border="0" usemap="#ainc_2sqlcpp_2components_2cond_8hpp" alt=""/></div>
 <map name="ainc_2sqlcpp_2components_2cond_8hpp" id="ainc_2sqlcpp_2components_2cond_8hpp">
-<area shape="rect" title=" " alt="" coords="490,5,661,47"/>
-<area shape="rect" href="field_8hpp.html" title=" " alt="" coords="287,169,495,196"/>
-<area shape="rect" href="defs_8hpp.html" title=" " alt="" coords="188,244,312,271"/>
-<area shape="rect" href="value_8hpp.html" title=" " alt="" coords="541,95,757,121"/>
-<area shape="rect" title=" " alt="" coords="858,169,935,196"/>
-<area shape="rect" title=" " alt="" coords="392,319,455,345"/>
-<area shape="rect" title=" " alt="" coords="475,244,550,271"/>
-<area shape="rect" title=" " alt="" coords="668,244,736,271"/>
-<area shape="rect" href="types_8hpp.html" title=" " alt="" coords="184,319,316,345"/>
-<area shape="rect" title=" " alt="" coords="325,393,383,420"/>
-<area shape="rect" title=" " alt="" coords="5,319,81,345"/>
-<area shape="rect" title=" " alt="" coords="105,319,160,345"/>
-<area shape="rect" title=" " alt="" coords="201,393,299,420"/>
-<area shape="rect" title=" " alt="" coords="520,169,591,196"/>
-<area shape="rect" title=" " alt="" coords="615,169,682,196"/>
+<area shape="rect" title=" " alt="" coords="466,5,637,47"/>
+<area shape="rect" href="expr_8hpp.html" title=" " alt="" coords="595,244,803,271"/>
+<area shape="rect" href="defs_8hpp.html" title=" " alt="" coords="244,319,368,345"/>
+<area shape="rect" title=" " alt="" coords="79,319,157,345"/>
+<area shape="rect" title=" " alt="" coords="984,319,1076,345"/>
+<area shape="rect" href="field_8hpp.html" title=" " alt="" coords="545,169,753,196"/>
+<area shape="rect" href="value_8hpp.html" title=" " alt="" coords="322,95,538,121"/>
+<area shape="rect" title=" " alt="" coords="261,468,319,495"/>
+<area shape="rect" title=" " alt="" coords="771,393,833,420"/>
+<area shape="rect" title=" " alt="" coords="443,319,518,345"/>
+<area shape="rect" title=" " alt="" coords="677,319,764,345"/>
+<area shape="rect" title=" " alt="" coords="593,319,653,345"/>
+<area shape="rect" title=" " alt="" coords="840,319,908,345"/>
+<area shape="rect" href="types_8hpp.html" title=" " alt="" coords="5,393,137,420"/>
+<area shape="rect" title=" " alt="" coords="213,393,289,420"/>
+<area shape="rect" title=" " alt="" coords="313,393,368,420"/>
+<area shape="rect" title=" " alt="" coords="23,468,120,495"/>
+<area shape="rect" title=" " alt="" coords="156,169,227,196"/>
+<area shape="rect" title=" " alt="" coords="251,169,318,196"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -125,23 +131,24 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="cond_8hpp__dep__incl.png" border="0" usemap="#ainc_2sqlcpp_2components_2cond_8hppdep" alt=""/></div>
 <map name="ainc_2sqlcpp_2components_2cond_8hppdep" id="ainc_2sqlcpp_2components_2cond_8hppdep">
-<area shape="rect" title=" " alt="" coords="534,5,705,47"/>
-<area shape="rect" href="cond_8cpp.html" title=" " alt="" coords="54,102,241,129"/>
-<area shape="rect" href="field_8cpp.html" title=" " alt="" coords="265,102,449,129"/>
-<area shape="rect" href="from_8hpp.html" title=" " alt="" coords="473,95,643,136"/>
-<area shape="rect" href="update_8hpp.html" title=" " alt="" coords="473,184,643,225"/>
-<area shape="rect" href="having_8hpp.html" title=" " alt="" coords="913,95,1083,136"/>
-<area shape="rect" href="where_8hpp.html" title=" " alt="" coords="718,95,889,136"/>
+<area shape="rect" title=" " alt="" coords="790,5,961,47"/>
+<area shape="rect" href="cond_8cpp.html" title=" " alt="" coords="298,102,485,129"/>
+<area shape="rect" href="expr_8cpp.html" title=" " alt="" coords="1407,273,1591,300"/>
+<area shape="rect" href="field_8cpp.html" title=" " alt="" coords="1603,102,1787,129"/>
+<area shape="rect" href="from_8hpp.html" title=" " alt="" coords="509,95,679,136"/>
+<area shape="rect" href="update_8hpp.html" title=" " alt="" coords="667,184,838,225"/>
+<area shape="rect" href="having_8hpp.html" title=" " alt="" coords="1134,95,1305,136"/>
+<area shape="rect" href="where_8hpp.html" title=" " alt="" coords="790,95,961,136"/>
 <area shape="rect" href="from_8cpp.html" title=" " alt="" coords="211,191,398,218"/>
-<area shape="rect" href="update_8cpp.html" title=" " alt="" coords="440,273,641,300"/>
-<area shape="rect" href="delete_8hpp.html" title=" " alt="" coords="667,184,838,225"/>
+<area shape="rect" href="update_8cpp.html" title=" " alt="" coords="667,273,868,300"/>
+<area shape="rect" href="delete_8hpp.html" title=" " alt="" coords="473,184,643,225"/>
 <area shape="rect" href="insert_8hpp.html" title=" " alt="" coords="17,184,187,225"/>
-<area shape="rect" href="select_8hpp.html" title=" " alt="" coords="913,184,1083,225"/>
-<area shape="rect" href="delete_8cpp.html" title=" " alt="" coords="666,273,863,300"/>
+<area shape="rect" href="select_8hpp.html" title=" " alt="" coords="1134,184,1305,225"/>
+<area shape="rect" href="delete_8cpp.html" title=" " alt="" coords="445,273,642,300"/>
 <area shape="rect" href="insert_8cpp.html" title=" " alt="" coords="5,273,199,300"/>
-<area shape="rect" href="select_8cpp.html" title=" " alt="" coords="901,273,1095,300"/>
+<area shape="rect" href="select_8cpp.html" title=" " alt="" coords="1122,273,1317,300"/>
 <area shape="rect" href="having_8cpp.html" title=" " alt="" coords="1329,191,1529,218"/>
-<area shape="rect" href="where_8cpp.html" title=" " alt="" coords="1108,191,1304,218"/>
+<area shape="rect" href="where_8cpp.html" title=" " alt="" coords="913,191,1109,218"/>
 </map>
 </div>
 </div>
@@ -204,30 +211,33 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ade469e61f70edb5266c7353cd638df52"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#ade469e61f70edb5266c7353cd638df52">sqlcpp::cmp_op_str</a> (CmpOp op)</td></tr>
 <tr class="separator:ade469e61f70edb5266c7353cd638df52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2cf752165ae7b9901594b89ee2c9e6a"><td class="memItemLeft" align="right" valign="top">CondCmp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#ae2cf752165ae7b9901594b89ee2c9e6a">sqlcpp::operator==</a> (FieldLike &amp;&amp;field, ValueLike &amp;&amp;value)</td></tr>
-<tr class="separator:ae2cf752165ae7b9901594b89ee2c9e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae946f91ed2693dc9d044b9e1408661a1"><td class="memItemLeft" align="right" valign="top">CondCmp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#ae946f91ed2693dc9d044b9e1408661a1">sqlcpp::operator!=</a> (FieldLike &amp;&amp;field, ValueLike &amp;&amp;value)</td></tr>
-<tr class="separator:ae946f91ed2693dc9d044b9e1408661a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08c57842797d0894874b9a98108f6c06"><td class="memItemLeft" align="right" valign="top">CondCmp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#a08c57842797d0894874b9a98108f6c06">sqlcpp::operator&gt;</a> (FieldLike &amp;&amp;field, ValueLike &amp;&amp;value)</td></tr>
-<tr class="separator:a08c57842797d0894874b9a98108f6c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6700d72caf352529087055d4bb5899d2"><td class="memItemLeft" align="right" valign="top">CondCmp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#a6700d72caf352529087055d4bb5899d2">sqlcpp::operator&gt;=</a> (FieldLike &amp;&amp;field, ValueLike &amp;&amp;value)</td></tr>
-<tr class="separator:a6700d72caf352529087055d4bb5899d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22e91fc58b40f913164c5d75d2ed550d"><td class="memItemLeft" align="right" valign="top">CondCmp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#a22e91fc58b40f913164c5d75d2ed550d">sqlcpp::operator&lt;</a> (FieldLike &amp;&amp;field, ValueLike &amp;&amp;value)</td></tr>
-<tr class="separator:a22e91fc58b40f913164c5d75d2ed550d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a110f60b55a49d211d0100b9520ab4e9f"><td class="memItemLeft" align="right" valign="top">CondCmp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#a110f60b55a49d211d0100b9520ab4e9f">sqlcpp::operator&lt;=</a> (FieldLike &amp;&amp;field, ValueLike &amp;&amp;value)</td></tr>
-<tr class="separator:a110f60b55a49d211d0100b9520ab4e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3484f9ed755aa7ffd039ce680471cba"><td class="memItemLeft" align="right" valign="top">CondOp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#ae3484f9ed755aa7ffd039ce680471cba">sqlcpp::operator&amp;&amp;</a> (Condition &amp;&amp;left, Condition &amp;&amp;right)</td></tr>
-<tr class="separator:ae3484f9ed755aa7ffd039ce680471cba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa25de55e3c5476f6f6b627bf2180afa9"><td class="memItemLeft" align="right" valign="top">CondOp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#aa25de55e3c5476f6f6b627bf2180afa9">sqlcpp::operator||</a> (Condition &amp;&amp;left, Condition &amp;&amp;right)</td></tr>
-<tr class="separator:aa25de55e3c5476f6f6b627bf2180afa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc2541b7849f377669403081c2eb97b3"><td class="memItemLeft" align="right" valign="top">CondOp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#afc2541b7849f377669403081c2eb97b3">sqlcpp::operator!</a> (Condition &amp;&amp;cond)</td></tr>
-<tr class="separator:afc2541b7849f377669403081c2eb97b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fd74585deec660a037596f29ba943fd"><td class="memItemLeft" align="right" valign="top">CondOp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#a1fd74585deec660a037596f29ba943fd">sqlcpp::operator&amp;&amp;</a> (const Condition &amp;left, const Condition &amp;right)</td></tr>
-<tr class="separator:a1fd74585deec660a037596f29ba943fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5b6065f56e5a7394fb49d1203f6cc5b"><td class="memItemLeft" align="right" valign="top">CondOp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#af5b6065f56e5a7394fb49d1203f6cc5b">sqlcpp::operator||</a> (const Condition &amp;left, const Condition &amp;right)</td></tr>
-<tr class="separator:af5b6065f56e5a7394fb49d1203f6cc5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe32cc46fd69b699bf3df8c3e6439473"><td class="memItemLeft" align="right" valign="top">CondOp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#abe32cc46fd69b699bf3df8c3e6439473">sqlcpp::operator!</a> (const Condition &amp;cond)</td></tr>
-<tr class="separator:abe32cc46fd69b699bf3df8c3e6439473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3218c5844a28d79355762a4711c9b774"><td class="memTemplParams" colspan="2">template&lt;typename F , typename V , typename  = std::enable_if_t&lt;std::is_convertible_v&lt;F, FieldLike&gt; &amp;&amp; std::is_convertible_v&lt;V, ValueLike&gt;&gt;&gt; </td></tr>
+<tr class="memitem:a3218c5844a28d79355762a4711c9b774"><td class="memTemplItemLeft" align="right" valign="top">CondCmp&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#a3218c5844a28d79355762a4711c9b774">sqlcpp::operator==</a> (F &amp;&amp;field, V &amp;&amp;value)</td></tr>
+<tr class="separator:a3218c5844a28d79355762a4711c9b774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6125d702869a0c561065babd680c02d5"><td class="memTemplParams" colspan="2">template&lt;typename F , typename V , typename  = std::enable_if_t&lt;std::is_convertible_v&lt;F, FieldLike&gt; &amp;&amp; std::is_convertible_v&lt;V, ValueLike&gt;&gt;&gt; </td></tr>
+<tr class="memitem:a6125d702869a0c561065babd680c02d5"><td class="memTemplItemLeft" align="right" valign="top">CondCmp&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#a6125d702869a0c561065babd680c02d5">sqlcpp::operator!=</a> (F &amp;&amp;field, V &amp;&amp;value)</td></tr>
+<tr class="separator:a6125d702869a0c561065babd680c02d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf0ea0fabf350792fe1e499476bf13b5"><td class="memTemplParams" colspan="2">template&lt;typename F , typename V , typename  = std::enable_if_t&lt;std::is_convertible_v&lt;F, FieldLike&gt; &amp;&amp; std::is_convertible_v&lt;V, ValueLike&gt;&gt;&gt; </td></tr>
+<tr class="memitem:acf0ea0fabf350792fe1e499476bf13b5"><td class="memTemplItemLeft" align="right" valign="top">CondCmp&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#acf0ea0fabf350792fe1e499476bf13b5">sqlcpp::operator&gt;</a> (F &amp;&amp;field, V &amp;&amp;value)</td></tr>
+<tr class="separator:acf0ea0fabf350792fe1e499476bf13b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa730e0ae93d88d2da83b143975f08546"><td class="memTemplParams" colspan="2">template&lt;typename F , typename V , typename  = std::enable_if_t&lt;std::is_convertible_v&lt;F, FieldLike&gt; &amp;&amp; std::is_convertible_v&lt;V, ValueLike&gt;&gt;&gt; </td></tr>
+<tr class="memitem:aa730e0ae93d88d2da83b143975f08546"><td class="memTemplItemLeft" align="right" valign="top">CondCmp&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#aa730e0ae93d88d2da83b143975f08546">sqlcpp::operator&gt;=</a> (F &amp;&amp;field, V &amp;&amp;value)</td></tr>
+<tr class="separator:aa730e0ae93d88d2da83b143975f08546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a337bce7196011999731b675670346625"><td class="memTemplParams" colspan="2">template&lt;typename F , typename V , typename  = std::enable_if_t&lt;std::is_convertible_v&lt;F, FieldLike&gt; &amp;&amp; std::is_convertible_v&lt;V, ValueLike&gt;&gt;&gt; </td></tr>
+<tr class="memitem:a337bce7196011999731b675670346625"><td class="memTemplItemLeft" align="right" valign="top">CondCmp&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#a337bce7196011999731b675670346625">sqlcpp::operator&lt;</a> (F &amp;&amp;field, V &amp;&amp;value)</td></tr>
+<tr class="separator:a337bce7196011999731b675670346625"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84b235c67f5841c81c04b739346cc678"><td class="memTemplParams" colspan="2">template&lt;typename F , typename V , typename  = std::enable_if_t&lt;std::is_convertible_v&lt;F, FieldLike&gt; &amp;&amp; std::is_convertible_v&lt;V, ValueLike&gt;&gt;&gt; </td></tr>
+<tr class="memitem:a84b235c67f5841c81c04b739346cc678"><td class="memTemplItemLeft" align="right" valign="top">CondCmp&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#a84b235c67f5841c81c04b739346cc678">sqlcpp::operator&lt;=</a> (F &amp;&amp;field, V &amp;&amp;value)</td></tr>
+<tr class="separator:a84b235c67f5841c81c04b739346cc678"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a749f1306805766feb8be798841a3f4eb"><td class="memTemplParams" colspan="2">template&lt;typename L , typename R , typename  = std::enable_if_t&lt;std::is_convertible_v&lt;L, Condition&gt; &amp;&amp; std::is_convertible_v&lt;R, Condition&gt;&gt;&gt; </td></tr>
+<tr class="memitem:a749f1306805766feb8be798841a3f4eb"><td class="memTemplItemLeft" align="right" valign="top">CondOp&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#a749f1306805766feb8be798841a3f4eb">sqlcpp::operator&amp;&amp;</a> (L &amp;&amp;left, R &amp;&amp;right)</td></tr>
+<tr class="separator:a749f1306805766feb8be798841a3f4eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37fb3607cdbc46946468f7820ddab84f"><td class="memTemplParams" colspan="2">template&lt;typename L , typename R , typename  = std::enable_if_t&lt;std::is_convertible_v&lt;L, Condition&gt; &amp;&amp; std::is_convertible_v&lt;R, Condition&gt;&gt;&gt; </td></tr>
+<tr class="memitem:a37fb3607cdbc46946468f7820ddab84f"><td class="memTemplItemLeft" align="right" valign="top">CondOp&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#a37fb3607cdbc46946468f7820ddab84f">sqlcpp::operator||</a> (L &amp;&amp;left, R &amp;&amp;right)</td></tr>
+<tr class="separator:a37fb3607cdbc46946468f7820ddab84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9149c003a40f19db5d8bdc352fbb026"><td class="memTemplParams" colspan="2">template&lt;typename T , typename  = std::enable_if_t&lt;std::is_convertible_v&lt;T, Condition&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ac9149c003a40f19db5d8bdc352fbb026"><td class="memTemplItemLeft" align="right" valign="top">CondOp&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesqlcpp.html#ac9149c003a40f19db5d8bdc352fbb026">sqlcpp::operator!</a> (T &amp;&amp;cond)</td></tr>
+<tr class="separator:ac9149c003a40f19db5d8bdc352fbb026"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>

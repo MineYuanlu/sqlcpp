@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['unique_5f_827',['unique_',['../structsqlcpp_1_1Index.html#a5c59442847090f56d04bebf2fe2eb297',1,'sqlcpp::Index']]],
-  ['unique_5f_828',['UNIQUE_',['../structsqlcpp_1_1Column.html#ae7e911496876c67707ada2075df00b43',1,'sqlcpp::Column']]],
-  ['update_5for_5f_829',['UPDATE_OR_',['../structsqlcpp_1_1Update.html#a45756076db1a5ad6583235d61d3e2af8',1,'sqlcpp::Update']]],
-  ['upper_830',['UPPER',['../namespacesqlcpp_1_1F.html#a7f029085dfa2d918dfcb1f89ad0f6791',1,'sqlcpp::F']]],
-  ['user_5fset_5fname_831',['user_set_name',['../structsqlcpp_1_1Index.html#a92cda67cba6110f1f7777a4a1e2d9827',1,'sqlcpp::Index']]]
+  ['table_5f_879',['table_',['../structsqlcpp_1_1Delete.html#a30e5f8938aa0057bc7f6d6544051fd2f',1,'sqlcpp::Delete::table_()'],['../structsqlcpp_1_1Index.html#a26880a31b4591befc55bf9bd4d42f5ca',1,'sqlcpp::Index::table_()'],['../structsqlcpp_1_1Insert.html#a06e8f73b8cf93fe186f6c9689532e02b',1,'sqlcpp::Insert::table_()'],['../structsqlcpp_1_1Table.html#a20ab2dc555e7fe9e61738ddb74e94966',1,'sqlcpp::Table::table_()'],['../structsqlcpp_1_1Update.html#a8793a9921718bfc8b260d97711f0e466',1,'sqlcpp::Update::table_()']]],
+  ['table_5fname_5f_880',['table_name_',['../structsqlcpp_1_1Field.html#aa2ad03d3b038456ebe6e865fe9a22f6b',1,'sqlcpp::Field::table_name_()'],['../structsqlcpp_1_1From.html#a3b8c5df25d6f67626c661e70e4274541',1,'sqlcpp::From::table_name_()']]],
+  ['time_881',['TIME',['../namespacesqlcpp_1_1F.html#a248e2d07cce4f87add3d1efb39e9f51a',1,'sqlcpp::F']]],
+  ['timestamp_5ftrunc_882',['TIMESTAMP_TRUNC',['../namespacesqlcpp_1_1F.html#ae08a03b62443e33155ea7bf752717e72',1,'sqlcpp::F']]],
+  ['trim_883',['TRIM',['../namespacesqlcpp_1_1F.html#a293d773e1d0fc4c4c32171af19dbc785',1,'sqlcpp::F']]],
+  ['type_884',['type',['../structsqlcpp_1_1Type.html#ad3c5c10cb0ab8a312f6b8a175b52bf78',1,'sqlcpp::Type']]],
+  ['type_5f_885',['type_',['../structsqlcpp_1_1Column.html#a4a1cd67b1b30746a58e43a6ce6cc020d',1,'sqlcpp::Column']]]
 ];

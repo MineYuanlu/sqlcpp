@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['offset_5f_790',['offset_',['../structsqlcpp_1_1Delete.html#ac9cb78d9ed9e1cc76fd60fdeb7b9355d',1,'sqlcpp::Delete::offset_()'],['../structsqlcpp_1_1Select.html#af121cbfce3bdd7f749a0ba6581425c85',1,'sqlcpp::Select::offset_()'],['../structsqlcpp_1_1Update.html#afae00fb0aa2b056eac814cb3eb800d90',1,'sqlcpp::Update::offset_()']]],
-  ['on_5fdelete_5f_791',['ON_DELETE_',['../structsqlcpp_1_1ForeignKey.html#a1401971f92ca164fa53ea4612cfb8dff',1,'sqlcpp::ForeignKey']]],
-  ['on_5fupdate_5f_792',['ON_UPDATE_',['../structsqlcpp_1_1ForeignKey.html#ab4cbbed12e5ab523b13823f5ab3b7124',1,'sqlcpp::ForeignKey::ON_UPDATE_()'],['../structsqlcpp_1_1Column.html#aed3e4bc9341e36b559e616b3da5f1f1b',1,'sqlcpp::Column::ON_UPDATE_()']]],
-  ['op_5f_793',['op_',['../structsqlcpp_1_1CondCmp.html#ab4c01e295233d4ccc20cf17ebbc8f7e9',1,'sqlcpp::CondCmp::op_()'],['../structsqlcpp_1_1CondOp.html#a55e39fcaf81e3409a5fc58de20d9abce',1,'sqlcpp::CondOp::op_()']]],
-  ['op_5fmodifier_5f_794',['op_modifier_',['../structsqlcpp_1_1Insert.html#af0c5b712d507b3ff5264f5390440f8f6',1,'sqlcpp::Insert']]],
-  ['op_5fstr_5f_795',['op_str_',['../structsqlcpp_1_1CondOpType.html#a336e7e52c407b09d10f33cbf4a35720a',1,'sqlcpp::CondOpType']]],
-  ['or_796',['OR',['../namespacesqlcpp.html#aa6b90fa7530152575e6be01f7c6d4fcb',1,'sqlcpp']]],
-  ['order_5fby_5f_797',['order_by_',['../structsqlcpp_1_1Delete.html#adf5d57f211a75a733cb40ccc1550a414',1,'sqlcpp::Delete::order_by_()'],['../structsqlcpp_1_1Select.html#a57f1f8606776740325e95e7ebd2a840c',1,'sqlcpp::Select::order_by_()'],['../structsqlcpp_1_1Update.html#a24f88bbd3b9e5c7451166fd7bdaa295e',1,'sqlcpp::Update::order_by_()']]]
+  ['name_841',['name',['../structsqlcpp_1_1Type.html#a86ce466384246f9bd491ed781fd38bf9',1,'sqlcpp::Type']]],
+  ['name_5f_842',['name_',['../structsqlcpp_1_1Column.html#acf1070311ac9e9fbc2e671d86923cfa6',1,'sqlcpp::Column::name_()'],['../structsqlcpp_1_1FuncExpr.html#a7bb3140ac059f4345b706ce5660e7234',1,'sqlcpp::FuncExpr::name_()'],['../structsqlcpp_1_1F_1_1NamedFunc.html#a662904021c2046e4aa56730f858ff329',1,'sqlcpp::F::NamedFunc::name_()'],['../structsqlcpp_1_1Index.html#a13576d91c25e7e04174c2aa4846c40eb',1,'sqlcpp::Index::name_()']]],
+  ['not_843',['NOT',['../namespacesqlcpp.html#affdd40ae5ed99048f688388abcb3316a',1,'sqlcpp']]],
+  ['not_5fexists_844',['NOT_EXISTS',['../namespacesqlcpp_1_1F.html#a279362ec08d47e117b86003122c6e33a',1,'sqlcpp::F']]],
+  ['not_5fnull_5f_845',['NOT_NULL_',['../structsqlcpp_1_1Column.html#a48016acebf508d0da7fe36c2acc8b192',1,'sqlcpp::Column']]],
+  ['now_846',['NOW',['../namespacesqlcpp_1_1F.html#aa6d845c771b4bed95aef2fa8cdcaae1e',1,'sqlcpp::F']]],
+  ['null_5fvalue_847',['NULL_VALUE',['../namespacesqlcpp.html#a9d37cee796b1d1effe04aa932fd9de6a',1,'sqlcpp']]]
 ];

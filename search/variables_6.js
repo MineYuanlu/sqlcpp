@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['having_5f_764',['having_',['../structsqlcpp_1_1Select.html#a25d96fb9b60c0f78edd27810684f9369',1,'sqlcpp::Select']]],
-  ['hour_765',['HOUR',['../namespacesqlcpp_1_1F.html#a369fbe5f790637c711995bdb8f15efa1',1,'sqlcpp::F']]]
+  ['group_5fby_5f_820',['group_by_',['../structsqlcpp_1_1Select.html#a71b55979789d36ff8f386503ae77e8c5',1,'sqlcpp::Select']]],
+  ['group_5fconcat_821',['GROUP_CONCAT',['../namespacesqlcpp_1_1F.html#a12777c5abe9126d0a482a7f5b405b5e9',1,'sqlcpp::F']]]
 ];

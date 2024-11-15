@@ -144,10 +144,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae9d8ca344d63fbcf02b0937f82cb2875"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#ae9d8ca344d63fbcf02b0937f82cb2875">Select</a> (std::vector&lt; <a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> &gt; fields)</td></tr>
 <tr class="memdesc:ae9d8ca344d63fbcf02b0937f82cb2875"><td class="mdescLeft">&#160;</td><td class="mdescRight">多字段构造函数  <a href="structsqlcpp_1_1Select.html#ae9d8ca344d63fbcf02b0937f82cb2875">More...</a><br /></td></tr>
 <tr class="separator:ae9d8ca344d63fbcf02b0937f82cb2875"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f7b3a8ccf3ec6d20237416e935af1d7"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;                        (std::is_convertible_v&lt;std::decay_t&lt;T&gt;, Field&gt; || std::is_convertible_v&lt;std::decay_t&lt;T&gt;, RawField&gt; || std::is_convertible_v&lt;std::decay_t&lt;T&gt;, FuncField&gt;) &amp;&amp;(sizeof...(Args) &gt; 0)&gt;&gt; </td></tr>
-<tr class="memitem:a2f7b3a8ccf3ec6d20237416e935af1d7"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a2f7b3a8ccf3ec6d20237416e935af1d7">Select</a> (T field, Args &amp;&amp;...args)</td></tr>
-<tr class="memdesc:a2f7b3a8ccf3ec6d20237416e935af1d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">多字段构造函数  <a href="structsqlcpp_1_1Select.html#a2f7b3a8ccf3ec6d20237416e935af1d7">More...</a><br /></td></tr>
-<tr class="separator:a2f7b3a8ccf3ec6d20237416e935af1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1097af81f8a4e057584f04e3992f170e"><td class="memTemplParams" colspan="2">template&lt;typename... Args, typename  = std::enable_if_t&lt;(                         (std::is_convertible_v&lt;Args, Field&gt; ||                          std::is_convertible_v&lt;Args, RawField&gt; ||                          std::is_convertible_v&lt;Args, ExprLike&gt;) &amp;&amp;...)&gt;&gt; </td></tr>
+<tr class="memitem:a1097af81f8a4e057584f04e3992f170e"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a1097af81f8a4e057584f04e3992f170e">Select</a> (Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:a1097af81f8a4e057584f04e3992f170e"><td class="mdescLeft">&#160;</td><td class="mdescRight">多字段构造函数  <a href="structsqlcpp_1_1Select.html#a1097af81f8a4e057584f04e3992f170e">More...</a><br /></td></tr>
+<tr class="separator:a1097af81f8a4e057584f04e3992f170e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63405bd1fa46c637dbec50ecf7bd3f2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a63405bd1fa46c637dbec50ecf7bd3f2a">select</a> (const char *field)</td></tr>
 <tr class="memdesc:a63405bd1fa46c637dbec50ecf7bd3f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">选择字段  <a href="structsqlcpp_1_1Select.html#a63405bd1fa46c637dbec50ecf7bd3f2a">More...</a><br /></td></tr>
 <tr class="separator:a63405bd1fa46c637dbec50ecf7bd3f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,10 +163,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaf3c936b96ae65df776f222545bf06a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#aaf3c936b96ae65df776f222545bf06a8">select</a> (<a class="el" href="structsqlcpp_1_1RawField.html">RawField</a> field)</td></tr>
 <tr class="memdesc:aaf3c936b96ae65df776f222545bf06a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">选择字段  <a href="structsqlcpp_1_1Select.html#aaf3c936b96ae65df776f222545bf06a8">More...</a><br /></td></tr>
 <tr class="separator:aaf3c936b96ae65df776f222545bf06a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab418c65d01713c92750cd9337d1ce86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#aab418c65d01713c92750cd9337d1ce86">select</a> (<a class="el" href="structsqlcpp_1_1FuncField.html">FuncField</a> field)</td></tr>
-<tr class="memdesc:aab418c65d01713c92750cd9337d1ce86"><td class="mdescLeft">&#160;</td><td class="mdescRight">选择字段  <a href="structsqlcpp_1_1Select.html#aab418c65d01713c92750cd9337d1ce86">More...</a><br /></td></tr>
-<tr class="separator:aab418c65d01713c92750cd9337d1ce86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78181615611e8a0f8d1e35f6050692b1"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;                        (std::is_convertible_v&lt;std::decay_t&lt;T&gt;, Field&gt; || std::is_convertible_v&lt;std::decay_t&lt;T&gt;, RawField&gt; || std::is_convertible_v&lt;std::decay_t&lt;T&gt;, FuncField&gt;) &amp;&amp;(sizeof...(Args) &gt; 0)&gt;&gt; </td></tr>
+<tr class="memitem:aae82734e8ab671811f0363fbb8d9e6da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#aae82734e8ab671811f0363fbb8d9e6da">select</a> (<a class="el" href="structsqlcpp_1_1ExprLike.html">ExprLike</a> field)</td></tr>
+<tr class="memdesc:aae82734e8ab671811f0363fbb8d9e6da"><td class="mdescLeft">&#160;</td><td class="mdescRight">选择字段  <a href="structsqlcpp_1_1Select.html#aae82734e8ab671811f0363fbb8d9e6da">More...</a><br /></td></tr>
+<tr class="separator:aae82734e8ab671811f0363fbb8d9e6da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78181615611e8a0f8d1e35f6050692b1"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;                        (std::is_convertible_v&lt;T, Field&gt; ||                         std::is_convertible_v&lt;T, RawField&gt; ||                         std::is_convertible_v&lt;T, ExprLike&gt;) &amp;&amp;(sizeof...(Args) &gt; 0) &amp;&amp;                        ((std::is_convertible_v&lt;Args, Field&gt; ||                          std::is_convertible_v&lt;Args, RawField&gt; ||                          std::is_convertible_v&lt;Args, ExprLike&gt;) &amp;&amp;...)&gt;&gt; </td></tr>
 <tr class="memitem:a78181615611e8a0f8d1e35f6050692b1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a78181615611e8a0f8d1e35f6050692b1">select</a> (T field, Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:a78181615611e8a0f8d1e35f6050692b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">选择字段  <a href="structsqlcpp_1_1Select.html#a78181615611e8a0f8d1e35f6050692b1">More...</a><br /></td></tr>
 <tr class="separator:a78181615611e8a0f8d1e35f6050692b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -203,9 +203,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a18381139e63688701d49c2dd356da630"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a18381139e63688701d49c2dd356da630">order_by</a> (<a class="el" href="structsqlcpp_1_1RawField.html">RawField</a> field, <a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a> o=Order::ASC)</td></tr>
 <tr class="memdesc:a18381139e63688701d49c2dd356da630"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置排序条件  <a href="structsqlcpp_1_1Select.html#a18381139e63688701d49c2dd356da630">More...</a><br /></td></tr>
 <tr class="separator:a18381139e63688701d49c2dd356da630"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac49010d76c6163a22d66717569eccaf6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#ac49010d76c6163a22d66717569eccaf6">order_by</a> (<a class="el" href="structsqlcpp_1_1FuncField.html">FuncField</a> field, <a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a> o=Order::ASC)</td></tr>
-<tr class="memdesc:ac49010d76c6163a22d66717569eccaf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置排序条件  <a href="structsqlcpp_1_1Select.html#ac49010d76c6163a22d66717569eccaf6">More...</a><br /></td></tr>
-<tr class="separator:ac49010d76c6163a22d66717569eccaf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d9d718c9451ea9d649c82dafc829bd0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a0d9d718c9451ea9d649c82dafc829bd0">order_by</a> (<a class="el" href="structsqlcpp_1_1ExprLike.html">ExprLike</a> field, <a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a> o=Order::ASC)</td></tr>
+<tr class="memdesc:a0d9d718c9451ea9d649c82dafc829bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置排序条件  <a href="structsqlcpp_1_1Select.html#a0d9d718c9451ea9d649c82dafc829bd0">More...</a><br /></td></tr>
+<tr class="separator:a0d9d718c9451ea9d649c82dafc829bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c394636efe691a28b33fafab0c4665e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a5c394636efe691a28b33fafab0c4665e">order_by</a> (<a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a> field, <a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a> o=Order::ASC)</td></tr>
 <tr class="memdesc:a5c394636efe691a28b33fafab0c4665e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置排序条件  <a href="structsqlcpp_1_1Select.html#a5c394636efe691a28b33fafab0c4665e">More...</a><br /></td></tr>
 <tr class="separator:a5c394636efe691a28b33fafab0c4665e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -233,6 +233,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aca5837e7d46aa0831a781015665cff38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#aca5837e7d46aa0831a781015665cff38">build_s</a> (std::ostream &amp;oss, const <a class="el" href="structsqlcpp_1_1Type.html">Type</a> &amp;t=<a class="el" href="namespacesqlcpp.html#a19237f9b2742dd80678d8dfa286dcfd6">SQLCPP_DEFAULT_TYPE</a>) const override</td></tr>
 <tr class="memdesc:aca5837e7d46aa0831a781015665cff38"><td class="mdescLeft">&#160;</td><td class="mdescRight">分步的将SQL语句输出到流中  <a href="structsqlcpp_1_1Select.html#aca5837e7d46aa0831a781015665cff38">More...</a><br /></td></tr>
 <tr class="separator:aca5837e7d46aa0831a781015665cff38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4dcfc7df34f3fe0682e07c311e73056"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#ac4dcfc7df34f3fe0682e07c311e73056">build_s</a> (std::ostream &amp;oss, const <a class="el" href="structsqlcpp_1_1Type.html">Type</a> &amp;t, bool is_subquery) const</td></tr>
+<tr class="separator:ac4dcfc7df34f3fe0682e07c311e73056"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0efdd2528453de5a53b5b8bb3ebc74e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlcpp_1_1Select.html#a0efdd2528453de5a53b5b8bb3ebc74e5">edit_var_map</a> (<a class="el" href="structsqlcpp_1_1VarMap.html">VarMap</a> &amp;var_map) const override</td></tr>
 <tr class="separator:a0efdd2528453de5a53b5b8bb3ebc74e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structsqlcpp_1_1Builder"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structsqlcpp_1_1Builder')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structsqlcpp_1_1Builder.html">sqlcpp::Builder</a></td></tr>
@@ -394,13 +396,13 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a2f7b3a8ccf3ec6d20237416e935af1d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f7b3a8ccf3ec6d20237416e935af1d7">&#9670;&nbsp;</a></span>Select() <span class="overload">[6/6]</span></h2>
+<a id="a1097af81f8a4e057584f04e3992f170e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1097af81f8a4e057584f04e3992f170e">&#9670;&nbsp;</a></span>Select() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;                        (std::is_convertible_v&lt;std::decay_t&lt;T&gt;, Field&gt; || std::is_convertible_v&lt;std::decay_t&lt;T&gt;, RawField&gt; || std::is_convertible_v&lt;std::decay_t&lt;T&gt;, FuncField&gt;) &amp;&amp;(sizeof...(Args) &gt; 0)&gt;&gt; </div>
+template&lt;typename... Args, typename  = std::enable_if_t&lt;(                         (std::is_convertible_v&lt;Args, Field&gt; ||                          std::is_convertible_v&lt;Args, RawField&gt; ||                          std::is_convertible_v&lt;Args, ExprLike&gt;) &amp;&amp;...)&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -408,19 +410,9 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
         <tr>
           <td class="memname">sqlcpp::Select::Select </td>
           <td>(</td>
-          <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>field</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">Args &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>args</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>args</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -435,8 +427,42 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac4dcfc7df34f3fe0682e07c311e73056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4dcfc7df34f3fe0682e07c311e73056">&#9670;&nbsp;</a></span>build_s() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sqlcpp::Select::build_s </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>oss</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structsqlcpp_1_1Type.html">Type</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_subquery</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aca5837e7d46aa0831a781015665cff38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca5837e7d46aa0831a781015665cff38">&#9670;&nbsp;</a></span>build_s()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aca5837e7d46aa0831a781015665cff38">&#9670;&nbsp;</a></span>build_s() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -802,8 +828,38 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
 
 </div>
 </div>
+<a id="a0d9d718c9451ea9d649c82dafc829bd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d9d718c9451ea9d649c82dafc829bd0">&#9670;&nbsp;</a></span>order_by() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp; sqlcpp::Select::order_by </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsqlcpp_1_1ExprLike.html">ExprLike</a>&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a>&#160;</td>
+          <td class="paramname"><em>o</em> = <code>Order::ASC</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置排序条件 </p>
+
+</div>
+</div>
 <a id="a5af2b908c312accd9c52c318951d038e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5af2b908c312accd9c52c318951d038e">&#9670;&nbsp;</a></span>order_by() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5af2b908c312accd9c52c318951d038e">&#9670;&nbsp;</a></span>order_by() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -833,7 +889,7 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
 </div>
 </div>
 <a id="a5c394636efe691a28b33fafab0c4665e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c394636efe691a28b33fafab0c4665e">&#9670;&nbsp;</a></span>order_by() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c394636efe691a28b33fafab0c4665e">&#9670;&nbsp;</a></span>order_by() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -842,36 +898,6 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
           <td class="memname"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp; sqlcpp::Select::order_by </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a>&#160;</td>
-          <td class="paramname"><em>field</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacesqlcpp.html#a1d06596fd89360b54ab175752fc81e9e">Order</a>&#160;</td>
-          <td class="paramname"><em>o</em> = <code>Order::ASC</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>设置排序条件 </p>
-
-</div>
-</div>
-<a id="ac49010d76c6163a22d66717569eccaf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac49010d76c6163a22d66717569eccaf6">&#9670;&nbsp;</a></span>order_by() <span class="overload">[3/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp; sqlcpp::Select::order_by </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structsqlcpp_1_1FuncField.html">FuncField</a>&#160;</td>
           <td class="paramname"><em>field</em>, </td>
         </tr>
         <tr>
@@ -982,8 +1008,28 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
 
 </div>
 </div>
+<a id="aae82734e8ab671811f0363fbb8d9e6da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae82734e8ab671811f0363fbb8d9e6da">&#9670;&nbsp;</a></span>select() <span class="overload">[2/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp; sqlcpp::Select::select </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsqlcpp_1_1ExprLike.html">ExprLike</a>&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>选择字段 </p>
+
+</div>
+</div>
 <a id="a364e5ffa953ac8a819f4309b3bc64df6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a364e5ffa953ac8a819f4309b3bc64df6">&#9670;&nbsp;</a></span>select() <span class="overload">[2/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a364e5ffa953ac8a819f4309b3bc64df6">&#9670;&nbsp;</a></span>select() <span class="overload">[3/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1003,7 +1049,7 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
 </div>
 </div>
 <a id="a379ebcfe1de28b951c4ed5ab1716b6ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a379ebcfe1de28b951c4ed5ab1716b6ee">&#9670;&nbsp;</a></span>select() <span class="overload">[3/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a379ebcfe1de28b951c4ed5ab1716b6ee">&#9670;&nbsp;</a></span>select() <span class="overload">[4/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1012,26 +1058,6 @@ template&lt;typename T , typename... Args, typename  = std::enable_if_t&lt;     
           <td class="memname"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp; sqlcpp::Select::select </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structsqlcpp_1_1FieldLike.html">FieldLike</a>&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>选择字段 </p>
-
-</div>
-</div>
-<a id="aab418c65d01713c92750cd9337d1ce86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab418c65d01713c92750cd9337d1ce86">&#9670;&nbsp;</a></span>select() <span class="overload">[4/7]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structsqlcpp_1_1Select.html">Select</a> &amp; sqlcpp::Select::select </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structsqlcpp_1_1FuncField.html">FuncField</a>&#160;</td>
           <td class="paramname"><em>field</em></td><td>)</td>
           <td></td>
         </tr>

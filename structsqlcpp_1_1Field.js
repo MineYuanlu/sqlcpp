@@ -11,6 +11,7 @@ var structsqlcpp_1_1Field =
     [ "BETWEEN", "structsqlcpp_1_1Field.html#a529f9c58c42914b4881ce1f2236459c5", null ],
     [ "build_s", "structsqlcpp_1_1Field.html#a3ca5a43e22e0c20701f7c4242f16e2f7", null ],
     [ "desc", "structsqlcpp_1_1Field.html#afc8eeb2d957509e20aea30eb60d732eb", null ],
+    [ "distinct", "structsqlcpp_1_1Field.html#ab38364634b6c99d1946c0874597590fb", null ],
     [ "edit_var_map", "structsqlcpp_1_1Field.html#a937255337c7f76f1263747655cb7ff0d", null ],
     [ "IN", "structsqlcpp_1_1Field.html#a7a937986303021da390f2497dc39cb06", null ],
     [ "LIKE", "structsqlcpp_1_1Field.html#aa8cf2297394cc84b6a6eb43a402c6d82", null ],
@@ -19,6 +20,7 @@ var structsqlcpp_1_1Field =
     [ "operator=", "structsqlcpp_1_1Field.html#a983fc25f233069fa203216eaa74b021c", null ],
     [ "table", "structsqlcpp_1_1Field.html#ae5b53f093e7dde23bcd3d93bb59991d7", null ],
     [ "alias_", "structsqlcpp_1_1Field.html#a7df3c5b1cf0671de7f957bb2be92fe1c", null ],
+    [ "distinct_", "structsqlcpp_1_1Field.html#ade4070b236e88f8f0bc2616e7428cc23", null ],
     [ "field_name_", "structsqlcpp_1_1Field.html#abb94ac5f82bd281273c69b4f2b389426", null ],
     [ "table_name_", "structsqlcpp_1_1Field.html#aa2ad03d3b038456ebe6e865fe9a22f6b", null ]
 ];

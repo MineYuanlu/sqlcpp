@@ -1,5 +1,5 @@
 <map id="sqlcpp::FieldLike" name="sqlcpp::FieldLike">
-<area shape="rect" id="node1" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / FuncField" alt="" coords="279,56,408,83"/>
+<area shape="rect" id="node1" title="形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / Expr" alt="" coords="279,56,408,83"/>
 <area shape="rect" id="node2" href="$structsqlcpp_1_1Builder.html" title="用于构建SQL语句的基类" alt="" coords="39,5,157,32"/>
 <area shape="rect" id="node3" href="$structsqlcpp_1_1VarBuilder.html" title="参数构建基类" alt="" coords="29,56,167,83"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,107,191,163"/>

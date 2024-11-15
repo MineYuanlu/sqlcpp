@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['name_783',['name',['../structsqlcpp_1_1Type.html#a86ce466384246f9bd491ed781fd38bf9',1,'sqlcpp::Type']]],
-  ['name_5f_784',['name_',['../structsqlcpp_1_1Column.html#acf1070311ac9e9fbc2e671d86923cfa6',1,'sqlcpp::Column::name_()'],['../structsqlcpp_1_1F_1_1NamedFunc.html#a662904021c2046e4aa56730f858ff329',1,'sqlcpp::F::NamedFunc::name_()'],['../structsqlcpp_1_1Index.html#a13576d91c25e7e04174c2aa4846c40eb',1,'sqlcpp::Index::name_()']]],
-  ['not_785',['NOT',['../namespacesqlcpp.html#affdd40ae5ed99048f688388abcb3316a',1,'sqlcpp']]],
-  ['not_5fexists_786',['NOT_EXISTS',['../namespacesqlcpp_1_1F.html#a279362ec08d47e117b86003122c6e33a',1,'sqlcpp::F']]],
-  ['not_5fnull_5f_787',['NOT_NULL_',['../structsqlcpp_1_1Column.html#a48016acebf508d0da7fe36c2acc8b192',1,'sqlcpp::Column']]],
-  ['now_788',['NOW',['../namespacesqlcpp_1_1F.html#aa6d845c771b4bed95aef2fa8cdcaae1e',1,'sqlcpp::F']]],
-  ['null_5fvalue_789',['NULL_VALUE',['../namespacesqlcpp.html#a9d37cee796b1d1effe04aa932fd9de6a',1,'sqlcpp']]]
+  ['max_835',['MAX',['../namespacesqlcpp_1_1F.html#a2bbc3b6eb315529bd023d07320687155',1,'sqlcpp::F']]],
+  ['microsecond_836',['MICROSECOND',['../namespacesqlcpp_1_1F.html#a69f9a752da82e4dcab9160b1a9bf757f',1,'sqlcpp::F']]],
+  ['min_837',['MIN',['../namespacesqlcpp_1_1F.html#afb844e61695de5fd4a36377e68341cd7',1,'sqlcpp::F']]],
+  ['minute_838',['MINUTE',['../namespacesqlcpp_1_1F.html#ab4d684149d175dd9be165502c3222c12',1,'sqlcpp::F']]],
+  ['month_839',['MONTH',['../namespacesqlcpp_1_1F.html#a061472eb73abf04e77150bd991d69971',1,'sqlcpp::F']]],
+  ['mysql_840',['MYSQL',['../namespacesqlcpp.html#adfc0e9d8f275661d7dfefc49157a7f56',1,'sqlcpp']]]
 ];

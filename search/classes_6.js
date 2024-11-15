@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['having_439',['Having',['../structsqlcpp_1_1Having.html',1,'sqlcpp']]]
+  ['groupby_473',['GroupBy',['../structsqlcpp_1_1GroupBy.html',1,'sqlcpp']]]
 ];

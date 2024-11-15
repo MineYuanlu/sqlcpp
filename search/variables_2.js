@@ -1,12 +1,21 @@
 var searchData=
 [
-  ['date_741',['DATE',['../namespacesqlcpp_1_1F.html#a8ec27df644cc84fd9133b1adb97ee4e5',1,'sqlcpp::F']]],
-  ['date_5fpart_742',['DATE_PART',['../namespacesqlcpp_1_1F.html#a18db971af290ab0ee49daab2b00380c7',1,'sqlcpp::F']]],
-  ['date_5ftrunc_743',['DATE_TRUNC',['../namespacesqlcpp_1_1F.html#a7671e75303feeffa8353ba822edd3298',1,'sqlcpp::F']]],
-  ['datetime_744',['DATETIME',['../namespacesqlcpp_1_1F.html#a45bb7366ead2ad39124bf6a7babcecf6',1,'sqlcpp::F']]],
-  ['day_745',['DAY',['../namespacesqlcpp_1_1F.html#aa7ff8e86d3fc2f135221b4d834f63bbe',1,'sqlcpp::F']]],
-  ['dayofmonth_746',['DAYOFMONTH',['../namespacesqlcpp_1_1F.html#a27e0111a37965a6e683d10245babb1af',1,'sqlcpp::F']]],
-  ['default_5f_747',['DEFAULT_',['../structsqlcpp_1_1Column.html#a759d4c8e6d4fc859307f7840c29130f5',1,'sqlcpp::Column']]],
-  ['direction_5f_748',['direction_',['../structsqlcpp_1_1OrderByField.html#a306b866933013e22f899b112bb338c60',1,'sqlcpp::OrderByField']]],
-  ['duplicate_5f_749',['DUPLICATE_',['../structsqlcpp_1_1Insert.html#a053a9790411b45296af3ce6300daa172',1,'sqlcpp::Insert']]]
+  ['cases_5f_779',['cases_',['../structsqlcpp_1_1CaseExpr.html#a7ccf4eed7440ebeda507dc7066917bb0',1,'sqlcpp::CaseExpr']]],
+  ['character_5fset_5f_780',['CHARACTER_SET_',['../structsqlcpp_1_1Column.html#a44c64aaa4e3ed100afa464b3b7ccaffe',1,'sqlcpp::Column']]],
+  ['charset_5f_781',['charset_',['../structsqlcpp_1_1Table.html#a49730e17e19bfb00b380646f3192dae7',1,'sqlcpp::Table']]],
+  ['check_5f_782',['check_',['../structsqlcpp_1_1Check.html#a922b302a26bbd4d8a22be2a64af1bd83',1,'sqlcpp::Check']]],
+  ['check_5f_783',['CHECK_',['../structsqlcpp_1_1Column.html#a06733610261f618114c24fd226454561',1,'sqlcpp::Column']]],
+  ['coalesce_784',['COALESCE',['../namespacesqlcpp_1_1F.html#a170ab343778d86fd67a460805d6688f6',1,'sqlcpp::F']]],
+  ['collate_5f_785',['collate_',['../structsqlcpp_1_1Table.html#ab759e2fd28baee84d3cba8f093827d1e',1,'sqlcpp::Table']]],
+  ['collate_5f_786',['COLLATE_',['../structsqlcpp_1_1Column.html#a7629903b717e46eef77ceb5c28655e18',1,'sqlcpp::Column']]],
+  ['column_5f_787',['column_',['../structsqlcpp_1_1ForeignKey.html#aaccda3497951518487816343048d545b',1,'sqlcpp::ForeignKey']]],
+  ['columns_5f_788',['columns_',['../structsqlcpp_1_1Insert.html#a134fe56206a7c530ede69b7b33ba0964',1,'sqlcpp::Insert::columns_()'],['../structsqlcpp_1_1Unique.html#ad08f85180d263f41804c962cbc94d086',1,'sqlcpp::Unique::columns_()'],['../structsqlcpp_1_1PrimaryKey.html#ac4d1880a247da2b6fc14c7ce61d378f8',1,'sqlcpp::PrimaryKey::columns_()']]],
+  ['comment_5f_789',['COMMENT_',['../structsqlcpp_1_1Column.html#a06fed0fd5e565d59a3a441d45829b080',1,'sqlcpp::Column']]],
+  ['condition_5f_790',['condition_',['../structsqlcpp_1_1Having.html#a68eb76ec9b82af4c6b111cca02ce2346',1,'sqlcpp::Having::condition_()'],['../structsqlcpp_1_1Where.html#aebcc32e9f12118d96501e45f567bba57',1,'sqlcpp::Where::condition_()']]],
+  ['conditions_5f_791',['conditions_',['../structsqlcpp_1_1Condition.html#a1e996ce07126ea4a7cacacb63b6c8ce1',1,'sqlcpp::Condition']]],
+  ['content_5f_792',['content_',['../structsqlcpp_1_1Table.html#a7642db53878dcd40d03789fdf52b4179',1,'sqlcpp::Table']]],
+  ['count_793',['COUNT',['../namespacesqlcpp_1_1F.html#adcd7af5ef63b93f0e69efb481da27428',1,'sqlcpp::F']]],
+  ['current_5fdate_794',['CURRENT_DATE',['../namespacesqlcpp_1_1F.html#aa7e806c8e71eb3181f6a72262ab821fa',1,'sqlcpp::F']]],
+  ['current_5ftime_795',['CURRENT_TIME',['../namespacesqlcpp_1_1F.html#a03932db956da589e5442dcc3f51ed5d7',1,'sqlcpp::F']]],
+  ['current_5ftimestamp_796',['CURRENT_TIMESTAMP',['../namespacesqlcpp_1_1F.html#ae6943051f8954c605f97125298effa93',1,'sqlcpp::F']]]
 ];

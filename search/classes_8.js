@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['namedfunc_444',['NamedFunc',['../structsqlcpp_1_1F_1_1NamedFunc.html',1,'sqlcpp::F']]],
-  ['nullvalue_445',['NullValue',['../structsqlcpp_1_1NullValue.html',1,'sqlcpp']]]
+  ['index_475',['Index',['../structsqlcpp_1_1Index.html',1,'sqlcpp']]],
+  ['indexedvarvalue_476',['IndexedVarValue',['../structsqlcpp_1_1IndexedVarValue.html',1,'sqlcpp']]],
+  ['insert_477',['Insert',['../structsqlcpp_1_1Insert.html',1,'sqlcpp']]],
+  ['insertvalues_478',['InsertValues',['../structsqlcpp_1_1InsertValues.html',1,'sqlcpp']]]
 ];

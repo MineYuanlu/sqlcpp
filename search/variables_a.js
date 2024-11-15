@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['max_777',['MAX',['../namespacesqlcpp_1_1F.html#a2bbc3b6eb315529bd023d07320687155',1,'sqlcpp::F']]],
-  ['microsecond_778',['MICROSECOND',['../namespacesqlcpp_1_1F.html#a69f9a752da82e4dcab9160b1a9bf757f',1,'sqlcpp::F']]],
-  ['min_779',['MIN',['../namespacesqlcpp_1_1F.html#afb844e61695de5fd4a36377e68341cd7',1,'sqlcpp::F']]],
-  ['minute_780',['MINUTE',['../namespacesqlcpp_1_1F.html#ab4d684149d175dd9be165502c3222c12',1,'sqlcpp::F']]],
-  ['month_781',['MONTH',['../namespacesqlcpp_1_1F.html#a061472eb73abf04e77150bd991d69971',1,'sqlcpp::F']]],
-  ['mysql_782',['MYSQL',['../namespacesqlcpp.html#adfc0e9d8f275661d7dfefc49157a7f56',1,'sqlcpp']]]
+  ['length_830',['LENGTH',['../namespacesqlcpp_1_1F.html#aa42da16e49ff69ecea50d3d391a5f514',1,'sqlcpp::F']]],
+  ['limit_5f_831',['limit_',['../structsqlcpp_1_1Delete.html#a6565aeae10083693c7128d51e73fcdef',1,'sqlcpp::Delete::limit_()'],['../structsqlcpp_1_1Select.html#a63dbf633393e6e3a707fb917937d6b88',1,'sqlcpp::Select::limit_()'],['../structsqlcpp_1_1Update.html#ad9745d73b4113eb58d53daf5ea9c37fc',1,'sqlcpp::Update::limit_()']]],
+  ['low_5fpriority_832',['LOW_PRIORITY',['../structsqlcpp_1_1Delete.html#a12bdaa36a2de63dcb956d8da2301a6ba',1,'sqlcpp::Delete::LOW_PRIORITY()'],['../structsqlcpp_1_1Update.html#a5afafcf3ee195b0216018689407f51c5',1,'sqlcpp::Update::LOW_PRIORITY()']]],
+  ['lower_833',['LOWER',['../namespacesqlcpp_1_1F.html#ac03d5a1e42fb76ad869ba47d25630ded',1,'sqlcpp::F']]],
+  ['ltrim_834',['LTRIM',['../namespacesqlcpp_1_1F.html#a7f1928c3bd42175661cfc894164823a4',1,'sqlcpp::F']]]
 ];
