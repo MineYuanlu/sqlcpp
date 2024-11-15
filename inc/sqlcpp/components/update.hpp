@@ -6,6 +6,7 @@
 #define SQLCPP_COMPONENTS_UPDATE__HPP_GUARD
 #include "sqlcpp/components/assign.hpp"
 #include "sqlcpp/components/cond.hpp"
+#include "sqlcpp/components/expr.hpp"
 #include "sqlcpp/components/field.hpp"
 #include "sqlcpp/components/from.hpp"
 #include "sqlcpp/components/order_by.hpp"
@@ -200,7 +201,7 @@ namespace sqlcpp {
         /// @brief 设置排序条件
         Update &order_by(RawField field, Order o = Order::ASC);
         /// @brief 设置排序条件
-        Update &order_by(FuncField field, Order o = Order::ASC);
+        Update &order_by(ExprLike field, Order o = Order::ASC);
         /// @brief 设置排序条件
         Update &order_by(FieldLike field, Order o = Order::ASC);
         /// @brief 设置排序条件

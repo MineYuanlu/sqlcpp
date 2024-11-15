@@ -4,6 +4,7 @@
 /// Licence: MIT
 #ifndef SQLCPP_COMPONENTS_SELECT__HPP_GUARD
 #define SQLCPP_COMPONENTS_SELECT__HPP_GUARD
+#include "sqlcpp/components/expr.hpp"
 #include "sqlcpp/components/field.hpp"
 #include "sqlcpp/components/from.hpp"
 #include "sqlcpp/components/group_by.hpp"
@@ -13,6 +14,7 @@
 #include "sqlcpp/components/where.hpp"
 #include "sqlcpp/defs.hpp"
 #include <optional>
+#include <type_traits>
 #include <vector>
 namespace sqlcpp {
 
@@ -41,12 +43,12 @@ namespace sqlcpp {
         /// @brief 多字段构造函数
         Select(std::vector<FieldLike> fields);
         /// @brief 多字段构造函数
-        template<
-                typename T,
-                typename... Args,
-                typename = std::enable_if_t<
-                        (std::is_convertible_v<std::decay_t<T>, Field> || std::is_convertible_v<std::decay_t<T>, RawField> || std::is_convertible_v<std::decay_t<T>, FuncField>) &&(sizeof...(Args) > 0)>>
-        Select(T field, Args &&...args) { select(field, std::forward<Args>(args)...); }
+        template<typename... Args,
+                 typename = std::enable_if_t<(
+                         (std::is_convertible_v<Args, Field> ||
+                          std::is_convertible_v<Args, RawField> ||
+                          std::is_convertible_v<Args, ExprLike>) &&...)>>
+        Select(Args &&...args) { select(std::forward<Args>(args)...); }
 
         /// @brief 选择字段
         Select &select(const char *field);
@@ -59,13 +61,18 @@ namespace sqlcpp {
         /// @brief 选择字段
         Select &select(RawField field);
         /// @brief 选择字段
-        Select &select(FuncField field);
+        Select &select(ExprLike field);
         /// @brief 选择字段
         template<
                 typename T,
                 typename... Args,
                 typename = std::enable_if_t<
-                        (std::is_convertible_v<std::decay_t<T>, Field> || std::is_convertible_v<std::decay_t<T>, RawField> || std::is_convertible_v<std::decay_t<T>, FuncField>) &&(sizeof...(Args) > 0)>>
+                        (std::is_convertible_v<T, Field> ||
+                         std::is_convertible_v<T, RawField> ||
+                         std::is_convertible_v<T, ExprLike>) &&(sizeof...(Args) > 0) &&
+                        ((std::is_convertible_v<Args, Field> ||
+                          std::is_convertible_v<Args, RawField> ||
+                          std::is_convertible_v<Args, ExprLike>) &&...)>>
         inline Select &select(T field, Args &&...args);
 
         /// @brief 设置完整的from关系
@@ -92,7 +99,7 @@ namespace sqlcpp {
         /// @brief 设置排序条件
         Select &order_by(RawField field, Order o = Order::ASC);
         /// @brief 设置排序条件
-        Select &order_by(FuncField field, Order o = Order::ASC);
+        Select &order_by(ExprLike field, Order o = Order::ASC);
         /// @brief 设置排序条件
         Select &order_by(FieldLike field, Order o = Order::ASC);
         /// @brief 设置排序条件
@@ -112,6 +119,7 @@ namespace sqlcpp {
 
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
+        void build_s(std::ostream &oss, const Type &t, bool is_subquery) const;
         void edit_var_map(VarMap &var_map) const override;
     };
 

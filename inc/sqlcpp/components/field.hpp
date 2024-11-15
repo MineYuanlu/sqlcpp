@@ -6,6 +6,7 @@
 #define SQLCPP_COMPONENTS_FIELD__HPP_GUARD
 
 
+#include "sqlcpp/components/expr.hpp"
 #include "sqlcpp/defs.hpp"
 #include <optional>
 #include <variant>
@@ -26,6 +27,7 @@ namespace sqlcpp {
         std::optional<std::string> table_name_{};///< 表名
         std::string field_name_;                 ///< 字段名
         std::optional<std::string> alias_{};     ///< 别称
+        bool distinct_{false};                   ///< 是否为distinct查询
 
         /// @brief 使用字段名构造
         Field(const char *field);
@@ -41,6 +43,8 @@ namespace sqlcpp {
         Field &alias(std::string alias);
         /// @brief 设置别称
         Field &as(std::string alias);
+        /// @brief 设置是否为distinct查询
+        Field &distinct(bool v = true);
 
         /// @brief 返回此字段的升序排序语句
         OrderByField asc() const;
@@ -78,29 +82,9 @@ namespace sqlcpp {
     };
 
 
-    /// @brief 函数字段, 用于查询/更新/删除/条件等操作
-    struct FuncField final : public Builder, public VarBuilder {
-        std::string func_name_;             ///< 函数名
-        std::variant<Field, RawField> args_;///< 参数
-        std::optional<std::string> alias_{};///< 别称
-
-        /// @brief 使用函数名和参数构造
-        FuncField(std::string func, std::variant<Field, RawField> args);
-        /// @brief 使用函数名、参数和别称构造
-        FuncField(std::string func, std::variant<Field, RawField> args, std::string alias);
-        /// @brief 设置别称
-        FuncField &alias(std::string alias);
-        /// @brief 设置别称
-        FuncField &as(std::string alias);
-
-        void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
-        void edit_var_map(VarMap &var_map) const override;
-    };
-
-
-    /// @brief 形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / FuncField
+    /// @brief 形如字段的表达式, 用于查询/更新/删除/条件等操作, 可以是 Field / RawField / Expr
     struct FieldLike final : public Builder, public VarBuilder {
-        std::variant<Field, RawField, FuncField> field_;///< 实际字段
+        std::variant<Field, RawField, ExprLike> field_;///< 实际字段
 
         /// @brief 使用字段名构造
         /// @see Field
@@ -118,8 +102,14 @@ namespace sqlcpp {
         FieldLike(Field field);
         /// @brief 使用字段构造
         FieldLike(RawField field);
-        /// @brief 使用字段构造
-        FieldLike(FuncField field);
+        /// @brief 使用表达式构造
+        FieldLike(OpExpr field);
+        /// @brief 使用表达式构造
+        FieldLike(CaseExpr field);
+        /// @brief 使用表达式构造
+        FieldLike(FuncExpr field);
+        /// @brief 使用表达式构造
+        FieldLike(ExprLike field);
 
         void build_s(std::ostream &oss, const Type &t = SQLCPP_DEFAULT_TYPE) const override;
         void edit_var_map(VarMap &var_map) const override;

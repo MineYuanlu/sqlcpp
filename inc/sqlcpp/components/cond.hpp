@@ -4,10 +4,12 @@
 /// Licence: MIT
 #ifndef SQLCPP_COMPONENTS_COND__HPP_GUARD
 #define SQLCPP_COMPONENTS_COND__HPP_GUARD
+#include "sqlcpp/components/expr.hpp"
 #include "sqlcpp/components/field.hpp"
 #include "sqlcpp/components/value.hpp"
 #include "sqlcpp/defs.hpp"
 #include <memory>
+#include <type_traits>
 namespace sqlcpp {
     /// @brief 比较运算符
     enum CmpOp {
@@ -61,12 +63,18 @@ namespace sqlcpp {
     };
 
 
-    inline CondCmp operator==(FieldLike &&field, ValueLike &&value) { return {std::move(field), EQ, std::move(value)}; }
-    inline CondCmp operator!=(FieldLike &&field, ValueLike &&value) { return {std::move(field), NEQ, std::move(value)}; }
-    inline CondCmp operator>(FieldLike &&field, ValueLike &&value) { return {std::move(field), GT, std::move(value)}; }
-    inline CondCmp operator>=(FieldLike &&field, ValueLike &&value) { return {std::move(field), GTE, std::move(value)}; }
-    inline CondCmp operator<(FieldLike &&field, ValueLike &&value) { return {std::move(field), LT, std::move(value)}; }
-    inline CondCmp operator<=(FieldLike &&field, ValueLike &&value) { return {std::move(field), LTE, std::move(value)}; }
+    template<typename F, typename V, typename = std::enable_if_t<std::is_convertible_v<F, FieldLike> && std::is_convertible_v<V, ValueLike>>>
+    inline CondCmp operator==(F &&field, V &&value) { return {std::forward<F>(field), EQ, std::forward<V>(value)}; }
+    template<typename F, typename V, typename = std::enable_if_t<std::is_convertible_v<F, FieldLike> && std::is_convertible_v<V, ValueLike>>>
+    inline CondCmp operator!=(F &&field, V &&value) { return {std::forward<F>(field), NEQ, std::forward<V>(value)}; }
+    template<typename F, typename V, typename = std::enable_if_t<std::is_convertible_v<F, FieldLike> && std::is_convertible_v<V, ValueLike>>>
+    inline CondCmp operator>(F &&field, V &&value) { return {std::forward<F>(field), GT, std::forward<V>(value)}; }
+    template<typename F, typename V, typename = std::enable_if_t<std::is_convertible_v<F, FieldLike> && std::is_convertible_v<V, ValueLike>>>
+    inline CondCmp operator>=(F &&field, V &&value) { return {std::forward<F>(field), GTE, std::forward<V>(value)}; }
+    template<typename F, typename V, typename = std::enable_if_t<std::is_convertible_v<F, FieldLike> && std::is_convertible_v<V, ValueLike>>>
+    inline CondCmp operator<(F &&field, V &&value) { return {std::forward<F>(field), LT, std::forward<V>(value)}; }
+    template<typename F, typename V, typename = std::enable_if_t<std::is_convertible_v<F, FieldLike> && std::is_convertible_v<V, ValueLike>>>
+    inline CondCmp operator<=(F &&field, V &&value) { return {std::forward<F>(field), LTE, std::forward<V>(value)}; }
 
 
     /// @brief IN条件
@@ -164,16 +172,16 @@ namespace sqlcpp {
 
     /// @brief 条件接口
     struct Condition final : public Builder, public VarBuilder {
-        std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw, FuncField> conditions_;
+        std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw, FuncExpr> conditions_;
 
-        Condition(std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw, FuncField> cond);
+        Condition(std::variant<CondOp, CondCmp, CondIn, CondNotIn, CondBetween, CondRaw, FuncExpr> cond);
         Condition(CondOp cond);
         Condition(CondCmp cond);
         Condition(CondIn cond);
         Condition(CondNotIn cond);
         Condition(CondBetween cond);
         Condition(CondRaw cond);
-        Condition(FuncField cond);
+        Condition(FuncExpr cond);
         Condition(const Cond *cond);
 
 
@@ -184,12 +192,12 @@ namespace sqlcpp {
     };
 
 
-    inline CondOp operator&&(Condition &&left, Condition &&right) { return {AND, {std::move(left), std::move(right)}}; }
-    inline CondOp operator||(Condition &&left, Condition &&right) { return {OR, {std::move(left), std::move(right)}}; }
-    inline CondOp operator!(Condition &&cond) { return {NOT, {std::move(cond)}}; }
-    inline CondOp operator&&(const Condition &left, const Condition &right) { return {AND, {left, right}}; }
-    inline CondOp operator||(const Condition &left, const Condition &right) { return {OR, {left, right}}; }
-    inline CondOp operator!(const Condition &cond) { return {NOT, {cond}}; }
+    template<typename L, typename R, typename = std::enable_if_t<std::is_convertible_v<L, Condition> && std::is_convertible_v<R, Condition>>>
+    inline CondOp operator&&(L &&left, R &&right) { return {AND, {std::forward<L>(left), std::forward<R>(right)}}; }
+    template<typename L, typename R, typename = std::enable_if_t<std::is_convertible_v<L, Condition> && std::is_convertible_v<R, Condition>>>
+    inline CondOp operator||(L &&left, R &&right) { return {OR, {std::forward<L>(left), std::forward<R>(right)}}; }
+    template<typename T, typename = std::enable_if_t<std::is_convertible_v<T, Condition>>>
+    inline CondOp operator!(T &&cond) { return {NOT, {std::move(cond)}}; }
 
 }// namespace sqlcpp
 #endif// SQLCPP_COMPONENTS_COND__HPP_GUARD

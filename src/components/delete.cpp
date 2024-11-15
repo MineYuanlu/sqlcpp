@@ -1,4 +1,5 @@
 #include "sqlcpp/components/delete.hpp"
+#include "sqlcpp/components/expr.hpp"
 #include <stdexcept>
 #include <variant>
 namespace sqlcpp {
@@ -65,7 +66,7 @@ namespace sqlcpp {
         order_by_.emplace(std::move(field), std::move(o));
         return *this;
     }
-    Delete &Delete::order_by(FuncField field, Order o) {
+    Delete &Delete::order_by(ExprLike field, Order o) {
         order_by_.emplace(std::move(field), std::move(o));
         return *this;
     }

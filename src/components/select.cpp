@@ -1,4 +1,5 @@
 #include "sqlcpp/components/select.hpp"
+#include "sqlcpp/components/expr.hpp"
 #include "sqlcpp/components/value.hpp"
 namespace sqlcpp {
     Select::Select(FieldLike field) : fields_({std::move(field)}) {}
@@ -24,7 +25,7 @@ namespace sqlcpp {
         fields_.emplace_back(std::move(field));
         return *this;
     }
-    Select &Select::select(FuncField field) {
+    Select &Select::select(ExprLike field) {
         fields_.emplace_back(std::move(field));
         return *this;
     }
@@ -72,7 +73,7 @@ namespace sqlcpp {
         order_by_.emplace(std::move(field), std::move(o));
         return *this;
     }
-    Select &Select::order_by(FuncField field, Order o) {
+    Select &Select::order_by(ExprLike field, Order o) {
         order_by_.emplace(std::move(field), std::move(o));
         return *this;
     }
@@ -108,8 +109,11 @@ namespace sqlcpp {
         offset_ = offset;
         return *this;
     }
+
     void Select::build_s(std::ostream &oss, const Type &t) const {
-        //TODO 任何支持"?"的地方，都可以获取其index，然后新建函数允许用户输入一组数据和实际的参数方法，然后自动映射?的位置
+        build_s(oss, t, false);
+    }
+    void Select::build_s(std::ostream &oss, const Type &t, bool is_subquery) const {
         oss << "SELECT ";
         const auto sz = fields_.size();
         for (size_t i = 0; i < sz; ++i) {
@@ -144,7 +148,7 @@ namespace sqlcpp {
                 idx->build_s(oss, t);
             }
         }
-        oss << ';';
+        if (!is_subquery) oss << ';';
     }
     void Select::edit_var_map(VarMap &var_map) const {
         if (where_) where_->edit_var_map(var_map);

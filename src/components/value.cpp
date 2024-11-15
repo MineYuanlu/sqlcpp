@@ -1,4 +1,5 @@
 #include "sqlcpp/components/value.hpp"
+#include "sqlcpp/components/expr.hpp"
 #include "sqlcpp/components/field.hpp"
 #include "sqlcpp/str.hpp"
 #include "sqlcpp/types.hpp"
@@ -87,7 +88,7 @@ namespace sqlcpp {
     ValueLike::ValueLike(BlobValue value) : value_(std::move(value)) {}
     ValueLike::ValueLike(Field value) : value_(std::move(value)) {}
     ValueLike::ValueLike(RawField value) : value_(std::move(value)) {}
-    ValueLike::ValueLike(FuncField value) : value_(std::move(value)) {}
+    ValueLike::ValueLike(ExprLike value) : value_(std::move(value)) {}
     ValueLike::ValueLike(const char *value) : value_(Value(std::move(value))) {}
     ValueLike::ValueLike(std::string value) : value_(Value(std::move(value))) {}
     ValueLike::ValueLike(int64_t value) : value_(Value(std::move(value))) {}
